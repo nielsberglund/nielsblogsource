@@ -1,0 +1,50 @@
+// ok
+TCP Send     Length: 134,
+TCP Receive  Length: 217,
+TCP Send     Length: 104,
+TCP Receive  Length: 17, 
+TCP Send     Length: 26, 
+TCP Receive  Length: 240,
+TCP Receive  Length: 28, 
+TCP Send     Length: 33, 
+TCP Send     Length: 28, 
+TCP Send     Length: 28, 
+TCP Receive  Length: 28, 
+TCP Receive  Length: 0, 
+
+
+// non exist func
+TCP Send     Length: 134,
+TCP Receive  Length: 217,
+TCP Send     Length: 104,
+TCP Receive  Length: 17, 
+TCP Send     Length: 26, 
+TCP Receive  Length: 466,
+TCP Receive  Length: 28, 
+TCP Send     Length: 28, 
+TCP Receive  Length: 28, 
+TCP Receive  Length: 0, 
+
+//very, very, very long error
+TCP Send     Length: 134,
+TCP Receive  Length: 217,
+TCP Send     Length: 104,
+TCP Receive  Length: 17, 
+TCP Send     Length: 26, 
+TCP Receive  Length: 368,
+TCP Receive  Length: 28, 
+TCP Send     Length: 28, 
+TCP Receive  Length: 28, 
+TCP Receive  Length: 0, 
+
+
+//sql error
+TCP Send     Length: 134,
+TCP Receive  Length: 217,
+TCP Send     Length: 104,
+TCP Receive  Length: 17, 
+TCP Send     Length: 26, 
+TCP Receive  Length: 240,
+TCP Receive  Length: 28, 
+TCP Send     Length: 28, 
+TCP Receive  Length: 0, 

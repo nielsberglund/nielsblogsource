@@ -1,0 +1,232 @@
+sqllang!CXStmtQuery::ErsqExecuteQuery
+  sqllang!CStmtQuery::GetQueryObj
+sqllang!CXStmtQuery::ErsqExecuteQuery
+  sqlmin!CQuery::FSecurityPolicyApplied
+sqllang!CXStmtQuery::ErsqExecuteQuery
+  KERNEL32!TlsGetValueStub
+  KERNEL32!TlsGetValue
+sqllang!CXStmtQuery::ErsqExecuteQuery
+  sqllang!CStmtQuery::GetQueryObj
+sqllang!CXStmtQuery::ErsqExecuteQuery
+  sqlmin!CQuery::FMightHaveMaskedColumns
+sqllang!CXStmtQuery::ErsqExecuteQuery
+  KERNEL32!TlsGetValueStub
+  KERNEL32!TlsGetValue
+sqllang!CXStmtQuery::ErsqExecuteQuery
+  sqlmin!XeSqlPkg::query_post_execution_showplan::IsEnabled
+sqllang!CXStmtQuery::ErsqExecuteQuery
+  sqlmin!XeSqlPkg::inaccurate_cardinality_estimate::IsEnabled
+sqllang!CXStmtQuery::ErsqExecuteQuery
+  sqllang!CDbAndSetOpts::LUserOpt1Get
+sqllang!CXStmtQuery::ErsqExecuteQuery
+  sqllang!CDbAndSetOpts::LUserOpt1Get
+sqllang!CXStmtQuery::ErsqExecuteQuery
+  sqllang!CStmtQuery::PwchPlanGuideName
+sqllang!CXStmtQuery::ErsqExecuteQuery
+  sqllang!CDbAndSetOpts::LUserOpt1Get
+sqllang!CXStmtQuery::ErsqExecuteQuery
+  sqllang!CXStmtQuery::InitForExecute
+    sqllang!CXStmtQuery::SetupQueryScanAndExpression
+      sqllang!CMsqlXactImp::GetBaseXact
+    sqllang!CXStmtQuery::SetupQueryScanAndExpression
+      sqllang!CMsqlXactImp::GetHkTransaction
+    sqllang!CXStmtQuery::SetupQueryScanAndExpression
+      sqlmin!CQuery::FHasBatchProcessing
+    sqllang!CXStmtQuery::SetupQueryScanAndExpression
+      sqllang!CDbAndSetOpts::LUserOpt1Get
+    sqllang!CXStmtQuery::SetupQueryScanAndExpression
+      sqlmin!CQuery::FIsPlanPropertyOn
+    sqllang!CXStmtQuery::SetupQueryScanAndExpression
+      sqlmin!CQECtxt::Init
+        sqllang!ContextAccessor::PTrigDataFromCurStmt
+      sqlmin!CQECtxt::Init
+        KERNEL32!TlsGetValueStub
+        KERNEL32!TlsGetValue
+      sqlmin!CQECtxt::Init
+    sqllang!CXStmtQuery::SetupQueryScanAndExpression
+      sqllang!CExecuteStatement::SetDataMaskingPrivilege
+    sqllang!CXStmtQuery::SetupQueryScanAndExpression
+      sqlmin!CQuery::FParallel
+    sqllang!CXStmtQuery::SetupQueryScanAndExpression
+      sqlmin!CQuery::CreateExecPlan
+        sqldk!CMemProc::CpagesInUse
+      sqlmin!CQuery::CreateExecPlan
+        sqldk!CMemProc::Alloc
+      sqlmin!CQuery::CreateExecPlan
+        sqlmin!CQueryScan::CQueryScan
+      sqlmin!CQuery::CreateExecPlan
+        sqlmin!CQueryScan::Setup
+      sqlmin!CQuery::CreateExecPlan
+    sqllang!CXStmtQuery::SetupQueryScanAndExpression
+      sqlmin!CQueryScan::PbhfGet
+    sqllang!CXStmtQuery::SetupQueryScanAndExpression
+      sqlTsEs!CEsRuntime::Startup
+        sqldk!CMemProc::Alloc
+      sqlTsEs!CEsRuntime::Startup
+        sqlTsEs!CEsExecBase::Init
+        sqlTsEs!CEsCompInfoSeg::CreateExecInfoSeg
+      sqlTsEs!CEsRuntime::Startup
+    sqllang!CXStmtQuery::SetupQueryScanAndExpression
+      sqldk!CMemProc::PvMark
+    sqllang!CXStmtQuery::SetupQueryScanAndExpression
+      sqlmin!CQueryScan::StartupQuery
+        sqlmin!CQueryScan::SendShowplanTrace
+      sqlmin!CQueryScan::StartupQuery
+        KERNEL32!TlsGetValueStub
+        KERNEL32!TlsGetValue
+      sqlmin!CQueryScan::StartupQuery
+        KERNEL32!TlsGetValueStub
+        KERNEL32!TlsGetValue
+      sqlmin!CQueryScan::StartupQuery
+        sqlmin!CQueryExecContext::Uncache
+      sqlmin!CQueryScan::StartupQuery
+        sqlmin!CQueryScan::FParallelExec
+      sqlmin!CQueryScan::StartupQuery
+        sqlmin!AddBulkCntxt
+      sqlmin!CQueryScan::StartupQuery
+        KERNEL32!TlsGetValueStub
+        KERNEL32!TlsGetValue
+      sqlmin!CQueryScan::StartupQuery
+        sqlmin!CQScanTopNew::Open
+        sqlmin!CQScanTopNew::Reset
+      sqlmin!CQueryScan::StartupQuery
+    sqllang!CXStmtQuery::SetupQueryScanAndExpression
+  sqllang!CXStmtQuery::InitForExecute
+    sqllang!CXStmtQuery::SetupDirectSelectForRow
+      sqllang!CTdsConn<0>::FNextRowWontBlockImpl
+    sqllang!CXStmtQuery::SetupDirectSelectForRow
+  sqllang!CXStmtQuery::InitForExecute
+  sqlmin!CQueryScan::GetRow
+    sqlmin!CQScanTopNew::GetRow
+      sqlmin!CQScanTableScanNew::GetRow
+        sqlmin!CQScanRowsetNew::GetRowWithPrefetch
+      sqlmin!CQScanTableScanNew::GetRow
+        sqllang!CValOdsRow::SetDataX
+        sqllang!CShilohTds::SendRowImpl
+      sqlmin!CQScanTableScanNew::GetRow
+    sqlmin!CQScanTopNew::GetRow
+  sqlmin!CQueryScan::GetRow
+sqllang!CXStmtQuery::ErsqExecuteQuery
+  sqllang!CTdsConn<0>::FNextRowWontBlockImpl
+sqllang!CXStmtQuery::ErsqExecuteQuery
+  sqllang!YieldAndCheckForAbort
+    KERNEL32!TlsGetValueStub
+    KERNEL32!TlsGetValue
+  sqllang!YieldAndCheckForAbort
+    sqllang!SOS_Task::Sleep
+      KERNEL32!TlsGetValueStub
+      KERNEL32!TlsGetValue
+    sqllang!SOS_Task::Sleep
+      KERNEL32!TlsGetValueStub
+      KERNEL32!TlsGetValue
+    sqllang!SOS_Task::Sleep
+      sqldk!SOS_Task::PreWait
+        KERNEL32!TlsGetValueStub
+        KERNEL32!TlsGetValue
+      sqldk!SOS_Task::PreWait
+        KERNEL32!QueryPerformanceCounterStub
+        ntdll!RtlQueryPerformanceCounter
+      sqldk!SOS_Task::PreWait
+        sqldk!XeSosPkg::wait_info::Publish
+      sqldk!SOS_Task::PreWait
+    sqllang!SOS_Task::Sleep
+      sqldk!SOS_Scheduler::Suspend
+      sqldk!SOS_Scheduler::SuspendNonPreemptive
+        sqldk!SOS_Scheduler::ResumeNoCuzz
+      sqldk!SOS_Scheduler::SuspendNonPreemptive
+        sqldk!SOS_Scheduler::SwitchContext
+        sqldk!SOS_Scheduler::Switch
+      sqldk!SOS_Scheduler::SuspendNonPreemptive
+    sqllang!SOS_Task::Sleep
+      sqldk!SOS_Task::PostWait
+        KERNEL32!TlsGetValueStub
+        KERNEL32!TlsGetValue
+      sqldk!SOS_Task::PostWait
+        sqldk!SOS_Scheduler::UpdateWaitTimeStats
+      sqldk!SOS_Task::PostWait
+    sqllang!SOS_Task::Sleep
+  sqllang!YieldAndCheckForAbort
+sqllang!CXStmtQuery::ErsqExecuteQuery
+  sqlmin!CQueryScan::GetRow
+    sqlmin!CQScanTopNew::GetRow
+      sqlmin!CQScanRowsetNew::ReleaseRow
+        sqlmin!RowsetNewSS::ReleaseRows
+      sqlmin!CQScanRowsetNew::ReleaseRow
+    sqlmin!CQScanTopNew::GetRow
+  sqlmin!CQueryScan::GetRow
+    sqlmin!CQueryScan::ProcessFinalRow
+  sqlmin!CQueryScan::GetRow
+sqllang!CXStmtQuery::ErsqExecuteQuery
+  KERNEL32!TlsGetValueStub
+  KERNEL32!TlsGetValue
+sqllang!CXStmtQuery::ErsqExecuteQuery
+  sqllang!CDbAndSetOpts::LUserOpt1Get
+sqllang!CXStmtQuery::ErsqExecuteQuery
+  sqlmin!XeSqlPkg::query_thread_profile::IsEnabled
+sqllang!CXStmtQuery::ErsqExecuteQuery
+  sqllang!CFeatureSwitchesMin::FLargeCardinalityMisestimateXEventEnabled
+sqllang!CXStmtQuery::ErsqExecuteQuery
+  sqlmin!CQueryScan::FExecCollectFeedbackXEvents
+sqllang!CXStmtQuery::ErsqExecuteQuery
+  sqlmin!CQueryScan::FExecCollectFeedbackXEvents
+sqllang!CXStmtQuery::ErsqExecuteQuery
+  sqllang!CXStmtQuery::ShutdownNormal
+    sqlmin!CQueryScan::ShutdownQuery
+      KERNEL32!TlsGetValueStub
+      KERNEL32!TlsGetValue
+    sqlmin!CQueryScan::ShutdownQuery
+  sqllang!CXStmtQuery::ShutdownNormal
+    sqlmin!CQueryScan::CacheQuery
+      sqlmin!CQueryScan::UpdateMemoryGrantIfNeeded
+    sqlmin!CQueryScan::CacheQuery
+      sqlmin!CQueryExecContext::UpdateParameters
+        sqlmin!_security_check_cookie
+      sqlmin!CQueryExecContext::UpdateParameters
+    sqlmin!CQueryScan::CacheQuery
+      sqlmin!CQueryScan::FLightWeightProfile
+    sqlmin!CQueryScan::CacheQuery
+      sqlmin!CQScanNew::Dormant
+      sqlmin!CQScanNew::DormantHelper
+        sqlmin!CQScanRowsetNew::Dormant
+        sqlmin!CQScanRowsetNew::DormantHelper
+        sqlmin!CQScanNew::DormantHelper
+      sqlmin!CQScanNew::DormantHelper
+    sqlmin!CQueryScan::CacheQuery
+      sqlmin!CBlobHandleFactoryMain::FNoNeedToShutdown
+    sqlmin!CQueryScan::CacheQuery
+      sqlmin!CQueryExecContext::Cache
+        sqlmin!CQueryExecContext::ClearExprCache
+      sqlmin!CQueryExecContext::Cache
+        sqlmin!CBlobHandleFactoryMain::FNoNeedToShutdown
+      sqlmin!CQueryExecContext::Cache
+        sqlmin!CSingleLinkedPtrs<IUnknown>::Shrink
+      sqlmin!CQueryExecContext::Cache
+    sqlmin!CQueryScan::CacheQuery
+      sqlmin!CQueryResourceGrantManager::ReturnGrant
+        KERNEL32!TlsGetValueStub
+        KERNEL32!TlsGetValue
+      sqlmin!CQueryResourceGrantManager::ReturnGrant
+        sqlmin!_security_check_cookie
+      sqlmin!CQueryResourceGrantManager::ReturnGrant
+    sqlmin!CQueryScan::CacheQuery
+  sqllang!CXStmtQuery::ShutdownNormal
+sqllang!CXStmtQuery::ErsqExecuteQuery
+  sqllang!CXStmtSelect::FinishAnyResultSetsImp
+  sqllang!CConnectionOutput::FUnstructuredEndResultSet
+    sqllang!ExcHandler::ExcHandler
+      KERNEL32!TlsGetValueStub
+      KERNEL32!TlsGetValue
+    sqllang!ExcHandler::ExcHandler
+  sqllang!CConnectionOutput::FUnstructuredEndResultSet
+    sqllang!CConnectionOutput::UnstructuredEndResultSet
+      sqllang!CTdsConn<0>::EndResultSetImpl
+        sqllang!SendDoneWarnings
+      sqllang!CTdsConn<0>::EndResultSetImpl
+    sqllang!CConnectionOutput::UnstructuredEndResultSet
+  sqllang!CConnectionOutput::FUnstructuredEndResultSet
+    sqllang!ExcHandler::~ExcHandler
+      KERNEL32!TlsGetValueStub
+      KERNEL32!TlsGetValue
+    sqllang!ExcHandler::~ExcHandler
+  sqllang!CConnectionOutput::FUnstructuredEndResultSet
+sqllang!CXStmtQuery::ErsqExecuteQuery

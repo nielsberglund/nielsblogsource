@@ -1,0 +1,4 @@
+W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sql2017_trusted_assemblies\cs\Sql2k17TrustedAsm\Sql2k17TrustedAsm1\bin\Release\Sql2k17TrustedAsm1.dll
+W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sql2017_trusted_assemblies\cs\Sql2k17TrustedAsm\Sql2k17TrustedAsm1\bin\Release\Sql2k17TrustedAsm1.pdb
+W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sql2017_trusted_assemblies\cs\Sql2k17TrustedAsm\Sql2k17TrustedAsm1\obj\Release\Sql2k17TrustedAsm1.dll
+W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sql2017_trusted_assemblies\cs\Sql2k17TrustedAsm\Sql2k17TrustedAsm1\obj\Release\Sql2k17TrustedAsm1.pdb

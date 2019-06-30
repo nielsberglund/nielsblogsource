@@ -1,0 +1,101 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS C:\Windows\system32> cd \
+PS C:\> az login
+Note, we have launched a browser for you to login. For old experience with device code, use "az login --use-device-code"
+You have logged in. Now let us find all the subscriptions to which you have access...
+[
+  {
+    "cloudName": "AzureCloud",
+    "id": "a16fbc6b-dc1f-43f7-a30d-3ad9c3760594",
+    "isDefault": true,
+    "name": "Visual Studio Premium with MSDN",
+    "state": "Enabled",
+    "tenantId": "6778d36c-50b7-4320-8d62-6a5091d6e2e7",
+    "user": {
+      "name": "niels.it.berglund@gmail.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "4744bfbf-f324-4142-ac99-65acc840ad8d",
+    "isDefault": false,
+    "name": "Enterprise Dev/Test",
+    "state": "Enabled",
+    "tenantId": "e64b32d9-f28f-4a39-958e-b3938a47f0a9",
+    "user": {
+      "name": "niels.it.berglund@gmail.com",
+      "type": "user"
+    }
+  }
+]
+PS C:\> az account set -s a16fbc6b-dc1f-43f7-a30d-3ad9c3760594
+PS C:\> az groups list
+az: 'groups' is not in the 'az' command group. See 'az --help'.
+
+The most similar choice to 'groups' is:
+        group
+PS C:\> az group list
+[
+  {
+    "id": "/subscriptions/a16fbc6b-dc1f-43f7-a30d-3ad9c3760594/resourceGroups/Default-Web-WestEurope",
+    "location": "westeurope",
+    "managedBy": null,
+    "name": "Default-Web-WestEurope",
+    "properties": {
+      "provisioningState": "Succeeded"
+    },
+    "tags": null
+  },
+  {
+    "id": "/subscriptions/a16fbc6b-dc1f-43f7-a30d-3ad9c3760594/resourceGroups/DefaultResourceGroup-WEU",
+    "location": "westeurope",
+    "managedBy": null,
+    "name": "DefaultResourceGroup-WEU",
+    "properties": {
+      "provisioningState": "Succeeded"
+    },
+    "tags": null
+  },
+  {
+    "id": "/subscriptions/a16fbc6b-dc1f-43f7-a30d-3ad9c3760594/resourceGroups/kubernetes-rg",
+    "location": "westeurope",
+    "managedBy": null,
+    "name": "kubernetes-rg",
+    "properties": {
+      "provisioningState": "Succeeded"
+    },
+    "tags": null
+  }
+]
+
+
+
+
+az aks create --name sqlkubecluster --resource-group kubernetes-rg --disable-rbac --generate-ssh-keys --node-vm-size Standard_E4s_v3 --node-count 3 --kubernetes-version 1.10.8
+
+az aks get-credentials --resource-group=kubernetes-rg --name sqlkubecluster
+
+az aks browse --resource-group kubernetes-rg --name sqlkubecluster
+
+pip3 install --index-url https://private-repo.microsoft.com/python/ctp-2.0 mssqlctl
+
+kubectl get all -n sqlbigdata1
+
+kubectl get pods -n sqlbigdata1
+
+
+kubectl get svc service-proxy-lb -n sqlbigdata1
+
+kubectl get service service-master-pool-lb -o=custom-columns="IP:.status.loadBalancer.ingress[0].ip,PORT:.spec.ports[0].port" -n sqlbigdata1
+
+kubectl get service service-security-lb -o=custom-columns="IP:.status.loadBalancer.ingress[0].ip,PORT:.spec.ports[0].port" -n sqlbigdata1
+
+
+
+
+
+13.94.184.220   31433
+13.94.173.71   30443

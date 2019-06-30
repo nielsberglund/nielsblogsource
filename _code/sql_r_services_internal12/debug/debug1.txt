@@ -1,0 +1,167 @@
+
+exec sp_execute_external_script
+    @language = N'R' ,
+    @script = N'Sys.sleep(10) 
+           d<-42';
+
+
+
+Breakpoint 1 hit
+sqllang!CSQLSatelliteConnection::WriteMessage:
+00007ffd`40d01bc0 57              push    rdi
+0:077> g
+Breakpoint 0 hit
+sqllang!CUDXR_ExternalScript::ConnectToSatellite:
+00007ffd`4083e630 48894c2408      mov     qword ptr [rsp+8],rcx ss:000000f7`e187c350=00000282da11d610
+0:077> g
+Breakpoint 2 hit
+sqllang!Tcp::WriteAsync:
+00007ffd`3f9b9e40 4c8bdc          mov     r11,rsp
+0:095> g
+Breakpoint 2 hit
+sqllang!Tcp::WriteAsync:
+00007ffd`3f9b9e40 4c8bdc          mov     r11,rsp
+0:083> g
+Breakpoint 1 hit
+sqllang!CSQLSatelliteConnection::WriteMessage:
+00007ffd`40d01bc0 57              push    rdi
+0:077> kc
+ # Call Site
+00 sqllang!CSQLSatelliteConnection::WriteMessage
+01 sqllang!CSatelliteProxy::PostSetupMessage
+02 sqllang!CUDXR_ExternalScript::ConnectToSatellite
+03 sqllang!CUDXR_ExternalScript::Open
+04 sqlmin!CQScanUdx::Open
+05 sqlmin!CQueryScan::StartupQuery
+06 sqllang!CXStmtQuery::SetupQueryScanAndExpression
+07 sqllang!CXStmtQuery::InitForExecute
+08 sqllang!CXStmtQuery::ErsqExecuteQuery
+09 sqllang!CXStmtSelect::XretExecute
+0a sqllang!CMsqlExecContext::ExecuteStmts<1,1>
+0b sqllang!CMsqlExecContext::FExecute
+0c sqllang!CSQLSource::Execute
+0d sqllang!SpExecuteExternalScript
+0e sqllang!CSpecProc::ExecuteSpecial
+0f sqllang!CXProc::Execute
+10 sqllang!CSQLSource::Execute
+11 sqllang!CStmtExecProc::XretLocalExec
+12 sqllang!CStmtExecProc::XretExecExecute
+13 sqllang!CXStmtExecProc::XretExecute
+14 sqllang!CMsqlExecContext::ExecuteStmts<1,1>
+15 sqllang!CMsqlExecContext::FExecute
+16 sqllang!CSQLSource::Execute
+17 sqllang!process_request
+18 sqllang!process_commands_internal
+19 sqllang!process_messages
+1a sqldk!SOS_Task::Param::Execute
+1b sqldk!SOS_Scheduler::RunTask
+1c sqldk!SOS_Scheduler::ProcessTasks
+1d sqldk!SchedulerManager::WorkerEntryPoint
+1e sqldk!SystemThread::RunWorker
+1f sqldk!SystemThreadDispatcher::ProcessWorker
+20 sqldk!SchedulerManager::ThreadEntryPoint
+21 KERNEL32!BaseThreadInitThunk
+22 ntdll!RtlUserThreadStart
+0:077> g
+Breakpoint 2 hit
+sqllang!Tcp::WriteAsync:
+00007ffd`3f9b9e40 4c8bdc          mov     r11,rsp
+0:077> k
+ # Child-SP          RetAddr           Call Site
+00 000000f7`e187c0f8 00007ffd`3f69b7cf sqllang!Tcp::WriteAsync
+01 000000f7`e187c100 00007ffd`40d01c3c sqllang!SNIWriteAsync+0xb0
+02 000000f7`e187c170 00007ffd`40d070a6 sqllang!CSQLSatelliteConnection::WriteMessage+0x7d
+03 000000f7`e187c1d0 00007ffd`4083e692 sqllang!CSatelliteProxy::PostSetupMessage+0x376
+04 000000f7`e187c300 00007ffd`4083bc45 sqllang!CUDXR_ExternalScript::ConnectToSatellite+0x62
+05 000000f7`e187c350 00007ffd`42593824 sqllang!CUDXR_ExternalScript::Open+0x96
+06 000000f7`e187c380 00007ffd`41c71a4f sqlmin!CQScanUdx::Open+0xe5
+07 000000f7`e187c3d0 00007ffd`3f690a46 sqlmin!CQueryScan::StartupQuery+0x316
+08 000000f7`e187c430 00007ffd`3f6934a4 sqllang!CXStmtQuery::SetupQueryScanAndExpression+0x3fa
+09 000000f7`e187c4b0 00007ffd`3f6969a7 sqllang!CXStmtQuery::InitForExecute+0x34
+0a 000000f7`e187c4e0 00007ffd`3f696b75 sqllang!CXStmtQuery::ErsqExecuteQuery+0x4dc
+0b 000000f7`e187c660 00007ffd`3f69450a sqllang!CXStmtSelect::XretExecute+0x322
+0c 000000f7`e187c730 00007ffd`3f694f23 sqllang!CMsqlExecContext::ExecuteStmts<1,1>+0x40d
+0d 000000f7`e187c870 00007ffd`3f693b91 sqllang!CMsqlExecContext::FExecute+0xa9e
+0e 000000f7`e187cba0 00007ffd`40341e2e sqllang!CSQLSource::Execute+0x983
+0f 000000f7`e187cd40 00007ffd`4034d8f5 sqllang!SpExecuteExternalScript+0x140e
+10 000000f7`e187d550 00007ffd`4034cd8c sqllang!CSpecProc::ExecuteSpecial+0x355
+11 000000f7`e187d650 00007ffd`3fa71670 sqllang!CXProc::Execute+0x10c
+12 000000f7`e187dc40 00007ffd`4038a0b2 sqllang!CSQLSource::Execute+0xab8
+13 000000f7`e187dde0 00007ffd`40389a51 sqllang!CStmtExecProc::XretLocalExec+0x2d2
+14 000000f7`e187de80 00007ffd`403867a8 sqllang!CStmtExecProc::XretExecExecute+0x481
+15 000000f7`e187e630 00007ffd`3f69450a sqllang!CXStmtExecProc::XretExecute+0x38
+16 000000f7`e187e670 00007ffd`3f694f23 sqllang!CMsqlExecContext::ExecuteStmts<1,1>+0x40d
+17 000000f7`e187e7b0 00007ffd`3f693b91 sqllang!CMsqlExecContext::FExecute+0xa9e
+18 000000f7`e187eae0 00007ffd`3f69c79b sqllang!CSQLSource::Execute+0x983
+19 000000f7`e187ec80 00007ffd`3f691972 sqllang!process_request+0xe61
+1a 000000f7`e187f250 00007ffd`3f6914d3 sqllang!process_commands_internal+0x2df
+1b 000000f7`e187f2d0 00007ffd`50c3567d sqllang!process_messages+0x253
+1c 000000f7`e187f4e0 00007ffd`50c35b75 sqldk!SOS_Task::Param::Execute+0x231
+1d 000000f7`e187fae0 00007ffd`50c357cd sqldk!SOS_Scheduler::RunTask+0xaa
+1e 000000f7`e187fb50 00007ffd`50c54858 sqldk!SOS_Scheduler::ProcessTasks+0x3cd
+1f 000000f7`e187fc30 00007ffd`50c548f0 sqldk!SchedulerManager::WorkerEntryPoint+0x2a1
+20 000000f7`e187fd00 00007ffd`50c542c7 sqldk!SystemThread::RunWorker+0x8f
+21 000000f7`e187fd30 00007ffd`50c54698 sqldk!SystemThreadDispatcher::ProcessWorker+0x2de
+22 000000f7`e187fde0 00007ffd`9bb11fe4 sqldk!SchedulerManager::ThreadEntryPoint+0x1d8
+23 000000f7`e187fe90 00007ffd`9c741311 KERNEL32!BaseThreadInitThunk+0x14
+24 000000f7`e187fec0 00000000`00000000 ntdll!RtlUserThreadStart+0x21
+0:077> kc
+ # Call Site
+00 sqllang!Tcp::WriteAsync
+01 sqllang!SNIWriteAsync
+02 sqllang!CSQLSatelliteConnection::WriteMessage
+03 sqllang!CSatelliteProxy::PostSetupMessage
+04 sqllang!CUDXR_ExternalScript::ConnectToSatellite
+05 sqllang!CUDXR_ExternalScript::Open
+06 sqlmin!CQScanUdx::Open
+07 sqlmin!CQueryScan::StartupQuery
+08 sqllang!CXStmtQuery::SetupQueryScanAndExpression
+09 sqllang!CXStmtQuery::InitForExecute
+0a sqllang!CXStmtQuery::ErsqExecuteQuery
+0b sqllang!CXStmtSelect::XretExecute
+0c sqllang!CMsqlExecContext::ExecuteStmts<1,1>
+0d sqllang!CMsqlExecContext::FExecute
+0e sqllang!CSQLSource::Execute
+0f sqllang!SpExecuteExternalScript
+10 sqllang!CSpecProc::ExecuteSpecial
+11 sqllang!CXProc::Execute
+12 sqllang!CSQLSource::Execute
+13 sqllang!CStmtExecProc::XretLocalExec
+14 sqllang!CStmtExecProc::XretExecExecute
+15 sqllang!CXStmtExecProc::XretExecute
+16 sqllang!CMsqlExecContext::ExecuteStmts<1,1>
+17 sqllang!CMsqlExecContext::FExecute
+18 sqllang!CSQLSource::Execute
+19 sqllang!process_request
+1a sqllang!process_commands_internal
+1b sqllang!process_messages
+1c sqldk!SOS_Task::Param::Execute
+1d sqldk!SOS_Scheduler::RunTask
+1e sqldk!SOS_Scheduler::ProcessTasks
+1f sqldk!SchedulerManager::WorkerEntryPoint
+20 sqldk!SystemThread::RunWorker
+21 sqldk!SystemThreadDispatcher::ProcessWorker
+22 sqldk!SchedulerManager::ThreadEntryPoint
+23 KERNEL32!BaseThreadInitThunk
+24 ntdll!RtlUserThreadStart
+0:077> g
+Breakpoint 1 hit
+sqllang!CSQLSatelliteConnection::WriteMessage:
+00007ffd`40d01bc0 57              push    rdi
+0:077> g
+Breakpoint 2 hit
+sqllang!Tcp::WriteAsync:
+00007ffd`3f9b9e40 4c8bdc          mov     r11,rsp
+0:077> g
+Breakpoint 1 hit
+sqllang!CSQLSatelliteConnection::WriteMessage:
+00007ffd`40d01bc0 57              push    rdi
+0:077> g
+Breakpoint 2 hit
+sqllang!Tcp::WriteAsync:
+00007ffd`3f9b9e40 4c8bdc          mov     r11,rsp
+0:077> g
+Breakpoint 1 hit
+sqllang!CSQLSatelliteConnection::WriteMessage:
+00007ffd`40d01bc0 57              push    rdi
+0:077> g

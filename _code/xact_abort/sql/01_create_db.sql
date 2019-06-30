@@ -1,0 +1,16 @@
+USE master;
+GO
+
+IF EXISTS(SELECT 1 FROM sys.databases WHERE name = 'ErrTestDB')
+BEGIN
+  DROP DATABASE ErrTestDB;
+END
+GO
+
+CREATE DATABASE ErrTestDB;
+GO
+
+USE ErrTestDB;
+GO
+
+

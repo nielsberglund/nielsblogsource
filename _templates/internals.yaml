@@ -1,0 +1,96 @@
+# Internals template
+---
+layout: post
+title: Microsoft SQL Server R Services - Internals 
+author: nielsb
+date: 
+comments: true
+categories:
+  - SQL Server
+  - Microsoft R Server
+  - Data Science  
+tags:
+  - SQL Server R Services
+  - R
+  - WinDbg
+  - Launchpad
+  - RTerm.exe
+description: 
+keywords:
+  -   
+---
+
+This post is part of a series of blog-posts about Microsoft SQL Server R Services:
+
+1. [Microsoft SQL Server 2016 R Services Installation][sinst]
+1. [Microsoft SQL Server R Services - Internals I][si1]
+1. [Microsoft SQL Server R Services - Internals II][si2]
+1. [Microsoft SQL Server R Services - Internals III][si3]
+1. [Microsoft SQL Server R Services - Internals IV][si4]
+1. [Microsoft SQL Server R Services - Internals V][si5]
+1. [Microsoft SQL Server R Services - Internals VI] [si6]
+1. [Microsoft SQL Server R Services - Internals VII][si7]
+1. [Microsoft SQL Server R Services - Internals VIII][si8]
+1. [Microsoft SQL Server R Services - Internals IX][si9]
+1. [Microsoft SQL Server R Services - Internals X][si10]
+1. [Microsoft SQL Server R Services - Internals XI][si11]
+1. [Microsoft SQL Server R Services - Internals XII][si12]
+1. [Microsoft SQL Server R Services - Internals XIII][si13]
+1. [Microsoft SQL Server R Services - Internals XIV][si14]
+1. [Microsoft SQL Server R Services - Internals XV][si15]
+1. [Microsoft SQL Server R Services - Internals XVI][si16]
+1. [Microsoft SQL Server R Services - Internals XVII][si17]
+1. [Microsoft SQL Server R Services - Internals XVIII][si18]
+1. [Microsoft SQL Server R Services - Internals XIX][si19]
+1. [Microsoft SQL Server R Services - Internals XX][si20]
+1. [Microsoft SQL Server R Services: sp_execute_external_script - I][sext1]
+1. [Microsoft SQL Server R Services - sp_execute_external_script - II][sext2]
+1. Microsoft SQL Server R Services: sp_execute_external_script - III (this post)
+1. More to come (hopefully)
+
+This post is the xth post about Microsoft SQL Server R Services, and the yth post that drills down into the internal of how it works. 
+
+
+<!--more-->
+
+{% img center /images/posts/<image_name.ext> w h %}
+**Figure 1:** **
+
+## ~ Finally
+
+If you have comments, questions etc., please comment on this post or [ping][ma] me.
+
+[ma]: mailto:niels.it.berglund@gmail.com
+[mp]: https://blog.acolyer.org
+[iq]: https://www.infoq.com/
+[ew]: http://sqlonice.com/
+[re]: http://blog.revolutionanalytics.com
+[sqsk]: https://www.sqlskills.com
+[ba]: https://twitter.com/bob_albright
+
+
+
+[sinst]: {% post_url 2017-03-04-microsoft-sql-server-2016-r-services-installation %}
+[si1]: {% post_url 2017-03-18-microsoft-sql-server-r-services---internals-i %}
+[si2]: {% post_url 2017-04-02-microsoft-sql-server-r-services---internals-ii %}
+[si3]: {% post_url 2017-04-13-microsoft-sql-server-r-services---internals-iii %}
+[si4]: {% post_url 2017-04-23-microsoft-sql-server-r-services---internals-iv %}
+[si5]: {% post_url 2017-05-01-microsoft-sql-server-r-services---internals-v %}
+[si6]: {% post_url 2017-05-16-microsoft-sql-server-r-services---internals-vi %}
+[si7]: {% post_url 2017-07-11-microsoft-sql-server-r-services---internals-vii %}
+[si8]: {% post_url 2017-07-22-microsoft-sql-server-r-services---internals-viii %}
+[si9]: {% post_url 2017-08-18-microsoft-sql-server-r-services---internals-ix %}
+[si10]: {% post_url 2017-08-29-microsoft-sql-server-r-services---internals-x %}
+[si11]: {% post_url 2017-10-20-microsoft-sql-server-r-services---internals-xi %}
+[si12]: {% post_url 2017-10-31-microsoft-sql-server-r-services---internals-xii %}
+[si13]: {% post_url 2017-11-11-microsoft-sql-server-r-services---internals-xiii %}
+[si14]: {% post_url 2017-11-25-microsoft-sql-server-r-services---internals-xiv %}
+[si15]: {% post_url 2017-12-02-microsoft-sql-server-r-services---internals-xv %}
+[si16]: {% post_url 2017-12-24--microsoft-sql-server-r-services---internals-xvi %}
+[si17]: {% post_url 2018-01-03-microsoft-sql-server-r-services---internals-xvii %}
+[si18]: {% post_url 2018-01-10-microsoft-sql-server-r-services---internals-xviii %}
+[si19]: {% post_url 2018-01-20-microsoft-sql-server-r-services---internals-xix %}
+[si20]: {% post_url 2018-02-02-microsoft-sql-server-r-services---internals-xx %}
+[sext1]: {% post_url 2018-03-07-microsoft-sql-server-r-services-sp_execute_external_script-I %}
+[sext2]: {% post_url 2018-03-11-microsoft-sql-server-r-services---sp-execute-external-script---ii %}
+

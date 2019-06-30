@@ -1,0 +1,5 @@
+W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sqlclr_cert\cs\SqlClrCertTest\SqlClrCert\bin\Release\SqlClrCert.dll
+W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sqlclr_cert\cs\SqlClrCertTest\SqlClrCert\bin\Release\SqlClrCert.pdb
+W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sqlclr_cert\cs\SqlClrCertTest\SqlClrCert\obj\Release\SqlClrCert.dll
+W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sqlclr_cert\cs\SqlClrCertTest\SqlClrCert\obj\Release\SqlClrCert.pdb
+W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sqlclr_cert\cs\SqlClrCertTest\SqlClrCert\obj\Release\SqlClrCert.csprojResolveAssemblyReference.cache

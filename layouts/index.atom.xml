@@ -1,0 +1,23 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} on {{ end }}{{ .Site.Title }}{{ end }}</title>
+  <link href="http://nielsberglund.com/atom.xml" rel="self"/>
+  <link href="http://nielsberglund.com"/>
+  <updated>{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
+  <id>http://nielsberglund.com/</id>
+  <generator uri="http://gohugo.io/">Hugo</generator>
+
+  {{ range first 20 .Data.Pages }}
+  <entry>
+    {{ `<title type="html"><![CDATA[` | safeHTML }}{{ .Title }}]]></title>
+    <link href="http://nielsberglund.com{{ .Permalink }}" rel="alternate" type="text/html"/>
+    <updated>{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
+    <id>http://nielsberglund.com{{ .Permalink }}</id>
+    {{ `<content type="html"><![CDATA` | safeHTML }}[{{ .Content }}]]></content>
+    <author>
+      <name>Niels Berglund</name>
+
+    </author>
+  </entry>
+  {{ end }}
+</feed>
+

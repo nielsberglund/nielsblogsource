@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/opt/mssql/bin/../lib/mssql-conf/mssql-conf.py", line 340, in <module>
+    main()
+  File "/opt/mssql/bin/../lib/mssql-conf/mssql-conf.py", line 336, in main
+    processCommands()
+  File "/opt/mssql/bin/../lib/mssql-conf/mssql-conf.py", line 246, in processCommands
+    COMMAND_TABLE[args.which]()
+  File "/opt/mssql/bin/../lib/mssql-conf/mssql-conf.py", line 69, in handleSetup
+    mssqlconfhelper.setupSqlServer(eulaAccepted, noprompt=args.noprompt)
+  File "/opt/mssql/lib/mssql-conf/mssqlconfhelper.py", line 887, in setupSqlServer
+    if not checkInstall():
+  File "/opt/mssql/lib/mssql-conf/mssqlconfhelper.py", line 857, in checkInstall
+    return runScript(checkInstallScript, True) == 0
+  File "/opt/mssql/lib/mssql-conf/mssqlconfhelper.py", line 846, in runScript
+    return subprocess.call([sudo, "-EH", pathToScript])
+  File "/usr/lib/python2.7/subprocess.py", line 523, in call
+    return Popen(*popenargs, **kwargs).wait()
+  File "/usr/lib/python2.7/subprocess.py", line 711, in __init__
+    errread, errwrite)
+  File "/usr/lib/python2.7/subprocess.py", line 1343, in _execute_child
+    raise child_exception
+OSError: [Errno 2] No such file or directory

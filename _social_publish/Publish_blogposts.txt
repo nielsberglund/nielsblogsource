@@ -1,0 +1,1332 @@
+﻿Blog-post: "Interesting Stuff - Week 25, 2019".
+Kafka on Windows and .NET, Go, state in stream processing, Kubernetes, and other interesting topics.
+http://www.nielsberglund.com/2019/06/23/interesting-stuff---week-25-2019/
+#apachekafka #docker #dotnetcore #kubernetes #databricks #golang
+
+
+Blog-post: "Confluent Platform & Kafka for a .NET Developer on Windows"
+We look at how to run Confluent Kafka in Docker on a Windows machine and writing .NET Code against it
+http://www.nielsberglund.com/2019/06/18/confluent-platform--kafka-for-a-.net-developer-on-windows/
+#kafka #VSCode #dotnetcore #apachekafka
+
+
+Blog-post: "Interesting Stuff - Week 24, 2019".
+Linux and Windows Docker containers, Petastorm Uber, YugaByte DB, and other interesting topics.
+http://www.nielsberglund.com/2019/06/16/interesting-stuff---week-24-2019/
+#datascience #machinelearning #apachekafka #docker
+
+Blog-post: "Interesting Stuff - Week 23, 2019".
+Azure Data Studio, machine learning, SQL Server 2019 Extensibility framework, and other topics.
+http://www.nielsberglund.com/2019/06/09/interesting-stuff---week-23-2019/
+#Java #datascience #machinelearning #sqlserver #azuredatastudio
+
+
+Blog-post: "SQL Server 2019 Extensibility Framework & External Languages"
+We look at SQL Server 2019 Extensibility Framework and Language Extensions and how to create an external language.
+http://www.nielsberglund.com/2019/06/06/sql-server-2019-extensibility-framework--external-languages/
+#sqlserver2019 #datascience #machinelearning #java #python
+
+
+Blog-post: "Interesting Stuff - Week 22, 2019".
+Kafka, VS Code and Java, Spark, and other interesting topics.
+http://www.nielsberglund.com/2019/06/03/interesting-stuff---week-22-2019/
+#kafka #Java #sqlserver #VSCode #dotnetcore
+
+
+
+Blog-post: "Java & SQL Server 2019 Extensibility Framework: The Sequel"
+We look at the implications of the introduction of the Java Language Extension SDK.
+http://www.nielsberglund.com/2019/05/26/java--sql-server-2019-extensibility-framework-the-sequel/
+#sqlserver2019 #datascience #machinelearning #java #python #VSCode #Maven
+
+
+
+Blog-post: "Interesting Stuff - Week 21, 2019".
+Kafka, Kafka Summit videos, SQL Server 2019, and other interesting topics.
+http://www.nielsberglund.com/2019/05/26/interesting-stuff---week-21-2019/
+via: @confluentinc @tlberglund
+#kafka #kafkasummit #Java #sqlserver #VSCode #Maven
+
+
+Blog-post: "Interesting Stuff - Week 20, 2019".
+Kafka, .NET Core, H2O, SQL Server 2019 & Java, and other interesting topics.
+http://www.nielsberglund.com/2019/05/19/interesting-stuff---week-20-2019/
+via: @InfoQ @confluentinc @tlberglund
+#kafka #datascience #dotnetcore #MachineLearning #kafkasummit #Java #sqlserver
+
+
+Blog-post: "Interesting Stuff - Week 19, 2019".
+Kafka & Events, ML.NET, .NET Core, Spark, and other interesting topics.
+http://www.nielsberglund.com/2019/05/11/interesting-stuff---week-19-2019/
+via: @InfoQ @confluentinc
+#kafka #datascience #dotnetcore #MachineLearning #apachekafka #kafkasummit #bigdata
+
+Blog-post: "Interesting Stuff - Week 18, 2019".
+Kafka & PipelineDB, .NET Core & Docker, Databricks, and other interesting topics.
+http://www.nielsberglund.com/2019/05/05/interesting-stuff---week-18-2019/
+via: @InfoQ @confluentinc @pipelinedb @databricks @charllamprecht
+#kafka #datascience #dotnetcore #Docker #MachineLearning #apachekafka #azuredatabricks
+
+
+Blog-post: "Interesting Stuff - Week 17, 2019".
+Kafka, Debezium .NET & Spark, SQL Server 2019, and other interesting topics.
+http://www.nielsberglund.com/2019/04/28/interesting-stuff---week-17-2019/
+via: @debezium
+#kafka #sqlserver #kubernetes #datascience #debezium #sqlserver2019 #apachekafka #sql 
+
+Blog-post: "Interesting Stuff - Week 16, 2019". 
+Kafka and KSQL, Azure Databricks, Azure Data Studio, Docker and Kubernetes, and other interesting topics.
+http://www.nielsberglund.com/2019/04/21/interesting-stuff---week-16-2019/
+via: @rmoff
+#kafka #azure #sqlserver #kubernetes #rstats #datascience
+
+
+
+Blog-post: "Installing R Packages in SQL Server Machine Learning Services - IV: Permissions".
+We look at permissions required when using CREATE EXTERNAL LIBRARY as well as ownership.
+http://www.nielsberglund.com/2019/04/21/installing-r-packages-in-sql-server-machine-learning-services---iv-permissions/
+#datascience #sqlserver #rstats #RevoScaleR #python
+
+
+Blog-post: "Interesting Stuff - Week 15, 2019". 
+Kafka, Kubernetes, Azure Cosmos DB, SQL Server Machine Learning Services, and other interesting topics.
+http://www.nielsberglund.com/2019/04/14/interesting-stuff---week-15-2019/
+via: @InfoQ @confluentinc @muratdemirbas
+#kafka #azure #sqlserver #kubernetes #rstats #datascience
+
+
+
+Blog-post: "Installing R Packages in SQL Server Machine Learning Services - III".
+How we can install R packages in SQL Server Machine Learning Services using T-SQL DDL: CREATE EXTERNAL LIBRARY.
+http://www.nielsberglund.com/2019/04/10/installing-r-packages-in-sql-server-machine-learning-services---iii/
+#datascience #sqlserver #rstats #RevoScaleR #python
+
+
+Blog-post: "Interesting Stuff - Week 14, 2019". 
+Kafka, KSQL, Kafka streams, and other interesting topics.
+http://www.nielsberglund.com/2019/04/07/interesting-stuff---week-14-2019
+via: @rmoff @InfoQ @confluentinc
+#apachekafka #ksql #kafka
+
+Blog-post: "Interesting Stuff - Week 13, 2019". 
+Kafka, KSQL, SQL Server 2019 Big Data Clusters, and other interesting topics.
+http://www.nielsberglund.com/2019/03/31/interesting-stuff---week-13-2019/
+via: @rmoff @adriancolyer
+#sqlserver #apachekafka #kubernetes #bigdata
+
+Blog-post: "Interesting Stuff - Week 12, 2019". 
+Kafka, Azure Data Studio, Istio & Kubernetes, and other interesting topics.
+http://www.nielsberglund.com/2019/03/24/interesting-stuff---week-12-2019/
+via: @infoq @confluentinc
+#sqlserver #apachekafka #kubernetes #azuredatastudio
+
+
+Blog-post: "SQL Server 2019, Java & External Libraries - II"
+We look at how to use CREATE EXTERNAL LIBRARY to deploy Java code without having access to SQL Server's filesystem.
+http://www.nielsberglund.com/2019/03/17/sql-server-2019-java--external-libraries---ii/
+#sqlserver2019 #datascience #machinelearning #java #python
+
+
+Blog-post: "Interesting Stuff - Week 10, 2019". 
+Distributed consensus, Azure in South Africa, Service Fabric and Event Hubs, SQL Server 2019 and Java, and other interesting topics.
+http://www.nielsberglund.com/2019/03/10/interesting-stuff---week-10-2019/
+via: @adriancolyer @ryanswanstrom
+#sqlserver #machinelearning #java #azure
+
+
+
+Blog-post: "SQL Server 2019, Java & External Libraries - I"
+We look at how we can deploy Java code to the database, so it can be loaded from there.
+http://www.nielsberglund.com/2019/03/10/sql-server-2019-java--external-libraries---i/
+#sqlserver2019 #datascience #machinelearning #java #vscode
+
+
+
+Blog-post: "Interesting Stuff - Week 9, 2019". 
+Kafka, Flink, SQL Server 2019 CTP2.3, and other interesting topics.
+http://www.nielsberglund.com/2019/03/03/interesting-stuff---week-9-2019/
+via: @infoq @VervericaData @confluentinc
+#apachekafka #sqlserver2019 #kubernetes #bigdata #machinelearning
+
+
+Blog-post: "Interesting Stuff - Week 8, 2019". 
+Weekly roundup of what interesting stuff I have read in blogs etc.
+http://www.nielsberglund.com/2019/02/24/interesting-stuff---week-8-2019/
+via: @infoq @VervericaData 
+#apacheflink 
+
+Blog-post: "Interesting Stuff - Week 7, 2019". 
+Kafka, Azure Data Studio, Kubernetes Clusters, and other cool topics!
+http://www.nielsberglund.com/2019/02/17/interesting-stuff---week-7-2019/
+via: @confluentinc @infoq @rmoff
+#apachekafka #sqlserver #azuredatastudio #kubernetes #bigdata
+
+Blog-post: "Interesting Stuff - Week 6, 2019". 
+Weekly roundup of what interesting stuff I have read in blogs etc.
+http://www.nielsberglund.com/2019/02/10/interesting-stuff---week-6-2019/
+via: @confluentinc @infoq @BuckWoodyMSFT @databricks
+#apachekafka #datascience #machinelearning #sqlserver2019
+
+Blog-post: "Interesting Stuff - Week 5, 2019". 
+Kafka, Kubernetes, .NET Core and other interesting topics.
+http://www.nielsberglund.com/2019/02/03/interesting-stuff---week-5-2019/
+via: @confluentinc @infoq
+#apachekafka #bigdata #java #kubernetes #MSIgniteTheTour
+
+Blog-post: "Interesting Stuff - Week 4, 2019". 
+Kafka, .NET Core and data, VS Code and Java, SQL Server 2019 Big Data Clusters and other topics!
+http://www.nielsberglund.com/2019/01/27/interesting-stuff---week-4-2019/
+via: @confluentinc @infoq @DataScienceCtrl
+#apachekafka #datascience #machinelearning #bigdata #java #vscode
+
+
+Blog-post: "Interesting Stuff - Week 3, 2019". 
+Kafka, .NET Core and data, VS Code and Java, SQL Server 2019 Big Data Clusters and other topics!
+http://www.nielsberglund.com/2019/01/20/interesting-stuff---week-3-2019/
+via: @confluentinc @infoq
+#apachekafka #sqlserver2019 #datascience #machinelearning #bigdata #kubernetes #java
+
+
+Blog-post: "SQL Server 2019 & Java with Visual Studio Code"
+We use VS Code to write Java code, and Maven to compile and package.
+http://www.nielsberglund.com/2019/01/17/sql-server-2019--java-with-visual-studio-code/
+#sqlserver2019 #datascience #machinelearning #java #maven #vscode
+
+
+Blog-post: "Interesting Stuff - Week 2, 2019". 
+Kafka, SQL Server 2019 Big Data Clusters, .NET, and other interesting topics.
+http://www.nielsberglund.com/2019/01/13/interesting-stuff---week-2-2019/
+via: @confluentinc @SitnikAdam @databricks
+#apachekafka #sqlserver2019 #datascience #machinelearning 
+
+
+Blog-post: "Interesting Stuff - Week 1, 2019". 
+Kafka, stream processing, SQL Server 2019 & Java, and other interesting topics.
+http://www.nielsberglund.com/2019/01/06/interesting-stuff---christmas-new-year-week-1-2019/
+via: @confluentinc @adriancolyer @muratdemirbas
+#apachekafka #sqlserver2019 #datascience #machinelearning #java #python 
+
+
+Blog-post: "SQL Server 2019 Extensibility Framework & Java - Misc. 'Stuff". 
+We look at SQL Server 2019 Java Extensions, and Java packages, the CLASSPATH and JAR files!
+http://www.nielsberglund.com/2018/12/30/sql-server-2019-extensibility-framework--java---misc.-stuff/
+#sqlserver2019 #python #rstats #datascience #machinelearning #java
+
+
+Blog-post: "SQL Server ML Services - Multiple Input Data Sets". 
+We look at how to push in multiple datasets to external R and Python scripts!
+http://www.nielsberglund.com/2018/12/24/sql-server-ml-services---multiple-input-data-sets/
+#datascience #sqlserver #sqlservermlservices #rstats #Python #machinelearning 
+
+Blog-post: "SQL Server 2019 Extensibility Framework & Java - Null Values". 
+We look at how to handle null values when calling Java code from SQL Server.
+http://www.nielsberglund.com/2018/12/19/sql-server-2019-extensibility-framework--java---null-values/
+#sqlserver2019 #python #rstats #datascience #machinelearning #java
+
+Post: "Interesting Stuff - Week 50". 
+Kafka, Flink, Azure Data Studio, SQL Server 2019 Big Data Clusters, SQL Server 2019 Java, and more!
+http://www.nielsberglund.com/2018/12/16/interesting-stuff---week-50--year-end/
+via: @confluentinc @revodavid @natemcmaster @matthewwarren
+#apachekafka #sqlserver2019 #kubernetes #machinelearning 
+
+
+Blog: "Interesting Stuff - Week 49". 
+Kafka, Flink, Azure Data Studio, SQL Server 2019 Big Data Clusters, SQL Server 2019 Java, and more!
+http://www.nielsberglund.com/2018/12/09/interesting-stuff---week-49/
+via: @confluentinc @dataartisans @sql_handle @BuckWoodyMSFT
+#apachekafka #apacheflink #bigdata #sqlserver2019 #java
+
+Blog-post: "SQL Server 2019 Extensibility Framework & Java - Passing Data". 
+Look at how to pass data back and forth between SQL Server 2019 and Java.
+http://www.nielsberglund.com/2018/12/08/sql-server-2019-extensibility-framework--java---passing-data/
+#sqlserver2019 #python #rstats #datascience #machinelearning #java
+
+
+
+Blog-post: "Interesting Stuff - Week 48". 
+Flink, Kafka, Azure Kubernetes, SQL Server 2019 & Java, and other interesting topics!
+http://www.nielsberglund.com/2018/12/02/interesting-stuff---week-48/
+via: @confluentinc @databricks @dataArtisans
+#apachekafka #databricks #bigdata #machinelearning #datascience #sqlserver2019 #java
+
+Blog-post: "SQL Server 2019 Extensibility Framework & Java - Hello World". 
+We look at how we install and enable Java extensions in SQL Server 2019, and a couple of simple Java methods.
+http://www.nielsberglund.com/2018/12/02/sql-server-2019-extensibility-framework--java---hello-world/
+#sqlserver2019 #python #rstats #datascience #machinelearning #java
+
+
+Blog-post: "Interesting Stuff - Week 47". 
+Kafka and Machine Learning, Data Science myths, Databricks MLflow, and other interesting topics.
+http://www.nielsberglund.com/2018/11/25/interesting-stuff---week-47/
+via: @confluentinc @timbray @databricks DataScienceCtrl
+#apachekafka #databricks #bigdata #machinelearning #datascience
+
+
+
+Blog-post: "Interesting Stuff - Week 46". 
+Kafka connectors, Flink, Facebook Prophet, Power BI and AI, plus other topics!
+http://www.nielsberglund.com/2018/11/18/interesting-stuff---week-46/
+via: @dataartisans @infoq @rmoff @adriancolyer @muratdemirbas
+#apachekafka #azure #bigdata #sqlserver2019 #apacheflink #powerbi
+
+
+Blog-post: "Interesting Stuff - Week 45". 
+Kafka and Azure Event Hubs, Flink SQL, SQL Server Big Data Cluster on Azure Kubernetes Service, and much more!
+http://www.nielsberglund.com/2018/11/11/interesting-stuff---week-45/
+via: @dataartisans @infoq
+#apachekafka #azure #bigdata #kubernetes #sqlserver2019
+
+
+New Blog-post: "SQL Server 2019 Big Data Cluster on Azure Kubernetes Service".
+A look at how to install SQL Server 2019 Big Data Cluster on Azure Kubernetes Service.
+http://www.nielsberglund.com/2018/11/10/sql-server-2019-big-data-cluster-on-azure-kubernetes-service/
+#sqlserver #sqlserver2019 #python #java #bigdata #apachespark #kubernetes
+
+
+Blog-post: "Interesting Stuff - Week 44". 
+Kafka and detecting fraud, Azure Stream Analytics, SQL Server 2019 Big Data Cluster and other interesting topics.
+http://www.nielsberglund.com/2018/11/04/interesting-stuff---week-44/
+via: @confluentinc @rmoff @adriancolyer @bytezn
+#apachekafka #azure #machinelearning #kubernetes
+
+
+New Blog-post: "Interesting Stuff - Week 43". 
+Kafka, Kafka and Kubernetes, Flink, Azure Automated Machine Learning, and other topics.
+http://www.nielsberglund.com/2018/10/28/interesting-stuff---week-43/
+via: @confluentinc @dataartisans @ale_amurray 
+#apachekafka #azure #machinelearning
+
+New Blog-post: "Interesting Stuff - Week 42". 
+Kafka, watermarks in Flink, Uber and Hadoop, event-driven architecture, and other interesting topics.
+http://www.nielsberglund.com/2018/10/21/interesting-stuff---week-42/
+via: @confluentinc @dataartisans @benstopford @martinkl @ale_amurray 
+#apachekafka #azure #machinelearning
+
+
+New Blog-post: "Interesting Stuff - Week 41". 
+Flink, Kafka, Azure Serverless functions, ML.NET and other interesting topics!
+http://www.nielsberglund.com/2018/10/14/interesting-stuff---week-41/
+via: @apachekafka @confluentinc @muratdemirbas @dataartisans
+#apachekafka #ksql #azure #datascience #machinelearning
+
+
+
+New Blog-post: "Interesting Stuff - Week 40". 
+Kafka and debugging KSQL, Flink, MS Ignite sessions, and other topics.
+http://www.nielsberglund.com/2018/10/07/interesting-stuff---week-40/
+via: @apachekafka @confluentinc @rmoff @BuckWoodyMSFT @rmoff @benstopford
+#apachekafka #ksql #python #datascience #machinelearning
+
+New Blog-post: "Interesting Stuff - Week 39". 
+Kafka streams, Azure Databricks Delta, lots  of SQL Server 2019, and other interesting topics!
+http://www.nielsberglund.com/2018/09/30/interesting-stuff---week-39/
+via: @apachekafka @confluentinc @databricks @rmoff @SitnikAdam @vickyharp
+#sqlserver2019 #machinelearning #java
+
+
+New Blog-post: "SQL Server 2019 for Linux in Docker on Windows".
+We run SQL Server 2019 for Linux in a Docker container on a Windows machine.
+http://www.nielsberglund.com/2018/09/29/sql-server-2019-for-linux-in-docker-on-windows/
+#datascience #sqlserver #sqlserver2019 #sqlserverMLservices #machinelearning #rstats #python #java
+
+
+New Blog-post: "What is New in SQL Server 2019 Public Preview".
+A very initial investigation of what is new in SQL Server 2019 Machine Learning Services.
+http://www.nielsberglund.com/2018/09/24/what-is-new-in-sql-server-2019-public-preview/
+#datascience #sqlserver #sqlserverRservices #sqlserverMLservices #machinelearning #rstats #python #java @aaronbertrand
+
+New Blog-post: "Interesting Stuff - Week 38". 
+Kafka and Donuts (I am serious), Docker on Windows, #MSIgnite, Databricks, and other interesting topics.
+http://www.nielsberglund.com/2018/09/23/interesting-stuff---week-38/
+via:  @apachekafka @confluentinc @MS_Ignite @charllamprecht @databricks @rmoff
+
+
+New Blog-post: "Interesting Stuff - Week 37". 
+Kafka and KSQL, Azure Data Lake Storage Gen2, SQL Server Query Plans, and other interesting topics!
+http://www.nielsberglund.com/2018/09/16/interesting-stuff---week-37/
+via: @MikeJohnsonZA @Jody_WP @TheSQLGirl @apachekafka @confluentinc
+
+
+New Blog-post: "Interesting Stuff - Week 36". 
+Kafka, KSQL, more Kafka, data Artisans, Azure and Durable Functions, SQL Saturday, and other interesting topics.
+http://www.nielsberglund.com/2018/09/09/interesting-stuff---week-36/
+via: @BuckWoodyMSFT @jaykreps @rmoff @apachekafka @confluentinc @dataartisans
+
+
+New Blog-post: "Interesting Stuff - Week 35". 
+Kafka, SQL Server Machine Learning Services, SQL Saturday, Hadoop and other interesting topics.
+http://www.nielsberglund.com/2018/09/02/interesting-stuff---week-35/
+via: @MikeJohnsonZA
+#sqlsatjhb
+
+
+New Blog-post: "Interesting Stuff - Week 34". 
+.NET monitoring, chaos engineering, Pat Helland, stream integration, serverless, and other cool topics!
+http://www.nielsberglund.com/2018/08/26/interesting-stuff---week-34/
+via: @pathelland @ryanswanstrom @adriancolyer @muratdemirbas @matthewwarren
+
+New Blog-post: "Interesting Stuff - Week 33". 
+Kafka, Databricks, Cosmos DB, Azure Kubernetes, SQL Saturday and other interesting topics.
+http://www.nielsberglund.com/2018/08/19/interesting-stuff---week-33/
+via: @apachekafka @confluentinc @databricks @muratdemirbas @brendandburns
+
+New Blog-post: "Interesting Stuff - Week 32". 
+Kafka, Flink, Databricks, use Kafka to server ML models, and other interesting topics.
+http://www.nielsberglund.com/2018/08/12/interesting-stuff-week-32/
+via: @apachekafka @confluentinc @revodavid @charllamprecht @databricks @dataartisans @muratdemirbas
+
+New Blog-post: "Interesting Stuff - Week 31". 
+Kafka (of course), Flink, Databricks Delta, RxSqlServerData and other interesting topics.
+http://www.nielsberglund.com/2018/08/05/interesting-stuff-week-31/
+via: @apachekafka @confluentinc @revodavid @charllamprecht @infoq @databricks @dataartisans
+
+
+New Blog-post: "sp_execute_external_script and SQL Compute Context - III".
+We use WinDbg, Process Monitor and WireShark to look in detail what happens in SQL Server when we use RxSqlServerData to pull data.
+http://www.nielsberglund.com/2018/08/04/sp-execute-external-script-and-sql-compute-context-iii/
+#datascience #sqlserver #sqlserverRservices @nelliegson
+
+New Blog-post: "Interesting Stuff - Week 30". 
+Cool Pulumi code, Kafka, Azure AI services, R and Python in Docker, and other interesting topics!
+http://www.nielsberglund.com/2018/07/29/interesting-stuff-week-30/
+via: @apachekafka @confluentinc @revodavid @funcOfJoe
+#apachekafka #rstats #python
+
+
+New Blog-post: "Interesting Stuff - Week 29". 
+Kafka, Push Messaging at Netflix, Databricks, and R vs Python plus other interesting things.
+http://www.nielsberglund.com/2018/07/22/interesting-stuff-week-29/
+via: @apachekafka @confluentinc
+#apachekafka #rstats #python
+
+
+New Blog-post: "Interesting Stuff - Week 28". 
+Kafka in Azure, Kafka on Windows, ML.NET R new version and other interesting topics.
+http://www.nielsberglund.com/2018/07/15/interesting-stuff-week-28/
+via: @revodavid @apachekafka
+#sqlserverMLservices #apachekafka #rstats
+
+
+New Blog-post: "Install Confluent Platform (Kafka) on Windows".
+We look at how we can install Kafka on Windows in Windows Subsystem for Linux.
+http://www.nielsberglund.com/2018/07/10/install-confluent-platform-kafka-on-windows/
+@confluentinc @apachekafka #apachekafka
+
+
+New Blog-post: "Interesting Stuff - Week 27". 
+Apache Kafka, Azure Event Hubs, Databricks, event-driven microservices, SQL Server Machine Learning Services and other interesting topics.
+http://www.nielsberglund.com/2018/07/08/interesting-stuff-week-27/
+via: @confluentinc @apachekafka @matthewwarren @jboner @infoq
+#sqlserverMLservices #apachekafka #azuredatalake
+
+New Blog-post: "sp_execute_external_script and SQL Compute Context - II".
+We look in detail why we see performance differences when using SQL Server Compute Context.
+http://www.nielsberglund.com/2018/07/07/sp-execute-external-script-and-sql-compute-context-II/
+#datascience #sqlserver #sqlserverRservices @nelliegson
+
+
+New Blog-post: "Interesting Stuff - Week 26". 
+Kafka (of course), Azure Data Lake store, Azure Databricks, RStudio and other interesting things! 
+http://www.nielsberglund.com/2018/07/01/interesting-stuff-week-26/
+via: @confluentinc @apachekafka @BuckWoodyMSFT @werner
+#sqlserverMLservices #apachekafka #azuredatalake
+
+
+New Blog-post: "Installing R Packages in SQL Server Machine Learning Services - II".
+We continue looking at installing R packages. This post is all about using RevoScaleR functionality.
+http://www.nielsberglund.com/2018/06/30/installing-r-packages-in-sql-server-machine-learning-services---ii/
+#datascience #sqlserver #sqlserverRservices #rstats #RevoScaleR
+
+New Blog-post: "Interesting Stuff - Week 25". 
+Kafka, Flink, Joe Duffy and Pulumi, posts about SQL Server Machine Learning Services, and other interesting topics.
+http://www.nielsberglund.com/2018/06/24/interesting-stuff-week-25/
+via: @confluentinc @apachekafka @dataArtisans @revodavid @BuckWoodyMSFT
+#sqlserverMLservices #apachekafka 
+
+
+New Blog-post: "sp_execute_external_script and Permissions".
+We look at what permissions a non-admin user needs to execute sp_execute_external_script.
+http://www.nielsberglund.com/2018/06/24/sp_execute_external_script-and-permissions/
+#datascience #sqlserver #sqlserverRservices #rstats
+
+New Blog-post: "Installing R Packages in SQL Server Machine Learning Services - I".
+Looking at how can we install R packages in SQL Server Machine Learning Services.
+http://www.nielsberglund.com/2018/06/23/installing-r-packages-in-sql-server-machine-learning-services---i/
+#datascience #sqlserver #sqlserverRservices #rstats
+
+New Blog-post: "Interesting Stuff - Week 24". 
+Kafka and EventHubs, Kafka and KSQL, how Uber tackles fraud, .NET and Docker and other interesting topics.
+http://www.nielsberglund.com/2018/06/17/interesting-stuff-week-24/
+via: @adriancolyer @matthewwarren
+#sqlserverMLservices #apachekafka #Azuredatalake @confluentinc 
+
+New Blog-post: "Interesting Stuff - Week 23". 
+ServiceFabric white paper, Kafka videos, Azure Data Lake Analytics, FASTER, and other interesting things!
+http://www.nielsberglund.com/2018/06/10/interesting-stuff-week-23/
+via: @adriancolyer
+#sqlserverMLservices #apachekafka #Azuredatalake @confluentinc @apachekafka
+
+
+New Blog-post: "Interesting Stuff - Week 22". 
+Kafka, event-driven architectures, books, fix R issues after applying CU7, and other interesting topics.
+http://www.nielsberglund.com/2018/06/03/interesting-stuff-week-22/
+via: @matt_davey @martinkl
+#sqlserverRservices #sqlserverMLservices #apachekafka
+
+New Blog-post: "SQL Server Machine Learning Services and SQL Server 2017 CU7".
+We look at how we can fix issues with the R engine after installing SQL Server 2017 CU7.
+http://www.nielsberglund.com/2018/06/01/sql-server-machine-learning-services-and-sql-server-2017-cu-7/
+#datascience #sqlserver #sqlserverRservices #sqlserverMLservices @greglow
+
+New Blog-post: "Interesting Stuff - Week 21". 
+Kafka, Flink, SQL Server on Linux, Azure Data Science Virtual Machine and other interesting topics!
+http://www.nielsberglund.com/2018/05/27/interesting-stuff-week-21/
+via: @confluentinc @apachekafka @dataArtisans 
+#sqlserverRservices #sqlserverMLservices #apachekafka #apacheflink @luis_de_sousa
+
+New Blog-post: "Interesting Stuff - Week 20". 
+Kafka, Azure Data Fabric, Azure Signal R, PyTorch and other interesting things!
+http://www.nielsberglund.com/2018/05/20/interesting-stuff-week-20/
+via: @confluentinc @apachekafka
+#sqlserverRservices #sqlserverMLservices #apachekafka #Python #PyTorch
+
+New Blog-post: "sp_execute_external_script and SQL Compute Context - I".
+A drill-down into how SQL Server Compute Context works when executing sp_execute_external_script.
+http://www.nielsberglund.com/2018/05/20/sp-execute-external-script-and-sql-compute-context/
+#datascience #sqlserver #sqlserverRservices @nelliegson
+
+New Blog-post: "Interesting Stuff - Week 19". 
+Kafka, kafka and more kafka, Azure Stream Analytics, Azure Event Hubs and Kafka, Uber and machine learning and other interesting things.
+http://www.nielsberglund.com/2018/05/13/interesting-stuff-week-19/
+via: @confluentinc @apachekafka @bytezn @g9yuayon @g9yuayon
+
+New Blog-post: "Interesting Stuff - Week 18". 
+Kafka Platform, Flink stream processing, SQL Server Machine Learning Services and other interesting things!
+http://www.nielsberglund.com/2018/05/06/interesting-stuff-week-18/
+via: @confluentinc @apachekafka @bytezn @apacheflink @dataartisans @muratdemirbas
+
+New Blog-post: "Interesting Stuff - Week 17". 
+Titus - Netflix container management platform, copy objects across JVM clusters, Kafka book, Kafka Summit videos, deep learning, other cool stuff.
+http://www.nielsberglund.com/2018/04/29/interesting-stuff-week-17/
+via: @confluentinc @adcol @benstopford @tyler_treat @AndrewYNg
+
+New Blog-post: "Interesting Stuff - Week 16". 
+Confluent Platform 4.1 and KSQL in Kafka, cool SQLCLR things, .NET Core 2.1, Azure Global Boot Camp and other cool stuff!
+http://www.nielsberglund.com/2018/04/22/interesting-stuff-week-16/
+via: @bytezn @confluentinc @JovanPop_MSFT
+
+New Blog-post: "Interesting Stuff - Week 15". 
+Chaos in Service Fabric, scaling Elasticsearch, 100 billion events per day and Kafka, RevoScaleR and other interesting topics.
+http://www.nielsberglund.com/2018/04/15/interesting-stuff-week-15/
+via: @bytezn
+
+New Blog-post: "Interesting Stuff - Week 14". 
+A look at PerfView, time series forecasting, Azure DataBricks and Data Lake, Azure Global Boot-Camp and some other interesting things.
+http://www.nielsberglund.com/2018/04/08/interesting-stuff-week-14/
+via: @b0rk @theburningmonk @g9yuayon @bytezn
+
+
+New Blog-post: "SQL Server Machine Learning Services and Extended Events".
+SQL Server extended events (XEvents) and SQL Server Machine Learning Services
+http://www.nielsberglund.com/2018/04/08/sql-server-machine-learning-services-and-extended-events/
+#datascience #sqlserver
+
+New Blog-post: "Interesting Stuff - Week 13". 
+dataArtisans dA Platform is released, patterns for Big Data in Azure, a great video series about the Microsoft AI suite, and other cool stuff!
+http://nielsberglund.com/2018/03/31/interesting-stuff-week-13/
+via: @apacheflink @dataartisans @adriancolyer @BuckWoodyMSFT
+
+
+New Blog-post: "Interesting Stuff - Week 12". 
+Resource usage in SQL Server, EventHubs and Spark, Azure Databricks, and a lot of other interesting things!
+http://nielsberglund.com/2018/03/25/interesting-stuff-week-12/
+via: @apachekafka @rmoff @benstopford @confluentinc @g9yuayon @muratdemirbas @matthewwarren
+
+New Blog-post: "Microsoft SQL Server R Services - sp_execute_external_script - III".
+A lowdown of sp_execute_external_script and the @parallel and @r_rowsPerRead parameters, the SQL Server compute context, using Process Monitor and Process Explorer
+http://www.nielsberglund.com/2018/03/21/microsoft-sql-server-r-services-sp-execute-external-script-iii/
+#datascience #sqlserver #sqlserverRservices #ProcessMonitor
+
+New Blog-post: "Interesting Stuff - Week 11". 
+Networking for Azure SQL Managed Instance databases, events and more events, Service Fabric, events and Kafka, new features in Flink, plus other cool things!
+http://www.nielsberglund.com/2018/03/18/interesting-stuff-week-11/
+via: @JovanPop_MSFT @InfoQ @apachekafka @apacheflink @dataartisans
+
+New Blog-post: "Interesting Stuff - Week 10". 
+Azure SQL Database Managed Instance, Anaconda in VSCode, ONXX in Windows 10 and other interesting topics!
+http://www.nielsberglund.com/2018/03/11/interesting-stuff-week-10/
+via: @JovanPop_MSFT @adriancolyer @luis_de_sousa
+
+
+New Blog-post: "Microsoft SQL Server R Services - sp_execute_external_script - II".
+A lowdown of sp_execute_external_script and its @params amd @parameter1 parameters, using Process Monitor and WireShark
+http://www.nielsberglund.com/2018/03/11/microsoft-sql-server-r-services-sp-execute-external-script-ii/
+#datascience #sqlserver #sqlserverRservices #WinDbg #WireShark #ProcessMonitor
+
+
+New Blog-post: "Interesting Stuff - Week 9". 
+Microsoft Machine Learning Server 9.3, stream processing, event databases, and other interesting topics! 
+http://www.nielsberglund.com/2018/03/04/interesting-stuff-week-9/
+via: @BuckWoodyMSFT @ryanswanstrom @pabloc_ds
+
+
+New Blog-post: "Interesting Stuff - Week 8". 
+Streaming with Kafka and Flink, AI chat-bots, and other interesting things!
+http://www.nielsberglund.com/2018/02/25/interesting-stuff-week-8/
+via: @apachekafka @apacheflink @revodavid @dataartisans @BuckWoodyMSFT
+
+New Blog-post: "Interesting Stuff - Week 7". 
+Kafka, Flink, Microsoft R and other interesting topics.
+http://www.nielsberglund.com/2018/02/18/interesting-stuff-week-7/
+via: @apachekafka @apacheflink @revodavid @dataartisans
+
+
+New Blog-post: "Interesting Stuff - Week 6". 
+Kubernetes, Kafka, Flink, and other interesting topics in this weeks roundup.
+http://www.nielsberglund.com/2018/02/11/interesting-stuff-week-6/
+via: @apachekafka @infoq @muratdemirbas @apacheflink 
+
+New Blog-post: "Interesting Stuff - Week 5". 
+MSDTC, JSON in SQL Server, Kafka, .NET Core 2.1, and other cool stuff!
+http://www.nielsberglund.com/2018/02/04/interesting-stuff-week-5/
+via: @JovanPop_MSFT @apachekafka @infoq @jrdothoughts @tomaz_tsql 
+
+New Blogpost: "Microsoft SQL Server R Services - Internals XX".
+A drill down, using WinDbg, WireShark, Process Monitor, into how error messages in the external engine are handled by SQL Server. 
+http://bit.ly/2BPNeLz
+#datascience #sqlserver #sqlserverRservices #WinDbg 
+
+New Blogpost: "Microsoft SQL Server R Services - Internals XX".
+A drill down, using WinDbg, WireShark, Process Monitor, into how error messages in the external engine is handled by SQL Server. 
+http://www.nielsberglund.com/2018/02/02/microsoft-sql-server-r-services-internals-xx/
+#datascience #sqlserver #sqlserver2016 #RStats #sqlserverRservices #WinDbg #WireShark
+
+New Blogpost: "Interesting Stuff - Week 4". 
+SQL Server on Linux, use JSON for de-normalizing data, Apache Flink, Keras, Python and other cool "stuff"!
+http://www.nielsberglund.com/2018/01/28/interesting-stuff-week-4/
+via: @apacheflink @adriancolyer @JovanPop_MSFT @matthewwarren @applied_data
+
+New Blogpost: "Interesting Stuff - Week 3". 
+Apache Kafka, Lambda vs. Kappa architecture, Microsoft Quantum computing, Microsoft SQL Server R Services, and other interesting stuff!
+http://www.nielsberglund.com/2018/01/21/interesting-stuff-week-3/
+via: @apachekafka @revodavid @muratdemirbas @lintool
+
+
+New Blogpost: "Microsoft SQL Server R Services - Internals XIX".
+A drill down, using WinDbg, into how print statements in the external engine together with ack messages comes back to SQL Server. 
+http://www.nielsberglund.com/2018/01/20/microsoft-sql-server-r-services-internals-xix/
+#datascience #sqlserver #sqlserver2016 #RStats #sqlserverRservices #WinDbg #WireShark
+
+
+New Blogpost: "Interesting Stuff - Week 2". 
+Functional programming, Kafka, Flink, R in the cloud and some other cool things!
+http://www.nielsberglund.com/2018/01/14/interesting-stuff-week-2/
+via: @apachekafka @apacheflink @revodavid @adriancolyer 
+
+
+Understand Output Parameters in SQL Server R Services Using WinDbg & WireShark
+http://www.nielsberglund.com/2018/01/10/microsoft-sql-server-r-services-internals-xviii/
+
+New Blogpost: "Microsoft SQL Server R Services - Internals XVIII". 
+A look at how output parameters are handled in SQL Server R Services using WinDbg and WireShark
+http://www.nielsberglund.com/2018/01/10/microsoft-sql-server-r-services-internals-xviii/
+#datascience #sqlserver #sqlserver2016 #RStats #sqlserverRservices #WinDbg #WireShark
+
+New Blogpost: "Interesting Stuff - Christmas, New Year, Week 1". 
+Tensorflow, Paxos, the obligatory Kafka discussions, and a lot of other "cool" stuff!
+http://www.nielsberglund.com/2018/01/07/interesting-stuff-christmas-new-year-week-1/
+via: @apachekafka @muratdemirbas @JovanPop_MSFT @BuckWoodyMSFT @davidthecoder
+
+
+New Blogpost: "Microsoft SQL Server R Services - Internals XVII". 
+Using WinDbg to find out what happens inside SQL Server when data is returned from SqlSatellite
+http://www.nielsberglund.com/2018/01/03/microsoft-sql-server-r-services-internals-xvii/
+#datascience #sqlserver #sqlserver2016 #RStats #sqlserverRservices
+
+New Blogpost: "Microsoft SQL Server R Services - Internals XVI". 
+Binary eXchange Language format,data coming back to SQL Server from SqlSatellite.
+http://www.nielsberglund.com/2017/12/24/microsoft-sql-server-r-services-internals-xvi/
+#datascience #sqlserver #sqlserver2016 #RStats #sqlserverRservices
+
+New Blogpost: "Interesting Stuff - Week 50: Year End!". 
+Apache Kafka, Flink, quantum computing, R on Windows Subsystem for Linux, and a lot of other interesting things!
+http://www.nielsberglund.com/2017/12/17/interesting-stuff-week-50-year-end/
+via: @revodavid @apachekafka @apacheflink @muratdemirbas @matthewwarren
+
+
+New Blogpost: "Interesting Stuff - Week 49". 
+Cool stuff about Fast Data, Netflix and Amazon, and how to get deep learning, AI etc., into production.
+http://www.nielsberglund.com/2017/12/10/interesting-stuff-week-49/
+via:@infoq @revodavid @deanwampler
+
+New Blogpost: "Interesting Stuff - Week 48". 
+SQL Server 2017 performance, Apache Kafka, H20.ai on Azure, and other cool stuff!.
+http://www.nielsberglund.com/2017/12/02/interesting-stuff-week-48/
+via: @apachekafka @bobwardms @sqL_handLe @muratdemirbas
+
+New Blogpost: "Microsoft SQL Server R Services - Internals XV". 
+More about Binary eXchange Language, we're looking at packet sizes - and what happens inside SQL Server.
+http://www.nielsberglund.com/2017/12/02/microsoft-sql-server-r-services-internals-xv/
+#datascience #sqlserver #sqlserver2016 #RStats #sqlserverRservices
+
+
+New Blogpost: "Interesting Stuff - Week 47". 
+Apache Kafka and transactions, Apache Flink new functionality, and other cool stuff!.
+http://www.nielsberglund.com/2017/11/26/interesting-stuff-week-47/
+via: @apachekafka @apacheflink @sqlonice @pathelland @donbox @revodavid
+
+New Blogpost: "Microsoft SQL Server R Services - Internals XIV". 
+Binary eXchange Language format, and strange packet sizes.
+http://www.nielsberglund.com/2017/11/25/microsoft-sql-server-r-services-internals-xiv/
+
+
+New Blogpost: "Interesting Stuff - Week 46". 
+JSON in SQL Server, some .NET coverage and other interesting stuff.
+http://www.nielsberglund.com/2017/11/19/interesting-stuff-week-46/
+via: @JovanPop_MSFT @bobwardms
+
+
+[Blog]: "Interesting Stuff - Week 45"
+Announcements from Apache Kafka and Apache Flink, together with impressive perf. from Azure SQL, and other interesting "stuff".
+http://www.nielsberglund.com/2017/11/12/interesting-stuff-week-45/
+via: @apachekafka @apacheflink @muratdemirbas
+
+
+New Blogpost: "Interesting Stuff - Week 45". 
+Announcements from Apache Kafka and Apache Flink, together with impressive perf. from Azure SQL, and other interesting "stuff".
+http://www.nielsberglund.com/2017/11/12/interesting-stuff-week-45/
+via: @apachekafka @apacheflink @muratdemirbas
+
+
+[Blog]:"Microsoft SQL Server R Services - Internals XIII"
+http://www.nielsberglund.com/2017/11/11/microsoft-sql-server-r-services-internals-xiii/
+#datascience #sqlserver #sqlserver2016 #RStats #sqlserverRservices
+
+New Blogpost: "Microsoft SQL Server R Services - Internals XIII".
+http://www.nielsberglund.com/2017/11/11/microsoft-sql-server-r-services-internals-xiii/
+When is SQL statements executed when executing external scripts?
+#datascience #sqlserver #sqlserver2016 #RStats #sqlserverRservices
+
+[Blog]: "Interesting Stuff - Week 44" 
+http://www.nielsberglund.com/2017/11/05/interesting-stuff-week-44/
+via: @apachekafka @sqlonice
+
+
+New Blogpost: "Interesting Stuff - Week 44". 
+Apache Kafka, CockroachDB, .NET, and other interesting topics.
+http://www.nielsberglund.com/2017/11/05/interesting-stuff-week-44/
+via: @apachekafka @sqlonice
+
+
+[Blog]:"Microsoft SQL Server R Services - Internals XII"
+http://www.nielsberglund.com/2017/10/31/microsoft-sql-server-r-services-internals-xii/
+#datascience #sqlserver #sqlserver2016 #RStats #sqlserverRservices
+
+New Blogpost: "Microsoft SQL Server R Services - Internals XII".
+http://www.nielsberglund.com/2017/10/31/microsoft-sql-server-r-services-internals-xii/
+More about the TCP/IPpackets sent from SQL Server to SqlSatellite.
+#datascience #sqlserver #sqlserver2016 #RStats #sqlserverRservices
+
+
+[Blog]: "Interesting Stuff - Week 43" 
+http://www.nielsberglund.com/2017/10/29/interesting-stuff-week-43/
+via: @apachekafka @revodavid @sqlqueen
+
+
+New Blogpost: "Interesting Stuff - Week 43". 
+Interesting stuff about Apache Flink, Anaconda, Azure Data Factory, and others.
+http://www.nielsberglund.com/2017/10/29/interesting-stuff-week-43/
+via: @apachekafka @revodavid @sqlqueen
+
+
+[Blog]: "Interesting Stuff - Week 42" 
+http://www.nielsberglund.com/2017/10/22/interesting-stuff-week-42/
+@apachekafka 
+
+
+New Blogpost: "Interesting Stuff - Week 42". 
+.NET performance, Apache Kafka Stream API's, real-time Microsoft Machine Learning web-services, and some other interesting stuff.
+http://www.nielsberglund.com/2017/10/22/interesting-stuff-week-42/
+@apachekafka
+
+
+[Blog]:"Microsoft SQL Server R Services - Internals XI"
+http://www.nielsberglund.com/2017/10/20/microsoft-sql-server-r-services-internals-xi/
+#datascience #sqlserver #sqlserver2016 #RStats #sqlserverRservices
+
+New Blogpost: "Microsoft SQL Server R Services - Internals XI".
+http://www.nielsberglund.com/2017/10/20/microsoft-sql-server-r-services-internals-xi/
+What are the two strange TCP/IPpackets sent from SQL Server to SqlSatellite, and who sends them?
+#datascience #sqlserver #sqlserver2016 #RStats #sqlserverRservices
+
+[Blog]: "Interesting Stuff - Week 41" 
+http://www.nielsberglund.com/2017/10/13/interesting-stuff-week-41/
+@apachekafka @apacheflink
+
+
+New Blogpost: "Interesting Stuff - Week 41". 
+Apache Kafka and Flink in the news, AthenaX, and other interesting things.
+http://www.nielsberglund.com/2017/10/13/interesting-stuff-week-41/
+@apachekafka @apacheflink
+
+
+
+[Blog]: "Interesting Stuff - Week 40" 
+http://www.nielsberglund.com/2017/10/08/interesting-stuff-week-40/
+via  @revodavid @sqL_handLe
+
+
+New Blogpost: "Interesting Stuff - Week 40". 
+SQL Server cardinality estimates, TensorFlow, and a tool to integrate R into Microsoft Office.
+http://www.nielsberglund.com/2017/10/08/interesting-stuff-week-40/
+via  @revodavid @sqL_handLe
+
+
+
+
+
+http://www.nielsberglund.com/2017/10/08/interesting-stuff-week-40/
+
+
+
+
+[Blog]: "Interesting Stuff - Week 39" 
+http://www.nielsberglund.com/2017/10/01/interesting-stuff-week-39/
+via  @revodavid @apachekafka @rusanu
+
+New Blogpost: "Interesting Stuff - Week 39". 
+SQL Server 2017 Machine Learning Services, Apache Kafka goodness, quantum computing and other interesting topics in this weeks roundup.
+http://www.nielsberglund.com/2017/10/01/interesting-stuff-week-39/
+via  @revodavid @apachekafka @rusanu
+
+
+
+
+[Blog]: "Interesting Stuff - Week 38" 
+http://www.nielsberglund.com/2017/09/24/interesting-stuff-week-38/
+via  @revodavid @apachekafka
+
+New Blogpost: "Interesting Stuff - Week 38". 
+Apache Kafka goodness, R improvements, and other interesting topics in this weeks roundup.
+http://www.nielsberglund.com/2017/09/24/interesting-stuff-week-38/
+via  @revodavid @apachekafka 
+
+
+
+[Blog]: "Interesting Stuff - Week 37" 
+http://www.nielsberglund.com/2017/09/17/interesting-stuff-week-37/
+via  @revodavid @rhsheldon_ @clemensv @apachekafka @sqL_handLe
+
+New Blogpost: "Interesting Stuff - Week 37". 
+Apache Kafka, Tensorflow, Azure messaging, and other things is covered this week.
+http://www.nielsberglund.com/2017/09/17/interesting-stuff-week-37/
+via  @revodavid @rhsheldon_ @clemensv @apachekafka @sqL_handLe
+
+[Blog]: "Interesting Stuff - Week 36" 
+http://www.nielsberglund.com/2017/09/10/interesting-stuff-week-36/
+via  @apachekafka @apacheflink
+
+New Blogpost: "Interesting Stuff - Week 36". 
+Apache Flink vs. Apache Kafka, Microsoft Cognitive Toolkit and lots more in this weeks roundup.
+http://www.nielsberglund.com/2017/09/10/interesting-stuff-week-36/
+@apachekafka @apacheflink
+
+
+
+
+
+[Blog]: "Interesting Stuff - Week 35" 
+http://www.nielsberglund.com/2017/09/03/interesting-stuff-week-35/
+via  @sqlonice
+@apachekafka @apacheflink
+
+New Blogpost: "Interesting Stuff - Week 35". 
+Apache Kafka, Flink, SQL Server internals and other interesting "stuff".
+http://www.nielsberglund.com/2017/09/03/interesting-stuff-week-35/
+@sqlonice @apachekafka @apacheflink
+
+
+http://www.nielsberglund.com/2017/09/03/interesting-stuff-week-35/
+
+[Blog]:"Microsoft SQL Server R Services - Internals X"
+http://www.nielsberglund.com/2017/08/29/microsoft-sql-server-r-services-internals-x/
+#datascience #sqlserver #sqlserver2016 #RStats #sqlserverRservices
+
+New Blogpost: "Microsoft SQL Server R Services - Internals X".
+http://www.nielsberglund.com/2017/08/29/microsoft-sql-server-r-services-internals-x/
+Here we look at how data is sent to SqlSatellite, We use WinDbg, WireShark and other cool stuff!
+#datascience #sqlserver #sqlserver2016 #RStats #sqlserverRservices
+
+
+
+
+
+[Blog]: "Interesting Stuff - Week 34" 
+http://www.nielsberglund.com/2017/08/27/interesting-stuff-week-34/
+via @revodavid @davidthecoder @sqlonice
+
+New Blogpost: "Interesting Stuff - Week 34". 
+This week we talk about Recurrent Neural Networks, SQL Server DMV's, R and Power BI.
+http://www.nielsberglund.com/2017/08/27/interesting-stuff-week-34/
+via @revodavid @davidthecoder @sqlonice
+
+
+[Blog]: "Interesting Stuff - Week 33" 
+http://bit.ly/2wulZXH
+via @apachekafka @apacheflink @BuckWoodyMSFT @revodavid 
+
+New Blogpost: "Interesting Stuff - Week 33". 
+Cool stuff about Apache Kafka, Apache Flink, Azure Event Grid and other interesting topics.
+http://www.nielsberglund.com/2017/08/20/interesting-stuff-week-33/
+via @apachekafka @apacheflink @BuckWoodyMSFT @revodavid 
+
+
+[Blog]:"Microsoft SQL Server R Services - Internals IX"
+http://www.nielsberglund.com/2017/08/18/microsoft-sql-server-r-services-internals-ix/
+#datascience #sqlserver #sqlserver2016 #RStats #sqlserverRservices
+
+New Blogpost: "Microsoft SQL Server R Services - Internals IX".
+http://www.nielsberglund.com/2017/08/18/microsoft-sql-server-r-services-internals-ix/
+Where we look at SqlSatellite and communication between SQL Server R Services components
+#datascience #sqlserver #sqlserver2016 #RStats #sqlserverRservices
+
+[Blog]: "Interesting Stuff - Week 32" 
+http://www.nielsberglund.com/2017/08/13/interesting-stuff-week-32/
+from @revodavid @pcalcado
+
+New Blogpost: "Interesting Stuff - Week 32". 
+Interesting stuff about microservices, Microsoft Cognitive Toolkit, HDInsight, Azure and a lot of other "stuff".
+http://www.nielsberglund.com/2017/08/13/interesting-stuff-week-32/
+from @revodavid @pcalcado
+
+
+
+[Blog]: "Interesting Stuff - Week 31" 
+http://www.nielsberglund.com/2017/08/06/interesting-stuff-week-31/
+from @sqlOnIce, @sqL_handLe, @BuckWoodyMSFT @tomaz_tsql @thdelteil
+
+New Blogpost: "Interesting Stuff - Week 31". 
+Covering SQL Server 2017 Machine Learning, introduction to TensorFlow, H2O on Azure, and a lot of other interesting stuff.
+http://www.nielsberglund.com/2017/08/06/interesting-stuff-week-31/
+from  @sqlOnIce @matthewwarren @revodavid @bnj_cooley
+#sqlserver2017 #python
+
+
+[Blog]: "Interesting Stuff - Week 30" 
+http://www.nielsberglund.com/2017/07/30/interesting-stuff-week-30/
+from @sqlOnIce, @sqL_handLe, @BuckWoodyMSFT @tomaz_tsql @thdelteil
+
+New Blogpost: "Interesting Stuff - Week 30". 
+F# coverage, together with .NET in general, SQL Server R Services, Azure Functions, and other things.
+http://www.nielsberglund.com/2017/07/30/interesting-stuff-week-30/
+from  @sqlOnIce, @sqL_handLe, @BuckWoodyMSFT @tomaz_tsql @thdelteil
+
+
+[Blog]: "Interesting Stuff - Week 29" 
+http://www.nielsberglund.com/2017/07/23/interesting-stuff-week-29/
+#sqlserver2017 #sqlserverrservices #sqlclr
+
+New Blogpost: "Interesting Stuff - Week 29". 
+SQLOS, SQLCLR and neural networks are prominent is this weeks roundup! Plus some other goodies!
+http://www.nielsberglund.com/2017/07/23/interesting-stuff-week-29/
+#sqlserver2017 #sqlserverrservices #sqlclr
+
+[Blog]:"SQL Server 2017 SQLCLR - Whitelisting Assemblies"
+http://www.nielsberglund.com/2017/07/23/sql-server-2017-sqlclr-white-listing-assemblies/
+#sqlserver #sqlclr #sqlserver2017
+
+New Blogpost: "SQL Server 2017 SQLCLR - Whitelisting Assemblies".
+http://www.nielsberglund.com/2017/07/23/sql-server-2017-sqlclr-white-listing-assemblies/
+SQL Server 2017 RC1 has added new functionality for SQLCLR security; sp_add_trusted_assembly.
+#sqlserver #sqlclr #sqlserver2017
+
+
+[Blog]:"Microsoft SQL Server R Services - Internals VIII"
+http://www.nielsberglund.com/2017/07/22/microsoft-sql-server-r-services-internals-viii/
+#datascience #sqlserver #sqlserver2016 #RStats #sqlserverRservices
+
+New Blogpost: "Microsoft SQL Server R Services - Internals VIII".
+http://www.nielsberglund.com/2017/07/22/microsoft-sql-server-r-services-internals-viii/
+Here we look at some of the components the launchpad service loads; Rterm.exe, BxlServer.exe, etc.
+#datascience #sqlserver #sqlserver2016 #RStats #sqlserverRservices
+
+
+
+Blog]: "Interesting Stuff - Week 28" 
+http://www.nielsberglund.com/2017/07/16/interesting-stuff-week-28/
+via @matthewwarren @SitnikAdam @greglow
+#Azure #apacheflink #sqlserver2017
+
+
+New Blogpost: "Interesting Stuff - Week 28". 
+Cool stuff about graph databases, SQL Server 2017, SQL Server Linux, Apache Flink and other interesting goodies!
+http://www.nielsberglund.com/2017/07/16/interesting-stuff-week-28/
+#Azure #apacheflink #sqlserver2017
+
+
+[Blog]:"Microsoft SQL Server R Services - Internals VII"
+http://www.nielsberglund.com/2017/07/11/microsoft-sql-server-r-services-internals-vii/
+#datascience #sqlserver #sqlserver2016 #RStats #sqlserverRservices
+
+New Blogpost: "Microsoft SQL Server R Services - Internals VII".
+http://www.nielsberglund.com/2017/07/11/microsoft-sql-server-r-services-internals-vii/
+We look at the files and sub-directories created when executing sp_execute_external_script.
+#datascience #sqlserver #sqlserver2016 #RStats #sqlserverRservices
+
+
+[Blog]: "Interesting Stuff - Week 27" 
+http://www.nielsberglund.com/2017/07/09/interesting-stuff-week-27/
+#Azure #azuredatalake # #apachekafka #cosmosdb
+
+
+New Blogpost: "Interesting Stuff - Week 27". 
+Azure data lake, tensorflow, Apache Kafka, read all about this weeks interesting stuff.
+http://www.nielsberglund.com/2017/07/09/interesting-stuff-week-27/
+#Azure #azuredatalake # #apachekafka #cosmosdb
+
+
+[Blog]: "Interesting Stuff - Week 26" 
+http://bit.ly/2tB5aco
+#Azure #sqlserver2017 #sqlclr #apacheflink 
+
+
+New Blogpost: "Interesting Stuff - Week 26". 
+We look at graph db in SQL Server 2017, Apache Flink, SQLCLR, Azure HDInsight, Spark and a lot of other cool stuff.
+http://bit.ly/2tB5aco
+#Azure #sqlserver2017 #sqlclr #apacheflink 
+
+
+
+
+
+[Blog]: "SQL Server 2017, SQLCLR and Permissions" 
+http://bit.ly/2tzlrhW
+#sqlserver #sqlclr #sqlserver2017
+
+New Blogpost: "SQL Server 2017, SQLCLR and Permissions". 
+Investigation SQL Server 2017 "clr strict security" and its impact on SQLCLR.
+http://bit.ly/2tzlrhW
+#sqlserver #sqlclr #sqlserver2017
+
+
+
+[Blog]: "SQLCLR & Certificates" 
+http://bit.ly/2tw4R2y
+#sqlserver #sqlclr #sqlserver2017
+
+New Blogpost: "SQLCLR & Certificates". 
+We discuss the use of TRUSTWORTHY and certificates in SQL Server when deploying SQLCLR assemblies.
+http://bit.ly/2tw4R2y
+#sqlserver #sqlclr #sqlserver2017
+
+
+[Blog]: "Interesting Stuff - Week 25" 
+http://bit.ly/2t9LzQN
+#Azure #sqlserver2016 #rstats #PowerBI
+
+
+New Blogpost: "Interesting Stuff - Week 25". 
+This week we cover Azure Machine Learning, Apache Spark, SQL Server R Services, and other goodies.
+http://bit.ly/2t9LzQN
+#Azure #sqlserver2016 #rstats #PowerBI
+
+
+[Blog]: "Creating R Stored Procedures in SQL Server 2016 Using sqlrutils" 
+http://bit.ly/2t9IWhB
+#datascience #sqlserver2016 #rstats #sqlrutils
+
+New Blogpost: "Creating R Stored Procedures in SQL Server 2016 Using sqlrutils". 
+We look at how to use sqlrutils to create SQL Server stored procedures from inside an R environment.
+http://bit.ly/2t9IWhB
+#datascience #sqlserver2016 #rstats #sqlrutils
+
+
+[Blog]: "Interesting Stuff - Week 24" 
+http://bit.ly/2rJFfuo
+#datascience #sqlserver #sqlserver2017 #python #rstats
+
+
+New Blogpost: "Interesting Stuff - Week 24". 
+This week we cover SQL Server on Linux, Python in SQL Server 2017, Microsoft R Server, and other goodies.
+http://bit.ly/2rJFfuo
+#datascience #sqlserver #sqlserver2017 #python #rstats
+
+[Blog]: "Interesting Stuff - Week 23" 
+http://bit.ly/2rkkPrB
+#datascience #sqlserver #rstats #azure
+
+New Blogpost: "Interesting Stuff - Week 23". 
+SQL Server, distributed computing and data science in this weeks roundup.
+http://bit.ly/2rkkPrB
+#datascience #sqlserver #rstats #azure
+
+
+[Blog]: "Interesting Stuff - Week 22" http://bit.ly/2qQwL93
+#datascience #sqlserver #apacheflink
+@proto.actor @JovanPop_MSFT
+
+New Blogpost: "Interesting Stuff - Week 22". 
+Apache Flink, Proto.Actor, some other actor stuff, and data science as usual.
+http://bit.ly/2qQwL93
+#datascience #sqlserver #apacheflink
+
+
+[Blog]: "Interesting Stuff - Week 21" http://bit.ly/2s4Jou7
+#datascience #sqlserver #RStats #Azure
+
+New Blogpost: "Interesting Stuff - Week 21". Azure Machine Learning, neural algorithms and some other interesting stuff.
+http://bit.ly/2s4Jou7
+#datascience #sqlserver #RStats #Azure
+
+
+[Blog]: "Interesting Stuff - Week 20" http://bit.ly/2rFsQsm
+#datascience #sqlserver #RStats #Azure #cosmosdb #kafka #flink #prophet
+
+
+New Blogpost: "Interesting Stuff - Week 20". This week we look at SQL Server 2017 CTP 2.1, Apache Flink, Kafka, Azure Cosmos DB, Facebook Prophet and other "cool" stuff.
+http://bit.ly/2rFsQsm
+#datascience #sqlserver #RStats #Azure #cosmosdb #kafka #flink #prophet
+
+[Blog]:"Facebook Prophet and Microsoft R Server" bit.ly/2rCtDJN
+#datascience #sqlserver #RStats #sqlserverRservices #prophet
+
+New Blogpost: "Facebook Prophet and Microsoft R Server". How to use Facebook Prophet in Microsoft R Server / SQL Server R Services. bit.ly/2rCtDJN
+#datascience #sqlserver #RStats #sqlserverRservices #prophet
+
+
+
+[Blog]:"Microsoft SQL Server R Services - Internals VI" http://bit.ly/2pTCOEE
+#datascience #sqlserver #RStats #sqlserverRservices
+
+New Blogpost: "Microsoft SQL Server R Services - Internals VI". This post looks at the directories created by the launchpad service in SQL Server R Services when executing an external script. http://bit.ly/2pTCOEE
+#datascience #sqlserver #RStats #sqlserverRservices
+
+
+
+[Blog]: "Interesting Stuff - Week 19" http://bit.ly/2pMdsbw
+#datascience #sqlserver #RStats #DSVM
+@john_lam @adriancolyer @infoq @ber
+
+
+New Blogpost: "Interesting Stuff - Week 19". Here we cover Azure Machine Learning, R Tools for Visual Studio, Azure Cosmos DB, and a lot of other interesting stuff.
+http://bit.ly/2pMdsbw
+#datascience @RT4VS #RStats #DSVM
+
+[Blog]: "Interesting Stuff - Week 18" http://bit.ly/2qQDR9e
+#datascience #sqlserver #RStats #DSVM
+
+New Blogpost: "Interesting Stuff - Week 18". In this roundup we talk about SQL Server R Services, SQL Server, Microsoft R Server, R and other interesting stuff! http://bit.ly/2qQDR9e
+#datascience #sqlserver #RStats #DSVM
+
+http://bit.ly/2qQDR9e
+
+
+[Blog]:"Microsoft SQL Server R Services - Internals V" http://bit.ly/2pAPhjU
+#datascience #sqlserver #RStats #sqlserverRservices
+
+New Blogpost: "Microsoft SQL Server R Services - Internals V". More about process creation in the launchpad service; MAXDOP, number of processes, process pool, etc. http://bit.ly/2pAPhjU
+#datascience #sqlserver #RStats #sqlserverRservices
+
+
+[Blog]: "Interesting Stuff - Week 17"http://bit.ly/2pxByuo
+#datascience #sqlserver #RStats
+
+New Blogpost: "Interesting Stuff - Week 17". In this roundup we talk about SQL Server R Services, SQL Server, R and other interesting stuff! http://bit.ly/2pxByuo
+#datascience #sqlserver #RStats 
+
+
+
+[Blog]: "Interesting Stuff - Week 16" http://bit.ly/2oW5mjA
+#datascience #sqlserver #RStats #CLR #sqlserver2017 #python
+
+New Blogpost: "Interesting Stuff - Week 16". In this roundup we talk about Microsoft Data Amp, SQL Server 2017, Python in SQL Server, SQL Server R Services, .NET, and other interesting stuff! http://bit.ly/2oW5mjA
+#datascience #sqlserver #RStats #CLR #sqlserver2017 #python
+
+
+[Blog]:"Microsoft SQL Server R Services - Internals IV" http://bit.ly/2oBj7kf
+#datascience #sqlserver #RStats #sqlserverRservices
+
+New Blogpost: "Microsoft SQL Server R Services - Internals IV". More about process creation in the launchpad service; number of processes, process pool, etc. http://bit.ly/2oBj7kf
+#datascience #sqlserver #RStats #sqlserverRservices
+
+
+[Blog]: "SQL Server 2017 - Python Executing Inside SQL Server" http://bit.ly/2ovAUtf
+#datascience #sqlserver2017 #RStats #python
+
+New Blogpost: "SQL Server 2017 - Python Executing Inside SQL Server". Python in SQL Server 2017. Here we have a brief look at the Python support in SQL Server 2017. http://bit.ly/2ovAUtf
+#datascience #sqlserver2017 #RStats #python
+
+[Blog]: "Interesting Stuff - Week 15" http://bit.ly/2pqLK5e
+#datascience #sqlserver #RStats #streaming #Azure #CLR
+
+New Blogpost: "Interesting Stuff - Week 15". In this roundup we talk about SQL Server R Services, distributed computing, .NET, Apache Flink and other interesting stuff! http://bit.ly/2pqLK5e
+#datascience #sqlserver #RStats #streaming #Azure #CLR
+
+
+[Blog]:"Microsoft SQL Server R Services - Internals III" http://bit.ly/2paXrNx
+#datascience #sqlserver #RStats #sqlserverRservices
+
+
+New Blogpost: "Microsoft SQL Server R Services - Internals III". What happens when launchpad spins up RTerm processes? http://bit.ly/2paXrNx
+#datascience #sqlserver #RStats #sqlserverRservices
+
+[Blog]: "Interesting Stuff - Week 14" http://bit.ly/2oSGiKZ
+#datascience #sqlserver #RStats #streaming
+
+New Blogpost: "Interesting Stuff - Week 14". Things I have read and found interesting this past week. http://bit.ly/2oSGiKZ
+#datascience #sqlserver #RStats #streaming
+
+
+[Blog]: "Interesting Stuff - Week 13" http://bit.ly/2oxfFII
+#datascience #sqlserver #RStats #streaming
+
+New Blogpost: "Interesting Stuff - Week 13". Things I have read and found interesting this past week. http://bit.ly/2oxfFII
+#datascience #sqlserver #RStats #streaming
+
+[Blog]:"Microsoft SQL Server R Services - Internals II" http://bit.ly/2owo9zI
+#datascience #sqlserver #RStats
+
+
+New Blogpost: "Microsoft SQL Server R Services - Internals II". What happens under the covers in when we execute sp_execute_external_script? This post looks at the launchpad service. http://bit.ly/2owo9zI
+#datascience #sqlserver #RStats
+
+
+[Blog]: "Interesting Stuff - Week 12" http://bit.ly/2n6eoXf
+#datascience #sqlserver #RStats #azure #rtvs
+
+New Blogpost: "Interesting Stuff - Week 12". Things I have read and found interesting this past week. http://bit.ly/2n6eoXf
+#datascience #sqlserver #RStats #azure #rtvs
+
+[Blog]: "Interesting Stuff - Week 11" http://bit.ly/2mEW2w6
+#datascience #sqlserver #RStats #azure
+
+
+New Blogpost: "Interesting Stuff - Week 11". Things I have read and found interesting this past week. http://bit.ly/2mEW2w6
+#datascience #sqlserver #RStats #azure
+
+
+
+
+[Blog]:"Microsoft SQL Server R Services - Internals I" bit.ly/2nDdWku
+#datascience #sqlserver #RStats  @tedneward @Aschenbrenner
+
+
+[Blog]:"Microsoft SQL Server R Services - Internals I" http://bit.ly/2nDdWku
+#datascience #sqlserver #RStats @revodavid @MSAdvAnalytics @MicrosoftR @tedneward @Aschenbrenner
+
+New Blogpost: "Microsoft SQL Server R Services - Internals I". What happens under the covers in SQL Server when we execute sp_execute_external_script. http://bit.ly/2nDdWku
+#datascience #sqlserver #RStats
+
+
+[Blog]:"Microsoft SQL Server R Services - Internals I" bit.ly/2nDdWku
+#datascience #sqlserver #RStats  @tedneward @Aschenbrenner
+
+
+[Blog]:"Interesting Stuff - Week 10" http://bit.ly/2mdVZaq
+#datascience #sqlserver #RStats #rtvs @revodavid @john_lam @slava_oks @sqlonice
+
+Interesting stuff week 10 http://bit.ly/2mdVZaq
+#datascience #sqlserver #RStats #rtvs
+@MSAdvAnalytics @adriancolyer
+
+What was interesting Week 10 http://bit.ly/2mdVZaq
+#datascience #sqlserver #RStats #rtvs
+@fwaris7 ‎@tomaz_tsql @MicrosoftR @PaulRandal
+
+[Blog]: "Interesting Stuff - Week 10" http://bit.ly/2mdVZaq
+#datascience #sqlserver #RStats #rtvs
+@fwaris7 ‎@tomaz_tsql @MSAdvAnalytics @MicrosoftR @revodavid @john_lam @adriancolyer @paulrandal @slava_oks @sqlonice
+
+New Blogpost: "Interesting Stuff - Week 10". Things I have read and found interesting this past week. http://bit.ly/2mdVZaq
+#datascience #sqlserver #RStats #rtvs
+
+
+
+
+[Blog]: "Interesting Stuff - Week 9" http://bit.ly/2ma7e73
+#datascience #manageddata
+#sqlserver #RStats
+
+New Blogpost: "Interesting Stuff - Week 9". Things I have read and found interesting this past week. http://bit.ly/2ma7e73
+#datascience #manageddata 
+#sqlserver #RStats
+
+[Blog]: "Microsoft SQL Server R Services Installation" http://bit.ly/2lH9ZsP
+#datascience #manageddata
+#sqlserver #RStats
+
+
+New Blogpost: "Microsoft SQL Server R Services Installation". How to install and enable SQL Server 2016 R Services http://bit.ly/2lH9ZsP
+#datascience #manageddata
+#sqlserver #RStats
+
+
+[Blog]: "Interesting Stuff - Week 8" http://bit.ly/2kYHQ51
+#datascience #manageddata
+#sqlserver #RStats #rtvs
+
+New Blogpost: "Interesting Stuff - Week 8". Things I have read and found interesting this past week. http://bit.ly/2kYHQ51
+#datascience #manageddata #streaming #kafka
+#sqlserver #RStats #rtvs
+
+[Blog]: "Microsoft R Server" http://bit.ly/2kVPz3X
+#datascience #manageddata
+#sqlserver #MachineLearning #RStats
+
+
+New Blogpost: "Microsoft R Server". How Microsoft R Server can have better performance than CRAN R. http://bit.ly/2kVPz3X
+#datascience #manageddata
+#sqlserver #MachineLearning #RStats
+
+
+[Blog]: "Interesting Stuff - Week 6" http://bit.ly/2lBUoLM
+#datascience #distributedcomputing #manageddata
+#sqlserver #MachineLearning #RStats
+
+New Blogpost: "Interesting Stuff - Week 6". Things I have read and found interesting this week. http://bit.ly/2lBUoLM
+#datascience #distributedcomputing #manageddata
+#sqlserver #MachineLearning #RStats
+
+
+[Blog]: "Interesting Stuff - Week 4" http://bit.ly/2k2zoxV
+#datascience #distributedcomputing #transactions #manageddata
+#sqlserver #MachineLearning #DSVM #RStats
+
+New Blogpost: "Interesting Stuff - Week 4". Things I find interesting this week. http://bit.ly/2k2zoxV
+#datascience #distributedcomputing #transactions #manageddata
+#sqlserver #MachineLearning #DSVM #RStats
+
+[Blog]: "Doomed, We are All Doomed I Say!" http://bit.ly/2k0G5R6
+#sqlserver #errorhandling #doomedtx #transactions
+#manageddata
+
+New Blogpost:: "Doomed, We are All Doomed I Say!" Post about doomed transactions in SQL Serever. http://bit.ly/2k0G5R6
+#sqlserver #errorhandling #doomedtx #transactions
+#manageddata
+
+[Blog]: "Interesting Stuff - Week 3" http://bit.ly/2kaUVDl
+#datascience #distributedcomputing #transactions #manageddata
+#sqlserver
+
+New Blogpost: "Interesting Stuff - Week 3" http://bit.ly/2kaUVDl
+#datascience #distributedcomputing #transactions #manageddata
+#sqlserver
+
+[Blog]: "Interesting Stuff - Week 2" http://bit.ly/2jm2udA
+#datascience #distributedcomputing #transactions #manageddata
+#sqlserver
+
+New Blogpost: "Interesting Stuff - Week 2" http://bit.ly/2jm2udA
+#datascience #distributedcomputing #transactions #manageddata
+#sqlserver
+
+
+[Blog]: "Abort, Abort, We Are XACT_ABORT:ing, Or Are We?!" http://bit.ly/2j534tj
+#sqlserver #xact_abort #errorhandling #manageddata
+
+New Blogpost: "Abort, Abort, We Are XACT_ABORT:ing, Or Are We?!" http://bit.ly/2j534tj
+Why XACT_ABORT may not be the best thing.
+#sqlserver #xact_abort #errorhandling #manageddata
+
+SQL Server using RabbitMQ as a message broker: http://buff.ly/2maeteZ
+#sqlserver #rabbitmq #streaming

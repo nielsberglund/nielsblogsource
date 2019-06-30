@@ -1,0 +1,177 @@
+SQL Server 2019 Big Data Cluster minikube
+
+python -m pip install requests
+
+
+# create a HyperV virtual switch (external)
+# I named it ExtSwitch1
+
+# start minikube
+minikube start --vm-driver="hyperv" --cpus 2 --memory 18432 --disk-size 100g --hyperv-virtual-switch "minikubeswitch"
+
+# 18432
+
+
+# stop the cluster to disable dynamic memory
+# minikube stop does not work properly, so:
+minikube ssh
+sudo poweroff
+# in hyperv manager disable dynamic memory
+
+# start minikube
+minikube start
+
+# Disable automatic checkpoint with Hyper-V
+Set-VM -Name minikube -CheckpointType Disabled -AutomaticCheckpointsEnabled $false
+
+# verify configuration of kubernetes
+kubectl config view
+
+# install mssqlctl (it installs in the Python Scripts path)
+pip3 install --index-url https://private-repo.microsoft.com/python/ctp-2.0 mssqlctl
+
+
+# in command as admin set env. variables
+SET ACCEPT_EULA=Y
+SET CLUSTER_PLATFORM=minikube
+
+SET CLUSTER_COMPUTE_POOL_REPLICAS=1
+SET CLUSTER_STORAGE_POOL_REPLICAS=1 
+SET CLUSTER_DATA_POOL_REPLICAS=1
+
+SET CONTROLLER_USERNAME=controlleruser
+SET CONTROLLER_PASSWORD=password1234$
+SET KNOX_PASSWORD=password1234$
+SET MSSQL_SA_PASSWORD=password1234$
+
+SET DOCKER_REGISTRY=private-repo.microsoft.com
+SET DOCKER_REPOSITORY=mssql-private-preview
+SET DOCKER_USERNAME=niels.berglund@derivco.co.za
+SET DOCKER_PASSWORD=4f38g49ppf3g
+SET DOCKER_EMAIL=niels.berglund@derivco.co.za
+SET DOCKER_PRIVATE_REGISTRY=1
+
+# deploy the cluster (from cmd)
+mssqlctl create cluster sqlbigdata1
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<
+C:\Windows\system32>mssqlctl create cluster sqlbigdata1
+The license terms for this product can be downloaded from:
+- https://go.microsoft.com/fwlink/?LinkId=2002534
+
+The privacy statement can be viewed at:
+- https://go.microsoft.com/fwlink/?LinkId=853010
+
+NOTE: Cluster creation can take a significant amount of time depending on
+configuration, network speed, and the number of nodes in the cluster.
+
+2018-10-11 04:25:32.0864 UTC | INFO | Creating cluster...
+2018-10-11 04:25:33.0942 UTC | INFO | Deploying controller...
+secret "controller-login-secret" created
+secret "controller-db-secret" created
+secret "controller-knox-secret" created
+2018-10-11 04:25:35.0178 UTC | INFO | The service account token is ready for controller
+replicaset.apps "mssql-controller" created
+service "service-mssql-controller" created
+service "service-mssql-controller-nodeport" created
+2018-10-11 04:25:36.0359 UTC | INFO | Waiting for controller pod to be up...
+2018-10-11 04:25:41.0872 UTC | INFO | Waiting for controller pod to be up...
+2018-10-11 04:25:47.0399 UTC | INFO | Waiting for controller pod to be up...
+2018-10-11 04:25:52.0931 UTC | INFO | Waiting for controller pod to be up...
+2018-10-11 04:25:58.0590 UTC | INFO | Waiting for controller pod to be up...
+...
+2018-10-11 04:35:19.0555 UTC | INFO | Waiting for controller pod to be up...
+2018-10-11 04:35:25.0127 UTC | INFO | Waiting for controller pod to be up...
+2018-10-11 04:35:30.0829 UTC | INFO | Controller pod is running.
+2018-10-11 04:35:30.0967 UTC | INFO | Controller Endpoint: https://10.0.0.14:30080
+2018-10-11 04:35:30.0987 UTC | INFO | Waiting for controller to be ready...
+2018-10-11 04:35:36.0019 UTC | INFO | Waiting for controller to be ready...
+2018-10-11 04:35:44.0537 UTC | INFO | Deploying cluster...
+2018-10-11 04:35:45.0229 UTC | INFO | Initiating cluster creation.
+2018-10-11 04:35:45.0229 UTC | INFO | Creating cluster with name: sqlbigdata1
+
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "c:\python37\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "c:\python37\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "c:\python37\lib\site-packages\mssqlctl\__init__.py", line 260, in getControllerLogs
+    for line in log.splitlines():
+AttributeError: 'list' object has no attribute 'splitlines'
+
+2018-10-11 12:59:44.0401 UTC | ERROR | HTTPSConnectionPool(host='10.0.0.14', port=30080): Max retries exceeded with url: /clusters/sqlbigdata1 (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x0000023190891F60>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2018-10-11 12:59:44.0402 UTC | ERROR | Failed to get cluster status after 120 minutes. Exiting...
+Traceback (most recent call last):
+  File "c:\python37\lib\runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "c:\python37\lib\runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "C:\Python37\Scripts\mssqlctl.exe\__main__.py", line 9, in <module>
+  File "c:\python37\lib\site-packages\mssqlctl\__init__.py", line 1249, in main
+    createCluster(args.name)
+  File "c:\python37\lib\site-packages\mssqlctl\__init__.py", line 868, in createCluster
+    raise Exception("Cluster is not ready after %d minutes." % (retryMinutes))
+Exception: Cluster is not ready after 120 minutes.
+
+C:\Windows\system32>
+
+
+
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
+PS C:\Windows\system32> kubectl get pods -n sqlbigdata1
+NAME                                     READY     STATUS              RESTARTS   AGE
+mssql-compute-pool-default-0             0/4       ContainerCreating   0          1m
+mssql-controller-4v5xl                   4/4       Running             0          16m
+mssql-data-pool-default-0                0/4       ContainerCreating   0          1m
+mssql-master-pool-0                      0/8       ContainerCreating   0          2m
+mssql-monitor-collectd-hj69f             0/1       ContainerCreating   0          1m
+mssql-monitor-elasticsearch-0            0/1       Init:0/1            0          54s
+mssql-monitor-grafana-7cf4b6cd6c-m4ff4   0/1       ContainerCreating   0          57s
+mssql-monitor-influxdb-0                 0/1       ContainerCreating   0          1m
+mssql-monitor-kibana-8d8469459-5mh2m     0/1       ContainerCreating   0          51s
+mssql-monitor-telegraf-fhrcm             0/1       ContainerCreating   0          1m
+mssql-security-0                         0/5       ContainerCreating   0          2m
+mssql-service-proxy-7dbfbf96f-6cwtp      1/1       Running             0          2m
+mssql-storage-pool-default-0             0/8       ContainerCreating   0          1m
+
+
+NAME                                     READY     STATUS              RESTARTS   AGE
+mssql-compute-pool-default-0             0/4       ContainerCreating   0          13m
+mssql-controller-4v5xl                   4/4       Running             0          28m
+mssql-data-pool-default-0                0/4       ContainerCreating   0          13m
+mssql-master-pool-0                      0/8       ContainerCreating   0          14m
+mssql-monitor-collectd-hj69f             1/1       Running             0          13m
+mssql-monitor-elasticsearch-0            0/1       PodInitializing     0          13m
+mssql-monitor-grafana-7cf4b6cd6c-m4ff4   1/1       Running             0          13m
+mssql-monitor-influxdb-0                 1/1       Running             0          13m
+mssql-monitor-kibana-8d8469459-5mh2m     0/1       ContainerCreating   0          12m
+mssql-monitor-telegraf-fhrcm             1/1       Running             0          13m
+mssql-security-0                         0/5       ContainerCreating   0          14m
+mssql-service-proxy-7dbfbf96f-6cwtp      1/1       Running             0          14m
+mssql-storage-pool-default-0             0/8       ContainerCreating   0          13m
+
+PS C:\Windows\system32> kubectl get pods -n sqlbigdata1
+NAME                                     READY     STATUS              RESTARTS   AGE
+mssql-compute-pool-default-0             0/4       ContainerCreating   0          20m
+mssql-controller-4v5xl                   4/4       Running             0          35m
+mssql-data-pool-default-0                0/4       ContainerCreating   0          20m
+mssql-master-pool-0                      0/8       ContainerCreating   0          21m
+mssql-monitor-collectd-hj69f             1/1       Running             0          20m
+mssql-monitor-elasticsearch-0            1/1       Running             0          20m
+mssql-monitor-grafana-7cf4b6cd6c-m4ff4   1/1       Running             0          20m
+mssql-monitor-influxdb-0                 1/1       Running             0          20m
+mssql-monitor-kibana-8d8469459-5mh2m     1/1       Running             0          20m
+mssql-monitor-telegraf-fhrcm             1/1       Running             0          20m
+mssql-security-0                         0/5       ContainerCreating   0          22m
+mssql-service-proxy-7dbfbf96f-6cwtp      1/1       Running             0          22m
+mssql-storage-pool-default-0             0/8       ContainerCreating   0          20m
+
+
+13 minutes until controller is up (07:37:xx - 07:50:40)

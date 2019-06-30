@@ -1,0 +1,53 @@
+00 00000014`95dfcb98 00007ff9`2ab1529e sqllang!SpExecuteExternalScript
+01 00000014`95dfcba0 00007ff9`2ab147d9 sqllang!CSpecProc::ExecuteSpecial+0x31e
+02 00000014`95dfcca0 00007ff9`2ab22a0b sqllang!CXProc::Execute+0x139
+03 00000014`95dfd550 00007ff9`2ab5ea83 sqllang!CSQLSource::Execute+0xb5b
+04 00000014`95dfd860 00007ff9`2ab5e420 sqllang!CStmtExecProc::XretLocalExec+0x2d3
+05 00000014`95dfd900 00007ff9`2ab5b208 sqllang!CStmtExecProc::XretExecExecute+0x4a1
+06 00000014`95dfe0b0 00007ff9`29f348d0 sqllang!CXStmtExecProc::XretExecute+0x38
+07 00000014`95dfe0f0 00007ff9`29f34333 sqllang!CMsqlExecContext::ExecuteStmts<1,1>+0x4c5
+08 00000014`95dfe240 00007ff9`29f33684 sqllang!CMsqlExecContext::FExecute+0xaae
+09 00000014`95dfe570 00007ff9`29f3cebd sqllang!CSQLSource::Execute+0xa2c
+0a 00000014`95dfe880 00007ff9`29f3bd02 sqllang!process_request+0xe52
+0b 00000014`95dfefe0 00007ff9`29f3baf3 sqllang!process_commands_internal+0x289
+0c 00000014`95dff0a0 00007ff9`42c3539d sqllang!process_messages+0x213
+0d 00000014`95dff2c0 00007ff9`42c35168 sqldk!SOS_Task::Param::Execute+0x231
+0e 00000014`95dff8c0 00007ff9`42c34ddd sqldk!SOS_Scheduler::RunTask+0xad
+0f 00000014`95dff930 00007ff9`42c58ec8 sqldk!SOS_Scheduler::ProcessTasks+0x3cd
+10 00000014`95dffa20 00007ff9`42c58fd0 sqldk!SchedulerManager::WorkerEntryPoint+0x2a1
+11 00000014`95dffaf0 00007ff9`42c58ae7 sqldk!SystemThread::RunWorker+0x8f
+12 00000014`95dffb20 00007ff9`42c592d9 sqldk!SystemThreadDispatcher::ProcessWorker+0x2e7
+13 00000014`95dffbc0 00007ff9`8dd424e4 sqldk!SchedulerManager::ThreadEntryPoint+0x1d8
+14 00000014`95dffc70 00007ff9`8e6b2b71 KERNEL32!BaseThreadInitThunk+0x14
+15 00000014`95dffca0 00000000`00000000 ntdll!RtlUserThreadStart+0x21
+
+
+
+
+
+00 00000014`99c7d230 00007ff9`7653ef53 KERNELBASE!RaiseException+0x68
+01 00000014`99c7d310 00007ff9`42c5ab27 MSVCR120!_CxxThrowException+0xb3 [f:\dd\vctools\crt\crtw32\eh\throw.cpp @ 154] 
+02 00000014`99c7d380 00007ff9`42c5a7a0 sqldk!ExceptionBackout::GetCurrentException+0x38f
+03 00000014`99c7d560 00007ff9`42c5a46a sqldk!ex_raise2+0x4fb
+04 00000014`99c7d890 00007ff9`53f3c33a sqldk!ex_raise+0xc4
+05 00000014`99c7d910 00007ff9`53fa0fca sqlTsEs!ESArithErrorHandler+0x13a
+06 00000014`99c7d960 00007ff9`53ef4e97 sqlTsEs!CTEsArith<3,56,56,1,0>::RsltArithArgArg+0xc2
+07 00000014`99c7d9c0 00007ff9`29f361f4 sqlTsEs!CEsExec::GeneralEval+0x1e9
+08 00000014`99c7db20 00007ff9`29f36349 sqllang!CXStmtQuery::ErsqExecuteQuery+0x5a2
+09 00000014`99c7dca0 00007ff9`29f348d0 sqllang!CXStmtSelect::XretExecute+0x2f2
+0a 00000014`99c7dd70 00007ff9`29f34333 sqllang!CMsqlExecContext::ExecuteStmts<1,1>+0x4c5
+0b 00000014`99c7dec0 00007ff9`29f33684 sqllang!CMsqlExecContext::FExecute+0xaae
+0c 00000014`99c7e1f0 00007ff9`29f3cebd sqllang!CSQLSource::Execute+0xa2c
+0d 00000014`99c7e500 00007ff9`29f3bd02 sqllang!process_request+0xe52
+0e 00000014`99c7ec60 00007ff9`29f3baf3 sqllang!process_commands_internal+0x289
+0f 00000014`99c7ed20 00007ff9`42c3539d sqllang!process_messages+0x213
+10 00000014`99c7ef40 00007ff9`42c35168 sqldk!SOS_Task::Param::Execute+0x231
+11 00000014`99c7f540 00007ff9`42c34ddd sqldk!SOS_Scheduler::RunTask+0xad
+12 00000014`99c7f5b0 00007ff9`42c58ec8 sqldk!SOS_Scheduler::ProcessTasks+0x3cd
+13 00000014`99c7f6a0 00007ff9`42c58fd0 sqldk!SchedulerManager::WorkerEntryPoint+0x2a1
+14 00000014`99c7f770 00007ff9`42c58ae7 sqldk!SystemThread::RunWorker+0x8f
+15 00000014`99c7f7a0 00007ff9`42c592d9 sqldk!SystemThreadDispatcher::ProcessWorker+0x2e7
+16 00000014`99c7f840 00007ff9`8dd424e4 sqldk!SchedulerManager::ThreadEntryPoint+0x1d8
+17 00000014`99c7f8f0 00007ff9`8e6b2b71 KERNEL32!BaseThreadInitThunk+0x14
+18 00000014`99c7f920 00000000`00000000 ntdll!RtlUserThreadStart+0x21
+

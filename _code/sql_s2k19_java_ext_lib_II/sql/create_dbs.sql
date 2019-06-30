@@ -1,0 +1,19 @@
+
+USE master
+GO
+
+DROP DATABASE IF EXISTS JavaTest;
+GO
+
+DROP DATABASE IF EXISTS JavaTestLocal;
+GO
+
+DROP DATABASE IF EXISTS JavaTestRemote;
+GO
+
+CREATE DATABASE JavaTestLocal;
+GO
+
+CREATE DATABASE JavaTestRemote;
+GO
+

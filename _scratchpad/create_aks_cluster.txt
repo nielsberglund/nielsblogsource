@@ -1,0 +1,54 @@
+PS C:\WINDOWS\system32> cd \
+PS C:\> az aks create --name kubsqlcluster --resource-group sqlbigdatarg --generate-ssh-keys --node-vm-size Standard_E4s_v3 --node-count 2 --kubernetes-version 1.10.7
+SSH key files 'C:\Users\nielsb\.ssh\id_rsa' and 'C:\Users\nielsb\.ssh\id_rsa.pub' have been generated under ~/.ssh to allow SSH access to the VM. If using machines without permanent storage like Azure Cloud Shell without an attached file share, back up your keys to a safe location
+[K{- Finished ..principal creation[##################################]  100.0000%
+  "aadProfile": null,
+  "addonProfiles": null,
+  "agentPoolProfiles": [
+    {
+      "count": 2,
+      "maxPods": 110,
+      "name": "nodepool1",
+      "osDiskSizeGb": 30,
+      "osType": "Linux",
+      "storageProfile": "ManagedDisks",
+      "vmSize": "Standard_E4s_v3",
+      "vnetSubnetId": null
+    }
+  ],
+  "dnsPrefix": "kubsqlclus-sqlbigdatarg-a16fbc",
+  "enableRbac": true,
+  "fqdn": "kubsqlclus-sqlbigdatarg-a16fbc-082d8991.hcp.westeurope.azmk8s.io",
+  "id": "/subscriptions/a16fbc6b-dc1f-43f7-a30d-3ad9c3760594/resourcegroups/sqlbigdatarg/providers/Microsoft.ContainerService/managedClusters/kubsqlcluster",
+  "kubernetesVersion": "1.10.7",
+  "linuxProfile": {
+    "adminUsername": "azureuser",
+    "ssh": {
+      "publicKeys": [
+        {
+          "keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDUiVWRDRlq+TJ7NGxSyidOaL1sp2Iy9dCWphorJz/0Z5AqzTu6NPt/gYhmUeiSAaVyDRLHQzh2FL55PSnNz0ktWBzqAoJwUIvhsnNgoXahmaKPk+bghWdKu8Tc/8+vny42ZpDrV4WXWGf747V2fDjaM5CoQL2p1UVgPYzZWUfg0zJHkcHjcDZ9HlwUnMS9nAkWAsZU0J23c14JQfLISQAvuZMmXLCE6CvwBkuBe6UiQilz0cBZwz2q2mxqV07wMhc19p3MTteJHh8JGS08cjRVzaLsdvWtafaehCPfKPdejRVWQ9KMw0BmzhafBwr5myjF9QpgcWcGNJqHOmIa5faN"
+        }
+      ]
+    }
+  },
+  "location": "westeurope",
+  "name": "kubsqlcluster",
+  "networkProfile": {
+    "dnsServiceIp": "10.0.0.10",
+    "dockerBridgeCidr": "172.17.0.1/16",
+    "networkPlugin": "kubenet",
+    "networkPolicy": null,
+    "podCidr": "10.244.0.0/16",
+    "serviceCidr": "10.0.0.0/16"
+  },
+  "nodeResourceGroup": "MC_sqlbigdatarg_kubsqlcluster_westeurope",
+  "provisioningState": "Succeeded",
+  "resourceGroup": "sqlbigdatarg",
+  "servicePrincipalProfile": {
+    "clientId": "62b3e1a1-2252-4d63-bd6e-1e54f86f69da",
+    "secret": null
+  },
+  "tags": null,
+  "type": "Microsoft.ContainerService/ManagedClusters"
+}
+PS C:\>

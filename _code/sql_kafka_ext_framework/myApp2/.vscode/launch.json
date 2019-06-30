@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SimplePublisher",
+            "request": "launch",
+            "mainClass": "javasql.SimplePublisher",
+            "projectName": "myApp2"
+        }
+    ]
+}

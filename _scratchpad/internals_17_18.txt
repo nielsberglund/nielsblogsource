@@ -1,0 +1,287 @@
+
+
+
+* I'll use *WireShark* for network packet sniffing. In previous posts I have used *Microsoft Message Analyzer* for this, but I am now back to *WireShark* as I find it gives me more readable output. If you want a refresher about *WireShark*, we covered the setup etc., in [Internals - X][si10].
+
+
+
+* In the last few posts I have used *WinDbg preview* a my debugger, but in this post I am reverting back to *WinDbg* "classic", as there are some things I cannot do in *WinDng preview*. If you need help with setting it up, that is covered in [Internals - I][si1].
+
+
+00 0000000f`df3fb5e8 00007ffa`79574f34 sqllang!CServerCargoContext::ReadSchemaFromPackets
+01 0000000f`df3fb5f0 00007ffa`790b890f sqllang!CServerCargoContext::ReadSchemaInternal+0x125
+02 0000000f`df3fbcd0 00007ffa`790b87de sqllang!CUDXR_ExternalScript::GetOutputSchema+0x8f
+03 0000000f`df3fbd80 00007ffa`790bb847 sqllang!CUDXR_ExternalScript::ProcessOutputSchema+0x2f
+
+
+
+
+
+
+
+
+
+00 0000000f`df3fbd28 00007ffa`7957fcb9 sqllang!CSatelliteCargoContext::SendPackets
+01 0000000f`df3fbd30 00007ffa`790bbb4e sqllang!CSatelliteCargoContext::SendRemainingChunk+0x149
+02 0000000f`df3fbd80 00007ffa`7ae1670f sqllang!CUDXR_ExternalScript::PushEOS+0x2f
+03 0000000f`df3fbdb0 00007ffa`7ae162d9 sqlmin!CQScanUdx::PushNextChildRow+0x1af
+04 0000000f`df3fbe00 00007ffa`7a4e5a2f sqlmin!CQScanUdx::GetRow+0x79
+05 0000000f`df3fbe40 00007ffa`77f12b67 sqlmin!CQueryScan::GetRow+0x81
+06 0000000f`df3fbe70 00007ffa`77f12d25 sqllang!CXStmtQuery::ErsqExecuteQuery+0x4dc
+07 0000000f`df3fbff0 00007ffa`77f1105a sqllang!CXStmtSelect::XretExecute+0x322
+08 0000000f`df3fc0c0 00007ffa`77f12553 sqllang!CMsqlExecContext::ExecuteStmts<1,1>+0x40d
+09 0000000f`df3fc200 00007ffa`77f11bf1 sqllang!CMsqlExecContext::FExecute+0xa9e
+0a 0000000f`df3fc530 00007ffa`78bbe2de sqllang!CSQLSource::Execute+0x983
+0b 0000000f`df3fc6d0 00007ffa`78bc9da5 sqllang!SpExecuteExternalScript+0x140e
+
+
+
+00 0000000f`df3fbdf8 00007ffa`7ae163f6 sqllang!CUDXR_ExternalScript::PullRow
+01 0000000f`df3fbe00 00007ffa`7a4e5a2f sqlmin!CQScanUdx::GetRow+0x196
+02 0000000f`df3fbe40 00007ffa`77f12b67 sqlmin!CQueryScan::GetRow+0x81
+03 0000000f`df3fbe70 00007ffa`77f12d25 sqllang!CXStmtQuery::ErsqExecuteQuery+0x4dc
+04 0000000f`df3fbff0 00007ffa`77f1105a sqllang!CXStmtSelect::XretExecute+0x322
+05 0000000f`df3fc0c0 00007ffa`77f12553 sqllang!CMsqlExecContext::ExecuteStmts<1,1>+0x40d
+06 0000000f`df3fc200 00007ffa`77f11bf1 sqllang!CMsqlExecContext::FExecute+0xa9e
+07 0000000f`df3fc530 00007ffa`78bbe2de sqllang!CSQLSource::Execute+0x983
+08 0000000f`df3fc6d0 00007ffa`78bc9da5 sqllang!SpExecuteExternalScript+0x140e
+
+
+
+
+Breakpoint 2 hit
+sqllang!CUDXR_ExternalScript::PullRow:
+00007ffa`790bb780 48895c2408      mov     qword ptr [rsp+8],rbx ss:0000000f`de9fc260=0000000000000000
+0:086> g
+Breakpoint 1 hit
+sqllang!CSatelliteCargoContext::SendPackets:
+00007ffa`7957f840 53              push    rbx
+0:086> g
+Breakpoint 2 hit
+sqllang!CUDXR_ExternalScript::PullRow:
+00007ffa`790bb780 48895c2408      mov     qword ptr [rsp+8],rbx ss:0000000f`de9fc260=0000013058b1ca70
+0:086> g
+Breakpoint 3 hit
+sqllang!CUDXR_ExternalScript::ProcessOutputSchema:
+00007ffa`790b87b0 57              push    rdi
+0:086> g
+Breakpoint 4 hit
+sqllang!CServerCargoContext::ReadSchemaInternal:
+00007ffa`79574e10 55              push    rbp
+0:086> g
+Breakpoint 5 hit
+sqllang!CUDXR_ExternalScript::GetOutputSchema+0x8f:
+00007ffa`790b890f 8be8            mov     ebp,eax
+0:086> g
+Breakpoint 3 hit
+sqllang!CUDXR_ExternalScript::ProcessOutputSchema:
+00007ffa`790b87b0 57              push    rdi
+0:086> g
+Breakpoint 4 hit
+sqllang!CServerCargoContext::ReadSchemaInternal:
+00007ffa`79574e10 55              push    rbp
+0:086> g
+
+
+
+
+
+
+
+Breakpoint 6 hit
+sqllang!CServerCargoContext::ReadSchemaFromPackets:
+00007ffa`79574c20 4c8bdc          mov     r11,rsp
+0:086> g
+Breakpoint 5 hit
+sqllang!CUDXR_ExternalScript::GetOutputSchema+0x8f:
+00007ffa`790b890f 8be8            mov     ebp,eax
+0:086> g
+Breakpoint 0 hit
+sqllang!CUDXR_ExternalScript::ProcessResultRows:
+00007ffa`790badd0 48895c2408      mov     qword ptr [rsp+8],rbx ss:0000000f`de9fc220=0000013050d53c50
+0:086> g
+Breakpoint 0 hit
+sqllang!CUDXR_ExternalScript::ProcessResultRows:
+00007ffa`790badd0 48895c2408      mov     qword ptr [rsp+8],rbx ss:0000000f`de9fc220=0000013050d53c50
+0:086> g
+
+
+
+
+
+0:101> g
+Breakpoint 2 hit
+sqllang!CUDXR_ExternalScript::PullRow:
+00007ffa`790bb780 48895c2408      mov     qword ptr [rsp+8],rbx ss:0000000f`dd5fbf90=0000000000000000
+0:054> g
+Breakpoint 1 hit
+sqllang!CSatelliteCargoContext::SendPackets:
+00007ffa`7957f840 53              push    rbx
+0:054> g
+Breakpoint 2 hit
+sqllang!CUDXR_ExternalScript::PullRow:
+00007ffa`790bb780 48895c2408      mov     qword ptr [rsp+8],rbx ss:0000000f`dd5fbf90=0000013058b1ca70
+0:054> g
+Breakpoint 3 hit
+sqllang!CUDXR_ExternalScript::ProcessOutputSchema:
+00007ffa`790b87b0 57              push    rdi
+0:054> g
+Breakpoint 4 hit
+sqllang!CServerCargoContext::ReadSchemaInternal:
+00007ffa`79574e10 55              push    rbp
+0:054> g
+Breakpoint 5 hit
+sqllang!CUDXR_ExternalScript::GetOutputSchema+0x8f:
+00007ffa`790b890f 8be8            mov     ebp,eax
+0:054> g
+Breakpoint 3 hit
+sqllang!CUDXR_ExternalScript::ProcessOutputSchema:
+00007ffa`790b87b0 57              push    rdi
+0:054> g
+Breakpoint 4 hit
+sqllang!CServerCargoContext::ReadSchemaInternal:              3019
+00007ffa`79574e10 55              push    rbp
+0:054> g
+
+
+
+0:101> g
+Breakpoint 6 hit
+sqllang!CServerCargoContext::ReadSchemaFromPackets: 2980 3006
+00007ffa`79574c20 4c8bdc          mov     r11,rsp
+0:054> g
+
+
+00 0000000f`df3fb5e8 00007ffa`79574f34 sqllang!CServerCargoContext::ReadSchemaFromPackets
+01 0000000f`df3fb5f0 00007ffa`790b890f sqllang!CServerCargoContext::ReadSchemaInternal+0x125
+02 0000000f`df3fbcd0 00007ffa`790b87de sqllang!CUDXR_ExternalScript::GetOutputSchema+0x8f
+03 0000000f`df3fbd80 00007ffa`790bb847 sqllang!CUDXR_ExternalScript::ProcessOutputSchema+0x2f
+04 0000000f`df3fbdc0 00007ffa`7ae163f6 sqllang!CUDXR_ExternalScript::PullRow+0xc7
+05 0000000f`df3fbe00 00007ffa`7a4e5a2f sqlmin!CQScanUdx::GetRow+0x196
+06 0000000f`df3fbe40 00007ffa`77f12b67 sqlmin!CQueryScan::GetRow+0x81
+07 0000000f`df3fbe70 00007ffa`77f12d25 sqllang!CXStmtQuery::ErsqExecuteQuery+0x4dc
+08 0000000f`df3fbff0 00007ffa`77f1105a sqllang!CXStmtSelect::XretExecute+0x322
+09 0000000f`df3fc0c0 00007ffa`77f12553 sqllang!CMsqlExecContext::ExecuteStmts<1,1>+0x40d
+0a 0000000f`df3fc200 00007ffa`77f11bf1 sqllang!CMsqlExecContext::FExecute+0xa9e
+0b 0000000f`df3fc530 00007ffa`78bbe2de sqllang!CSQLSource::Execute+0x983
+0c 0000000f`df3fc6d0 00007ffa`78bc9da5 sqllang!SpExecuteExternalScript+0x140e
+
+
+Breakpoint 5 hit
+sqllang!CUDXR_ExternalScript::GetOutputSchema+0x8f: 3032
+00007ffa`790b890f 8be8            mov     ebp,eax
+0:054> g
+
+
+00 0000000f`df3fbcd0 00007ffa`790b87de sqllang!CUDXR_ExternalScript::GetOutputSchema+0x8f
+01 0000000f`df3fbd80 00007ffa`790bb847 sqllang!CUDXR_ExternalScript::ProcessOutputSchema+0x2f
+02 0000000f`df3fbdc0 00007ffa`7ae163f6 sqllang!CUDXR_ExternalScript::PullRow+0xc7
+03 0000000f`df3fbe00 00007ffa`7a4e5a2f sqlmin!CQScanUdx::GetRow+0x196
+04 0000000f`df3fbe40 00007ffa`77f12b67 sqlmin!CQueryScan::GetRow+0x81
+05 0000000f`df3fbe70 00007ffa`77f12d25 sqllang!CXStmtQuery::ErsqExecuteQuery+0x4dc
+06 0000000f`df3fbff0 00007ffa`77f1105a sqllang!CXStmtSelect::XretExecute+0x322
+07 0000000f`df3fc0c0 00007ffa`77f12553 sqllang!CMsqlExecContext::ExecuteStmts<1,1>+0x40d
+08 0000000f`df3fc200 00007ffa`77f11bf1 sqllang!CMsqlExecContext::FExecute+0xa9e
+09 0000000f`df3fc530 00007ffa`78bbe2de sqllang!CSQLSource::Execute+0x983
+0a 0000000f`df3fc6d0 00007ffa`78bc9da5 sqllang!SpExecuteExternalScript+0x140e
+
+
+
+
+Breakpoint 0 hit
+sqllang!CUDXR_ExternalScript::ProcessResultRows:
+00007ffa`790badd0 48895c2408      mov     qword ptr [rsp+8],rbx ss:0000000f`dd5fbf50=0000013050d53c50
+0:054> g
+
+
+00 0000000f`df3fbdb8 00007ffa`790bb874 sqllang!CUDXR_ExternalScript::ProcessResultRows
+01 0000000f`df3fbdc0 00007ffa`7ae163f6 sqllang!CUDXR_ExternalScript::PullRow+0xf4
+02 0000000f`df3fbe00 00007ffa`7a4e5a2f sqlmin!CQScanUdx::GetRow+0x196
+03 0000000f`df3fbe40 00007ffa`77f12b67 sqlmin!CQueryScan::GetRow+0x81
+04 0000000f`df3fbe70 00007ffa`77f12d25 sqllang!CXStmtQuery::ErsqExecuteQuery+0x4dc
+05 0000000f`df3fbff0 00007ffa`77f1105a sqllang!CXStmtSelect::XretExecute+0x322
+06 0000000f`df3fc0c0 00007ffa`77f12553 sqllang!CMsqlExecContext::ExecuteStmts<1,1>+0x40d
+07 0000000f`df3fc200 00007ffa`77f11bf1 sqllang!CMsqlExecContext::FExecute+0xa9e
+08 0000000f`df3fc530 00007ffa`78bbe2de sqllang!CSQLSource::Execute+0x983
+09 0000000f`df3fc6d0 00007ffa`78bc9da5 sqllang!SpExecuteExternalScript+0x140e
+
+
+
+Breakpoint 0 hit
+sqllang!CUDXR_ExternalScript::ProcessResultRows:
+00007ffa`790badd0 48895c2408      mov     qword ptr [rsp+8],rbx ss:0000000f`dd5fbf50=0000013050d53c50
+0:054> g
+
+00 0000000f`df3fbdb8 00007ffa`790bb874 sqllang!CUDXR_ExternalScript::ProcessResultRows
+01 0000000f`df3fbdc0 00007ffa`7ae163f6 sqllang!CUDXR_ExternalScript::PullRow+0xf4
+02 0000000f`df3fbe00 00007ffa`7a4e5a2f sqlmin!CQScanUdx::GetRow+0x196
+03 0000000f`df3fbe40 00007ffa`77f12b67 sqlmin!CQueryScan::GetRow+0x81
+04 0000000f`df3fbe70 00007ffa`77f12d25 sqllang!CXStmtQuery::ErsqExecuteQuery+0x4dc
+05 0000000f`df3fbff0 00007ffa`77f1105a sqllang!CXStmtSelect::XretExecute+0x322
+06 0000000f`df3fc0c0 00007ffa`77f12553 sqllang!CMsqlExecContext::ExecuteStmts<1,1>+0x40d
+07 0000000f`df3fc200 00007ffa`77f11bf1 sqllang!CMsqlExecContext::FExecute+0xa9e
+08 0000000f`df3fc530 00007ffa`78bbe2de sqllang!CSQLSource::Execute+0x983
+09 0000000f`df3fc6d0 00007ffa`78bc9da5 sqllang!SpExecuteExternalScript+0x140e
+
+
+
+
+sqllang!CServerCargoContext::ReadOneRow
+sqllang!CSQLSatelliteMessageDataChunk::ReadData
+sqllang!CUDXR_ExternalScript::OutputRow
+sqllang!CTds74::SendRowImpl
+
+
+
+[here](/downloads/misc/sql_r_services_internal17.zip)
+
+
+
+
+Where do we start? Why not looking at the modules in *Code Snippet 3*, and see whether they have any routines that might have anything to do with receiving data:
+
+```c++ title: "Finding Routines"
+x sqllang!CUDXR_ExternalScript*
+x sqllang!CServerCargoContext*
+x sqllang!CSQLSatelliteMessageDataChunk*
+```
+**Code Snippet 4:** *Searching for Routines*
+
+By executing the statements in *Code Snippet 4* line by line and look at the results, the idea is that we might fins routines that looks like they might be related to handle returning data. 
+
+sqllang!CUDXR_ExternalScript::PullRow
+sqllang!CUDXR_ExternalScript::ProcessResultRows
+sqllang!CServerCargoContext::ReadOneRow
+sqllang!CServerCargoContext::ReceiveOneDataChunk
+
+
+
+sqllang!CUDXR_ExternalScript::ProcessOutputSchema
+sqllang!CUDXR_ExternalScript::ProcessOutputArguments
+sqllang!CUDXR_ExternalScript::PullRow
+sqllang!CUDXR_ExternalScript::OutputRow
+
+sqllang!CUDXR_ExternalScript::ProcessResultRows
+
+
+KERNELBASE!SignalObjectAndWait
+
+sqllang!Tcp::ReadAsync
+
+00 00000081`e61fefe8 00007ffa`7686ce8a sqllang!Tcp::ReadAsync
+01 00000081`e61feff0 00007ffa`77ecb7e8 sqllang!SNIReadAsync+0xc7
+02 00000081`e61ff080 00007ffa`77ecb6d9 sqllang!CSQLSatelliteConnection::ReadCallBackInternal+0xc8
+03 00000081`e61ff0f0 00007ffa`76870a6e sqllang!CSQLSatelliteConnection::ReadCallBack+0x39
+04 00000081`e61ff130 00007ffa`87276f12 sqllang!SNIReadDone+0x13c
+05 00000081`e61ff1b0 00007ffa`8726540d sqldk!SOS_Node::ListenOnIOCompletionPort+0x384
+06 00000081`e61ff460 00007ffa`87265905 sqldk!SOS_Task::Param::Execute+0x231
+07 00000081`e61ffa60 00007ffa`8726555d sqldk!SOS_Scheduler::RunTask+0xaa
+08 00000081`e61ffad0 00007ffa`87283d58 sqldk!SOS_Scheduler::ProcessTasks+0x3cd
+09 00000081`e61ffbb0 00007ffa`87283f40 sqldk!SchedulerManager::WorkerEntryPoint+0x2a1
+0a 00000081`e61ffc80 00007ffa`87283ec7 sqldk!SystemThread::RunWorker+0x8f
+0b 00000081`e61ffcb0 00007ffa`87284498 sqldk!SystemThreadDispatcher::ProcessWorker+0x2de
+0c 00000081`e61ffd60 00007ffa`cc3b3f84 sqldk!SchedulerManager::ThreadEntryPoint+0x1d8
+0d 00000081`e61ffe10 00007ffa`ccde13b1 KERNEL32!BaseThreadInitThunk+0x14
+0e 00000081`e61ffe40 00000000`00000000 ntdll!RtlUserThreadStart+0x21
+
+

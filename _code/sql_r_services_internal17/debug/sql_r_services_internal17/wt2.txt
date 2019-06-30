@@ -1,0 +1,67 @@
+ 11     0 [  0] sqllang!CUDXR_ExternalScript::ProcessResultRows
+ 38     0 [  1]   sqllang!CServerCargoContext::ReadOneRow
+ 40     0 [  2]     sqldk!CMemProc::Alloc
+ 51    40 [  1]   sqllang!CServerCargoContext::ReadOneRow
+ 19     0 [  2]     sqllang!CSQLSatelliteCommunication::GetSQLSatelliteMessage
+ 74    59 [  1]   sqllang!CServerCargoContext::ReadOneRow
+ 54     0 [  2]     sqllang!CSQLSatelliteMessageDataChunk::ReadData
+ 21     0 [  3]       sqllang!SQLDataReaderTargetRow::TargetBufferPtr
+ 83    21 [  2]     sqllang!CSQLSatelliteMessageDataChunk::ReadData
+ 18     0 [  3]       MSVCR120!memcpy_s
+  9     0 [  4]         MSVCR120!memcpy
+  4     0 [  4]         MSVCR120!MoveSmall
+ 26    13 [  3]       MSVCR120!memcpy_s
+126    60 [  2]     sqllang!CSQLSatelliteMessageDataChunk::ReadData
+126   245 [  1]   sqllang!CServerCargoContext::ReadOneRow
+ 25   371 [  0] sqllang!CUDXR_ExternalScript::ProcessResultRows
+  1     0 [  1]   KERNEL32!TlsGetValueStub
+  7     0 [  1]   KERNEL32!TlsGetValue
+ 37   379 [  0] sqllang!CUDXR_ExternalScript::ProcessResultRows
+  8     0 [  1]   sqllang!CUDXR_ExternalScript::OutputRow
+ 26     0 [  2]     sqllang!CTds74::SendRowImpl
+  2     0 [  3]       sqllang!CColMetaData::CCols
+ 30     2 [  2]     sqllang!CTds74::SendRowImpl
+  2     0 [  3]       sqllang!CColMetaData::RgCommonMD
+ 34     4 [  2]     sqllang!CTds74::SendRowImpl
+  2     0 [  3]       sqllang!CNetConnection::FStartedTokenStream
+ 40     6 [  2]     sqllang!CTds74::SendRowImpl
+  2     0 [  3]       sqllang!CNetConnection::SetStartedTokenStream
+ 44     8 [  2]     sqllang!CTds74::SendRowImpl
+  9     0 [  3]       sqllang!Worker::TaskAutoOnFlags::TaskAutoOnFlags
+  1     0 [  4]         KERNEL32!TlsGetValueStub
+  7     0 [  4]         KERNEL32!TlsGetValue
+ 25     8 [  3]       sqllang!Worker::TaskAutoOnFlags::TaskAutoOnFlags
+ 48    41 [  2]     sqllang!CTds74::SendRowImpl
+  3     0 [  3]       sqllang!CNetConnection::DwGetOutputSpaceLeft
+ 52    44 [  2]     sqllang!CTds74::SendRowImpl
+  3     0 [  3]       sqllang!CNetConnection::PbGetOutputCurPtr
+ 57    47 [  2]     sqllang!CTds74::SendRowImpl
+  2     0 [  3]       sqllang!CNetConnection::IncOutputPktLen
+ 77    49 [  2]     sqllang!CTds74::SendRowImpl
+  3     0 [  3]       sqllang!CXVariantBase::FIsNull
+ 82    52 [  2]     sqllang!CTds74::SendRowImpl
+  2     0 [  3]       sqllang!CXVariant::PbShallowBufPtr
+ 88    54 [  2]     sqllang!CTds74::SendRowImpl
+  3     0 [  3]       sqllang!CNetConnection::DwGetOutputSpaceLeft
+ 92    57 [  2]     sqllang!CTds74::SendRowImpl
+  3     0 [  3]       sqllang!CNetConnection::PbGetOutputCurPtr
+ 97    60 [  2]     sqllang!CTds74::SendRowImpl
+  2     0 [  3]       sqllang!CNetConnection::IncOutputPktLen
+100    62 [  2]     sqllang!CTds74::SendRowImpl
+  3     0 [  3]       sqllang!CNetConnection::DwGetOutputSpaceLeft
+104    65 [  2]     sqllang!CTds74::SendRowImpl
+  3     0 [  3]       sqllang!CNetConnection::PbGetOutputCurPtr
+110    68 [  2]     sqllang!CTds74::SendRowImpl
+  2     0 [  3]       sqllang!CNetConnection::IncOutputPktLen
+118    70 [  2]     sqllang!CTds74::SendRowImpl
+  2     0 [  3]       sqllang!`anonymous namespace'::MarkEndOfTokenStream
+122    72 [  2]     sqllang!CTds74::SendRowImpl
+  5     0 [  3]       sqllang!Worker::TaskAutoOnFlags::~TaskAutoOnFlags
+125    77 [  2]     sqllang!CTds74::SendRowImpl
+  6     0 [  3]       sqllang!_security_check_cookie
+135    83 [  2]     sqllang!CTds74::SendRowImpl
+ 12   218 [  1]   sqllang!CUDXR_ExternalScript::OutputRow
+  1     0 [  2]     KERNEL32!TlsGetValueStub
+  7     0 [  2]     KERNEL32!TlsGetValue
+ 21   226 [  1]   sqllang!CUDXR_ExternalScript::OutputRow
+ 45   626 [  0] sqllang!CUDXR_ExternalScript::ProcessResultRows

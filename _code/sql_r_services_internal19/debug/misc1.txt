@@ -1,0 +1,307 @@
+
+
+launchpad!CSQLSatelliteConnection::ReadOneFullMessage
+
+b
+
+launchpad!CSQLSatelliteCommunication::SendAckMessage
+
+
+
+00 0000003c`0a7fed78 00007ff7`344d0bc7 launchpad!CSQLSatelliteConnection::ReadOneFullMessage
+01 0000003c`0a7fed80 00007ff7`344d0b19 launchpad!CSQLSatelliteConnection::ReadCallBackInternal+0x37
+02 0000003c`0a7fedb0 00007ff7`344a9351 launchpad!CSQLSatelliteConnection::ReadCallBack+0x39
+03 0000003c`0a7fedf0 00007ffc`018c6f12 launchpad!SNIReadDone+0x151
+04 0000003c`0a7fee80 00007ffc`018b540d sqldk!SOS_Node::ListenOnIOCompletionPort+0x384
+05 0000003c`0a7ff130 00007ffc`018b5905 sqldk!SOS_Task::Param::Execute+0x231
+06 0000003c`0a7ff730 00007ffc`018b555d sqldk!SOS_Scheduler::RunTask+0xaa
+07 0000003c`0a7ff7a0 00007ffc`018d3d58 sqldk!SOS_Scheduler::ProcessTasks+0x3cd
+08 0000003c`0a7ff880 00007ffc`018d3f40 sqldk!SchedulerManager::WorkerEntryPoint+0x2a1
+09 0000003c`0a7ff950 00007ffc`018d3ec7 sqldk!SystemThread::RunWorker+0x8f
+0a 0000003c`0a7ff980 00007ffc`018d4498 sqldk!SystemThreadDispatcher::ProcessWorker+0x2de
+0b 0000003c`0a7ffa30 00007ffc`40b53f84 sqldk!SchedulerManager::ThreadEntryPoint+0x1d8
+0c 0000003c`0a7ffae0 00007ffc`41c913b1 KERNEL32!BaseThreadInitThunk+0x14
+0d 0000003c`0a7ffb10 00000000`00000000 ntdll!RtlUserThreadStart+0x21
+
+
+
+
+00 0000003c`093fc1b8 00007ff7`344a9c0c launchpad!Np::WriteAsync
+01 0000003c`093fc1c0 00007ff7`344d0a5d launchpad!SNIWriteAsync+0xac
+02 0000003c`093fc230 00007ff7`344ccd70 launchpad!CSQLSatelliteConnection::WriteMessage+0x7d
+03 0000003c`093fc290 00007ff7`344d64b9 launchpad!CSatelliteCargoContext::SendLogMessage+0x2b0
+04 0000003c`093fc350 00007ffc`11194188 launchpad!SQLSatellite_LogWString+0x99
+05 0000003c`093fc390 00007ffc`11193e31 RLauncher!GetInstance+0x3edf8
+06 0000003c`093fc460 00007ffc`1119401e RLauncher!GetInstance+0x3eaa1
+07 0000003c`093fc550 00007ffc`111927ab RLauncher!GetInstance+0x3ec8e
+08 0000003c`093fc5f0 00007ffc`1116cebd RLauncher!GetInstance+0x3d41b
+09 0000003c`093fc680 00007ffc`11171cac RLauncher!GetInstance+0x17b2d
+0a 0000003c`093fc700 00007ffc`11155110 RLauncher!GetInstance+0x1c91c
+0b 0000003c`093fc730 00007ff7`3448aeca RLauncher!SQLSatellite_GetLauncherAPI+0xe50
+0c 0000003c`093fc810 00007ff7`3448d11a launchpad!CLaunchContext::Cleanup+0x11a
+0d 0000003c`093fc8b0 00007ff7`3448cf42 launchpad!CLaunchContext::LaunchServTask+0x8fa
+0e 0000003c`093fe920 00007ffc`018b540d launchpad!CLaunchContext::LaunchServTask+0x722
+0f 0000003c`093ff090 00007ffc`018b5905 sqldk!SOS_Task::Param::Execute+0x231
+10 0000003c`093ff690 00007ffc`018b555d sqldk!SOS_Scheduler::RunTask+0xaa
+11 0000003c`093ff700 00007ffc`018d3d58 sqldk!SOS_Scheduler::ProcessTasks+0x3cd
+12 0000003c`093ff7e0 00007ffc`018d3f40 sqldk!SchedulerManager::WorkerEntryPoint+0x2a1
+13 0000003c`093ff8b0 00007ffc`018d3ec7 sqldk!SystemThread::RunWorker+0x8f
+14 0000003c`093ff8e0 00007ffc`018d4498 sqldk!SystemThreadDispatcher::ProcessWorker+0x2de
+15 0000003c`093ff990 00007ffc`40b53f84 sqldk!SchedulerManager::ThreadEntryPoint+0x1d8
+16 0000003c`093ffa40 00007ffc`41c913b1 KERNEL32!BaseThreadInitThunk+0x14
+17 0000003c`093ffa70 00000000`00000000 ntdll!RtlUserThreadStart+0x21
+
+
+
+   19     0 [  0] launchpad!CSQLSatelliteCommunication::SendAckMessage
+   50     0 [  1]   launchpad!SNIPacketAllocateEx2
+    8     0 [  2]     launchpad!SNIMemRegion::Pop
+   11     0 [  3]       launchpad!MemoryClerkInternal::GetPoolId
+   13    11 [  2]     launchpad!SNIMemRegion::Pop
+    2     0 [  3]       sqldk!SystemThread::GetCurrentId
+   40    13 [  2]     launchpad!SNIMemRegion::Pop
+   98    53 [  1]   launchpad!SNIPacketAllocateEx2
+   48   151 [  0] launchpad!CSQLSatelliteCommunication::SendAckMessage
+   14     0 [  1]   launchpad!CSQLSatelliteMessage::FireXEvent
+    6     0 [  2]     launchpad!_security_check_cookie
+   17     6 [  1]   launchpad!CSQLSatelliteMessage::FireXEvent
+   66   174 [  0] launchpad!CSQLSatelliteCommunication::SendAckMessage
+   18     0 [  1]   MSVCR120!memcpy_s
+    9     0 [  2]     MSVCR120!memcpy
+    4     0 [  2]     MSVCR120!MoveSmall
+   26    13 [  1]   MSVCR120!memcpy_s
+   76   213 [  0] launchpad!CSQLSatelliteCommunication::SendAckMessage
+    9     0 [  1]   launchpad!CSQLSatelliteConnection::PostWriteRequest
+   23     0 [  1]   launchpad!CSQLSatelliteConnection::WriteMessage
+   13     0 [  2]     launchpad!SOS_RWLock::GetLock
+    1     0 [  3]       KERNEL32!TlsGetValueStub
+    7     0 [  3]       KERNEL32!TlsGetValue
+   33     8 [  2]     launchpad!SOS_RWLock::GetLock
+   56     0 [  3]       sqldk!SOS_RWLock::GetLongWait
+   45    64 [  2]     launchpad!SOS_RWLock::GetLock
+   30   109 [  1]   launchpad!CSQLSatelliteConnection::WriteMessage
+   25     0 [  2]     launchpad!SNIWriteAsync
+   21     0 [  3]       launchpad!Np::WriteAsync
+   32     0 [  4]         launchpad!Np::SendPacketAsync
+   30     0 [  5]           launchpad!SNI::detail::Transport::PrepareForAsyncCall
+   40    30 [  4]         launchpad!Np::SendPacketAsync
+    1     0 [  5]           KERNEL32!WriteFile
+   36     0 [  5]           KERNELBASE!WriteFile
+    6     0 [  6]             ntdll!NtWriteFile
+>> More than one level popped 5 -> 5
+   50     6 [  5]           KERNELBASE!WriteFile
+   49    87 [  4]         launchpad!Np::SendPacketAsync
+    1     0 [  5]           KERNEL32!GetOverlappedResultStub
+   21     0 [  5]           KERNELBASE!GetOverlappedResult
+    3     0 [  6]             KERNELBASE!BaseSetLastNTError
+   17     0 [  7]               ntdll!RtlNtStatusToDosError
+    6    17 [  6]             KERNELBASE!BaseSetLastNTError
+   15     0 [  7]               ntdll!RtlSetLastWin32Error
+    6     0 [  8]                 ntdll!_security_check_cookie
+   17     6 [  7]               ntdll!RtlSetLastWin32Error
+   10    40 [  6]             KERNELBASE!BaseSetLastNTError
+   33    50 [  5]           KERNELBASE!GetOverlappedResult
+   71   171 [  4]         launchpad!Np::SendPacketAsync
+   33   242 [  3]       launchpad!Np::WriteAsync
+   33   275 [  2]     launchpad!SNIWriteAsync
+    9     0 [  3]       launchpad!SNITime::GetTick
+   49   284 [  2]     launchpad!SNIWriteAsync
+   36   442 [  1]   launchpad!CSQLSatelliteConnection::WriteMessage
+   29     0 [  2]     sqldk!SOS_RWLock::ReleaseLock
+   43   471 [  1]   launchpad!CSQLSatelliteConnection::WriteMessage
+   27     0 [  2]     launchpad!CSQLSatelliteConnection::WriteCallBack
+   50     0 [  3]       launchpad!CSQLSatelliteConnection::FreePackets
+   11     0 [  4]         launchpad!SNIMemRegion::Push
+    2     0 [  5]           sqldk!SystemThread::GetCurrentId
+   38     2 [  4]         launchpad!SNIMemRegion::Push
+   60    40 [  3]       launchpad!CSQLSatelliteConnection::FreePackets
+   42   100 [  2]     launchpad!CSQLSatelliteConnection::WriteCallBack
+   53   613 [  1]   launchpad!CSQLSatelliteConnection::WriteMessage
+   82   888 [  0] launchpad!CSQLSatelliteCommunication::SendAckMessage
+   10     0 [  1]   launchpad!CSQLSatelliteConnection::WaitWriteDone
+   94   898 [  0] launchpad!CSQLSatelliteCommunication::SendAckMessage
+
+
+
+
+
+   41     0 [  0] launchpad!CSatelliteCargoContext::SendLogMessage
+   50     0 [  1]   launchpad!SNIPacketAllocateEx2
+    8     0 [  2]     launchpad!SNIMemRegion::Pop
+   11     0 [  3]       launchpad!MemoryClerkInternal::GetPoolId
+   13    11 [  2]     launchpad!SNIMemRegion::Pop
+    2     0 [  3]       sqldk!SystemThread::GetCurrentId
+   40    13 [  2]     launchpad!SNIMemRegion::Pop
+   98    53 [  1]   launchpad!SNIPacketAllocateEx2
+   87   151 [  0] launchpad!CSatelliteCargoContext::SendLogMessage
+   14     0 [  1]   launchpad!CSQLSatelliteMessage::FireXEvent
+    6     0 [  2]     launchpad!_security_check_cookie
+   17     6 [  1]   launchpad!CSQLSatelliteMessage::FireXEvent
+  121   174 [  0] launchpad!CSatelliteCargoContext::SendLogMessage
+   18     0 [  1]   MSVCR120!memcpy_s
+   39     0 [  2]     MSVCR120!memcpy
+   26    39 [  1]   MSVCR120!memcpy_s
+  139   239 [  0] launchpad!CSatelliteCargoContext::SendLogMessage
+   18     0 [  1]   MSVCR120!memcpy_s
+    9     0 [  2]     MSVCR120!memcpy
+    4     0 [  2]     MSVCR120!MoveSmall
+   26    13 [  1]   MSVCR120!memcpy_s
+  159   278 [  0] launchpad!CSatelliteCargoContext::SendLogMessage
+   14     0 [  1]   launchpad!CSQLSatelliteMessage::FireXEvent
+    6     0 [  2]     launchpad!_security_check_cookie
+   17     6 [  1]   launchpad!CSQLSatelliteMessage::FireXEvent
+  165   301 [  0] launchpad!CSatelliteCargoContext::SendLogMessage
+   16     0 [  1]   launchpad!MessageTelemetry::Record
+  180   317 [  0] launchpad!CSatelliteCargoContext::SendLogMessage
+   23     0 [  1]   launchpad!CSQLSatelliteConnection::WriteMessage
+   13     0 [  2]     launchpad!SOS_RWLock::GetLock
+    1     0 [  3]       KERNEL32!TlsGetValueStub
+    7     0 [  3]       KERNEL32!TlsGetValue
+   33     8 [  2]     launchpad!SOS_RWLock::GetLock
+   56     0 [  3]       sqldk!SOS_RWLock::GetLongWait
+   45    64 [  2]     launchpad!SOS_RWLock::GetLock
+   30   109 [  1]   launchpad!CSQLSatelliteConnection::WriteMessage
+   25     0 [  2]     launchpad!SNIWriteAsync
+   21     0 [  3]       launchpad!Np::WriteAsync
+   32     0 [  4]         launchpad!Np::SendPacketAsync
+   30     0 [  5]           launchpad!SNI::detail::Transport::PrepareForAsyncCall
+   40    30 [  4]         launchpad!Np::SendPacketAsync
+    1     0 [  5]           KERNEL32!WriteFile
+   36     0 [  5]           KERNELBASE!WriteFile
+    6     0 [  6]             ntdll!NtWriteFile
+>> More than one level popped 5 -> 5
+   50     6 [  5]           KERNELBASE!WriteFile
+   49    87 [  4]         launchpad!Np::SendPacketAsync
+    1     0 [  5]           KERNEL32!GetOverlappedResultStub
+   21     0 [  5]           KERNELBASE!GetOverlappedResult
+    3     0 [  6]             KERNELBASE!BaseSetLastNTError
+   17     0 [  7]               ntdll!RtlNtStatusToDosError
+    6    17 [  6]             KERNELBASE!BaseSetLastNTError
+   15     0 [  7]               ntdll!RtlSetLastWin32Error
+    6     0 [  8]                 ntdll!_security_check_cookie
+   17     6 [  7]               ntdll!RtlSetLastWin32Error
+   10    40 [  6]             KERNELBASE!BaseSetLastNTError
+   33    50 [  5]           KERNELBASE!GetOverlappedResult
+   71   171 [  4]         launchpad!Np::SendPacketAsync
+   33   242 [  3]       launchpad!Np::WriteAsync
+   33   275 [  2]     launchpad!SNIWriteAsync
+    9     0 [  3]       launchpad!SNITime::GetTick
+   49   284 [  2]     launchpad!SNIWriteAsync
+   36   442 [  1]   launchpad!CSQLSatelliteConnection::WriteMessage
+   29     0 [  2]     sqldk!SOS_RWLock::ReleaseLock
+   43   471 [  1]   launchpad!CSQLSatelliteConnection::WriteMessage
+   25     0 [  2]     launchpad!CSQLSatelliteConnection::WriteCallBack
+    9     0 [  3]       launchpad!EventInternal<SuspendQueueSLock>::SignalAll
+    2     0 [  4]         sqldk!SystemThread::GetCurrentId
+   28     2 [  3]       launchpad!EventInternal<SuspendQueueSLock>::SignalAll
+    6     0 [  4]         sqldk!SOS_Scheduler::ResumeBulk
+   32     8 [  3]       launchpad!EventInternal<SuspendQueueSLock>::SignalAll
+   29    40 [  2]     launchpad!CSQLSatelliteConnection::WriteCallBack
+   50     0 [  3]       launchpad!CSQLSatelliteConnection::FreePackets
+   11     0 [  4]         launchpad!SNIMemRegion::Push
+    2     0 [  5]           sqldk!SystemThread::GetCurrentId
+   38     2 [  4]         launchpad!SNIMemRegion::Push
+   60    40 [  3]       launchpad!CSQLSatelliteConnection::FreePackets
+   44   140 [  2]     launchpad!CSQLSatelliteConnection::WriteCallBack
+   53   655 [  1]   launchpad!CSQLSatelliteConnection::WriteMessage
+  207  1025 [  0] launchpad!CSatelliteCargoContext::SendLogMessage
+
+
+
+
+00 00000018`7d7feb28 00007ffb`ec0fce8a sqllang!Np::ReadAsync
+01 00000018`7d7feb30 00007ffb`ed75b7e8 sqllang!SNIReadAsync+0xc7
+02 00000018`7d7febc0 00007ffb`ed75b6d9 sqllang!CSQLSatelliteConnection::ReadCallBackInternal+0xc8
+03 00000018`7d7fec30 00007ffb`ec100a6e sqllang!CSQLSatelliteConnection::ReadCallBack+0x39
+04 00000018`7d7fec70 00007ffb`eb216f12 sqllang!SNIReadDone+0x13c
+05 00000018`7d7fecf0 00007ffb`eb20540d sqldk!SOS_Node::ListenOnIOCompletionPort+0x384
+06 00000018`7d7fefa0 00007ffb`eb205905 sqldk!SOS_Task::Param::Execute+0x231
+07 00000018`7d7ff5a0 00007ffb`eb20555d sqldk!SOS_Scheduler::RunTask+0xaa
+08 00000018`7d7ff610 00007ffb`eb223d58 sqldk!SOS_Scheduler::ProcessTasks+0x3cd
+09 00000018`7d7ff6f0 00007ffb`eb223f40 sqldk!SchedulerManager::WorkerEntryPoint+0x2a1
+0a 00000018`7d7ff7c0 00007ffb`eb223ec7 sqldk!SystemThread::RunWorker+0x8f
+0b 00000018`7d7ff7f0 00007ffb`eb224498 sqldk!SystemThreadDispatcher::ProcessWorker+0x2de
+0c 00000018`7d7ff8a0 00007ffc`40b53f84 sqldk!SchedulerManager::ThreadEntryPoint+0x1d8
+0d 00000018`7d7ff950 00007ffc`41c913b1 KERNEL32!BaseThreadInitThunk+0x14
+0e 00000018`7d7ff980 00000000`00000000 ntdll!RtlUserThreadStart+0x21
+
+
+
+
+00 00000018`00bfba08 00007ffb`ed75d19f sqllang!CSQLSatelliteCommunication::GetSQLSatelliteMessage
+01 00000018`00bfba10 00007ffb`ed75d6ba sqllang!CSQLSatelliteCommunication::BindReadSNIPacket+0x6f
+02 00000018`00bfba40 00007ffb`ed29ab20 sqllang!CSQLSatelliteCommunication::WaitForAckMessage+0x7a
+03 00000018`00bfbaa0 00007ffb`eeff5b8e sqllang!CUDXR_ExternalScript::ShutdownService+0x250
+04 00000018`00bfbf10 00007ffb`ee713a61 sqlmin!CUDXR_ExternalScriptCleanup::Close+0xe
+05 00000018`00bfbf40 00007ffb`ee714aa9 sqlmin!CQueryExecContext::FinalCleanup+0x51
+06 00000018`00bfbf70 00007ffb`ec2fa090 sqlmin!CQueryScan::DestroyQuery+0x224
+07 00000018`00bfbfb0 00007ffb`ec0f81ef sqllang!CXStmtQuery::ShutdownNormal+0x151
+08 00000018`00bfbfe0 00007ffb`ec0f2d25 sqllang!CXStmtQuery::ErsqExecuteQuery+0x1014
+09 00000018`00bfc160 00007ffb`ec0f105a sqllang!CXStmtSelect::XretExecute+0x322
+0a 00000018`00bfc230 00007ffb`ec0f2553 sqllang!CMsqlExecContext::ExecuteStmts<1,1>+0x40d
+0b 00000018`00bfc370 00007ffb`ec0f1bf1 sqllang!CMsqlExecContext::FExecute+0xa9e
+0c 00000018`00bfc6a0 00007ffb`ecd9e2de sqllang!CSQLSource::Execute+0x983
+0d 00000018`00bfc840 00007ffb`ecda9da5 sqllang!SpExecuteExternalScript+0x140e
+0e 00000018`00bfd050 00007ffb`ecda923c sqllang!CSpecProc::ExecuteSpecial+0x355
+0f 00000018`00bfd150 00007ffb`ec4d02f0 sqllang!CXProc::Execute+0x10c
+10 00000018`00bfd740 00007ffb`ecde657d sqllang!CSQLSource::Execute+0xab8
+11 00000018`00bfd8e0 00007ffb`ecde5f81 sqllang!CStmtExecProc::XretLocalExec+0x26e
+12 00000018`00bfd960 00007ffb`ecde2cd8 sqllang!CStmtExecProc::XretExecExecute+0x481
+13 00000018`00bfe110 00007ffb`ec0f105a sqllang!CXStmtExecProc::XretExecute+0x38
+14 00000018`00bfe150 00007ffb`ec0f2553 sqllang!CMsqlExecContext::ExecuteStmts<1,1>+0x40d
+15 00000018`00bfe290 00007ffb`ec0f1bf1 sqllang!CMsqlExecContext::FExecute+0xa9e
+16 00000018`00bfe5c0 00007ffb`ec0fa41b sqllang!CSQLSource::Execute+0x983
+17 00000018`00bfe760 00007ffb`ec0ff692 sqllang!process_request+0xe61
+18 00000018`00bfed30 00007ffb`ec0ff7a3 sqllang!process_commands_internal+0x2df
+19 00000018`00bfedb0 00007ffb`eb20540d sqllang!process_messages+0x253
+1a 00000018`00bfefc0 00007ffb`eb205905 sqldk!SOS_Task::Param::Execute+0x231
+1b 00000018`00bff5c0 00007ffb`eb20555d sqldk!SOS_Scheduler::RunTask+0xaa
+1c 00000018`00bff630 00007ffb`eb223d58 sqldk!SOS_Scheduler::ProcessTasks+0x3cd
+1d 00000018`00bff710 00007ffb`eb223f40 sqldk!SchedulerManager::WorkerEntryPoint+0x2a1
+1e 00000018`00bff7e0 00007ffb`eb223ec7 sqldk!SystemThread::RunWorker+0x8f
+1f 00000018`00bff810 00007ffb`eb224498 sqldk!SystemThreadDispatcher::ProcessWorker+0x2de
+20 00000018`00bff8c0 00007ffc`40b53f84 sqldk!SchedulerManager::ThreadEntryPoint+0x1d8
+21 00000018`00bff970 00007ffc`41c913b1 KERNEL32!BaseThreadInitThunk+0x14
+22 00000018`00bff9a0 00000000`00000000 ntdll!RtlUserThreadStart+0x21
+
+00 00000018`00bfba08 00007ffb`ed75d19f sqllang!CSQLSatelliteCommunication::GetSQLSatelliteMessage
+01 00000018`00bfba10 00007ffb`ed75d6ba sqllang!CSQLSatelliteCommunication::BindReadSNIPacket+0x6f
+02 00000018`00bfba40 00007ffb`ed29ab20 sqllang!CSQLSatelliteCommunication::WaitForAckMessage+0x7a
+03 00000018`00bfbaa0 00007ffb`eeff5b8e sqllang!CUDXR_ExternalScript::ShutdownService+0x250
+04 00000018`00bfbf10 00007ffb`ee713a61 sqlmin!CUDXR_ExternalScriptCleanup::Close+0xe
+05 00000018`00bfbf40 00007ffb`ee714aa9 sqlmin!CQueryExecContext::FinalCleanup+0x51
+06 00000018`00bfbf70 00007ffb`ec2fa090 sqlmin!CQueryScan::DestroyQuery+0x224
+07 00000018`00bfbfb0 00007ffb`ec0f81ef sqllang!CXStmtQuery::ShutdownNormal+0x151
+08 00000018`00bfbfe0 00007ffb`ec0f2d25 sqllang!CXStmtQuery::ErsqExecuteQuery+0x1014
+09 00000018`00bfc160 00007ffb`ec0f105a sqllang!CXStmtSelect::XretExecute+0x322
+0a 00000018`00bfc230 00007ffb`ec0f2553 sqllang!CMsqlExecContext::ExecuteStmts<1,1>+0x40d
+0b 00000018`00bfc370 00007ffb`ec0f1bf1 sqllang!CMsqlExecContext::FExecute+0xa9e
+0c 00000018`00bfc6a0 00007ffb`ecd9e2de sqllang!CSQLSource::Execute+0x983
+0d 00000018`00bfc840 00007ffb`ecda9da5 sqllang!SpExecuteExternalScript+0x140e
+0e 00000018`00bfd050 00007ffb`ecda923c sqllang!CSpecProc::ExecuteSpecial+0x355
+0f 00000018`00bfd150 00007ffb`ec4d02f0 sqllang!CXProc::Execute+0x10c
+10 00000018`00bfd740 00007ffb`ecde657d sqllang!CSQLSource::Execute+0xab8
+11 00000018`00bfd8e0 00007ffb`ecde5f81 sqllang!CStmtExecProc::XretLocalExec+0x26e
+12 00000018`00bfd960 00007ffb`ecde2cd8 sqllang!CStmtExecProc::XretExecExecute+0x481
+13 00000018`00bfe110 00007ffb`ec0f105a sqllang!CXStmtExecProc::XretExecute+0x38
+14 00000018`00bfe150 00007ffb`ec0f2553 sqllang!CMsqlExecContext::ExecuteStmts<1,1>+0x40d
+15 00000018`00bfe290 00007ffb`ec0f1bf1 sqllang!CMsqlExecContext::FExecute+0xa9e
+16 00000018`00bfe5c0 00007ffb`ec0fa41b sqllang!CSQLSource::Execute+0x983
+17 00000018`00bfe760 00007ffb`ec0ff692 sqllang!process_request+0xe61
+18 00000018`00bfed30 00007ffb`ec0ff7a3 sqllang!process_commands_internal+0x2df
+19 00000018`00bfedb0 00007ffb`eb20540d sqllang!process_messages+0x253
+1a 00000018`00bfefc0 00007ffb`eb205905 sqldk!SOS_Task::Param::Execute+0x231
+1b 00000018`00bff5c0 00007ffb`eb20555d sqldk!SOS_Scheduler::RunTask+0xaa
+1c 00000018`00bff630 00007ffb`eb223d58 sqldk!SOS_Scheduler::ProcessTasks+0x3cd
+1d 00000018`00bff710 00007ffb`eb223f40 sqldk!SchedulerManager::WorkerEntryPoint+0x2a1
+1e 00000018`00bff7e0 00007ffb`eb223ec7 sqldk!SystemThread::RunWorker+0x8f
+1f 00000018`00bff810 00007ffb`eb224498 sqldk!SystemThreadDispatcher::ProcessWorker+0x2de
+20 00000018`00bff8c0 00007ffc`40b53f84 sqldk!SchedulerManager::ThreadEntryPoint+0x1d8
+21 00000018`00bff970 00007ffc`41c913b1 KERNEL32!BaseThreadInitThunk+0x14
+22 00000018`00bff9a0 00000000`00000000 ntdll!RtlUserThreadStart+0x21
+
+
+
+
+
+

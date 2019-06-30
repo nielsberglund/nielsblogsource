@@ -1,0 +1,159 @@
+baseUrl = ""
+languageCode = "en"
+
+author = "nielsb"
+title = "Niels Berglund"
+copyright = "This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License."
+
+theme = "hyde-hyde"
+
+## Hugo Built-in Features
+disqusShortname = "manageddata" # Comment out to disable Disqus.
+googleAnalytics = "UA-18914734-2"
+enableRobotsTXT = true
+enableEmoji = true
+
+publishDir = "_site"
+
+paginate = 5
+
+rssLimit = 10
+
+[mediaTypes]
+[mediaTypes."application/atom"]
+    suffixes = ["xml"]
+
+[outputFormats.Atom]
+    mediaType = "application/atom"
+    baseName = "atom"
+    isPlainText = false
+
+[outputs]
+    home = [ "HTML", "Atom" ]
+
+disableKinds = ["RSS"]   
+
+## Site Settings
+[params]
+    author = "nielsb"
+    description = "Technology musings about coding and data. Some topics: .NET, SQL Server, Data Science, R, Windows Azure and a lot more."
+    #authorimage = "images/nielsb.jpg"
+    #authorimage = "img/avatar.svg"
+
+    # https://golang.org/pkg/time/#example_Time_Format
+    dateformat = "Jan 2, 2006"
+
+    # https://highlightjs.org
+    highlightjs = true
+    highlightjsLang = ["r", "c++", "sql", "c#", "bash", "cpp", "python"]
+    #highlightjsstyle = "agate"
+    #highlightjsstyle = "androidstudio"
+    #highlightjsstyle = "atom-one-dark"
+    #highlightjsstyle = "atom-one-light"
+    #highlightjsstyle = "dracula"
+    #highlightjsstyle = "darcula"
+    #highlightjsstyle = "github"
+    #highlightjsstyle = "hybrid"
+    highlightjsstyle = "monokai"
+    #highlightjsstyle = "ocean"
+    #highlightjsstyle = "railscasts"
+    #highlightjsstyle = "rainbow"
+    #highlightjsstyle = "sunburst"
+    #highlightjsstyle = "tomorrow-night"
+    #highlightjsstyle = "tomorrow-night-bright"
+    #highlightjsstyle = "tomorrow-night-eighties"
+    #highlightjsstyle = "zenburn"
+    
+    sideBarSticky = false
+
+    relatedPosts = true
+    #postNavigation = false
+
+    mainSections = ["post"]
+[permalinks]
+    posts = "/:year/:month/:day/:slug/"
+    
+## Site Meta Settings
+[params.meta]
+    description = "nielsb's blog :: technology musings about coding and data. Some topics: .NET, SQL Server, Data Science, R, Windows Azure and a lot more"
+    keywords = "sql server, c#, distributed computing, data science, microsoft r server, microsoft machine learning server, data science, sql server r services, sql server machine learning services, kafka, flink"
+
+## Social Accounts
+[params.social]
+    github = "nberglund"
+    #instagram = "htr3n"
+    #medium = "htr3n"
+    #bitbucket = "hoanghuytran"
+    linkedin = "niels-berglund-0122593"
+    twitter = "nielsberglund"
+    #keybase = "htr3n"
+    #facebook = "htr3n"
+    #gitlab = "htr3n"
+    stackoverflow = "7656880"
+    
+
+## Main Menu
+
+[[menu.main]]
+    name = "Home"
+    weight = 100
+    identifier = "home"
+    url = "/"
+
+
+[[menu.main]]
+    name = "Post Archive"
+    weight = 100
+    identifier = "posts"
+    url = "/posts/"
+[[menu.main]]
+    name = "About"
+    identifier = "about"
+    weight =700
+    url = "/about/"
+[[menu.main]]
+    name = "Blog Post Series"
+    identifier = "series"
+    weight = 200
+    url = "/series/"
+[[menu.main]]
+    name = "Categories"
+    identifier = "categories"
+    weight = 400
+    url = "/categories/" 
+[[menu.main]]
+    name = "Tags"
+    identifier = "tags"
+    weight = 600
+    url = "/tags/" 
+[[menu.main]]
+  name = "Disclaimer"
+  identifier = "disclaimer"
+  weight = 700
+  url = "/disclaimer/"   
+
+
+# https://gohugo.io/content-management/related
+[related]
+    # Only include matches with rank >= threshold. This is a normalized rank
+    # between 0 and 100.
+    threshold = 80
+    # To get stable "See also" sections we, by default, exclude newer related
+    # pages.
+    includeNewer = false
+    # Will lower case keywords in both queries and in the indexes.
+    toLower = false
+[[related.indices]]
+    name = "keywords"
+    weight = 150
+[[related.indices]]
+    name  = "author"
+    toLower = true
+    weight = 30
+[[related.indices]]
+    name  = "tags"
+    weight = 100
+[[related.indices]]
+    name  = "date"
+    weight = 10
+    pattern = "2006"

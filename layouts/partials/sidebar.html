@@ -1,0 +1,38 @@
+<!-- Sidebar -->
+<div class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+      </span>
+      {{ with .Site.Params.authorimage }}
+      {{ $strippedSlash := ($.Site.Params.authorimage | replaceRE "^(/)+(.*)" "$2") }}
+      {{ $authorImage := (printf "%s%s" $.Site.BaseURL $strippedSlash) }}
+      <div class="author-image">
+        <img src="{{$authorImage}}" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </div>
+      {{ end }}
+      <p class="site__description">
+        {{ with .Site.Params.description }} {{.}} {{ else }} Your site's description {{end}}
+      </p>
+      {{ partial "sidebar/sidebaradsense.html" . }}
+
+      {{ partial "sidebar/menu.html" . }}
+    
+      {{ partial "sidebar/sidebarmvp.html" . }}
+    </div>
+
+      
+    
+    <p>
+      {{ partial "sidebar/social.html" . }}
+    </p>
+    <p class="copyright">
+      {{ with .Site.Params.copyright }}{{.|safeHTML}}{{ else }}&copy; {{ now.Format "2006"}} {{.Site.Params.author}}.
+      <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.
+      {{end}}
+    </p>
+  </div>
+  <div>
+  </div>
+</div>

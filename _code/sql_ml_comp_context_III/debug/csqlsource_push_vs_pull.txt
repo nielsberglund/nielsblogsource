@@ -1,0 +1,68 @@
+push 
+
+0:087> g
+Breakpoint 5 hit
+sqllang!CSQLSource::Execute:
+00007ffc`a8773210 488bc4          mov     rax,rsp
+0:040> g
+Breakpoint 5 hit
+sqllang!CSQLSource::Execute:
+00007ffc`a8773210 488bc4          mov     rax,rsp
+0:040> g
+Breakpoint 5 hit
+sqllang!CSQLSource::Execute:
+00007ffc`a8773210 488bc4          mov     rax,rsp
+0:040> g
+Breakpoint 0 hit
+sqllang!SpExecuteExternalScript:
+00007ffc`a9346af0 53              push    rbx
+0:040> g
+Breakpoint 5 hit
+sqllang!CSQLSource::Execute:
+00007ffc`a8773210 488bc4          mov     rax,rsp
+0:040> g
+Breakpoint 2 hit
+sqllang!CXStmtQuery::ErsqExecuteQuery:
+00007ffc`a8775e70 4c8bdc          mov     r11,rsp
+0:040> g
+
+
+pull
+
+0:087> g
+Breakpoint 5 hit
+sqllang!CSQLSource::Execute:
+00007ffc`a8773210 488bc4          mov     rax,rsp
+0:040> g
+Breakpoint 5 hit
+sqllang!CSQLSource::Execute:
+00007ffc`a8773210 488bc4          mov     rax,rsp
+0:040> g
+Breakpoint 5 hit
+sqllang!CSQLSource::Execute:
+00007ffc`a8773210 488bc4          mov     rax,rsp
+0:040> g
+Breakpoint 0 hit
+sqllang!SpExecuteExternalScript:
+00007ffc`a9346af0 53              push    rbx
+0:040> g
+Breakpoint 5 hit
+sqllang!CSQLSource::Execute:
+00007ffc`a8773210 488bc4          mov     rax,rsp
+0:040> g
+Breakpoint 2 hit
+sqllang!CXStmtQuery::ErsqExecuteQuery:
+00007ffc`a8775e70 4c8bdc          mov     r11,rsp
+0:040> g
+Breakpoint 5 hit
+sqllang!CSQLSource::Execute:
+00007ffc`a8773210 488bc4          mov     rax,rsp
+0:089> g
+Breakpoint 5 hit
+sqllang!CSQLSource::Execute:
+00007ffc`a8773210 488bc4          mov     rax,rsp
+0:089> g
+Breakpoint 2 hit
+sqllang!CXStmtQuery::ErsqExecuteQuery:
+00007ffc`a8775e70 4c8bdc          mov     r11,rsp
+0:089> g

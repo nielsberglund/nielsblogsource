@@ -1,0 +1,12 @@
+No.     Time           Source                Destination           Protocol Length Info
+     26 5.333354       127.0.0.1             127.0.0.1             TCP      156    50980 → 51627 [PSH, ACK] Seq=455 Ack=265 Win=525312 Len=36
+
+Frame 26: 156 bytes on wire (1248 bits), 80 bytes captured (640 bits) on interface 0
+Null/Loopback
+Internet Protocol Version 4, Src: 127.0.0.1, Dst: 127.0.0.1
+Transmission Control Protocol, Src Port: 50980, Dst Port: 51627, Seq: 455, Ack: 265, Len: 36
+Data (36 bytes)
+
+0000  01 00 07 80 24 00 00 00 9b db 7c 9c 84 8c 0e 4a   ....$.....|....J
+0010  80 18 a9 47 f7 7d 69 3b 00 00 01 00 00 00 00 00   ...G.}i;........
+0020  01 00 00 00                                       ....

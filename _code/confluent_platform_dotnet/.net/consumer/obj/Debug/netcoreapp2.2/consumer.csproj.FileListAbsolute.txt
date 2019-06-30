@@ -1,0 +1,11 @@
+W:\confluent\consumer\bin\Debug\netcoreapp2.2\consumer.deps.json
+W:\confluent\consumer\bin\Debug\netcoreapp2.2\consumer.runtimeconfig.json
+W:\confluent\consumer\bin\Debug\netcoreapp2.2\consumer.runtimeconfig.dev.json
+W:\confluent\consumer\bin\Debug\netcoreapp2.2\consumer.dll
+W:\confluent\consumer\bin\Debug\netcoreapp2.2\consumer.pdb
+W:\confluent\consumer\obj\Debug\netcoreapp2.2\consumer.csprojAssemblyReference.cache
+W:\confluent\consumer\obj\Debug\netcoreapp2.2\consumer.csproj.CoreCompileInputs.cache
+W:\confluent\consumer\obj\Debug\netcoreapp2.2\consumer.AssemblyInfoInputs.cache
+W:\confluent\consumer\obj\Debug\netcoreapp2.2\consumer.AssemblyInfo.cs
+W:\confluent\consumer\obj\Debug\netcoreapp2.2\consumer.dll
+W:\confluent\consumer\obj\Debug\netcoreapp2.2\consumer.pdb

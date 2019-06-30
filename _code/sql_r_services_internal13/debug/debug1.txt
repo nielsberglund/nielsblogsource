@@ -1,0 +1,115 @@
+
+
+C++ exception event filter
+
+05 00000078`0b3fa160 00007ff9`7d01b18b sqllang!CSQLSource::FCompile+0x230f
+06 00000078`0b3fc840 00007ff9`7d01b0c1 sqllang!CSQLSource::FCompWrapper+0xce
+07 00000078`0b3fc910 00007ff9`7cff1aab sqllang!CSQLSource::Transform+0x556
+08 00000078`0b3fc9e0 00007ff9`7dc9e2de sqllang!CSQLSource::Execute+0x3b0
+09 00000078`0b3fcb80 00007ff9`7dca9da5 sqllang!SpExecuteExternalScript+0x140e
+
+
+bp sqlmin!CQueryScan::GetRow
+
+bp sqllang!CSQLSource::Execute
+
+bp sqllang!CSQLSource::FCompile
+
+
+bp sqllang!SpExecuteExternalScript
+
+bp sqllang!CUDXR_ExternalScript::PullRow
+
+
+26     0 [  0] sqllang!CUDXR_ExternalScript::PullRow
+    9     0 [  1]   sqllang!CUDXR_ExternalScript::ProcessOutputSchema
+   34     0 [  2]     sqllang!CUDXR_ExternalScript::GetOutputSchema
+   81     0 [  3]       sqllang!CServerCargoContext::ReadSchemaInternal
+   49    81 [  2]     sqllang!CUDXR_ExternalScript::GetOutputSchema
+   21   130 [  1]   sqllang!CUDXR_ExternalScript::ProcessOutputSchema
+   62   151 [  0] sqllang!CUDXR_ExternalScript::PullRow
+    9     0 [  1]   sqllang!CUDXR_ExternalScript::ProcessOutputSchema
+   34     0 [  2]     sqllang!CUDXR_ExternalScript::GetOutputSchema
+   91     0 [  3]       sqllang!CServerCargoContext::ReadSchemaInternal
+   56    91 [  2]     sqllang!CUDXR_ExternalScript::GetOutputSchema
+   23   147 [  1]   sqllang!CUDXR_ExternalScript::ProcessOutputSchema
+   82   321 [  0] sqllang!CUDXR_ExternalScript::PullRow
+   11     0 [  1]   sqllang!CUDXR_ExternalScript::ProcessResultRows
+   38     0 [  2]     sqllang!CServerCargoContext::ReadOneRow
+  148     0 [  3]       sqllang!CServerCargoContext::ReceiveOneDataChunk
+   60   148 [  2]     sqllang!CServerCargoContext::ReadOneRow
+   22   208 [  1]   sqllang!CUDXR_ExternalScript::ProcessResultRows
+    7     0 [  2]     sqllang!CUDXR_ExternalScript::EndOutput
+    1     0 [  3]       KERNEL32!TlsGetValueStub
+    7     0 [  3]       KERNEL32!TlsGetValue
+   14     8 [  2]     sqllang!CUDXR_ExternalScript::EndOutput
+   27   230 [  1]   sqllang!CUDXR_ExternalScript::ProcessResultRows
+   95   578 [  0] sqllang!CUDXR_ExternalScript::PullRow
+   36     0 [  1]   sqllang!CUDXR_ExternalScript::ProcessOutputArguments
+   31     0 [  2]     sqllang!CServerCargoContext::ReadOutputArgumentsInternal
+  150     0 [  3]       sqllang!CSQLSatelliteCommunication::CSQLSatelliteCommunication
+   40   150 [  2]     sqllang!CServerCargoContext::ReadOutputArgumentsInternal
+   64     0 [  3]       sqllang!CSQLSatelliteCommunication::Init
+   58   214 [  2]     sqllang!CServerCargoContext::ReadOutputArgumentsInternal
+   94     0 [  3]       sqllang!CServerCargoContext::ReadAllPackets
+   69   308 [  2]     sqllang!CServerCargoContext::ReadOutputArgumentsInternal
+  116     0 [  3]       sqllang!CServerCargoContext::ReadOutputArgsFromPackets
+   74   424 [  2]     sqllang!CServerCargoContext::ReadOutputArgumentsInternal
+   60     0 [  3]       sqllang!CSQLSatelliteConnection::FreePackets
+   80   484 [  2]     sqllang!CServerCargoContext::ReadOutputArgumentsInternal
+   20     0 [  3]       sqllang!CSQLSatelliteCommunication::~CSQLSatelliteCommunication
+   84   504 [  2]     sqllang!CServerCargoContext::ReadOutputArgumentsInternal
+    6     0 [  3]       sqllang!_security_check_cookie
+   94   510 [  2]     sqllang!CServerCargoContext::ReadOutputArgumentsInternal
+   89   604 [  1]   sqllang!CUDXR_ExternalScript::ProcessOutputArguments
+  120  1271 [  0] sqllang!CUDXR_ExternalScript::PullRow
+
+
+
+
+
+
+sp_executesql invalid col
+00 000000f1`ea0f62d0 00007ff9`5a52ef53 KERNELBASE!RaiseException+0x68
+01 000000f1`ea0f63b0 00007ff9`4cfc5479 MSVCR120!_CxxThrowException+0xb3 [f:\dd\vctools\crt\crtw32\eh\throw.cpp @ 154] 
+02 000000f1`ea0f6420 00007ff9`4cfc52f4 sqldk!ExceptionBackout::GetCurrentException+0x385
+03 000000f1`ea0f6600 00007ff9`4cfc4f9a sqldk!ex_raise2+0x52f
+04 000000f1`ea0f6930 00007ff9`31b1149a sqldk!ex_raise+0xc4
+05 000000f1`ea0f69b0 00007ff9`3175b18b sqllang!CSQLSource::FCompile+0x230f
+06 000000f1`ea0f9090 00007ff9`3175b0c1 sqllang!CSQLSource::FCompWrapper+0xce
+07 000000f1`ea0f9160 00007ff9`323f486b sqllang!CSQLSource::Transform+0x556
+08 000000f1`ea0f9230 00007ff9`324325b9 sqllang!CSQLSource::Compile+0x23b
+09 000000f1`ea0f9300 00007ff9`3175ba8c sqllang!CStmtPrepQuery::Init+0x889
+0a 000000f1`ea0f98f0 00007ff9`3175aa08 sqllang!CCompPlan::FCompileStep+0x1f17
+0b 000000f1`ea0f9a50 00007ff9`3175b18b sqllang!CSQLSource::FCompile+0x18e1
+0c 000000f1`ea0fc130 00007ff9`3175b0c1 sqllang!CSQLSource::FCompWrapper+0xce
+0d 000000f1`ea0fc200 00007ff9`31731aab sqllang!CSQLSource::Transform+0x556
+0e 000000f1`ea0fc2d0 00007ff9`323dccad sqllang!CSQLSource::Execute+0x3b0
+0f 000000f1`ea0fc470 00007ff9`323e9bac sqllang!ExecuteSql+0x93d
+10 000000f1`ea0fcff0 00007ff9`323e923c sqllang!CSpecProc::ExecuteSpecial+0x15c
+11 000000f1`ea0fd0f0 00007ff9`31b102f0 sqllang!CXProc::Execute+0x10c
+12 000000f1`ea0fd6e0 00007ff9`3242657d sqllang!CSQLSource::Execute+0xab8
+13 000000f1`ea0fd880 00007ff9`32425f81 sqllang!CStmtExecProc::XretLocalExec+0x26e
+14 000000f1`ea0fd900 00007ff9`32422cd8 sqllang!CStmtExecProc::XretExecExecute+0x481
+15 000000f1`ea0fe0b0 00007ff9`3173105a sqllang!CXStmtExecProc::XretExecute+0x38
+16 000000f1`ea0fe0f0 00007ff9`31732553 sqllang!CMsqlExecContext::ExecuteStmts<1,1>+0x40d
+17 000000f1`ea0fe230 00007ff9`31731bf1 sqllang!CMsqlExecContext::FExecute+0xa9e
+18 000000f1`ea0fe560 00007ff9`3173a41b sqllang!CSQLSource::Execute+0x983
+19 000000f1`ea0fe700 00007ff9`3173f692 sqllang!process_request+0xe61
+1a 000000f1`ea0fecd0 00007ff9`3173f7a3 sqllang!process_commands_internal+0x2df
+1b 000000f1`ea0fed50 00007ff9`4cfa540d sqllang!process_messages+0x253
+1c 000000f1`ea0fef60 00007ff9`4cfa5905 sqldk!SOS_Task::Param::Execute+0x231
+1d 000000f1`ea0ff560 00007ff9`4cfa555d sqldk!SOS_Scheduler::RunTask+0xaa
+1e 000000f1`ea0ff5d0 00007ff9`4cfc3d58 sqldk!SOS_Scheduler::ProcessTasks+0x3cd
+1f 000000f1`ea0ff6b0 00007ff9`4cfc3f40 sqldk!SchedulerManager::WorkerEntryPoint+0x2a1
+20 000000f1`ea0ff780 00007ff9`4cfc3ec7 sqldk!SystemThread::RunWorker+0x8f
+21 000000f1`ea0ff7b0 00007ff9`4cfc4498 sqldk!SystemThreadDispatcher::ProcessWorker+0x2de
+22 000000f1`ea0ff860 00007ff9`7e513f84 sqldk!SchedulerManager::ThreadEntryPoint+0x1d8
+23 000000f1`ea0ff910 00007ff9`7f2613b1 KERNEL32!BaseThreadInitThunk+0x14
+24 000000f1`ea0ff940 00000000`00000000 ntdll!RtlUserThreadStart+0x21
+
+
+sqllang!CXStmtQuery::ErsqExecuteQuery:
+00007ff8`d22d27f0 4c8bdc          mov     r11,rsp
+0:099> wt -l 4
+Tracing sqllang!CXStmtQuery::ErsqExecuteQuery to return address 00007ff8`d22d2d25

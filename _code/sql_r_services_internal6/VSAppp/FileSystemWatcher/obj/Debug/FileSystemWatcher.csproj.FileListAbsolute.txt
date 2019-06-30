@@ -1,0 +1,12 @@
+W:\nielsb-work\GitHub-Repos\nielsberglund.com\code\sql_r_services_internal6\VSAppp\FileSystemWatcher\bin\Debug\FileSystemWatcher.exe.config
+W:\nielsb-work\GitHub-Repos\nielsberglund.com\code\sql_r_services_internal6\VSAppp\FileSystemWatcher\bin\Debug\FileSystemWatcher.exe
+W:\nielsb-work\GitHub-Repos\nielsberglund.com\code\sql_r_services_internal6\VSAppp\FileSystemWatcher\bin\Debug\FileSystemWatcher.pdb
+W:\nielsb-work\GitHub-Repos\nielsberglund.com\code\sql_r_services_internal6\VSAppp\FileSystemWatcher\obj\Debug\FileSystemWatcher.csprojResolveAssemblyReference.cache
+W:\nielsb-work\GitHub-Repos\nielsberglund.com\code\sql_r_services_internal6\VSAppp\FileSystemWatcher\obj\Debug\FileSystemWatcher.exe
+W:\nielsb-work\GitHub-Repos\nielsberglund.com\code\sql_r_services_internal6\VSAppp\FileSystemWatcher\obj\Debug\FileSystemWatcher.pdb
+W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sql_r_services_internal6\VSAppp\FileSystemWatcher\bin\Debug\FileSystemWatcher.exe.config
+W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sql_r_services_internal6\VSAppp\FileSystemWatcher\bin\Debug\FileSystemWatcher.exe
+W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sql_r_services_internal6\VSAppp\FileSystemWatcher\bin\Debug\FileSystemWatcher.pdb
+W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sql_r_services_internal6\VSAppp\FileSystemWatcher\obj\Debug\FileSystemWatcher.csprojResolveAssemblyReference.cache
+W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sql_r_services_internal6\VSAppp\FileSystemWatcher\obj\Debug\FileSystemWatcher.exe
+W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sql_r_services_internal6\VSAppp\FileSystemWatcher\obj\Debug\FileSystemWatcher.pdb

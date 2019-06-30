@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<event_sessions>  
+ <event_session name="miscEvents" maxMemory="1" dispatchLatency="1" MaxDispatchLatency="2 SECONDS">  
+    <event package="SQLSatellite" name="connection_accept" />
+    <event package="SQLSatellite" name="satellite_authentication_completion" />  
+    <event package="SQLSatellite" name="extensibility_session_snapshot" />  
+    <target package="package0" name="event_file">  
+      <parameter name="filename" value="..\..\..\..\..\..\..\..\..\..\ExtLogs\bxlserver2.xel" />  
+      <parameter name="max_file_size" value="10" />  
+      <parameter name="max_rollover_files" value="10" />  
+    </target>  
+  </event_session>  
+</event_sessions>

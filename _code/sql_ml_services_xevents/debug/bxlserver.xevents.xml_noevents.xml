@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<event_sessions>  
+ <event_session name="miscEvents" maxMemory="1" dispatchLatency="1" MaxDispatchLatency="2 SECONDS">  
+    <event package="SQLSatellite" name="connection_accept" />
+    <event package="SQLSatellite" name="satellite_authentication_completion" />  
+    <event package="SQLSatellite" name="extensibility_session_snapshot" />  
+    <event package="SQLSatellite" name="external_resource_pool" />  
+    <event package="SQLSatellite" name="extensibility_error_ring_buffer_record" />  
+    <event package="SQLSatellite" name="extensibility_session_snapshot" />
+    <event package="SQLSatellite" name="satellite_unexpected_message_received" />
+    <event package="SQLSatellite" name="stack_trace" />
+    <event package="SQLSatellite" name="satellite_message_ring_buffer_record" />
+    <event package="SQLSatellite" name="satellite_sessionId_mismatch" />
+    <event package="SQLSatellite" name="satellite_invalid_sized_message" />
+    <event package="SQLSatellite" name="satellite_message_version_mismatch" />
+    <event package="SQLSatellite" name="satellite_partial_message" />
+    <event package="SQLSatellite" name="satellite_message_coalesced" />
+    <event package="SQLSatellite" name="failed_launching" />
+    <event package="SQLSatellite" name="satellite_messaging" />
+    <event package="SQLSatellite" name="satellite_authentication_completion" />
+    <target package="package0" name="event_file">  
+      <parameter name="filename" value="..\..\..\..\..\..\..\..\..\..\ExtLogs\bxlserver2.xel" />  
+      <parameter name="max_file_size" value="10" />  
+      <parameter name="max_rollover_files" value="10" />  
+    </target>  
+  </event_session>  
+</event_sessions>

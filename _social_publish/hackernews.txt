@@ -1,0 +1,230 @@
+Week 40: Kafka and debugging KSQL, Flink, MS Ignite sessions, and other topics
+http://www.nielsberglund.com/2018/10/07/interesting-stuff---week-40/
+
+
+
+Wow! Docker for Windows and SQL Server 2019 on Linux What a Combination
+http://www.nielsberglund.com/2018/09/29/sql-server-2019-for-linux-in-docker-on-windows/
+
+
+
+SQL Server: Performance and sp_execute_external_script
+http://www.nielsberglund.com/2018/03/21/microsoft-sql-server-r-services---sp_execute_external_script---iii/
+
+
+SQL Server: How does prameters work in sp_execute_external_script
+http://www.nielsberglund.com/2018/03/11/microsoft-sql-server-r-services---sp_execute_external_script---ii/
+
+
+sp_execute_external_script, entry point into SQL Server external engines
+http://www.nielsberglund.com/2018/03/07/microsoft-sql-server-r-services---sp_execute_external_script---i/
+
+
+
+What is that Snake (Python) doing in my SQL Server Database?
+http://www.nielsberglund.com/2017/04/20/sql-server-2017---python-executing-inside-sql-server/
+
+
+SQL Server: Facebook Prophet and SQL Server Machine Learning Services
+http://www.nielsberglund.com/2017/05/20/facebook-prophet-and-microsoft-r-server/
+How to run Facebook Prophet inside SQL Server Machine Learning Services
+
+
+Interesting last week: Azure Databricks, Kafka Streams, SQL 2019
+http://www.nielsberglund.com/2018/09/30/interesting-stuff---week-39/
+We look at some of the interesting stuff from Week 39.
+
+SQL Server: Data comes back from SqlSatellite, what happens.
+http://www.nielsberglund.com/2018/01/03/microsoft-sql-server-r-services---internals-xvii/
+We look at what happens inside SQL Server when data is returned from SqlSatellite.
+
+
+Binary eXchange Language, and data coming back from SqlSatellite
+http://www.nielsberglund.com/2017/12/24/microsoft-sql-server-r-services---internals-xvi/
+A look at the format of data coming back to SQL Server from the SqlSatellite.
+
+
+Send messages to RabbitMQ from inside SQL Server using SQLCLR
+http://www.nielsberglund.com/2017/02/11/rabbitmq---sql-server/
+Here we look at how we can send messages from SQL Server to RabbitMQ by using SQLCLR assemblies.
+
+
+SQL Server: Binary eXchange Language & Packet Sizes
+http://www.nielsberglund.com/2017/12/02/microsoft-sql-server-r-services---internals-xv/
+More about Binary eXchange Language and packet sizes.
+
+
+SQL Server: Move over TDS, Binary eXchange Language is here! 
+http://www.nielsberglund.com/2017/11/25/microsoft-sql-server-r-services---internals-xiv/
+We look at what the Binary eXchange Language is in SQL Server Machine Learning Services
+
+
+When does SQL statements get executed when we run sp_execute_external_script
+http://www.nielsberglund.com/2017/11/11/microsoft-sql-server-r-services---internals-xiii/
+In this post we look at when SQL statements are executed when executing external scripts?
+
+SQL Server 2019 Public Preview New & Interesting Features
+http://www.nielsberglund.com/2018/09/24/what-is-new-in-sql-server-2019-public-preview/
+A very initial investigation of what is new in SQL Server 2019 Machine Learning Services.
+
+
+Week 39: Azure Databricks Delta, Kafka streams, SQL Server 2019, and other topics!
+http://www.nielsberglund.com/2018/09/30/interesting-stuff---week-39/
+We look at some of the interesting stuff from Week 39.
+
+
+Goodness: Docker for Windows and SQL Server 2019 for Linux 
+http://www.nielsberglund.com/2018/09/29/sql-server-2019-for-linux-in-docker-on-windows/
+We look at how to run SQL Server 2019 for Linux in a Docker container on a Windows machine.
+
+Kafka streams, Azure Databricks Delta, SQL Server 2019, and other topics!
+http://www.nielsberglund.com/2018/09/30/interesting-stuff---week-39/
+We look at some of the interesting stuff from Week 39.
+
+
+TCP Communication between SQL Server and SqlSatellite in SQL ML Services
+http://www.nielsberglund.com/2017/10/31/microsoft-sql-server-r-services---internals-xii/
+What about the TCP packets sent between SQL Server and SqlSatellite?
+
+
+SQL Server 2019 for Linux, Docker for Windows and Azure Data Studio!
+http://www.nielsberglund.com/2018/09/29/sql-server-2019-for-linux-in-docker-on-windows/
+We look at how to run SQL Server 2019 for Linux in a Docker container on a Windows machine.
+
+
+Run SQL Server 2019 for Linux in a Docker Container on a Windows Machine
+http://www.nielsberglund.com/2018/09/29/sql-server-2019-for-linux-in-docker-on-windows/
+We look at how to run SQL Server 2019 for Linux in a Docker container on a Windows machine.
+
+
+Run SQL Server 2019 for Linux in a Docker container on a Windows machine.
+http://www.nielsberglund.com/2018/09/29/sql-server-2019-for-linux-in-docker-on-windows/
+We look at how to run SQL Server 2019 for Linux in a Docker container on a Windows machine.
+
+We use WireShark to look at strange TCP packets SQL Server Sends
+http://www.nielsberglund.com/2017/10/20/microsoft-sql-server-r-services---internals-xi/
+
+
+Use WinDbg and WireShark to see how SQL Server sends data to the SqlSatellite
+http://www.nielsberglund.com/2017/08/29/microsoft-sql-server-r-services---internals-x/
+Here we look at how data is sent to SqlSatellite. We use WinDbg, WireShark and other cool stuff!
+
+SqlSatellite and communication between SQL ML Services components
+http://www.nielsberglund.com/2017/08/18/microsoft-sql-server-r-services---internals-ix/
+
+What are those files and sub-directories created when executing sp_execute_external_script.
+http://www.nielsberglund.com/2017/07/11/microsoft-sql-server-r-services---internals-vii/
+What are the files and sub-directories created when we execute sp_execute_external_script.
+
+
+What are these strange directories Launchpad service creates?
+http://www.nielsberglund.com/2017/05/16/microsoft-sql-server-r-services---internals-vi/
+Directories created by the launchpad service in SQL ML Services when executing an external script.
+
+
+The Launchpad service, RTerm processes and parallelism in SQL ML Services
+http://www.nielsberglund.com/2017/05/01/microsoft-sql-server-r-services---internals-v/
+About the launchpad service and RTerm processes in relation to parallelism in SQL Server R Services.
+
+Yes, you can run Kafka in Windows Subsystem for Linux
+http://www.nielsberglund.com/2018/07/10/install-confluent-platform-kafka-on-windows/
+A look at how we can run Kafka on Windows
+
+A look at what happens in SQL Server when SqlSatellite returns data
+http://www.nielsberglund.com/2018/01/03/microsoft-sql-server-r-services---internals-xvii/
+We look at the inner workings in SQL Serever when data is returned by the SqlSatellite
+
+How output parameters are handled in SQL Server Machine Learning Services.
+http://www.nielsberglund.com/2018/01/10/microsoft-sql-server-r-services---internals-xviii/
+We look at how output parameters are handled in SQL Server Machine Learning Services.
+
+All about the process pool, process creation in SQL Server ML Services
+http://www.nielsberglund.com/2017/04/23/microsoft-sql-server-r-services---internals-iv/
+We are looking in detail about the Launchpads process pool and process creation in SQL Server Machine Learning Services
+
+How to Install R and Python in SQL Server 2017 ML Services
+http://www.nielsberglund.com/2017/03/04/microsoft-sql-server-2016-r-services-installation/
+We look at how the installation works if we want to run Python and R in SQL Server 2017 Machine Learning Services.
+
+Launchpad and its processes inside SQL Server ML Services
+http://www.nielsberglund.com/2017/04/13/microsoft-sql-server-r-services---internals-iii/
+A deep-dive into Launchpad Service and processes using #WinDbg and #processexplorer
+
+Execute Java from SQL Server 2019 ML Services
+http://www.nielsberglund.com/2018/09/24/what-is-new-in-sql-server-2019-public-preview/
+A first look at what is new in SQL Server 2019 Machine Learning Services. Yes, we can now execute Java code from inside SQL Server.
+
+Use SQL Server Extended Events (XEvents) in SQL Server Machine Learning Services
+http://www.nielsberglund.com/2018/04/08/sql-server-machine-learning-services-and-extended-events/
+A look at how we can setup XEvents for SQL Server Machine Learning Services
+
+
+Week 38: Coll Stuff about Kafka and Donuts, Docker on Windows, and MSIginte
+http://www.nielsberglund.com/2018/09/23/interesting-stuff---week-38/
+We look at some of the interesting stuff from Week 38
+
+Kafka and Donuts, Docker on Windows, #MSIgnite, Databricks, Interesting Week 38:
+http://www.nielsberglund.com/2018/09/23/interesting-stuff---week-38/
+A roundup of things I found interesting the week just gone by.
+
+
+SQL Server ML Services and Launchpad
+http://www.nielsberglund.com/2017/04/02/microsoft-sql-server-r-services---internals-ii/
+We take a look at the Launchpad service using WinDbg
+
+
+How Do I Install My Favorite R Package in SQL Server Machine Learning Services?
+http://www.nielsberglund.com/2018/06/23/installing-r-packages-in-sql-server-machine-learning-services---i/
+
+SQL Server Machine Learning Services - Internals I
+http://www.nielsberglund.com/2017/03/18/microsoft-sql-server-r-services---internals-i/
+First post in a series about the internals of SQL Server Machine Learning Services
+
+How to Run Facebook Prophet Inside SQL Server Machine Learning Services
+http://www.nielsberglund.com/2017/05/20/facebook-prophet-and-microsoft-r-server/
+We look at using Facebook Prophet inside SQL Server Machine Learning Services
+
+Why XACT_ABORT is the Devils Tool in SQL Server
+http://www.nielsberglund.com/2017/01/08/abort-abort-we-are-xact_aborting-or-are-we/
+Discussion about the pitfalls of using XACT_ABORT in SQL Server
+
+Install Machine Learning Services in SQL Server
+http://www.nielsberglund.com/2017/03/04/microsoft-sql-server-2016-r-services-installation/
+How to install In-Database Analytics in  SQL Server 2016 and 2017
+
+Install Kafka on Windows in Windows Subsystem for Linux
+http://www.nielsberglund.com/2018/07/10/install-confluent-platform-kafka-on-windows/
+A look at how we can run Kafka on Windows
+
+What are Doomed Transactions in SQL Server
+http://www.nielsberglund.com/2017/01/27/doomed-we-are-all-doomed-i-say/
+A look at what doomed transactions are in SQL Server
+
+Installing R Packages in SQL Server Machine Learning Services via RevoScaleR
+http://www.nielsberglund.com/2018/06/30/installing-r-packages-in-sql-server-machine-learning-services---ii/
+We look at how we can install R packages into SQL Server Machine Learning Services using RevoScaleR functionality.
+
+How to Install R Packages in SQL Server using R Package Managers
+http://www.nielsberglund.com/2018/06/23/installing-r-packages-in-sql-server-machine-learning-services---i/
+We look at how we can install R packages into SQL Server Machine Learning Services using R package managers.
+
+
+How do I Install SQL Server Machine Learning Services
+http://www.nielsberglund.com/2017/03/04/microsoft-sql-server-2016-r-services-installation/
+How to install In-Database Analytics in  SQL Server 2016 and 2017
+
+How Transactions Work in SQL Server
+http://www.nielsberglund.com/2011/09/11/transactions-in-sql-server-take-2956/
+We look at transactions and SQL Server (again ...)
+
+SQL Server Error Handling Gotchas
+http://www.nielsberglund.com/2016/12/31/sql-server-error-handling-gotchas/
+Error handling in SQL Server, how hard can it be? Quite hard as it turns out ...
+
+What is that Snake doing in my Database?
+http://www.nielsberglund.com/2017/04/20/sql-server-2017---python-executing-inside-sql-server/
+We look at Python in SQL Server Machine Learning Services
+
+Kafka and KSQL, Azure Data Lake Storage Gen2, and other topics week 37!
+http://www.nielsberglund.com/2018/09/16/interesting-stuff---week-37/
+A roundup of things I found interesting the week just gone by.

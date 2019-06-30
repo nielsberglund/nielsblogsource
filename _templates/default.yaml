@@ -1,0 +1,48 @@
+# Default template
+---
+type: post
+layout: "post"
+title: ${1}
+author: nielsb
+date: 
+comments: true
+highlight: true
+draft: true
+categories:
+  - 
+tags:
+  -
+description: 
+keywords:
+  -   
+---
+
+
+<!--more-->
+
+
+![](/images/posts/<image_name_incl_ext>)
+
+**Figure 1:** **
+
+
+## ~ Finally
+
+If you have comments, questions etc., please comment on this post or [ping][ma] me.
+
+[ma]: mailto:niels.it.berglund@gmail.com
+[mp]: https://blog.acolyer.org
+[iq]: https://www.infoq.com/
+[ew]: http://sqlonice.com/
+[re]: http://blog.revolutionanalytics.com
+[sqsk]: https://www.sqlskills.com
+
+
+<!-- [postref]: {{< relref "file_name_incl_ext" >}} -->
+
+<!-- [series1]: [SQL Server R Services](/sql_server_2k16_r_services) -->
+<!-- [series2]: [Install R Packages in SQL Server ML Services](/sql_server_ml_services_install_packages) -->
+<!-- [series3]: [sp_execute_external_script and SQL Server Compute Context](/spees_and_sql_compute_context) -->
+
+
+<!-- [findstr]: findstr /I <word_to_find> * -->

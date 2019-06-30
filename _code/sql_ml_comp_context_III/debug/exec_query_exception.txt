@@ -1,0 +1,53 @@
+KERNELBASE!RaiseException+0x68
+MSVCR120!_CxxThrowException+0xb3 [f:\dd\vctools\crt\crtw32\eh\throw.cpp @ 154] 
+sqldk!ExceptionBackout::GetCurrentException+0x38f
+sqldk!ex_raise2+0x4fb
+sqldk!ex_raise+0xc4
+sqlTsEs!ESArithErrorHandler+0x13a
+sqlTsEs!CTEsArith<3,56,56,1,0>::RsltArithArgArg+0xc2
+sqlTsEs!CEsExec::GeneralEval+0x1e9
+sqllang!CXStmtQuery::ErsqExecuteQuery+0x5a2
+sqllang!CXStmtSelect::XretExecute+0x2f2
+sqllang!CMsqlExecContext::ExecuteStmts<1,1>+0x4c5
+sqllang!CMsqlExecContext::FExecute+0xaae
+sqllang!CSQLSource::Execute+0xa2c
+sqllang!process_request+0xe52
+sqllang!process_commands_internal+0x289
+sqllang!process_messages+0x213
+sqldk!SOS_Task::Param::Execute+0x231
+sqldk!SOS_Scheduler::RunTask+0xad
+sqldk!SOS_Scheduler::ProcessTasks+0x3cd
+sqldk!SchedulerManager::WorkerEntryPoint+0x2a1
+sqldk!SystemThread::RunWorker+0x8f
+sqldk!SystemThreadDispatcher::ProcessWorker+0x2e7
+sqldk!SchedulerManager::ThreadEntryPoint+0x1d8
+KERNEL32!BaseThreadInitThunk+0x14
+ntdll!RtlUserThreadStart+0x21
+
+
+00 00000014`7d3fd130 00007ffa`7611ef53 KERNELBASE!RaiseException+0x68
+01 00000014`7d3fd210 00007ffa`4e97ab27 MSVCR120!_CxxThrowException+0xb3 [f:\dd\vctools\crt\crtw32\eh\throw.cpp @ 154] 
+02 00000014`7d3fd280 00007ffa`4e97a7a0 sqldk!ExceptionBackout::GetCurrentException+0x38f
+03 00000014`7d3fd460 00007ffa`4e97a46a sqldk!ex_raise2+0x4fb
+04 00000014`7d3fd790 00007ffa`4d73c33a sqldk!ex_raise+0xc4
+05 00000014`7d3fd810 00007ffa`4d7a0fca sqlTsEs!ESArithErrorHandler+0x13a
+06 00000014`7d3fd860 00007ffa`4d6f4e97 sqlTsEs!CTEsArith<3,56,56,1,0>::RsltArithArgArg+0xc2
+07 00000014`7d3fd8c0 00007ffa`331e61f4 sqlTsEs!CEsExec::GeneralEval+0x1e9
+08 00000014`7d3fda20 00007ffa`331e6349 sqllang!CXStmtQuery::ErsqExecuteQuery+0x5a2
+09 00000014`7d3fdba0 00007ffa`331e48d0 sqllang!CXStmtSelect::XretExecute+0x2f2
+0a 00000014`7d3fdc70 00007ffa`331e4333 sqllang!CMsqlExecContext::ExecuteStmts<1,1>+0x4c5
+0b 00000014`7d3fddc0 00007ffa`331e3684 sqllang!CMsqlExecContext::FExecute+0xaae
+0c 00000014`7d3fe0f0 00007ffa`331ecebd sqllang!CSQLSource::Execute+0xa2c
+0d 00000014`7d3fe400 00007ffa`331ebd02 sqllang!process_request+0xe52
+0e 00000014`7d3feb60 00007ffa`331ebaf3 sqllang!process_commands_internal+0x289
+0f 00000014`7d3fec20 00007ffa`4e95539d sqllang!process_messages+0x213
+10 00000014`7d3fee40 00007ffa`4e955168 sqldk!SOS_Task::Param::Execute+0x231
+11 00000014`7d3ff440 00007ffa`4e954ddd sqldk!SOS_Scheduler::RunTask+0xad
+12 00000014`7d3ff4b0 00007ffa`4e978ec8 sqldk!SOS_Scheduler::ProcessTasks+0x3cd
+13 00000014`7d3ff5a0 00007ffa`4e978fd0 sqldk!SchedulerManager::WorkerEntryPoint+0x2a1
+14 00000014`7d3ff670 00007ffa`4e978ae7 sqldk!SystemThread::RunWorker+0x8f
+15 00000014`7d3ff6a0 00007ffa`4e9792d9 sqldk!SystemThreadDispatcher::ProcessWorker+0x2e7
+*** ERROR: Symbol file could not be found.  Defaulted to export symbols for C:\WINDOWS\System32\KERNEL32.DLL - 
+16 00000014`7d3ff740 00007ffa`90ee24e4 sqldk!SchedulerManager::ThreadEntryPoint+0x1d8
+17 00000014`7d3ff7f0 00007ffa`91bf2b71 KERNEL32!BaseThreadInitThunk+0x14
+18 00000014`7d3ff820 00000000`00000000 ntdll!RtlUserThreadStart+0x21
