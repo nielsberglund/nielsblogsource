@@ -1,4 +1,12 @@
-﻿Blog-post: "Interesting Stuff - Week 26, 2019".
+﻿Blog-post: "Interesting Stuff - Week 27, 2019".
+Kafka, Windows Subsystem for Linux, SQL for streaming data, and other interesting topics.
+https://nielsberglund.com/2019/07/07/interesting-stuff---week-27-2019/
+#apachekafka #mvpbuzz #streamingsql
+
+via: @confluentinc @rmoff @adriancolyer
+
+
+Blog-post: "Interesting Stuff - Week 26, 2019".
 Kafka & microservices, Kafka client for .NET, SQL Server 2019 and other interesting topics.
 https://nielsberglund.com/2019/06/30/interesting-stuff---week-26-2019/
 #apachekafka #dotnet #sqlserver #sqlserver2019
