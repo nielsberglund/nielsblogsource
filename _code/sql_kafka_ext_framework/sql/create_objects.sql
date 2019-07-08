@@ -18,21 +18,26 @@ CREATE TABLE dbo.tb_GamePlay
   GameID int NOT NULL,
   WagerAmount decimal(10, 2) NOT NULL,
   PayoutAmount decimal(10, 2) NOT NULL,
-  EventTime datetime2 DEFAULT SYSUTCDATETIME()
+  EventTime datetime2 NOT NULL
 );
 GO
 
 CREATE PROCEDURE dbo.pr_LogWager @UserID INT,
                                  @GameID INT,
                                  @WagerAmount decimal(10, 2),
-                                 @PayoutAmount decimal(10, 2)
+                                 @PayoutAmount decimal(10, 2),
+                                 @EventTime datetime2
 AS
 BEGIN
+  IF(@EventTime IS NULL)
+  BEGIN
+    SET @EventTime = SYSUTCDATETIME();
+  END 
 
   BEGIN TRY
     BEGIN TRAN
-      INSERT INTO dbo.tb_GamePlay(UserID, GameID, WagerAmount, PayoutAmount)
-      VALUES(@UserID, @GameID, @WagerAmount, @PayoutAmount);
+      INSERT INTO dbo.tb_GamePlay(UserID, GameID, WagerAmount, PayoutAmount, EventTime)
+      VALUES(@UserID, @GameID, @WagerAmount, @PayoutAmount, @EventTime);
       --do some more tx "stuff" here
     COMMIT TRAN;
 

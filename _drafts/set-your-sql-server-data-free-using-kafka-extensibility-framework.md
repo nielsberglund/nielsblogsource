@@ -55,7 +55,7 @@ CREATE TABLE dbo.tb_GamePlay
   GameID int NOT NULL,
   WagerAmount decimal(10, 2) NOT NULL,
   PayoutAmount decimal(10, 2) NOT NULL,
-  EventTime datetime2 DEFAULT SYSUTCDATETIME()
+  EventTime datetime2 NOT NULL
 );
 GO
 
@@ -75,15 +75,19 @@ When the player spins, etc., the gameplay goes via various services, and finally
 CREATE PROCEDURE dbo.pr_LogWager @UserID INT,
                                  @GameID INT,
                                  @WagerAmount decimal(10, 2),
-                                 @PayoutAmount decimal(10, 2)
+                                 @PayoutAmount decimal(10, 2),
+                                 @EventTime datetime2
 AS
 BEGIN
-
+  IF(@EventTime IS NULL)
+  BEGIN
+    SET @EventTime = SYSUTCDATETIME();
+  END
   BEGIN TRY
     BEGIN TRAN
       INSERT INTO dbo.tb_GamePlay(UserID, GameID, WagerAmount, 
-                                  PayoutAmount)
-      VALUES(@UserID, @GameID, @WagerAmount, @PayoutAmount);
+                                  EventTime, PayoutAmount)
+      VALUES(@UserID, @GameID, @WagerAmount, @PayoutAmount, EventTime);
       --do more tx "stuff" here
     COMMIT TRAN;
 
@@ -165,6 +169,12 @@ Obviously it should publish to Kafka, but what should it publish? In this case i
          "description": "Amount paid out (win)",
          "type": "number"
       },
+      
+      "eventTime": {
+         "description": "Time when the wager happened",
+         "type": "string",
+         "format": "date-time"
+      },
     
      
    },
@@ -175,7 +185,52 @@ Obviously it should publish to Kafka, but what should it publish? In this case i
 ```
 **Code Snippet 3:** *Wager Schema*
 
-We see in *Code Snippet 3* how the schema for the event looks very much like what we persist to the table in our stored procedure. The only difference is that we also define an `eventTypeId`. This can be used when we do stream processing to filter out various types of events.
+We see in *Code Snippet 3* how the schema for the event looks very much like what we persist to the table in our stored procedure. The only difference is that we also define an `eventTypeId`, which can be used when we do stream processing to filter out various types of events.
+
+Even though the hook-point can be just a few lines of T-SQL code, best practice is to define an event specific stored procedure:
+
+``` sql
+CREATE PROCEDURE dbo.pr_GenerateAndPublishWagerEvent @UserID INT,
+                                          @GameID INT,
+                                          @WagerAmount decimal(10, 2),
+                                          @PayoutAmount decimal(10, 2),
+                                          @EventTime datetime2
+AS
+BEGIN
+  DECLARE @msg nvarchar(max);
+
+  --generate the event
+  SET @msg =  (SELECT 1500 AS eventTypeId,
+                 @UserId AS userId,
+                 @GameId AS gameId,
+                 @WagerAmount AS wagerAmount,
+                 @PayoutAmount AS payoutAmount,
+                 @EventTime AS eventTime
+     FOR JSON PATH, WITHOUT_ARRAY_WRAPPER);
+  -- call "something" to publish to Kafka
+END
+```
+**Code Snippet 4:** *Hook Point Procedure*
+
+The code we see in *Code Snippet 4* is the start of the hook-point procedure. We see how the procedure generates the wager event by using the T-SQL `FOR JSON` syntax. The generation of the event is followed by a placeholder for the publish call.
+
+> **NOTE:** when you look at the hook-point procedure it may seem like overenginnering as the call is basically a pass-through from the `dbo.pr_LogWager` procedure. The reason we have a specific procedure is that in the "real world" you most likely do more things inside the procedure.
+
+So, the placeholder for the publish call; that is where we call into some Java code that publishes to Kafka. Let us now look at that code.
+
+## Java & Kafka
+
+
+
+
+
+
+
+and we look at the publish call later in this post.
+
+
+
+
 
 
 
