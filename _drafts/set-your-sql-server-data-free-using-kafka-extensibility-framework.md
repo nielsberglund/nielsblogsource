@@ -128,6 +128,79 @@ The idea with stored procedure hook-points is that at a place in a stored proced
 
 > **NOTE:** With the definition of a hook-point above, you may ask what the difference is between a hook-point and an ordinary procedure call? There is no real difference; the way I see it is that the hook-point executes code which is, to a large degree, un-related to what the procedure does. Oh, and the name "hook-point" sounds cool.
 
+So, where do we insert the hook-point in our procedure we see in *Code Snippet 2*? As the `pr_LogWager` is transactional we insert the hook-point after the commit so we do not publish any messages for rolled back wagers. Now we know where the hook-point should be, but what should it do?
+
+Obviously it should publish to Kafka, but what should it publish? In this case it should publish an event, so the hook-point also needs to generate the event. What the event should look like is very much up to you, for now let us assume the event looks something like so:
+
+``` json
+{
+   "$schema": "http://json-schema.org/draft-04/schema#",
+   "title": "Wager",
+   "description": "A placed wager",
+   "type": "object",
+  
+   "properties": {
+  
+      "eventTypeId": {
+         "description": "Unique identifier for the event type",
+         "type": "integer"
+      },
+
+      "userId": {
+         "description": "The unique identifier for a user",
+         "type": "integer"
+      },
+
+      "userId": {
+         "description": "The unique identifier for a game",
+         "type": "integer"
+      },
+
+      "wagerAmount": {
+         "description": "Amount wagered",
+         "type": "number"
+      },
+
+      "payoutAmount": {
+         "description": "Amount paid out (win)",
+         "type": "number"
+      },
+    
+     
+   },
+  
+   "required": ["eventTypeId", "userId", "userId", 
+                "wagerAmount", "payoutAmount"]
+}
+```
+**Code Snippet 3:** *Wager Schema*
+
+We see in *Code Snippet 3* how the schema for the event looks very much like what we persist to the table in our stored procedure. The only difference is that we also define an `eventTypeId`. This can be used when we do stream processing to filter out various types of events.
+
+
+
+
+
+
+
+``` sql
+BEGIN TRY
+  BEGIN TRAN
+    -- insert statement
+    --do more tx "stuff" here
+  COMMIT TRAN;
+
+  --insert hook-point here
+
+END TRY
+
+---
+
+END  
+GO
+```
+**Code Snippet 3:** *Hook Point Placement*
+
 
 
 
