@@ -272,7 +272,15 @@ In order to be able to publish to Kafka we need a Java Kafka client, and we use 
   ...
 </dependencies>
 ```
+**Code Snippet 5:** *Kafka Clients Dependencies*
 
+We see in *Code Snippet 5* the dependency we added to the `pom.xml` file. We are now redy to start to write some code. 
+
+To begin with we create a very basic method which publishes to Kafka:
+
+``` java
+
+```
 
 
 
