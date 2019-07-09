@@ -214,16 +214,74 @@ END
 
 The code we see in *Code Snippet 4* is the start of the hook-point procedure. We see how the procedure generates the wager event by using the T-SQL `FOR JSON` syntax. The generation of the event is followed by a placeholder for the publish call.
 
-> **NOTE:** when you look at the hook-point procedure it may seem like overenginnering as the call is basically a pass-through from the `dbo.pr_LogWager` procedure. The reason we have a specific procedure is that in the "real world" you most likely do more things inside the procedure.
+> **NOTE:** when you look at the hook-point procedure it may seem like overengineering as the call is basically a pass-through from the `dbo.pr_LogWager` procedure. The reason we have a specific procedure is that in the "real world" you most likely do more things inside the procedure.
 
-So, the placeholder for the publish call; that is where we call into some Java code that publishes to Kafka. Let us now look at that code.
+So, the placeholder for the publish call; that is where we call into some Java code that publishes to Kafka. Before we look at the Java code, let us see what the Kafka setup should look like. 
 
-## Java & Kafka
+## Kafka
+
+I have made an assumption in this post that we have Kafka installed "somewhere", and that we can connect to it. If that is not the case, have a look at the [Confluent Platform & Kafka for a .NET Developer on Windows][3] post to see how you can install Kafka in a Docker container.
+
+Now, when we have Kafka installed, let us create two topics:
+
+* `testTopic` - as the name implies, a topic for test. We use it initially just to make sure our Java code works. Create it with 1 partition.
+* `wagers` - this is the topic where we publish wagers to. We create it with 4 partitions.
+
+> **NOTE:** In a future post we will talk more about partitions, and what role they play.
+
+As I did in the [post][3] mentioned above, I create the topics using *Control Center*:
+
+![](/images/posts/sql_kafka_extlang_topics.png)
+
+**Figure 1:** *Create Wagers Topic*
+
+In *Figure 1* we see how I create the `wagers` topic in *Control Centers* *New topic* screen. 
+
+> **NOTE:** If you don't have *Control Center* you can create topics via the command line, and the `kafka-topics --create ...` statement.
+
+When we have the two topics, let us write some Java code.
+
+## Java
+
+> **NOTE:** I am by no means a Java developer so I apologize in advance for simplistic and naive code. Furthermore, the code is by no means production code; no error handling etc., so use it on your own risk.
+
+For this blog post I use *VS Code* together with the *Maven* extension, and you can read more about that in the [SQL Server 2019 & Java with Visual Studio Code][4] post.
+
+To begin with let us:
+
+* Create a empty folder where you want your Java project.
+* Open *VS Code* and open the folder you created above.
+* Create a new *Maven* project, using the archetype `maven-archetype-quickstart`.
+
+During creation of the project you are asked for some properties of the project: `groupId`,  `artifactId`, `version`, and `packageId`. In my project I set them to:
+
+* `groupId`: `com.nielsberglund.sqlserver`.
+* `artifactId`: `SqlToKafka`.
+* `version`: `1.0`.
+* `package`: `kafkapublish`.
+
+In order to be able to publish to Kafka we need a Java Kafka client, and we use the native client from `org.apache.kafka`: `kafka-clients`. To use the client we need to add it as a dependency in the projects `pom.xml` file:
+
+```xml
+<dependencies>
+  <dependency>
+    <groupId>org.apache.kafka</groupId>
+    <artifactId>kafka-clients</artifactId>
+    <version>2.3.0</version>
+  </dependency>
+  ...
+</dependencies>
+```
 
 
 
 
 
+
+
+sql_kafka_extlang_topics.png
+
+Let us now look at that code.
 
 
 and we look at the publish call later in this post.
@@ -301,7 +359,7 @@ If you have comments, questions etc., please comment on this post or [ping][ma] 
 
 [1]: https://docs.microsoft.com/en-us/sql/relational-databases/track-changes/about-change-data-capture-sql-server?view=sql-server-2017
 [2]: https://docs.microsoft.com/en-us/sql/relational-databases/track-changes/about-change-tracking-sql-server?view=sql-server-2017
-[3]:
+[3]: {{< relref "2019-06-18-confluent-platform--kafka-for-the-windows--net-developer.md" >}}
 [4]:
 [5]:
 [6]:
