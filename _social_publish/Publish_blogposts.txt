@@ -1,4 +1,11 @@
-﻿Blog-post: "Interesting Stuff - Week 28, 2019".
+﻿Blog-post: "Set Your SQL Server Data Free with Kafka: Extensibility Framework"
+In this post we look at how we use Java to send data from SQL Server to Kafka.
+https://nielsberglund.com/2019/07/16/set-your-sql-server-data-free-with-kafka-extensibility-framework
+#kafka #VSCode #maven #sqlserver #Java #apachekafka
+@confluentinc @rmoff
+
+
+Blog-post: "Interesting Stuff - Week 28, 2019".
 Kafka, managed SQL Server in the cloud, KSQL training, and other interesting topics.
 https://nielsberglund.com/2019/07/14/interesting-stuff---week-28-2019/
 #apachekafka #Azure #SQLServer
