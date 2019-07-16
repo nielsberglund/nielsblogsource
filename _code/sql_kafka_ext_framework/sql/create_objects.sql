@@ -59,7 +59,7 @@ GO
 
 */
 
-ALTER PROCEDURE dbo.pr_PublishToKafka @EventID int,
+CREATE PROCEDURE dbo.pr_PublishToKafka @EventID int,
                                        @PartitionValue nvarchar(50),
                                        @EventMessage nvarchar(max)
 AS
@@ -102,8 +102,6 @@ BEGIN
                  @EventTime AS eventTime
      FOR JSON PATH, WITHOUT_ARRAY_WRAPPER);
 
-     SELECT @msg;
-  
   EXEC dbo.pr_PublishToKafka @EventID = 1500,
                              @PartitionValue = @UserID,
                              @EventMessage = @msg; 
