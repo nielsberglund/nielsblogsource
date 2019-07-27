@@ -1,4 +1,10 @@
-﻿Blog-post: "Set Your SQL Server Data Free with Kafka: Extensibility Framework"
+﻿Blog-post: "Interesting Stuff - Week 29, 2019".
+Push data to Kafka from SQL Server, data architecture & data architects, plus other interesting topics.
+https://nielsberglund.com/2019/07/21/interesting-stuff---week-29-2019/
+#apachekafka #SQLServer #machinelearning #datascience
+
+
+Blog-post: "Set Your SQL Server Data Free with Kafka: Extensibility Framework"
 In this post we look at how we use Java to send data from SQL Server to Kafka.
 https://nielsberglund.com/2019/07/16/set-your-sql-server-data-free-with-kafka-extensibility-framework
 #kafka #VSCode #maven #sqlserver #Java #apachekafka

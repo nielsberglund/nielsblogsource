@@ -3,7 +3,6 @@ import java.util.Properties;
 
 //import simple producer packages
 import org.apache.kafka.clients.producer.Producer;
-
 import java.sql.Types;
 import java.util.LinkedHashMap;
 
@@ -59,10 +58,7 @@ public class SqlKafka  extends AbstractSqlServerExtensionExecutor
         producer.send(new ProducerRecord<String, String>(topic, partition, message));
         producer.close();
     }
-    
-    
-    
-    
+     
     public static void main( String[] args )
     {
         SqlKafka sq = new SqlKafka();
