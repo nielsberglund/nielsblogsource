@@ -38,7 +38,7 @@ http://www.nielsberglund.com/2019/06/23/interesting-stuff---week-25-2019/
 
 Blog-post: "Confluent Platform & Kafka for a .NET Developer on Windows"
 We look at how to run Confluent Kafka in Docker on a Windows machine and writing .NET Code against it
-http://www.nielsberglund.com/2019/06/18/confluent-platform--kafka-for-a-.net-developer-on-windows/
+https://www.nielsberglund.com/2019/06/18/confluent-platform--kafka-for-a-.net-developer-on-windows/
 #kafka #VSCode #dotnetcore #apachekafka
 
 
@@ -55,7 +55,7 @@ http://www.nielsberglund.com/2019/06/09/interesting-stuff---week-23-2019/
 
 Blog-post: "SQL Server 2019 Extensibility Framework & External Languages"
 We look at SQL Server 2019 Extensibility Framework and Language Extensions and how to create an external language.
-http://www.nielsberglund.com/2019/06/06/sql-server-2019-extensibility-framework--external-languages/
+https://www.nielsberglund.com/2019/06/06/sql-server-2019-extensibility-framework--external-languages/
 #sqlserver2019 #datascience #machinelearning #java #python
 
 
@@ -68,7 +68,7 @@ http://www.nielsberglund.com/2019/06/03/interesting-stuff---week-22-2019/
 
 Blog-post: "Java & SQL Server 2019 Extensibility Framework: The Sequel"
 We look at the implications of the introduction of the Java Language Extension SDK.
-http://www.nielsberglund.com/2019/05/26/java--sql-server-2019-extensibility-framework-the-sequel/
+https://nielsberglund.com/2019/05/26/java--sql-server-2019-extensibility-framework-the-sequel/
 #sqlserver2019 #datascience #machinelearning #java #python #VSCode #Maven
 
 
@@ -169,7 +169,7 @@ via: @adriancolyer @ryanswanstrom
 
 Blog-post: "SQL Server 2019, Java & External Libraries - I"
 We look at how we can deploy Java code to the database, so it can be loaded from there.
-http://www.nielsberglund.com/2019/03/10/sql-server-2019-java--external-libraries---i/
+https://www.nielsberglund.com/2019/03/10/sql-server-2019-java--external-libraries---i/
 #sqlserver2019 #datascience #machinelearning #java #vscode
 
 
@@ -221,7 +221,7 @@ via: @confluentinc @infoq
 
 Blog-post: "SQL Server 2019 & Java with Visual Studio Code"
 We use VS Code to write Java code, and Maven to compile and package.
-http://www.nielsberglund.com/2019/01/17/sql-server-2019--java-with-visual-studio-code/
+https://www.nielsberglund.com/2019/01/17/sql-server-2019--java-with-visual-studio-code/
 #sqlserver2019 #datascience #machinelearning #java #maven #vscode
 
 
@@ -270,7 +270,7 @@ via: @confluentinc @dataartisans @sql_handle @BuckWoodyMSFT
 
 Blog-post: "SQL Server 2019 Extensibility Framework & Java - Passing Data". 
 Look at how to pass data back and forth between SQL Server 2019 and Java.
-http://www.nielsberglund.com/2018/12/08/sql-server-2019-extensibility-framework--java---passing-data/
+https://www.nielsberglund.com/2018/12/08/sql-server-2019-extensibility-framework--java---passing-data/
 #sqlserver2019 #python #rstats #datascience #machinelearning #java
 
 
@@ -283,7 +283,7 @@ via: @confluentinc @databricks @dataArtisans
 
 Blog-post: "SQL Server 2019 Extensibility Framework & Java - Hello World". 
 We look at how we install and enable Java extensions in SQL Server 2019, and a couple of simple Java methods.
-http://www.nielsberglund.com/2018/12/02/sql-server-2019-extensibility-framework--java---hello-world/
+https://nielsberglund.com/2018/12/02/sql-server-2019-extensibility-framework--java---hello-world/
 #sqlserver2019 #python #rstats #datascience #machinelearning #java
 
 
