@@ -1,4 +1,10 @@
-﻿Blog-post: "Interesting Stuff - Week 29, 2019".
+﻿Blog-post: "Interesting Stuff - Week 30, 2019".
+Kafka & Jaeger, SQL Server 2019 Big Data Cluster & Java, and other interesting topics.
+https://nielsberglund.com/2019/07/28/interesting-stuff---week-30-2019/
+#apachekafka #sqlserver2019 #java #jaeger
+
+
+Blog-post: "Interesting Stuff - Week 29, 2019".
 Push data to Kafka from SQL Server, data architecture & data architects, plus other interesting topics.
 https://nielsberglund.com/2019/07/21/interesting-stuff---week-29-2019/
 #apachekafka #SQLServer #machinelearning #datascience
