@@ -1,0 +1,27 @@
+
+
+tear down existing BDC
+
+pip3 install -U requests
+
+uninstall mssqlctl
+pip3 uninstall -r https://private-repo.microsoft.com/python/ctp3.1/mssqlctl/requirements.txt
+
+uninstall azdata
+pip3 uninstall -r https://aka.ms/azdata
+
+install azdata
+pip3 install -r https://aka.ms/azdata
+
+
+azure login
+az login
+
+view regions
+az account list-locations
+
+southafricanorth
+southafricawest
+
+
+ERROR: jupyter-console 6.0.0 has requirement prompt-toolkit<2.1.0,>=2.0.0, but you'll have prompt-toolkit 1.0.16 which is incompatible.
