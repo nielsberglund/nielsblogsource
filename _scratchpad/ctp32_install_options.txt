@@ -1,0 +1,34 @@
+# no ml
+no launchpad etc.
+only mssql directory
+
+# PolyBase Java Connector
+prompted for Java install
+AZUL-OpenJDK-JRE directory in install path
+
+
+# Machine Learning only
+Launchpad, etc. exists. The language extension and SDK in the install\binn path
+
+# Machine learning & Java choose embedded
+Launchpad, etc. exists. The language extension and SDK in the install\binn path
+Azule JDK in the install path
+
+s2k19_ctp32_java.png
+
+s2k19_ctp32_java3.png
+
+# Machine Learning incl. Java custom location
+as with "Machine Learning only"
+
+
+
+
+
+JAVA_HOME: C:\Program Files\Java\jdk1.8.0_211
+
+JRE_HOME: C:\Program Files\Java\jdk1.8.0_211\jre
+
+Not needed:
+PATH: C:\Program Files\Java\jdk1.8.0_211\jre
+
