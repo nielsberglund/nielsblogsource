@@ -14,6 +14,10 @@ Launchpad, etc. exists. The language extension and SDK in the install\binn path
 Launchpad, etc. exists. The language extension and SDK in the install\binn path
 Azule JDK in the install path
 
+the path to JRE needs to be set
+
+C:\Program Files\Microsoft SQL Server\MSSQL15.S2K19_CTP32_1\AZUL-OpenJDK-JRE
+
 s2k19_ctp32_java.png
 
 s2k19_ctp32_java3.png

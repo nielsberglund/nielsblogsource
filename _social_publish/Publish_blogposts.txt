@@ -1,4 +1,9 @@
-﻿Blog-post: "Interesting Stuff - Week 30, 2019".
+﻿Blog-post: "SQL Server 2019 CTP3.2 & Java"
+SQL Server 2019 CTP 3.2 and Azule OpenJDK.
+https://nielsberglund.com/2019/08/03/sql-server-2019-ctp3.2--java/
+#sqlserver2019 #datascience #machinelearning #java #python
+
+Blog-post: "Interesting Stuff - Week 30, 2019".
 Kafka & Jaeger, SQL Server 2019 Big Data Cluster & Java, and other interesting topics.
 https://nielsberglund.com/2019/07/28/interesting-stuff---week-30-2019/
 #apachekafka #sqlserver2019 #java #jaeger
