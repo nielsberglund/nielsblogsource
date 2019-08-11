@@ -1,4 +1,10 @@
-﻿Blog-post: "Interesting Stuff - Week 31, 2019".
+﻿Blog-post: "Interesting Stuff - Week 32, 2019".
+Kafka, KSQL & KStreams, SQL Server, and other interesting topics.
+https://nielsberglund.com/2019/08/11/interesting-stuff---week-32-2019/
+#apachekafka #sqlserver #maven
+
+
+Blog-post: "Interesting Stuff - Week 31, 2019".
 Kafka & KStreams, the Paxos protocol, SQL Server 2019 & Java, and other interesting topics.
 https://nielsberglund.com/2019/08/04/interesting-stuff---week-31-2019/
 #apachekafka #sqlserver2019 #java #machinelearning #datascience 

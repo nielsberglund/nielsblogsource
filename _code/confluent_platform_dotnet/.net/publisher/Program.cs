@@ -13,7 +13,7 @@ namespace publisher
         static void CreateConfig() {
             producerConfig = new ProducerConfig
                 {
-                    BootstrapServers = "localhost:9092"
+                    BootstrapServers = "172.19.173.2:9092"
                 };
         }
 
@@ -30,8 +30,8 @@ namespace publisher
             Console.CancelKeyPress += new ConsoleCancelEventHandler(OnExit);
             int x = 0;
       
-            while(x < 100) {
-             SendMessage("testTopic", $"This test: {x}");
+            while(x < 5) {
+             SendMessage("myTestTopic", $"This test: {x}");
              x++;
              Thread.Sleep(200);
             }

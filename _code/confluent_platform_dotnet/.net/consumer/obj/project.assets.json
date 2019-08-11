@@ -890,11 +890,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "W:\\confluent\\consumer\\consumer.csproj",
+      "projectUniqueName": "W:\\nielsb-work\\GitHub-Repos\\gh-nielsberglund\\nielsberglund.com\\_code\\confluent_platform_dotnet\\.net\\consumer\\consumer.csproj",
       "projectName": "consumer",
-      "projectPath": "W:\\confluent\\consumer\\consumer.csproj",
+      "projectPath": "W:\\nielsb-work\\GitHub-Repos\\gh-nielsberglund\\nielsberglund.com\\_code\\confluent_platform_dotnet\\.net\\consumer\\consumer.csproj",
       "packagesPath": "C:\\Users\\niels\\.nuget\\packages\\",
-      "outputPath": "W:\\confluent\\consumer\\obj\\",
+      "outputPath": "W:\\nielsb-work\\GitHub-Repos\\gh-nielsberglund\\nielsberglund.com\\_code\\confluent_platform_dotnet\\.net\\consumer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -936,7 +936,12 @@
           }
         },
         "imports": [
-          "net461"
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true

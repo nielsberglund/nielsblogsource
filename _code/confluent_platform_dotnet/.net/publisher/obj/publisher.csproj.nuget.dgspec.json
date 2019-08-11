@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "W:\\confluent\\publisher\\publisher.csproj": {}
+    "W:\\nielsb-work\\GitHub-Repos\\gh-nielsberglund\\nielsberglund.com\\_code\\confluent_platform_dotnet\\.net\\publisher\\publisher.csproj": {}
   },
   "projects": {
-    "W:\\confluent\\publisher\\publisher.csproj": {
+    "W:\\nielsb-work\\GitHub-Repos\\gh-nielsberglund\\nielsberglund.com\\_code\\confluent_platform_dotnet\\.net\\publisher\\publisher.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "W:\\confluent\\publisher\\publisher.csproj",
+        "projectUniqueName": "W:\\nielsb-work\\GitHub-Repos\\gh-nielsberglund\\nielsberglund.com\\_code\\confluent_platform_dotnet\\.net\\publisher\\publisher.csproj",
         "projectName": "publisher",
-        "projectPath": "W:\\confluent\\publisher\\publisher.csproj",
+        "projectPath": "W:\\nielsb-work\\GitHub-Repos\\gh-nielsberglund\\nielsberglund.com\\_code\\confluent_platform_dotnet\\.net\\publisher\\publisher.csproj",
         "packagesPath": "C:\\Users\\niels\\.nuget\\packages\\",
-        "outputPath": "W:\\confluent\\publisher\\obj\\",
+        "outputPath": "W:\\nielsb-work\\GitHub-Repos\\gh-nielsberglund\\nielsberglund.com\\_code\\confluent_platform_dotnet\\.net\\publisher\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -53,7 +53,12 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true
