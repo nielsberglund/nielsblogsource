@@ -1,4 +1,9 @@
-﻿Blog-post: "Interesting Stuff - Week 32, 2019".
+﻿Blog-post: "Interesting Stuff - Week 33, 2019".
+Kafka & Kafka Connect, Kubernetes Serverless, Time Series data, and other interesting topics.
+https://nielsberglund.com/2019/08/18/interesting-stuff---week-33-2019/
+#apachekafka #kubernetes #dotnetcore #datascience #machinelearning 
+
+Blog-post: "Interesting Stuff - Week 32, 2019".
 Kafka, KSQL & KStreams, SQL Server, and other interesting topics.
 https://nielsberglund.com/2019/08/11/interesting-stuff---week-32-2019/
 #apachekafka #sqlserver #maven
