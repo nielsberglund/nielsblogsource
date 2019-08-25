@@ -1,4 +1,12 @@
-﻿Blog-post: "Interesting Stuff - Week 33, 2019".
+﻿Blog-post: "Interesting Stuff - Week 34, 2019".
+Kafka & transactions, SQL Server 2019 Big Data Cluster, SQL Server 2019 RC1, and other interesting topics.
+https://nielsberglund.com/2019/08/25/interesting-stuff---week-34-2019/
+#apachekafka #kubernetes #SQLServer
+@datawookie @JHBSQLUserGroup
+
+
+
+Blog-post: "Interesting Stuff - Week 33, 2019".
 Kafka & Kafka Connect, Kubernetes Serverless, Time Series data, and other interesting topics.
 https://nielsberglund.com/2019/08/18/interesting-stuff---week-33-2019/
 #apachekafka #kubernetes #dotnetcore #datascience #machinelearning 
@@ -386,7 +394,7 @@ via: @apachekafka @confluentinc @databricks @rmoff @SitnikAdam @vickyharp
 
 New Blog-post: "SQL Server 2019 for Linux in Docker on Windows".
 We run SQL Server 2019 for Linux in a Docker container on a Windows machine.
-http://www.nielsberglund.com/2018/09/29/sql-server-2019-for-linux-in-docker-on-windows/
+https://nielsberglund.com/2018/09/29/sql-server-2019-for-linux-in-docker-on-windows/
 #datascience #sqlserver #sqlserver2019 #sqlserverMLservices #machinelearning #rstats #python #java
 
 
@@ -443,7 +451,7 @@ via: @apachekafka @confluentinc @revodavid @charllamprecht @infoq @databricks @d
 
 New Blog-post: "sp_execute_external_script and SQL Compute Context - III".
 We use WinDbg, Process Monitor and WireShark to look in detail what happens in SQL Server when we use RxSqlServerData to pull data.
-http://www.nielsberglund.com/2018/08/04/sp-execute-external-script-and-sql-compute-context-iii/
+https://nielsberglund.com/2018/08/04/sp_execute_external_script-and-sql-compute-context---iii/
 #datascience #sqlserver #sqlserverRservices @nelliegson
 
 New Blog-post: "Interesting Stuff - Week 30". 
@@ -469,7 +477,7 @@ via: @revodavid @apachekafka
 
 New Blog-post: "Install Confluent Platform (Kafka) on Windows".
 We look at how we can install Kafka on Windows in Windows Subsystem for Linux.
-http://www.nielsberglund.com/2018/07/10/install-confluent-platform-kafka-on-windows/
+https://nielsberglund.com/2018/07/10/install-confluent-platform-kafka-on-windows/
 @confluentinc @apachekafka #apachekafka
 
 
@@ -481,7 +489,7 @@ via: @confluentinc @apachekafka @matthewwarren @jboner @infoq
 
 New Blog-post: "sp_execute_external_script and SQL Compute Context - II".
 We look in detail why we see performance differences when using SQL Server Compute Context.
-http://www.nielsberglund.com/2018/07/07/sp-execute-external-script-and-sql-compute-context-II/
+https://nielsberglund.com/2018/07/07/sp_execute_external_script-and-sql-compute-context---ii/
 #datascience #sqlserver #sqlserverRservices @nelliegson
 
 
@@ -494,7 +502,7 @@ via: @confluentinc @apachekafka @BuckWoodyMSFT @werner
 
 New Blog-post: "Installing R Packages in SQL Server Machine Learning Services - II".
 We continue looking at installing R packages. This post is all about using RevoScaleR functionality.
-http://www.nielsberglund.com/2018/06/30/installing-r-packages-in-sql-server-machine-learning-services---ii/
+https://nielsberglund.com/2018/06/30/installing-r-packages-in-sql-server-machine-learning-services---ii/
 #datascience #sqlserver #sqlserverRservices #rstats #RevoScaleR
 
 New Blog-post: "Interesting Stuff - Week 25". 
@@ -506,12 +514,12 @@ via: @confluentinc @apachekafka @dataArtisans @revodavid @BuckWoodyMSFT
 
 New Blog-post: "sp_execute_external_script and Permissions".
 We look at what permissions a non-admin user needs to execute sp_execute_external_script.
-http://www.nielsberglund.com/2018/06/24/sp_execute_external_script-and-permissions/
+https://nielsberglund.com/2018/06/24/sp_execute_external_script-and-permissions/
 #datascience #sqlserver #sqlserverRservices #rstats
 
 New Blog-post: "Installing R Packages in SQL Server Machine Learning Services - I".
 Looking at how can we install R packages in SQL Server Machine Learning Services.
-http://www.nielsberglund.com/2018/06/23/installing-r-packages-in-sql-server-machine-learning-services---i/
+https://nielsberglund.com/2018/06/23/installing-r-packages-in-sql-server-machine-learning-services---i/
 #datascience #sqlserver #sqlserverRservices #rstats
 
 New Blog-post: "Interesting Stuff - Week 24". 
@@ -552,7 +560,7 @@ via: @confluentinc @apachekafka
 
 New Blog-post: "sp_execute_external_script and SQL Compute Context - I".
 A drill-down into how SQL Server Compute Context works when executing sp_execute_external_script.
-http://www.nielsberglund.com/2018/05/20/sp-execute-external-script-and-sql-compute-context/
+https://nielsberglund.com/2018/05/20/sp_execute_external_script-and-sql-compute-context---i/
 #datascience #sqlserver #sqlserverRservices @nelliegson
 
 New Blog-post: "Interesting Stuff - Week 19". 
