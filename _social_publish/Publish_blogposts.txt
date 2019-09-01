@@ -1,10 +1,14 @@
-﻿Blog-post: "Interesting Stuff - Week 34, 2019".
+﻿Blog-post: "Interesting Stuff - Week 35, 2019".
+Kafka & Graph Databases, Kubernetes, Big Data, and other interesting topics.
+https://nielsberglund.com/2019/09/01/interesting-stuff---week-35-2019/
+#apachekafka #kubernetes #SQLServer #SQLSaturdayJohannesburg #sqlsaturdayjhb #sqlsatcapetown
+@datawookie @JHBSQLUserGroup @BuckWoodyMSFT
+
+Blog-post: "Interesting Stuff - Week 34, 2019".
 Kafka & transactions, SQL Server 2019 Big Data Cluster, SQL Server 2019 RC1, and other interesting topics.
 https://nielsberglund.com/2019/08/25/interesting-stuff---week-34-2019/
 #apachekafka #kubernetes #SQLServer
 @datawookie @JHBSQLUserGroup
-
-
 
 Blog-post: "Interesting Stuff - Week 33, 2019".
 Kafka & Kafka Connect, Kubernetes Serverless, Time Series data, and other interesting topics.
@@ -1000,7 +1004,7 @@ http://www.nielsberglund.com/2017/07/23/interesting-stuff-week-29/
 #sqlserver2017 #sqlserverrservices #sqlclr
 
 [Blog]:"SQL Server 2017 SQLCLR - Whitelisting Assemblies"
-http://www.nielsberglund.com/2017/07/23/sql-server-2017-sqlclr-white-listing-assemblies/
+https://nielsberglund.com/2017/07/23/sql-server-2017-sqlclr---whitelisting-assemblies/
 #sqlserver #sqlclr #sqlserver2017
 
 New Blogpost: "SQL Server 2017 SQLCLR - Whitelisting Assemblies".
@@ -1068,7 +1072,7 @@ http://bit.ly/2tB5aco
 
 
 [Blog]: "SQL Server 2017, SQLCLR and Permissions" 
-http://bit.ly/2tzlrhW
+https://nielsberglund.com/2017/07/02/sql-server-2017-sqlclr-and-permissions/
 #sqlserver #sqlclr #sqlserver2017
 
 New Blogpost: "SQL Server 2017, SQLCLR and Permissions". 
@@ -1396,5 +1400,6 @@ New Blogpost: "Abort, Abort, We Are XACT_ABORT:ing, Or Are We?!" http://bit.ly/2
 Why XACT_ABORT may not be the best thing.
 #sqlserver #xact_abort #errorhandling #manageddata
 
-SQL Server using RabbitMQ as a message broker: http://buff.ly/2maeteZ
+SQL Server using RabbitMQ as a message broker: 
+https://nielsberglund.com/2017/02/11/rabbitmq---sql-server/
 #sqlserver #rabbitmq #streaming
