@@ -17,6 +17,8 @@ This is a collection of posts about the Java language extensions introduced in *
 * [SQL Server 2019, Java & External Libraries - I][5]: Part I of a couple of posts where we look at how we can deploy Java code to the database, so it can be loaded from there.
 * [SQL Server 2019, Java & External Libraries - II][6]: Part II of a couple of posts where we look at how we can deploy Java code to the database, so it can be loaded from there. In this post we look at how to use `CREATE EXTERNAL LIBRARY` to deploy Java code without having access to SQL Server's filesystem.
 * [Java & SQL Server 2019 Extensibility Framework: The Sequel][7]. We look at the implications of the introduction of the Java Language Extension SDK.
+* [SQL Server 2019 Extensibility Framework & External Languages][8]. We look at SQL Server 2019 Extensibility Framework and Language Extensions.
+* [SQL Server 2019 CTP3.2 & Java][9]. SQL Server 2019 CTP 3.2 and Azule OpenJDK.
 
 
 
@@ -28,3 +30,5 @@ This is a collection of posts about the Java language extensions introduced in *
 [5]: {{< relref "2019-03-10-sql-server-2019-java--external-libraries---i.md" >}}
 [6]: {{< relref "2019-03-17-sql-server-2019-java--external-libraries---ii.md" >}}
 [7]: {{< relref "2019-05-26-java--sql-server-2019-extensibility-framework-the-sequel.md" >}}
+[8]: {{< relref "2019-06-06-sql-server-2019-extensibility-framework--external-languages.md" >}}
+[9]: {{< relref "2019-08-03-sql-server-2019-ctp32--java.md" >}}

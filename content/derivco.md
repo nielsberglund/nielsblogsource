@@ -11,9 +11,14 @@ We probably have one of the biggest install base of Microsoft SQL Server's with 
 
 **Derivco** is not only SQL Server, no - we have a multitude of Web API's, Windows Services and micro-services written in **.NET** (mostly **C#**) and **C++**. Other technologies we use are:
 
+* Azure Dev Ops
 * Raw TCP/IP Sockets
 * RabbitMQ
+* Kafka
+* KStreams & KSQL
 * Service Fabric
+* Kubernetes
+* Docker
 * Web Sockets
 * Signal R
 * HTML 5
@@ -21,7 +26,7 @@ We probably have one of the biggest install base of Microsoft SQL Server's with 
 * iOS
 * Android
 
-So if you are an exceptional developer, and you like a challenge - please do not hesitate to [send your CV][cv]. We have offices, not only in Durban SA, but also in:
+So if you are an exceptional developer, and you like a challenge - please do not hesitate to [send your CV](https://derivco.co.za/careers/). We have offices, not only in Durban SA, but also in:
 
 * Cape Town, SA
 * Johannesburg / Pretoria, SA
@@ -29,5 +34,4 @@ So if you are an exceptional developer, and you like a challenge - please do not
 * Sweden
 * UK
 
-[1]:  http://www.derivco.com
-[cv]: http://www.derivco.com/careers.html
+[1]:  https://derivco.co.za

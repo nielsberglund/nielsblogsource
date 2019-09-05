@@ -1,4 +1,38 @@
-﻿Blog-post: "Interesting Stuff - Week 30, 2019".
+﻿Blog-post: "Interesting Stuff - Week 35, 2019".
+Kafka & Graph Databases, Kubernetes, Big Data, and other interesting topics.
+https://nielsberglund.com/2019/09/01/interesting-stuff---week-35-2019/
+#apachekafka #kubernetes #SQLServer #SQLSaturdayJohannesburg #sqlsaturdayjhb #sqlsatcapetown
+@datawookie @JHBSQLUserGroup @BuckWoodyMSFT
+
+Blog-post: "Interesting Stuff - Week 34, 2019".
+Kafka & transactions, SQL Server 2019 Big Data Cluster, SQL Server 2019 RC1, and other interesting topics.
+https://nielsberglund.com/2019/08/25/interesting-stuff---week-34-2019/
+#apachekafka #kubernetes #SQLServer
+@datawookie @JHBSQLUserGroup
+
+Blog-post: "Interesting Stuff - Week 33, 2019".
+Kafka & Kafka Connect, Kubernetes Serverless, Time Series data, and other interesting topics.
+https://nielsberglund.com/2019/08/18/interesting-stuff---week-33-2019/
+#apachekafka #kubernetes #dotnetcore #datascience #machinelearning 
+
+Blog-post: "Interesting Stuff - Week 32, 2019".
+Kafka, KSQL & KStreams, SQL Server, and other interesting topics.
+https://nielsberglund.com/2019/08/11/interesting-stuff---week-32-2019/
+#apachekafka #sqlserver #maven
+
+
+Blog-post: "Interesting Stuff - Week 31, 2019".
+Kafka & KStreams, the Paxos protocol, SQL Server 2019 & Java, and other interesting topics.
+https://nielsberglund.com/2019/08/04/interesting-stuff---week-31-2019/
+#apachekafka #sqlserver2019 #java #machinelearning #datascience 
+
+
+Blog-post: "SQL Server 2019 CTP3.2 & Java"
+SQL Server 2019 CTP 3.2 and Azule OpenJDK.
+https://nielsberglund.com/2019/08/03/sql-server-2019-ctp3.2--java/
+#sqlserver2019 #datascience #machinelearning #java #python
+
+Blog-post: "Interesting Stuff - Week 30, 2019".
 Kafka & Jaeger, SQL Server 2019 Big Data Cluster & Java, and other interesting topics.
 https://nielsberglund.com/2019/07/28/interesting-stuff---week-30-2019/
 #apachekafka #sqlserver2019 #java #jaeger
@@ -364,7 +398,7 @@ via: @apachekafka @confluentinc @databricks @rmoff @SitnikAdam @vickyharp
 
 New Blog-post: "SQL Server 2019 for Linux in Docker on Windows".
 We run SQL Server 2019 for Linux in a Docker container on a Windows machine.
-http://www.nielsberglund.com/2018/09/29/sql-server-2019-for-linux-in-docker-on-windows/
+https://nielsberglund.com/2018/09/29/sql-server-2019-for-linux-in-docker-on-windows/
 #datascience #sqlserver #sqlserver2019 #sqlserverMLservices #machinelearning #rstats #python #java
 
 
@@ -421,7 +455,7 @@ via: @apachekafka @confluentinc @revodavid @charllamprecht @infoq @databricks @d
 
 New Blog-post: "sp_execute_external_script and SQL Compute Context - III".
 We use WinDbg, Process Monitor and WireShark to look in detail what happens in SQL Server when we use RxSqlServerData to pull data.
-http://www.nielsberglund.com/2018/08/04/sp-execute-external-script-and-sql-compute-context-iii/
+https://nielsberglund.com/2018/08/04/sp_execute_external_script-and-sql-compute-context---iii/
 #datascience #sqlserver #sqlserverRservices @nelliegson
 
 New Blog-post: "Interesting Stuff - Week 30". 
@@ -447,7 +481,7 @@ via: @revodavid @apachekafka
 
 New Blog-post: "Install Confluent Platform (Kafka) on Windows".
 We look at how we can install Kafka on Windows in Windows Subsystem for Linux.
-http://www.nielsberglund.com/2018/07/10/install-confluent-platform-kafka-on-windows/
+https://nielsberglund.com/2018/07/10/install-confluent-platform-kafka-on-windows/
 @confluentinc @apachekafka #apachekafka
 
 
@@ -459,7 +493,7 @@ via: @confluentinc @apachekafka @matthewwarren @jboner @infoq
 
 New Blog-post: "sp_execute_external_script and SQL Compute Context - II".
 We look in detail why we see performance differences when using SQL Server Compute Context.
-http://www.nielsberglund.com/2018/07/07/sp-execute-external-script-and-sql-compute-context-II/
+https://nielsberglund.com/2018/07/07/sp_execute_external_script-and-sql-compute-context---ii/
 #datascience #sqlserver #sqlserverRservices @nelliegson
 
 
@@ -472,7 +506,7 @@ via: @confluentinc @apachekafka @BuckWoodyMSFT @werner
 
 New Blog-post: "Installing R Packages in SQL Server Machine Learning Services - II".
 We continue looking at installing R packages. This post is all about using RevoScaleR functionality.
-http://www.nielsberglund.com/2018/06/30/installing-r-packages-in-sql-server-machine-learning-services---ii/
+https://nielsberglund.com/2018/06/30/installing-r-packages-in-sql-server-machine-learning-services---ii/
 #datascience #sqlserver #sqlserverRservices #rstats #RevoScaleR
 
 New Blog-post: "Interesting Stuff - Week 25". 
@@ -484,12 +518,12 @@ via: @confluentinc @apachekafka @dataArtisans @revodavid @BuckWoodyMSFT
 
 New Blog-post: "sp_execute_external_script and Permissions".
 We look at what permissions a non-admin user needs to execute sp_execute_external_script.
-http://www.nielsberglund.com/2018/06/24/sp_execute_external_script-and-permissions/
+https://nielsberglund.com/2018/06/24/sp_execute_external_script-and-permissions/
 #datascience #sqlserver #sqlserverRservices #rstats
 
 New Blog-post: "Installing R Packages in SQL Server Machine Learning Services - I".
 Looking at how can we install R packages in SQL Server Machine Learning Services.
-http://www.nielsberglund.com/2018/06/23/installing-r-packages-in-sql-server-machine-learning-services---i/
+https://nielsberglund.com/2018/06/23/installing-r-packages-in-sql-server-machine-learning-services---i/
 #datascience #sqlserver #sqlserverRservices #rstats
 
 New Blog-post: "Interesting Stuff - Week 24". 
@@ -530,7 +564,7 @@ via: @confluentinc @apachekafka
 
 New Blog-post: "sp_execute_external_script and SQL Compute Context - I".
 A drill-down into how SQL Server Compute Context works when executing sp_execute_external_script.
-http://www.nielsberglund.com/2018/05/20/sp-execute-external-script-and-sql-compute-context/
+https://nielsberglund.com/2018/05/20/sp_execute_external_script-and-sql-compute-context---i/
 #datascience #sqlserver #sqlserverRservices @nelliegson
 
 New Blog-post: "Interesting Stuff - Week 19". 
@@ -970,7 +1004,7 @@ http://www.nielsberglund.com/2017/07/23/interesting-stuff-week-29/
 #sqlserver2017 #sqlserverrservices #sqlclr
 
 [Blog]:"SQL Server 2017 SQLCLR - Whitelisting Assemblies"
-http://www.nielsberglund.com/2017/07/23/sql-server-2017-sqlclr-white-listing-assemblies/
+https://nielsberglund.com/2017/07/23/sql-server-2017-sqlclr---whitelisting-assemblies/
 #sqlserver #sqlclr #sqlserver2017
 
 New Blogpost: "SQL Server 2017 SQLCLR - Whitelisting Assemblies".
@@ -1038,7 +1072,7 @@ http://bit.ly/2tB5aco
 
 
 [Blog]: "SQL Server 2017, SQLCLR and Permissions" 
-http://bit.ly/2tzlrhW
+https://nielsberglund.com/2017/07/02/sql-server-2017-sqlclr-and-permissions/
 #sqlserver #sqlclr #sqlserver2017
 
 New Blogpost: "SQL Server 2017, SQLCLR and Permissions". 
@@ -1366,5 +1400,6 @@ New Blogpost: "Abort, Abort, We Are XACT_ABORT:ing, Or Are We?!" http://bit.ly/2
 Why XACT_ABORT may not be the best thing.
 #sqlserver #xact_abort #errorhandling #manageddata
 
-SQL Server using RabbitMQ as a message broker: http://buff.ly/2maeteZ
+SQL Server using RabbitMQ as a message broker: 
+https://nielsberglund.com/2017/02/11/rabbitmq---sql-server/
 #sqlserver #rabbitmq #streaming

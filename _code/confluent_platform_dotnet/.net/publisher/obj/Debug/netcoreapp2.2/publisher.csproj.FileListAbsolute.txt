@@ -9,3 +9,14 @@ w:\confluent\publisher\obj\Debug\netcoreapp2.2\publisher.AssemblyInfoInputs.cach
 w:\confluent\publisher\obj\Debug\netcoreapp2.2\publisher.AssemblyInfo.cs
 w:\confluent\publisher\obj\Debug\netcoreapp2.2\publisher.dll
 w:\confluent\publisher\obj\Debug\netcoreapp2.2\publisher.pdb
+W:\nielsb-work\GitHub-Repos\gh-nielsberglund\nielsberglund.com\_code\confluent_platform_dotnet\.net\publisher\bin\Debug\netcoreapp2.2\publisher.deps.json
+W:\nielsb-work\GitHub-Repos\gh-nielsberglund\nielsberglund.com\_code\confluent_platform_dotnet\.net\publisher\bin\Debug\netcoreapp2.2\publisher.runtimeconfig.json
+W:\nielsb-work\GitHub-Repos\gh-nielsberglund\nielsberglund.com\_code\confluent_platform_dotnet\.net\publisher\bin\Debug\netcoreapp2.2\publisher.runtimeconfig.dev.json
+w:\nielsb-work\GitHub-Repos\gh-nielsberglund\nielsberglund.com\_code\confluent_platform_dotnet\.net\publisher\bin\Debug\netcoreapp2.2\publisher.dll
+w:\nielsb-work\GitHub-Repos\gh-nielsberglund\nielsberglund.com\_code\confluent_platform_dotnet\.net\publisher\bin\Debug\netcoreapp2.2\publisher.pdb
+w:\nielsb-work\GitHub-Repos\gh-nielsberglund\nielsberglund.com\_code\confluent_platform_dotnet\.net\publisher\obj\Debug\netcoreapp2.2\publisher.csprojAssemblyReference.cache
+w:\nielsb-work\GitHub-Repos\gh-nielsberglund\nielsberglund.com\_code\confluent_platform_dotnet\.net\publisher\obj\Debug\netcoreapp2.2\publisher.csproj.CoreCompileInputs.cache
+w:\nielsb-work\GitHub-Repos\gh-nielsberglund\nielsberglund.com\_code\confluent_platform_dotnet\.net\publisher\obj\Debug\netcoreapp2.2\publisher.AssemblyInfoInputs.cache
+w:\nielsb-work\GitHub-Repos\gh-nielsberglund\nielsberglund.com\_code\confluent_platform_dotnet\.net\publisher\obj\Debug\netcoreapp2.2\publisher.AssemblyInfo.cs
+w:\nielsb-work\GitHub-Repos\gh-nielsberglund\nielsberglund.com\_code\confluent_platform_dotnet\.net\publisher\obj\Debug\netcoreapp2.2\publisher.dll
+w:\nielsb-work\GitHub-Repos\gh-nielsberglund\nielsberglund.com\_code\confluent_platform_dotnet\.net\publisher\obj\Debug\netcoreapp2.2\publisher.pdb

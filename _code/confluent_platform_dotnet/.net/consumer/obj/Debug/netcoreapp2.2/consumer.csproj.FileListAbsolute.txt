@@ -9,3 +9,14 @@ W:\confluent\consumer\obj\Debug\netcoreapp2.2\consumer.AssemblyInfoInputs.cache
 W:\confluent\consumer\obj\Debug\netcoreapp2.2\consumer.AssemblyInfo.cs
 W:\confluent\consumer\obj\Debug\netcoreapp2.2\consumer.dll
 W:\confluent\consumer\obj\Debug\netcoreapp2.2\consumer.pdb
+W:\nielsb-work\GitHub-Repos\gh-nielsberglund\nielsberglund.com\_code\confluent_platform_dotnet\.net\consumer\bin\Debug\netcoreapp2.2\consumer.deps.json
+W:\nielsb-work\GitHub-Repos\gh-nielsberglund\nielsberglund.com\_code\confluent_platform_dotnet\.net\consumer\bin\Debug\netcoreapp2.2\consumer.runtimeconfig.json
+W:\nielsb-work\GitHub-Repos\gh-nielsberglund\nielsberglund.com\_code\confluent_platform_dotnet\.net\consumer\bin\Debug\netcoreapp2.2\consumer.runtimeconfig.dev.json
+w:\nielsb-work\GitHub-Repos\gh-nielsberglund\nielsberglund.com\_code\confluent_platform_dotnet\.net\consumer\bin\Debug\netcoreapp2.2\consumer.dll
+w:\nielsb-work\GitHub-Repos\gh-nielsberglund\nielsberglund.com\_code\confluent_platform_dotnet\.net\consumer\bin\Debug\netcoreapp2.2\consumer.pdb
+w:\nielsb-work\GitHub-Repos\gh-nielsberglund\nielsberglund.com\_code\confluent_platform_dotnet\.net\consumer\obj\Debug\netcoreapp2.2\consumer.csprojAssemblyReference.cache
+w:\nielsb-work\GitHub-Repos\gh-nielsberglund\nielsberglund.com\_code\confluent_platform_dotnet\.net\consumer\obj\Debug\netcoreapp2.2\consumer.csproj.CoreCompileInputs.cache
+w:\nielsb-work\GitHub-Repos\gh-nielsberglund\nielsberglund.com\_code\confluent_platform_dotnet\.net\consumer\obj\Debug\netcoreapp2.2\consumer.AssemblyInfoInputs.cache
+w:\nielsb-work\GitHub-Repos\gh-nielsberglund\nielsberglund.com\_code\confluent_platform_dotnet\.net\consumer\obj\Debug\netcoreapp2.2\consumer.AssemblyInfo.cs
+w:\nielsb-work\GitHub-Repos\gh-nielsberglund\nielsberglund.com\_code\confluent_platform_dotnet\.net\consumer\obj\Debug\netcoreapp2.2\consumer.dll
+w:\nielsb-work\GitHub-Repos\gh-nielsberglund\nielsberglund.com\_code\confluent_platform_dotnet\.net\consumer\obj\Debug\netcoreapp2.2\consumer.pdb

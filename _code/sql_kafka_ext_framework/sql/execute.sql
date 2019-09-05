@@ -27,3 +27,7 @@ EXEC sp_execute_external_script
 , @y = @p2 
 GO                      
 
+
+dbo.pr_EmulateGamePlay @Loops = 5,
+                      @MinDelay = 50,
+                      @MaxDelay = 500;

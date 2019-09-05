@@ -16,7 +16,7 @@ namespace consumer
 
         static void CreateConfig() {
             consumerConfig = new ConsumerConfig {
-                BootstrapServers = "localhost:9092",
+                BootstrapServers = "172.24.244.44:9092",
                 GroupId = "test-group",
                 AutoOffsetReset = AutoOffsetReset.Earliest
             };
