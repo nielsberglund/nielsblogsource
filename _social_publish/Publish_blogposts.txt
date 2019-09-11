@@ -1,4 +1,9 @@
-﻿Blog-post: "Interesting Stuff - Week 35, 2019".
+﻿Blog-post: "Interesting Stuff - Week 36, 2019".
+Practical DDD and messaging, VS Code, SQL Saturday in Cape Town, and other interesting topics.
+https://nielsberglund.com/2019/09/08/interesting-stuff---week-36-2019/
+#SQLServer #SQLSatCT #sqlsatcapetown #vscode
+
+Blog-post: "Interesting Stuff - Week 35, 2019".
 Kafka & Graph Databases, Kubernetes, Big Data, and other interesting topics.
 https://nielsberglund.com/2019/09/01/interesting-stuff---week-35-2019/
 #apachekafka #kubernetes #SQLServer #SQLSaturdayJohannesburg #sqlsaturdayjhb #sqlsatcapetown
