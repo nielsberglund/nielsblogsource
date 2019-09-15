@@ -1,4 +1,9 @@
-﻿New Blog-Post: Install SQL Server 2019 Big Data Cluster using Azure Data Studio
+﻿Blog-post: "Interesting Stuff - Week 37, 2019".
+Kafka, approximation of queries, SQL Saturday, SQL Server 2019 Big Data Cluster, and other interesting topics.
+https://nielsberglund.com/2019/09/15/interesting-stuff---week-37-2019/
+#SQLServer #SQLSatCT #apachekafka
+
+New Blog-Post: Install SQL Server 2019 Big Data Cluster using Azure Data Studio
 Installation of SQL Server 2019 Big Data Cluster on Azure Kubernetes Service using Azure Data Studio.
 https://nielsberglund.com/2019/09/11/install-sql-server-2019-big-data-cluster-using-azure-data-studio/
 #kubernetes #sqlserver2019 #azurdatastudio #sqlserverbigdataclsuter #azure
