@@ -1,4 +1,9 @@
-﻿Blog-post: "Interesting Stuff - Week 37, 2019".
+﻿Blog-post: "Interesting Stuff - Week 38, 2019".
+Kafka, Kubernetes, VLDB 2019, and other interesting topics.
+https://nielsberglund.com/2019/09/22/interesting-stuff---week-38-2019/
+#apachekafka #kubernetes #VLDB2019
+
+Blog-post: "Interesting Stuff - Week 37, 2019".
 Kafka, approximation of queries, SQL Saturday, SQL Server 2019 Big Data Cluster, and other interesting topics.
 https://nielsberglund.com/2019/09/15/interesting-stuff---week-37-2019/
 #SQLServer #SQLSatCT #apachekafka
