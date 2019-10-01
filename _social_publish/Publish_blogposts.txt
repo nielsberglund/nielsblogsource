@@ -1,4 +1,31 @@
-﻿Blog-post: "Interesting Stuff - Week 35, 2019".
+﻿Blog-post: "Interesting Stuff - Week 39, 2019".
+Kafka, Rockset, .NET Core, Kubernetes, and other interesting topics.
+https://nielsberglund.com/2019/09/29/interesting-stuff---week-39-2019/
+#apachekafka #kubernetes #dotnetcore3
+
+
+
+Blog-post: "Interesting Stuff - Week 38, 2019".
+Kafka, Kubernetes, VLDB 2019, and other interesting topics.
+https://nielsberglund.com/2019/09/22/interesting-stuff---week-38-2019/
+#apachekafka #kubernetes #VLDB2019
+
+Blog-post: "Interesting Stuff - Week 37, 2019".
+Kafka, approximation of queries, SQL Saturday, SQL Server 2019 Big Data Cluster, and other interesting topics.
+https://nielsberglund.com/2019/09/15/interesting-stuff---week-37-2019/
+#SQLServer #SQLSatCT #apachekafka
+
+New Blog-Post: Install SQL Server 2019 Big Data Cluster using Azure Data Studio
+Installation of SQL Server 2019 Big Data Cluster on Azure Kubernetes Service using Azure Data Studio.
+https://nielsberglund.com/2019/09/11/install-sql-server-2019-big-data-cluster-using-azure-data-studio/
+#kubernetes #sqlserver2019 #azurdatastudio #sqlserverbigdataclsuter #azure
+
+Blog-post: "Interesting Stuff - Week 36, 2019".
+Practical DDD and messaging, VS Code, SQL Saturday in Cape Town, and other interesting topics.
+https://nielsberglund.com/2019/09/08/interesting-stuff---week-36-2019/
+#SQLServer #SQLSatCT #sqlsatcapetown #vscode
+
+Blog-post: "Interesting Stuff - Week 35, 2019".
 Kafka & Graph Databases, Kubernetes, Big Data, and other interesting topics.
 https://nielsberglund.com/2019/09/01/interesting-stuff---week-35-2019/
 #apachekafka #kubernetes #SQLServer #SQLSaturdayJohannesburg #sqlsaturdayjhb #sqlsatcapetown
@@ -1004,6 +1031,7 @@ http://www.nielsberglund.com/2017/07/23/interesting-stuff-week-29/
 #sqlserver2017 #sqlserverrservices #sqlclr
 
 [Blog]:"SQL Server 2017 SQLCLR - Whitelisting Assemblies"
+SQL Server 2017 has added new functionality for SQLCLR security; sp_add_trusted_assembly.
 https://nielsberglund.com/2017/07/23/sql-server-2017-sqlclr---whitelisting-assemblies/
 #sqlserver #sqlclr #sqlserver2017
 
@@ -1072,6 +1100,7 @@ http://bit.ly/2tB5aco
 
 
 [Blog]: "SQL Server 2017, SQLCLR and Permissions" 
+Investigation SQL Server 2017 "clr strict security" and its impact on SQLCLR.
 https://nielsberglund.com/2017/07/02/sql-server-2017-sqlclr-and-permissions/
 #sqlserver #sqlclr #sqlserver2017
 
