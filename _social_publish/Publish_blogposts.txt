@@ -1,4 +1,12 @@
-﻿Blog-post: "Interesting Stuff - Week 39, 2019".
+﻿Blog-post: "Interesting Stuff - Week 40, 2019".
+Kafka in the Cloud, Event Sourcing and other interesting topics.
+https://nielsberglund.com/2019/10/06/interesting-stuff---week-40-2019/
+#apachekafka 
+
+#kafkasummit
+
+
+Blog-post: "Interesting Stuff - Week 39, 2019".
 Kafka, Rockset, .NET Core, Kubernetes, and other interesting topics.
 https://nielsberglund.com/2019/09/29/interesting-stuff---week-39-2019/
 #apachekafka #kubernetes #dotnetcore3

@@ -14,10 +14,23 @@ public class JavaTest1 extends AbstractSqlServerExtensionExecutor {
 
     public PrimitiveDataset execute(PrimitiveDataset input, LinkedHashMap<String, Object> params) {
 
-        int x = (int)params.get("x");
-        int y = (int)params.get("y");
+        // int x = (int)params.get("x");
+        // int y = (int)params.get("y");
 
-        System.out.printf("The result of adding %d and %d = %d", x, y, x + y);   
+        Object x = params.get("x");
+        Object y = params.get("y").toString();
+
+        if(x == null) {
+            x = "null";
+        }
+
+        
+     
+        System.out.printf("Value of x = %s and y = %s", x, y);   
+
+        params.put("x", 42);
+
+        //System.out.printf("The result of adding %d and %d = %d", x, y, x + y);   
         return null;
 
     }
