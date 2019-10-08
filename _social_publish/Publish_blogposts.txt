@@ -1,7 +1,7 @@
 ﻿Blog-post: "Interesting Stuff - Week 40, 2019".
 Kafka in the Cloud, Event Sourcing and other interesting topics.
 https://nielsberglund.com/2019/10/06/interesting-stuff---week-40-2019/
-#apachekafka 
+#apachekafka #kafkasummit
 
 #kafkasummit
 
