@@ -99,7 +99,7 @@ The data we insert is entirely random, but it gives us something to "play around
 
 ## Null Values
 
-In the [null values post][4] mentioned above we mentioned that there are differences between SQL Server and Java in how they handle null, and we might want to identify null values in Java and potentially handle them similar to what we do in SQL Server. 
+In the [null values post][4] mentioned above, I mentioned that there are differences between SQL Server and Java in how they handle null. So, when we call into Java from SQL Server, we may want to treat null values the same way as we do in SQL Server.  
 
 
 
