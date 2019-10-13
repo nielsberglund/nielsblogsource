@@ -1,4 +1,10 @@
-﻿Blog-post: "Interesting Stuff - Week 40, 2019".
+﻿Blog-post: "Interesting Stuff - Week 41, 2019".
+Kafka, Kafka Summit videos, Databricks, Flink, and other interesting topics.
+https://nielsberglund.com/2019/10/13/interesting-stuff---week-41-2019/
+#apachekafka #kafkasummit #datascience #machinelearning #databricks
+via: @rmoff
+
+Blog-post: "Interesting Stuff - Week 40, 2019".
 Kafka in the Cloud, Event Sourcing and other interesting topics.
 https://nielsberglund.com/2019/10/06/interesting-stuff---week-40-2019/
 #apachekafka #kafkasummit

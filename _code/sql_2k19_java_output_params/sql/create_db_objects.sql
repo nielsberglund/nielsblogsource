@@ -38,7 +38,6 @@ UPDATE dbo.tb_NullRand10
 WHERE RowId = 9 
 GO
 
-SELECT * FROM dbo.tb_Rand10
 SELECT * FROM dbo.tb_NullRand10
 GO
 
