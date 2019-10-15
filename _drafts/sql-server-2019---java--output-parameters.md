@@ -186,7 +186,59 @@ We see in *Code Snippet 4* how we call into the `NullValues` class in the `sql` 
 
 **Figure 2:** *Java Code Result*
 
-Compare the result we see in *Figure 2* with the result in *Figure 1*, and we see the difference in the outlined rows, (3, 6, 8), and the highlighted columns, In *Figure 1* the columns are `NULL`, whereas in *Figure 2* they are `0`.
+Compare the result we see in *Figure 2* with the result in *Figure 1*, and we see the difference in the outlined rows, (3, 6, 8), and the highlighted columns, In *Figure 1* the columns are `NULL`, whereas in *Figure 2* they are `0`. So why are the columns `0`?
+
+Well, as we said in the [null post][4], this is because the Java language extension converts the null values to the default value for the data type in question.
+
+> **NOTE:** The Java language extension is the bridge between SQL Server and your Java code. The [**SQL Server 2019 Extensibility Framework & External Languages**][2] post covers it in some detail.
+
+The question is, why do we care that a null value comes across as zero, at least we do not get a null exception? Let us take a look at the following Java code:
+
+``` java
+public PrimitiveDataset execute(PrimitiveDataset input, 
+                                LinkedHashMap<String, Object> params) {
+    
+  int[] inputCol3 = input.getIntColumn(2);
+
+  double sum = Arrays.stream(inputCol3).asDoubleStream().sum();
+
+  double avg = sum / inputCol3.length;
+
+  System.out.printf("Average value of y is: %f", avg);
+
+  return null;
+}
+```
+**Code Snippet 5:** *Average Value*
+
+The code in *Code Snippet 5* expects the same input data as we generated in *Code Snippet 4*, and it calculates the average value of the `y` column of that dataset. When we execute the code in *Code Snippet 4*, after having compiled, packaged and deployed, (comment out `WITH RESULT SETS`), we see the result as so:
+
+![](/images/posts/sql-2k19-java-null2-average.png )
+
+**Figure 3:** *Result of Average Calculation*
+
+The result in *Figure 3* looks OK, so let us see what it looks like if we run a similar query in SQL Server:
+
+``` sql
+SELECT CAST(AVG(CAST(y AS DECIMAL(4,2)))AS DECIMAL(4,2))
+FROM dbo.tb_NullRand10;
+```
+**Code Snippet 6:** *T-SQL Average Calculation*
+
+The result of the query in *Code Snippet 6* looks like so:
+
+![](/images/posts/sql-2k19-java-null2-average2.png )
+
+**Figure 4:** *Result of T-SQL Average Calculation*
+
+We see in *Figure 4* how the result of the average calculation, (outlined in red), differs from the Java calculation. The question is why this is, it was the same data in both calculations? Well, was it; we see in *Figure 4* the highlighted part at the top: "Null value is eliminated ...". So what happens is that for certain operations SQL Server eliminates null values, as SQL Server treats nulls as unknown.
+
+As the Java language extension converts nulls we need to handle it in our Java code.
+
+#### Input Nulls
+
+Let us see how we handle input nulls, like in the examples above.
+
 
 
 

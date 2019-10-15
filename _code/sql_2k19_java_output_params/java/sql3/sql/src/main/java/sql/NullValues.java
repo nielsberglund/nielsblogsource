@@ -22,6 +22,22 @@ public class NullValues extends AbstractSqlServerExtensionExecutor {
     int[] inputCol2 = input.getIntColumn(1);
     int[] inputCol3 = input.getIntColumn(2);
 
+    double sum = Arrays.stream(inputCol3).asDoubleStream().sum();
+
+    double avg = (double)sum / inputCol3.length;
+
+    System.out.printf("Average value of y is: %f", avg);
+  
+    return null;
+  }
+
+  /*
+  public PrimitiveDataset execute(PrimitiveDataset input, LinkedHashMap<String, Object> params) {
+    
+    int[] inputCol1 = input.getIntColumn(0);
+    int[] inputCol2 = input.getIntColumn(1);
+    int[] inputCol3 = input.getIntColumn(2);
+
     PrimitiveDataset output = new PrimitiveDataset();
 
     output.addColumnMetadata(0, "RowID", Types.INTEGER, 0, 0);
@@ -34,6 +50,7 @@ public class NullValues extends AbstractSqlServerExtensionExecutor {
    
     return output;
   }
+  */
 
 
   // public static void multiplier3() {
