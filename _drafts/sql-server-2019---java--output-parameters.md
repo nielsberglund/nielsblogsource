@@ -237,7 +237,9 @@ As the Java language extension converts nulls we need to handle it in our Java c
 
 #### Input Nulls
 
-Let us see how we handle input nulls, like in the examples above.
+Let us see how we handle input nulls, like we receive when we execute the code in *Code Snippet 4*.
+
+
 
 
 
