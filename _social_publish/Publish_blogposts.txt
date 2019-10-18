@@ -1118,12 +1118,6 @@ Investigation SQL Server 2017 "clr strict security" and its impact on SQLCLR.
 https://nielsberglund.com/2017/07/02/sql-server-2017-sqlclr-and-permissions/
 #sqlserver #sqlclr #sqlserver2017
 
-New Blogpost: "SQL Server 2017, SQLCLR and Permissions". 
-Investigation SQL Server 2017 "clr strict security" and its impact on SQLCLR.
-http://bit.ly/2tzlrhW
-#sqlserver #sqlclr #sqlserver2017
-
-
 
 [Blog]: "SQLCLR & Certificates" 
 http://bit.ly/2tw4R2y
@@ -1131,7 +1125,7 @@ http://bit.ly/2tw4R2y
 
 New Blogpost: "SQLCLR & Certificates". 
 We discuss the use of TRUSTWORTHY and certificates in SQL Server when deploying SQLCLR assemblies.
-http://bit.ly/2tw4R2y
+https://nielsberglund.com/2017/07/01/sqlclr-and-certificates/
 #sqlserver #sqlclr #sqlserver2017
 
 
@@ -1152,7 +1146,7 @@ http://bit.ly/2t9IWhB
 
 New Blogpost: "Creating R Stored Procedures in SQL Server 2016 Using sqlrutils". 
 We look at how to use sqlrutils to create SQL Server stored procedures from inside an R environment.
-http://bit.ly/2t9IWhB
+https://nielsberglund.com/2017/06/25/creating-r-stored-procedures-in-sql-server-2016-using-sqlrutils/
 #datascience #sqlserver2016 #rstats #sqlrutils
 
 

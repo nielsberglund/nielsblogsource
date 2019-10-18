@@ -237,7 +237,16 @@ As the Java language extension converts nulls we need to handle it in our Java c
 
 #### Input Nulls
 
-Let us see how we handle input nulls, like we receive when we execute the code in *Code Snippet 4*.
+In the previous [null post][4] we saw that, when we want to handle null input, we use a required class level variable `inputNullMap`, which the Java language extension populates "automagically". However, after the introduction of the Java language SDK, this variable is not required any more. Even if you declared it, the Java language extension does not populate it.
+
+
+
+
+
+
+ how the Java language extension "automagically" populates a required variable `inputNullMap`.    Let us see how we handle input nulls, like we receive when we execute the code in *Code Snippet 4*.
+
+In the 
 
 
 

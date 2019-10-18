@@ -18,18 +18,46 @@ public class NullValues extends AbstractSqlServerExtensionExecutor {
 
   public PrimitiveDataset execute(PrimitiveDataset input, LinkedHashMap<String, Object> params) {
     
-    int[] inputCol1 = input.getIntColumn(0);
-    int[] inputCol2 = input.getIntColumn(1);
     int[] inputCol3 = input.getIntColumn(2);
 
-    double sum = Arrays.stream(inputCol3).asDoubleStream().sum();
+    int numRows = inputCol3.length;
+    boolean[] nullMap = input.getColumnNullMap(2);
+    int nonNull= 0;
+    int sum = 0;
 
-    double avg = (double)sum / inputCol3.length;
+    for(int x = 0; x < numRows; x++) {
+      if(!nullMap[x]) {
+        nonNull ++;
+        sum += inputCol3[x];
+      }
+
+    }
+
+    double avg = (double)sum / nonNull;
 
     System.out.printf("Average value of y is: %f", avg);
   
     return null;
   }
+
+  // public PrimitiveDataset execute(PrimitiveDataset input, LinkedHashMap<String, Object> params) {
+    
+  //   int[] inputCol3 = input.getIntColumn(2);
+
+  //   int numRows = inputCol3.length;
+  //   int sum = 0;
+
+  //   for(int x = 0; x < numRows; x++) {
+  //     sum += inputCol3[x];
+
+  //   }
+
+  //   double avg = (double)sum / numRows;
+
+  //   System.out.printf("Average value of y is: %f", avg);
+  
+  //   return null;
+  // }
 
   /*
   public PrimitiveDataset execute(PrimitiveDataset input, LinkedHashMap<String, Object> params) {
