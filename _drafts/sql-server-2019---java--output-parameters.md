@@ -239,6 +239,40 @@ As the Java language extension converts nulls we need to handle it in our Java c
 
 In the previous [null post][4] we saw that, when we want to handle null input, we use a required class level variable `inputNullMap`, which the Java language extension populates "automagically". However, after the introduction of the Java language SDK, this variable is not required any more. Even if you declared it, the Java language extension does not populate it.
 
+So how do we then figure out whether a column has a null value? Well, since the Java language extension passes data into the `execute` method vis the `PrimitiveDataSet` class, let us have a look at the base class for `PrimitiveDataSet`: `AbstractSqlServerExtensionDataset`: 
+
+``` java
+public class AbstractSqlServerExtensionDataset {
+  /**
+   * Column metadata interfaces
+   */
+  public void addColumnMetadata(int columnId, String columnName, int columnType, int precision, int scale) {
+    throw new UnsupportedOperationException("addColumnMetadata is not implemented");
+  }
+
+  ...
+
+  public boolean[] getColumnNullMap(int columnId) {
+    throw new UnsupportedOperationException("getColumnNullMap is not implemented");
+  }
+
+  ...
+}
+```
+**Code Snippet 7:** *AbstractSqlServerExtensionDataset*
+
+We see in *Code Snippet 7* how the `AbstractSqlServerExtensionDataset` has a section for metadata, and in that section is a method: `getColumnNullMap`. The method takes an integer as input parameter, and it returns an array of type `boolean`.
+
+> **NOTE:** The Java SDK is open source, and you find it [here][6].
+
+So what happens when the Java language C++ extension populates the `PrimitiveDataset` input parameter is that:
+
+* The extension creates a `boolean` array for each column.
+* The extension loops each row for each column.
+* Where there is a null value, for a primitive data type, the extension assigns the default value of the data type to that column.
+* When the extension comes across a null value in a column, it sets the boolean array value to `true` in the column array for that particular row.
+
+
 
 
 
@@ -286,7 +320,7 @@ If you have comments, questions etc., please comment on this post or [ping][ma] 
 [3]: {{< relref "2019-08-03-sql-server-2019-ctp32--java.md" >}}
 [4]: {{< relref "2018-12-19-sql-server-2019-extensibility-framework--java---null-values.md" >}}
 [5]: {{< relref "2019-03-10-sql-server-2019-java--external-libraries---i.md" >}}
-[6]:
+[6]: https://github.com/microsoft/sql-server-language-extensions
 [7]:
 [8]:
 [9]:
