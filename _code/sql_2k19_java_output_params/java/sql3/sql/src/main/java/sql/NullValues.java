@@ -1,12 +1,9 @@
 package sql;
 
-import com.microsoft.sqlserver.javalangextension.PrimitiveDataset;
 import java.util.LinkedHashMap;
-import com.microsoft.sqlserver.javalangextension.AbstractSqlServerExtensionExecutor;
 
-import java.util.ArrayList;
-import java.sql.Types;
-import java.util.*;
+import com.microsoft.sqlserver.javalangextension.AbstractSqlServerExtensionExecutor;
+import com.microsoft.sqlserver.javalangextension.PrimitiveDataset;
 
 public class NullValues extends AbstractSqlServerExtensionExecutor {
 
@@ -16,29 +13,49 @@ public class NullValues extends AbstractSqlServerExtensionExecutor {
     executorOutputDatasetClassName = PrimitiveDataset.class.getName();
   }
 
-  public PrimitiveDataset execute(PrimitiveDataset input, LinkedHashMap<String, Object> params) {
+    public PrimitiveDataset execute(PrimitiveDataset input, LinkedHashMap<String, Object> params) {
     
-    int[] inputCol3 = input.getIntColumn(2);
+    int[] rowId = input.getIntColumn(0);
+    int[] col1 = input.getIntColumn(1);
+    String[] col2 = input.getStringColumn(2);
+    int[] col3 = input.getIntColumn(3);
 
-    int numRows = inputCol3.length;
-    boolean[] nullMap = input.getColumnNullMap(2);
-    int nonNull= 0;
-    int sum = 0;
+    boolean[] col1NullMap = input.getColumnNullMap(1);
+    boolean[] col2NullMap = input.getColumnNullMap(2);
+    boolean[] col3NullMap = input.getColumnNullMap(3);
 
+    int numRows = rowId.length;
+    
     for(int x = 0; x < numRows; x++) {
-      if(!nullMap[x]) {
-        nonNull ++;
-        sum += inputCol3[x];
-      }
-
+      System.out.printf("Column value is: %s. Nullmap value is %b", col2[x], col2NullMap[x]);
     }
-
-    double avg = (double)sum / nonNull;
-
-    System.out.printf("Average value of y is: %f", avg);
-  
+   
     return null;
   }
+
+  // public PrimitiveDataset execute(PrimitiveDataset input, LinkedHashMap<String, Object> params) {
+    
+  //   int[] inputCol3 = input.getIntColumn(2);
+
+  //   int numRows = inputCol3.length;
+  //   boolean[] nullMap = input.getColumnNullMap(2);
+  //   int nonNull= 0;
+  //   int sum = 0;
+
+  //   for(int x = 0; x < numRows; x++) {
+  //     if(!nullMap[x]) {
+  //       nonNull ++;
+  //       sum += inputCol3[x];
+  //     }
+
+  //   }
+
+  //   double avg = (double)sum / nonNull;
+
+  //   System.out.printf("Average value of y is: %f", avg);
+  
+  //   return null;
+  // }
 
   // public PrimitiveDataset execute(PrimitiveDataset input, LinkedHashMap<String, Object> params) {
     
