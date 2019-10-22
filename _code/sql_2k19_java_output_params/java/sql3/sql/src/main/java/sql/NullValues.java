@@ -24,10 +24,17 @@ public class NullValues extends AbstractSqlServerExtensionExecutor {
     boolean[] col2NullMap = input.getColumnNullMap(2);
     boolean[] col3NullMap = input.getColumnNullMap(3);
 
+    // if(col2NullMap == null) {
+    //   System.out.printf("col2NullMap is null");
+    // }
+
     int numRows = rowId.length;
     
     for(int x = 0; x < numRows; x++) {
-      System.out.printf("Column value is: %s. Nullmap value is %b", col2[x], col2NullMap[x]);
+      //System.out.printf("Column value is: %s", (String)col2[x]);
+      //System.out.printf("Nullmap value is %b", col2NullMap[x]);
+     // System.out.printf("Column value is: %s. Nullmap value is %b", col2[x], col2NullMap[x]);
+      System.out.printf("Column value is: %d. Nullmap value is %b", col3[x], col3NullMap[x]);
     }
    
     return null;

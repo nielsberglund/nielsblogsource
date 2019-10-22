@@ -1,9 +1,5 @@
 package sql;
 
-import com.microsoft.sqlserver.javalangextension.PrimitiveDataset;
-
-import java.sql.Types;
-import java.util.*;
 /**
  * Hello world!
  *
@@ -12,11 +8,16 @@ public class App
 {
     public static void main( String[] args )
     {
-        PrimitiveDataset ds = new PrimitiveDataset();
 
-        ds.getColumnNullMap(0);
+        String s = null;
 
-        ds.addColumnMetadata(0, "RowID", Types.INTEGER, 0, 0);
+        System.out.printf("Value of s is: %s", s);
+
+        // PrimitiveDataset ds = new PrimitiveDataset();
+
+        // ds.getColumnNullMap(0);
+
+        // ds.addColumnMetadata(0, "RowID", Types.INTEGER, 0, 0);
         //ds.addColumnMetadata(1, "x", Types.INTEGER, 0, 0);
 
         //int[] col1 = new int[5];

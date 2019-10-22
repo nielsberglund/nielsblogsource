@@ -1,4 +1,10 @@
-﻿Blog-post: "Interesting Stuff - Week 41, 2019".
+﻿Blog-post: "Interesting Stuff - Week 42, 2019".
+Kafka, Confluent Cloud, JSON in SQL Server and other interesting topics.
+https://nielsberglund.com/2019/10/20/interesting-stuff---week-42-2019/
+#apachekafka #sqlserver #confluentcloud #dotnetcore
+via: @rmoff @rayokota
+
+Blog-post: "Interesting Stuff - Week 41, 2019".
 Kafka, Kafka Summit videos, Databricks, Flink, and other interesting topics.
 https://nielsberglund.com/2019/10/13/interesting-stuff---week-41-2019/
 #apachekafka #kafkasummit #datascience #machinelearning #databricks
