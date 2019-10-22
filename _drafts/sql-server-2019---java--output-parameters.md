@@ -200,14 +200,21 @@ public PrimitiveDataset execute(PrimitiveDataset input,
     
   int[] inputCol3 = input.getIntColumn(2);
 
-  double sum = Arrays.stream(inputCol3).asDoubleStream().sum();
+  int numRows = inputCol3.length;
+  int sum = 0;
 
-  double avg = sum / inputCol3.length;
+  for(int x = 0; x < numRows; x++) {
+    sum += inputCol3[x];
+
+  }
+
+  double avg = (double)sum / numRows;
 
   System.out.printf("Average value of y is: %f", avg);
 
   return null;
 }
+
 ```
 **Code Snippet 5:** *Average Value*
 
@@ -265,14 +272,63 @@ We see in *Code Snippet 7* how the `AbstractSqlServerExtensionDataset` has a sec
 
 > **NOTE:** The Java SDK is open source, and you find it [here][6].
 
-So what happens when the Java language C++ extension populates the `PrimitiveDataset` input parameter is that:
+So what happens when the Java language C++ extension populates the dataset which is used as input parameter is:
 
-* The extension creates a `boolean` array for each column.
-* The extension loops each row for each column.
+* The extension creates a `boolean` array for each non-nullable Java datatype columns.
+* The extension loops each row for each column in the dataset.
 * Where there is a null value, for a primitive data type, the extension assigns the default value of the data type to that column.
-* When the extension comes across a null value in a column, it sets the boolean array value to `true` in the column array for that particular row.
+* When the extension comes across a null value in a non-nullabe Java data type column, it sets the boolean array value to `true` in the column array for that particular row.
 
+With this in mind we can change the code in *Code Snippet 5* to handle null values, or rather handle values in the dataset that originates from a SQL Server null value:
 
+``` java
+public PrimitiveDataset execute(PrimitiveDataset input, 
+                                LinkedHashMap<String, Object> params) {
+    
+  int[] inputCol3 = input.getIntColumn(2);
+
+  int numRows = inputCol3.length;
+  boolean[] nullMap = input.getColumnNullMap(2);
+  int nonNull= 0;
+  int sum = 0;
+
+  for(int x = 0; x < numRows; x++) {
+    if(!nullMap[x]) {
+      nonNull ++;
+      sum += inputCol3[x];
+    }
+
+  }
+
+  double avg = (double)sum / nonNull;
+
+  System.out.printf("Average value of y is: %f", avg);
+
+  return null;
+}
+```
+**Code Snippet 8:** *Null Handling*
+
+So, in *Code Snippet 8* we see how we:
+
+* Get the column we want to create the average over.
+* Use `getColumnNullMap` to retrieve the null map for the column we use for the calculation.
+* In the `for` loop check whether the column value is null or not. If it is not null we include the value, and increase the row count.
+* Finally do the average calculation.
+
+The result when executing the code in *Code Snippet 4* against our new code looks like so:
+
+![](/images/posts/sql-2k19-java-null2-average2.png )
+
+**Figure 5:** *New Java Average Calculation*
+
+We see in *Figure 5* how our Java calculation now gives the same result as the T-SQL calculation. Awesome! 
+
+#### Output Nulls
+
+We have now seen how to use `getColumnNullMap` to distinguish inout values that comes in as `null` from SQL Server but the Java lnaguage C++ extension converts to the default value for the Java data type.
+
+What about if we need to return null values to SQL Server in a return dataset, but the Java data type is non-nullable? 
 
 
 
