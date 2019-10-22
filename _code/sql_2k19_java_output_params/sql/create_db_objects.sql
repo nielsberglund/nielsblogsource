@@ -41,5 +41,20 @@ GO
 SELECT * FROM dbo.tb_NullRand10
 GO
 
+CREATE TABLE dbo.tb_NullColumnMap (RowID int identity primary key,
+                                   Col1 int,
+                                   Col2 nvarchar(256),
+                                   Col3 int)
+
+INSERT INTO dbo.tb_NullColumnMap(Col1, Col2, Col3)
+VALUES(1, NULL, 42),
+      (2, 'hello', 3),
+      (null, 'world', null),
+      (56, null, null);
+
+SELECT * FROM dbo.tb_NullColumnMap
+           
+
+
 
 
