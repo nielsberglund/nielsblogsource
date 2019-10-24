@@ -429,7 +429,12 @@ When we look at *Figure 6* we see that our code worked, and how the Java C++ lan
 
 ## Summary
 
+When we deal with data passing between SQL Server and Java, (to and from), we need to 
 
+After the introduction of the Java language SDK for Java code in SQL Server, the way to handle null valus in input and output datasets have changed. Before the introduction of the Java SDK you defined boolean arrays indicating 
+
+
+We discussed in this post how non-nullable Java data types can have nullable valus in SQL Server. We said that the Java C++ language extension converts SQL Server null values to default values for the non-nullable data type. For example; the Java language extension converts an integer with a null value to 0, (zero).
 
 
 
