@@ -1,5 +1,6 @@
 package sql;
 
+import java.sql.Types;
 import java.util.LinkedHashMap;
 
 import com.microsoft.sqlserver.javalangextension.AbstractSqlServerExtensionExecutor;
@@ -13,7 +14,51 @@ public class NullValues extends AbstractSqlServerExtensionExecutor {
     executorOutputDatasetClassName = PrimitiveDataset.class.getName();
   }
 
-    public PrimitiveDataset execute(PrimitiveDataset input, LinkedHashMap<String, Object> params) {
+  
+  public PrimitiveDataset execute(PrimitiveDataset input, LinkedHashMap<String, Object> params) {
+    
+    PrimitiveDataset output = new PrimitiveDataset();
+
+    int numRows = 5;
+
+    output.addColumnMetadata(0, "RowID", Types.INTEGER, 0, 0);
+    output.addColumnMetadata(1, "IntCol", Types.INTEGER, 0, 0);
+    output.addColumnMetadata(2, "StringCol", Types.NVARCHAR, 256, 0);
+
+    int[] rowIdRows = new int[numRows];
+    int[] intColRows = new int[numRows];
+    String[] stringColRows = new String[numRows];
+
+    boolean[] intColNullMap = new boolean[numRows];
+
+    for(int x = 0; x < numRows; x++){
+      rowIdRows[x] = x+1;
+      if(x % 2 ==0) {
+        intColRows[x] = 0;
+        intColNullMap[x] = true;
+      }
+      else {
+        intColRows[x] = x + 2;
+        intColNullMap[x] = false;
+      }
+      if(x % 3 ==0) {
+        stringColRows[x] = null;
+      }
+      else {
+        stringColRows[x] = "Hello number: " + (x + 1);
+      }
+
+    }
+
+    output.addIntColumn(0, rowIdRows, null);
+    output.addIntColumn(1, intColRows, intColNullMap);
+    output.addStringColumn(2, stringColRows);
+   
+    return output;
+  }
+  
+  /*
+  public PrimitiveDataset execute(PrimitiveDataset input, LinkedHashMap<String, Object> params) {
     
     int[] rowId = input.getIntColumn(0);
     int[] col1 = input.getIntColumn(1);
@@ -39,6 +84,7 @@ public class NullValues extends AbstractSqlServerExtensionExecutor {
    
     return null;
   }
+  */
 
   // public PrimitiveDataset execute(PrimitiveDataset input, LinkedHashMap<String, Object> params) {
     

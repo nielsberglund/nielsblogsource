@@ -1,5 +1,11 @@
 package sql;
 
+import java.sql.Types;
+import java.util.LinkedHashMap;
+
+import com.microsoft.sqlserver.javalangextension.AbstractSqlServerExtensionExecutor;
+import com.microsoft.sqlserver.javalangextension.PrimitiveDataset;
+
 /**
  * Hello world!
  *
@@ -8,10 +14,15 @@ public class App
 {
     public static void main( String[] args )
     {
+         NullValues nv = new NullValues();
 
-        String s = null;
+        nv.execute(null, null);
 
-        System.out.printf("Value of s is: %s", s);
+   
+
+        // String s = null;
+
+        // System.out.printf("Value of s is: %s", s);
 
         // PrimitiveDataset ds = new PrimitiveDataset();
 

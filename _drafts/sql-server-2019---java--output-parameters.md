@@ -326,9 +326,142 @@ We see in *Figure 5* how our Java calculation now gives the same result as the T
 
 #### Output Nulls
 
-We have now seen how to use `getColumnNullMap` to distinguish inout values that comes in as `null` from SQL Server but the Java lnaguage C++ extension converts to the default value for the Java data type.
+We have now seen how to use `getColumnNullMap` to distinguish input values that comes in as `null` from SQL Server but the Java language C++ extension converts to the default value for the Java data type.
 
-What about if we need to return null values to SQL Server in a return dataset, but the Java data type is non-nullable? 
+What about if we need to return null values to SQL Server in a return dataset, but the Java data type is non-nullable? I.e. we receive data in the input dataset, and some column values for a non-nullable Java type are null when passed in from SQL Server. If we wanted to, for example, add the column to another column, the sum should be `null` if we were to handle it the same way as SQL Server does. 
+
+So how do we indicate to SQL Server that a column value is null, even though it has a value in Java? Let us go back to *Code Snippet 2* where we discussed how to return data back t SQL Server from Java code. After "newing" up an instance of `PrimitiveDataset` we defined the metadata for the columns via the `addColumnMetadata` method. We then added the row arrays for the columns through the `add*Type*Column`, (in our case it was `addIntColumn`), and it is in that method the "secret" to null values lies. Let us go back to `AbstractSqlServerExtensionDataset` and look at the signature for `addIntColumn`:
+
+``` java
+public class AbstractSqlServerExtensionDataset {
+  
+  /**
+   * Adding column interfaces
+   */
+  public void addIntColumn(int columnId, int[] rows, 
+                           boolean[] nullMap) {
+    throw new UnsupportedOperationException(...);
+  }
+}
+```
+**Code Snippet 9:** *Add Column Method*
+
+Look in *Code Snippet 9* at the third parameter in the add method. See how it takes a `boolean` array, and how the name "gives it away": `nullMap`. If we look at other methods for non-nullable Java types we see that all of them have this parameter, whereas add methods for types that are nullable do not have it.
+
+So for non-nullable types we define `boolean` arrays, and in those arrays we indicate what row value(s) is `null`. Let us see an example:
+
+```java
+public PrimitiveDataset execute(PrimitiveDataset input, 
+                                LinkedHashMap<String, Object> params) {
+    
+  PrimitiveDataset output = new PrimitiveDataset();
+
+  int numRows = 5;
+
+  output.addColumnMetadata(0, "RowID", Types.INTEGER, 0, 0);
+  output.addColumnMetadata(1, "IntCol", Types.INTEGER, 0, 0);
+  output.addColumnMetadata(2, "StringCol", Types.NVARCHAR, 256, 0);
+
+  int[] rowIdRows = new int[numRows];
+  int[] intColRows = new int[numRows];
+  String[] stringColRows = new String[numRows];
+
+  boolean[] intColNullMap = new boolean[numRows];
+
+  for(int x = 0; x < numRows; x++){
+    rowIdRows[x] = x+1;
+    if(x % 2 ==0) {
+      intColRows[x] = 0;
+      intColNullMap[x] = true;
+    }
+    else {
+      intColRows[x] = x + 2;
+      intColNullMap[x] = false;
+    }
+    if(x % 3 ==0) {
+      stringColRows[x] = null;
+    }
+    else {
+      stringColRows[x] = "Hello number: " + (x + 1);
+    }
+  }
+
+  output.addIntColumn(0, rowIdRows, null);
+  output.addIntColumn(1, intColRows, intColNullMap);
+  output.addStringColumn(2, stringColRows);
+ 
+  return output;
+}
+```
+**Code Snippet 10:** *Return Dataset*
+
+What we see in *Code Snippet 10* is a somewhat contrived example where we return a dataset where some column values are null. We see how we:
+
+* Create metadata for the dataset.
+* Create arrays for the individual rows.
+* Create a null map for one of the integer columns.
+* In the `for` loop add values to the arrays, and based on some modulus operations emulate that some values are null.
+* Add the arrays to the columns, and for the second integer column we also add the null map.
+* Finally return the dataset.
+
+A couple of things to notice in the code in *Code Snippet 10*:
+
+* Null-map is not required for a non-nullable data type columns if the values are not null.
+* We do not need a null-map for nullable data type columns.
+
+To see that our code works we use following code:
+
+``` sql
+EXEC sp_execute_external_script
+  @language = N'Java'
+, @script = N'sql.NullValues'
+WITH RESULT SETS((RowID int, IntCol int, StringCol nvarchar(256)))
+```
+**Code Snippet 11:** *Execute T-SQL*
+
+The result we get when executing the code in *Code Snippet 11*, looks like so:
+
+![](/images/posts/sql-2k19-java-null2-return-null.png)
+
+**Figure 6:** *Return Dataset with Null Values*
+
+When we look at *Figure 6* we see that our code worked, and how the Java C++ language extension converted the 0 values in the integer column to `null` based on the null map.
+
+## Summary
+
+
+
+
+
+
+
+
+Let us start with discussing how we generate a return dataset in our Java code. In the Java code snippets we have seen so far the return type of the `execute` method is a `PrimitiveDataset`, which extends `AbstractSqlServerExtensionDataset`. When ["spelunking"] around in the source for `AbstractSqlServerExtensionDataset` we see some interesting methods:
+
+``` java
+public class AbstractSqlServerExtensionDataset {
+  /**
+   * Column metadata interfaces
+   */
+  public void addColumnMetadata(int columnId, String columnName, 
+                               int columnType, int precision, 
+                               int scale) {
+    throw new UnsupportedOperationException(...);
+  }
+
+  /**
+   * Adding column interfaces
+   */
+  public void addIntColumn(int columnId, int[] rows, boolean[] nullMap) {
+    throw new UnsupportedOperationException(...);
+  }
+}
+```
+
+
+
+
+Let us go back to the `AbstractSqlServerExtensionDataset`, and see if we can find anything interesting
 
 
 
