@@ -1,7 +1,7 @@
 ---
 type: post
 layout: "post"
-title: "SQL Server 2019 - Java Null Handling & Output Parameters"
+title: "SQL Server 2019 & Java Null Handling: Take Two"
 author: nielsb
 date: 
 comments: true
@@ -9,8 +9,10 @@ highlight: true
 draft: true
 categories:
   - SQL Server 2019
+  - SQL Server Machine Learning Services
   - SQL Server Extensibility Framework
 tags:
+  - SQL Server Machine Learning Services
   - SQL Server 2019
   - R
   - Python
@@ -25,10 +27,7 @@ You who read my blog know that during the last year, (or so), I have been writin
 
 * [**SQL Server 2019 Extensibility Framework & Java**](/s2k19_ext_framework_java).
 
-It has been a fascinating "journey", since SQL Server 2019 is still in preview, and there have been changes in how you call Java code along the way. In this post, we look at some relatively recent changes for:
-
-* Null handling.
-* Output parameters.
+It has been a fascinating "journey", since SQL Server 2019 is still in preview, and there have been changes in how you call Java code along the way. In this post, we look at some relatively recent changes to how we handle null values in datasets.
 
 <!--more-->
 
@@ -119,7 +118,7 @@ Now, when we have a database with some data and Java enabled we, can start.
 
 In the [null values post][4] mentioned above, I mentioned that there are differences between SQL Server and Java in how they handle null. So, when we call into Java from SQL Server, we may want to treat null values the same way as we do in SQL Server.
 
-I wrote about this in the [**SQL Server 2019 Extensibility Framework & Java - Null Values**][4] post mentioned above. However, that post was written before SQL Server 2019 CTP 2.5, and Microsoft introduced the Java SDK in CTP 2.5, and certain things changed. Amongst the things that changed is the way we handle nulls when we receive datasets from SQL Server in our Java code.
+I wrote about this in the [**SQL Server 2019 Extensibility Framework & Java - Null Values**][4] post mentioned above. However, that post was written before SQL Server 2019 CTP 2.5. In CTP 2.5 Microsoft introduced the Java SDK, and certain things changed. Amongst the things that changed is the way we handle nulls when we receive datasets from SQL Server in our Java code.
 
 Let us see how null handling works now post CTP 2.5. We use similar code to what we saw in the [null post][4] above:
 
@@ -238,9 +237,9 @@ The result of the query in *Code Snippet 6* looks like so:
 
 **Figure 4:** *Result of T-SQL Average Calculation*
 
-We see in *Figure 4* how the result of the average calculation, (outlined in red), differs from the Java calculation. The question is why this is, it was the same data in both calculations? Well, was it; we see in *Figure 4* the highlighted part at the top: "Null value is eliminated ...". So what happens is that for certain operations SQL Server eliminates null values, as SQL Server treats nulls as unknown.
+We see in *Figure 4* how the result of the average calculation, (outlined in red), differs from the Java calculation. The question is why this is; it was the same data in both calculations? Well, was it; we see in *Figure 4* the highlighted part at the top: "Null value is eliminated ...". So what happens is that for certain operations SQL Server eliminates null values, as SQL Server treats nulls as unknown.
 
-As the Java language extension converts nulls we need to handle it in our Java code.
+As the Java language extension converts nulls, we need to handle it in our Java code.
 
 #### Input Nulls
 
@@ -268,16 +267,16 @@ public class AbstractSqlServerExtensionDataset {
 ```
 **Code Snippet 7:** *AbstractSqlServerExtensionDataset*
 
-We see in *Code Snippet 7* how the `AbstractSqlServerExtensionDataset` has a section for metadata, and in that section is a method: `getColumnNullMap`. The method takes an integer as input parameter, and it returns an array of type `boolean`.
+We see in *Code Snippet 7* how the `AbstractSqlServerExtensionDataset` has a section for metadata, and in that section is a method: `getColumnNullMap`. The method takes an integer as an input parameter, and it returns an array of type `boolean`.
 
 > **NOTE:** The Java SDK is open source, and you find it [here][6].
 
-So what happens when the Java language C++ extension populates the dataset which is used as input parameter is:
+So what happens when the Java language C++ extension populates the dataset which is used as an input parameter is:
 
 * The extension creates a `boolean` array for each non-nullable Java datatype columns.
 * The extension loops each row for each column in the dataset.
 * Where there is a null value, for a primitive data type, the extension assigns the default value of the data type to that column.
-* When the extension comes across a null value in a non-nullabe Java data type column, it sets the boolean array value to `true` in the column array for that particular row.
+* When the extension comes across a null value in a non-nullable Java data type column, it sets the boolean array value to `true` in the column array for that particular row.
 
 With this in mind we can change the code in *Code Snippet 5* to handle null values, or rather handle values in the dataset that originates from a SQL Server null value:
 
@@ -313,7 +312,7 @@ So, in *Code Snippet 8* we see how we:
 
 * Get the column we want to create the average over.
 * Use `getColumnNullMap` to retrieve the null map for the column we use for the calculation.
-* In the `for` loop check whether the column value is null or not. If it is not null we include the value, and increase the row count.
+* In the `for` loop check whether the column value is null or not. If it is not null, we include the value and increase the row count.
 * Finally do the average calculation.
 
 The result when executing the code in *Code Snippet 4* against our new code looks like so:
@@ -326,11 +325,11 @@ We see in *Figure 5* how our Java calculation now gives the same result as the T
 
 #### Output Nulls
 
-We have now seen how to use `getColumnNullMap` to distinguish input values that comes in as `null` from SQL Server but the Java language C++ extension converts to the default value for the Java data type.
+We have now seen how to use `getColumnNullMap` to distinguish input values that come in as `null` from SQL Server, which the Java language C++ extension converts to the default value for the Java data type.
 
 What about if we need to return null values to SQL Server in a return dataset, but the Java data type is non-nullable? I.e. we receive data in the input dataset, and some column values for a non-nullable Java type are null when passed in from SQL Server. If we wanted to, for example, add the column to another column, the sum should be `null` if we were to handle it the same way as SQL Server does. 
 
-So how do we indicate to SQL Server that a column value is null, even though it has a value in Java? Let us go back to *Code Snippet 2* where we discussed how to return data back t SQL Server from Java code. After "newing" up an instance of `PrimitiveDataset` we defined the metadata for the columns via the `addColumnMetadata` method. We then added the row arrays for the columns through the `add*Type*Column`, (in our case it was `addIntColumn`), and it is in that method the "secret" to null values lies. Let us go back to `AbstractSqlServerExtensionDataset` and look at the signature for `addIntColumn`:
+So how do we indicate to SQL Server that a column value is null, even though it has a value in Java? Let us go back to *Code Snippet 2* where we discussed how to return data to SQL Server from Java code. After "newing" up an instance of `PrimitiveDataset`, we defined the metadata for the columns via the `addColumnMetadata` method. We then added the row arrays for the columns through the `add*Type*Column`, (in our case it was `addIntColumn`), and it is in that method the "secret" to null values lies. Let us go back to `AbstractSqlServerExtensionDataset` and look at the signature for `addIntColumn`:
 
 ``` java
 public class AbstractSqlServerExtensionDataset {
@@ -346,9 +345,9 @@ public class AbstractSqlServerExtensionDataset {
 ```
 **Code Snippet 9:** *Add Column Method*
 
-Look in *Code Snippet 9* at the third parameter in the add method. See how it takes a `boolean` array, and how the name "gives it away": `nullMap`. If we look at other methods for non-nullable Java types we see that all of them have this parameter, whereas add methods for types that are nullable do not have it.
+Look in *Code Snippet 9* at the third parameter in the add method. See how it takes a `boolean` array, and how the name "gives it away": `nullMap`. If we look at other methods for non-nullable Java types, we see that all of them have this parameter, whereas add methods for types that are nullable do not have it.
 
-So for non-nullable types we define `boolean` arrays, and in those arrays we indicate what row value(s) is `null`. Let us see an example:
+So for non-nullable types, we define `boolean` arrays, and in those arrays, we indicate what row value(s) is `null`. Let us see an example:
 
 ```java
 public PrimitiveDataset execute(PrimitiveDataset input, 
@@ -401,12 +400,12 @@ What we see in *Code Snippet 10* is a somewhat contrived example where we return
 * Create arrays for the individual rows.
 * Create a null map for one of the integer columns.
 * In the `for` loop add values to the arrays, and based on some modulus operations emulate that some values are null.
-* Add the arrays to the columns, and for the second integer column we also add the null map.
+* Add the arrays to the columns, and for the second integer column, we also add the null map.
 * Finally return the dataset.
 
 A couple of things to notice in the code in *Code Snippet 10*:
 
-* Null-map is not required for a non-nullable data type columns if the values are not null.
+* A null-map is not required for a non-nullable data type columns if the values are not null.
 * We do not need a null-map for nullable data type columns.
 
 To see that our code works we use following code:
@@ -429,67 +428,14 @@ When we look at *Figure 6* we see that our code worked, and how the Java C++ lan
 
 ## Summary
 
-When we deal with data passing between SQL Server and Java, (to and from), we need to 
+In this post, we discussed how to handle null values in datasets passed into our Java code from SQL Server, and from our Java code back to SQL Server. I wrote about null handling in a previous [post][4], but since that post, Microsoft introduced the Java language SDK for SQL Server, and null handling has changed. 
 
-After the introduction of the Java language SDK for Java code in SQL Server, the way to handle null valus in input and output datasets have changed. Before the introduction of the Java SDK you defined boolean arrays indicating 
+We care about null values because, in SQL Server, all data types are nullable, whereas, in Java, that is not the case. In Java, like in .NET, primitive types, (`int`, etc.), cannot be null. The Java C++ language extension handles the mismatch between nullable in SQL Server and non-nullable in Java, whereby it converts null values in data from SQL Server to the data type's default value for Java. Going the other way, from Java to SQL Server, the C++ language extension converts the values supposed to be null to actual null values.
 
+The way we handle null values after the introduction of the Java language SDK is that we:
 
-We discussed in this post how non-nullable Java data types can have nullable valus in SQL Server. We said that the Java C++ language extension converts SQL Server null values to default values for the non-nullable data type. For example; the Java language extension converts an integer with a null value to 0, (zero).
-
-
-
-
-
-
-Let us start with discussing how we generate a return dataset in our Java code. In the Java code snippets we have seen so far the return type of the `execute` method is a `PrimitiveDataset`, which extends `AbstractSqlServerExtensionDataset`. When ["spelunking"] around in the source for `AbstractSqlServerExtensionDataset` we see some interesting methods:
-
-``` java
-public class AbstractSqlServerExtensionDataset {
-  /**
-   * Column metadata interfaces
-   */
-  public void addColumnMetadata(int columnId, String columnName, 
-                               int columnType, int precision, 
-                               int scale) {
-    throw new UnsupportedOperationException(...);
-  }
-
-  /**
-   * Adding column interfaces
-   */
-  public void addIntColumn(int columnId, int[] rows, boolean[] nullMap) {
-    throw new UnsupportedOperationException(...);
-  }
-}
-```
-
-
-
-
-Let us go back to the `AbstractSqlServerExtensionDataset`, and see if we can find anything interesting
-
-
-
-
-
- how the Java language extension "automagically" populates a required variable `inputNullMap`.    Let us see how we handle input nulls, like we receive when we execute the code in *Code Snippet 4*.
-
-In the 
-
-
-
-
-
-
-
-
-
-
-
-
-![](/images/posts/<image_name_incl_ext>)
-
-**Figure 1:** **
+* For input data, and each non-nullable column, we call `getColumnNullMap` and pass in the columns ordinal position. We then handle the values where the null map indicates a null value. 
+* For output data we create `boolean` arrays for the columns which should contain null values in SQL Server. We pass the array in as a parameter to the `add*TypeName*Column` method.
 
 ## ~ Finally
 
@@ -503,34 +449,9 @@ If you have comments, questions etc., please comment on this post or [ping][ma] 
 [sqsk]: https://www.sqlskills.com
 [ba]: https://twitter.com/bob_albright
 
-
-<!--
-  post reference
-  [pkg1]: {{< relref "" >}}
--->  
-
 [1]: {{< relref "2019-05-26-java--sql-server-2019-extensibility-framework-the-sequel.md" >}}
 [2]: {{< relref "2019-06-06-sql-server-2019-extensibility-framework--external-languages.md" >}}
 [3]: {{< relref "2019-08-03-sql-server-2019-ctp32--java.md" >}}
 [4]: {{< relref "2018-12-19-sql-server-2019-extensibility-framework--java---null-values.md" >}}
 [5]: {{< relref "2019-03-10-sql-server-2019-java--external-libraries---i.md" >}}
 [6]: https://github.com/microsoft/sql-server-language-extensions
-[7]:
-[8]:
-[9]:
-[10]:
-[11]:
-[12]:
-[13]:
-[14]:
-[15]:   
-
-<!--
-[series1]: <> [SQL Server R Services](/series/sql_server_2k16_r_services)
-[series2]: <> [Install R Packages in SQL Server ML Services](/series/sql_server_ml_services_install_packages)
-[series3]: <> [sp_execute_external_script and SQL Server Compute Context](/series/spees_and_sql_compute_context)
--->
-
-<!--
-[findstr]: <> findstr /I \<word_to_find\> *
--->
