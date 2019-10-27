@@ -1,4 +1,16 @@
 ﻿Blog-post: "Interesting Stuff - Week 42, 2019".
+Kafka, Scaling Kubernetes, SQL Server & Java, PySpark, and other interesting topics.
+https://nielsberglund.com/2019/10/27/interesting-stuff---week-43-2019/
+#apachekafka #sqlserver #dotnet #kubernetes #java #python
+via: @matthewwarren @adriancolyer
+
+Blog-post: "SQL Server 2019 & Java Null Handling: Take Two"
+We take a second look at how to handle null values in datasets being passed to and from Java code.
+https://nielsberglund.com/2019/10/26/sql-server-2019--java-null-handling-take-two/
+#sqlserver2019 #datascience #machinelearning #java #python
+
+
+Blog-post: "Interesting Stuff - Week 42, 2019".
 Kafka, Confluent Cloud, JSON in SQL Server and other interesting topics.
 https://nielsberglund.com/2019/10/20/interesting-stuff---week-42-2019/
 #apachekafka #sqlserver #confluentcloud #dotnetcore
