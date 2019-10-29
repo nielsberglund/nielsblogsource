@@ -45,7 +45,30 @@ If you have not done any Java code in SQL Server, or at least not recently, here
 
 ## Parameter Recap
 
+Let us take a lok back at parameters to refresh our memory. Pre CTP 2.5, (and the Java Language SDK), you declared parameters as class variables with the same name as the SQL parameters but without the `@`. The Java C++ language extension then populated the values from the input. We declare the parameters like so:
 
+```sql
+DECLARE @p1 int = 21;
+DECLARE @p2 int = 21;
+EXEC sp_execute_external_script
+  @language = N'Java'
+, @script = N'JavaTest1.adder'
+, @params = N'@x int, @y int'
+, @x = @p1
+, @y = @p2   
+GO
+```
+**Code Snippet 1** *Call from T-SQL to Java with Parameters*
+
+We see in *Code Snippet 1* how we have declared two parameters: `@x`, and `@y`. When we execute the code the Java C++ language extension gets the parameter values, and, pre CTP 2.5, looks in the code for two class level variables named `x`, and `y`, and assigns the values to those variables.
+
+The way we call into Java after the introduction of the Java Language SDK is that we call into a class extending `AbstractSqlServerExtensionExecutor`. The Java C++ language extension executes the `execute` method which we need to implement. 
+
+The `execute` method signature looks like so:
+
+```java
+
+```
 
 
 
