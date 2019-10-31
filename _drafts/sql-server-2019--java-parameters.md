@@ -43,6 +43,17 @@ If you have not done any Java code in SQL Server, or at least not recently, here
 * [**SQL Server 2019 CTP3.2 & Java**][3]. SQL Server 2019 CTP 3.2 and Azule OpenJDK.
 * [**SQL Server 2019 & Java Null Handling: Take Two**][6]. We take a second look at how to handle null values in datasets being passed to and from Java code.
 
+## Pre-req
+
+If you want to follow along with what we are doing in this post, you need:
+
+* A SQL Server 2019 CTP 3.0, (or later), instance. 
+* A database where you have registered Java as a language. Read [this post][2] if you are unsure how to register Java as an external language.
+* The Java Language SDK deployed to the database above. [This post][1] explains how.
+* Understand how to deploy Java code to the database. The post [here][5] helps with that.
+
+You also need an editor with which you can write Java code. I am partial to **Visual Studio Code** myself, and I wrote a post about VS Code and Java [here][7]. 
+
 ## Parameter Recap
 
 Let us take a look back at parameters to refresh our memory. 
@@ -101,16 +112,54 @@ GO
 
 The only real difference between *Code Snippet 3* and *Code Snippet 2* is that the `@script` parameter is now `package.class`, instead of `class.method`.
 
-For the parameters the Java C++ language extension now creates a new instance of a `LinkedHashMap` and populates it with the parameter names, (sans @), and the values. 
-
-
-
-
-The parameter we are interested in for this post is the `LinkedHashMap<String, Object> params` parameter.
+For the parameters the Java C++ language extension creates a new instance of a `LinkedHashMap` and populates it with the parameter names, (sans `@`), and the values. 
 
 ## Parameters
 
-The way we call into Java has after the introduction of the Java Language SDK looks something like so:
+Having the recap out of the way, let us see how we handle the parameters in our Java code. Let us first start with some skeleton code:
+
+``` java
+package sql;
+
+import com.microsoft.sqlserver.javalangextension.*;
+import java.util.LinkedHashMap;
+
+public class JavaTest1 extends AbstractSqlServerExtensionExecutor {
+
+  public JavaTest1() {
+    executorExtensionVersion = SQLSERVER_JAVA_LANG_EXTENSION_V1;
+    executorInputDatasetClassName = PrimitiveDataset.class.getName();
+    executorOutputDatasetClassName = PrimitiveDataset.class.getName();
+  }
+
+  public PrimitiveDataset execute(PrimitiveDataset input, 
+                                  LinkedHashMap<String, Object> params) {
+    
+    return null;
+
+  }
+}
+``` 
+**Code Snippet 4:** *Java Starter Code*
+
+We see in *Code Snippet 4* that we have a class, `JavaTest1`, which extends the `AbstractSqlServerExtensionExecutor` class. In the constructor, we set some required class members, and the `execute` method is empty.
+
+> **NOTE:** The post [**Java & SQL Server 2019 Extensibility Framework: The Sequel**][1] explains about the constructor in *Code Snippet 4*.
+
+The code we want to write is to handle the parameters we send in when we execute the code in *Code Snippet 3*, and in our code we want to add the two parameters together. With that in mind, our code looks like so:
+
+``` java
+public PrimitiveDataset execute(PrimitiveDataset input, 
+                                LinkedHashMap<String, Object> params) {
+
+  int x = (int)params.get("x");
+  int y = (int)params.get("y");
+  System.out.printf("The result of adding %d and %d = %d", x, y, x + y);
+  return null;
+}
+```
+**Code Snippet 5:** *Handle Parameters*
+
 
 
 
@@ -145,7 +194,7 @@ If you have comments, questions etc., please comment on this post or [ping][ma] 
 [4]: {{< relref "2018-12-19-sql-server-2019-extensibility-framework--java---null-values.md" >}}
 [5]: {{< relref "2019-03-10-sql-server-2019-java--external-libraries---i.md" >}}
 [6]: {{< relref "2019-10-26-sql-server-2019--java-null-handling-take-two.md" >}}
-[7]: 
+[7]: {{< relref "2019-01-17-sql-server-2019--java-with-visual-studio-code.md" >}}
 [8]:
 [9]:
 [10]:
