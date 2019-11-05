@@ -20,6 +20,7 @@ This is a collection of posts about the Java language extensions introduced in *
 * [SQL Server 2019 Extensibility Framework & External Languages][8]. We look at SQL Server 2019 Extensibility Framework and Language Extensions.
 * [SQL Server 2019 CTP3.2 & Java][9]. SQL Server 2019 CTP 3.2 and Azule OpenJDK.
 * [SQL Server 2019 & Java Null Handling: Take Two][10]. We take a second look at how to handle null values in datasets being passed to and from Java code.
+* [SQL Server 2019 & Java: Parameters][11]. We discuss how to handle parameters between SQL Server and Java, as well as discussing the support of output parameters.
 
 
 
@@ -34,3 +35,5 @@ This is a collection of posts about the Java language extensions introduced in *
 [8]: {{< relref "2019-06-06-sql-server-2019-extensibility-framework--external-languages.md" >}}
 [9]: {{< relref "2019-08-03-sql-server-2019-ctp32--java.md" >}}
 [10]: {{< relref "2019-10-26-sql-server-2019--java-null-handling-take-two.md" >}}
+[11]: {{< relref "2019-11-03-sql-server-2019--java-parameters.md" >}}
+

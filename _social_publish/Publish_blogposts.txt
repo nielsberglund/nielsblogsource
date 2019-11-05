@@ -1,4 +1,16 @@
-﻿Blog-post: "Interesting Stuff - Week 42, 2019".
+﻿Blog-post: "Interesting Stuff - Week 44, 2019".
+SQL Server 2019 Big Data Cluster, SQL Server 2019 learning resources, Kafka & data pipelines, and other interesting topics.
+https://nielsberglund.com/2019/11/03/interesting-stuff---week-44-2019/
+#apachekafka #sqlserver #java #python
+via: @nelliegson @bobwardms
+
+Blog-post: "SQL Server 2019 & Java: Parameters"
+We discuss how to handle parameters between SQL Server and Java, as well as discussing the support of output parameters.
+https://nielsberglund.com/2019/11/03/sql-server-2019--java-parameters/
+#sqlserver2019 #datascience #machinelearning #java #python
+
+
+Blog-post: "Interesting Stuff - Week 42, 2019".
 Kafka, Scaling Kubernetes, SQL Server & Java, PySpark, and other interesting topics.
 https://nielsberglund.com/2019/10/27/interesting-stuff---week-43-2019/
 #apachekafka #sqlserver #dotnet #kubernetes #java #python
