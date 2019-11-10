@@ -1,4 +1,10 @@
-﻿Blog-post: "Interesting Stuff - Week 44, 2019".
+﻿
+Blog-post: "Interesting Stuff - Week 45, 2019".
+Kafka, the wonders of Azure Synapse Analytics, Event Hubs and Dapr, and other interesting topics.
+https://nielsberglund.com/2019/11/10/interesting-stuff---week-45-2019/
+#apachekafka #sqlserver2019 #synapse #azuresynapse #MachineLearning #azure
+
+Blog-post: "Interesting Stuff - Week 44, 2019".
 SQL Server 2019 Big Data Cluster, SQL Server 2019 learning resources, Kafka & data pipelines, and other interesting topics.
 https://nielsberglund.com/2019/11/03/interesting-stuff---week-44-2019/
 #apachekafka #sqlserver #java #python
