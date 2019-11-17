@@ -1,4 +1,8 @@
-﻿
+﻿New Blog-post: "Interesting Stuff - Week 46, 2019".
+Pulumi & .NET Core, SQL Server 2019 Big Data Cluster, Microsoft Ignite The Tour, and other interesting topics.
+https://nielsberglund.com/2019/11/17/interesting-stuff---week-46-2019/
+#sqlserver2019 #MachineLearning #azure #dotnetcore #pulumi #MSIgniteTheTour #datascience
+
 Blog-post: "Interesting Stuff - Week 45, 2019".
 Kafka, the wonders of Azure Synapse Analytics, Event Hubs and Dapr, and other interesting topics.
 https://nielsberglund.com/2019/11/10/interesting-stuff---week-45-2019/
