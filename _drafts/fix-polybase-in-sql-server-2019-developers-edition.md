@@ -64,15 +64,15 @@ We see in *Figure 3* how all components are green which indicates that the insta
 
 ## Problem
 
-But has the installation succeeded? What I do after a SQL installation is to go to *Services* and change properties for the various SQL services, (automatic startup to manual startup, etc.). When I do this, I see:
+But has the installation succeeded? What usually I do after a SQL installation is to go to *Services* and change properties for the various SQL services, (automatic startup to manual startup, etc.). When I do this, I see:
 
 ![](/images/posts/sql-2k19-polybase-issue-services.png)
 
 **Figure 4:** *Services*
 
-What we see in *Figure 4* is a view of services a couple of minutes after the installation, and we see that the SQL Server service, (`MSSQLSERVER`), is in `Running` state. However, the two PolyBase services are still in a `Starting` state. Something must have gone wrong, but what!
+What we see in *Figure 4* is a view of services a couple of minutes after the installation. We see that the SQL Server service, (`MSSQLSERVER`), is in `Running` state. However, the two PolyBase services are still in a `Starting` state. Something must have gone wrong, but what!
 
-> **NOTE:** Depending on how long after installation you look at services you may see the PolyBase Engine in a stopped state, but the Data Movement in a `Starting` state.
+> **NOTE:** Depending on how long after installation you look at services you may see the PolyBase Engine in a stopped state, but the Data Movement still in a `Starting` state.
 
 Let us see if we can try and figure out what is wrong. We start by going to the SQL Server log files directory, which is at: `<path_to_sql_instance>\MSSQL\Log`. In there you find a `Polybase` directory with a `dump` subdirectory:
 
@@ -121,7 +121,7 @@ To enable we right-click on the TCP/IP protocol and in the menu choose **Enable*
 
 **Figure 7:** *Warning Dialog*
 
-So, we see in *Figure 7* that any changes will not happen until the SQL Server instance is restarted. Cool, let us restart the service. We go back to *Services* as in *Figure 4*, we right click on the SQL Server service, and choose **Restart**:
+So, we see in *Figure 7* that any changes will not happen until the SQL Server instance is restarted. Cool, let us restart the service. We go back to *Services* as in *Figure 4*, and we right-click on the SQL Server service, and choose **Restart**:
 
 ![](/images/posts/sql-2k19-polybase-issue-stop-service.png)
 
@@ -153,9 +153,9 @@ We see in *Figure 10* the `PID`, (highlighted in yellow), which we now use to te
 
 **Figure 11:** *Task Manager*
 
-As we see in *Figure 11* I called `taskkill` from command prompt which I opened as administrator. I used the process id from *Figure 10*, and I used the `/F` flag to indicate I wanted to force the termination. The command executed successfully, and as we see in *Figure 11* the process has been terminated.
+As we see in *Figure 11* I called `taskkill` from command prompt which I opened as administrator. I used the process-id from *Figure 10*, and I used the `/F` flag to indicate I wanted to force the termination. The command executed successfully, and as we see in *Figure 11* the process has been terminated.
 
-What is left to do now is to start the SQL Server process, followed by the PolyBase Data Movement service and the PolyBase Engine service. The PolyBase Data Movement service may still be in the state of `Starting, but by right clicking on the service and choose **Start** it will start:
+What is left to do now is to start the SQL Server process, followed by the PolyBase Data Movement service and the PolyBase Engine service. The PolyBase Data Movement service may still be in the state of `Starting, but by right-clicking on the service and choose **Start** it will start:
 
 ![](/images/posts/sql-2k19-polybase-issue-services-running.png)
 
@@ -167,14 +167,14 @@ We see in *Figure 12* how the services are up and running.
 
 In this post, we saw how we fix the issue where the PolyBase services do not start on a SQL Server 2019 Developer Edition.
 
-We said it was due to that TCP/IP is not an enabled SQL Server network protocol, and therefore the PolyBase services cannot connect to the SQL Server instance at startup. We fixed it by:
+We said it was due to that TCP/IP is not by default an enabled SQL Server network protocol for the Developer edition. Therefore the PolyBase services cannot connect to the SQL Server instance at startup. We fixed it by:
 
 * Enable the TCP/IP protocol under *SQL Server Network Configuration* in *SQL Server Configuration Manager*.
-* Retrieve the process id, (`PID`), for the SQL Server service.
+* Retrieve the process-id, (`PID`), for the SQL Server service.
 * Forcing the process to be terminated by the `taskkill /PID <process-id> /F` command.
 * Restart the SQL Server service, followed by the PolyBase services.
 
-Another way to do this is to install SQL Server without the PolyBase features. After installation you enable the TCP/IP protocol and then install the PolyBase features.
+Another way to do this is to install SQL Server without the PolyBase features. After installation you enable the TCP/IP protocol, restart SQL Server, and then install the PolyBase features.
 
 ## ~ Finally
 
