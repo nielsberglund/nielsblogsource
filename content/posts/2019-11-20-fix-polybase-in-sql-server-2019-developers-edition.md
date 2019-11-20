@@ -3,19 +3,19 @@ type: post
 layout: "post"
 title: Fix PolyBase in SQL Server 2019 Developers Edition
 author: nielsb
-date: 
+date: 2019-11-20T05:52:17+02:00
 comments: true
 highlight: true
-draft: true
+draft: false
 categories:
   - SQL Server 2019
 tags:
   - SQL Server 2019
   - Polybase
-  
-description: 
+description: How to fix PolyBase not working out of the box in SQL Server 2019 Developer edition.
 keywords:
-  -   
+  - SQL Server 2019
+  - Polybase   
 ---
 
 At [MS Ignite][1] in Orlando November 4 - 8, 2019, Microsoft announced the general availability of SQL Server 2019. At the same time, the SQL Server 2019 Developers Edition appeared as an MSDN download, and of course, I downloaded it and installed it on my dev box.
