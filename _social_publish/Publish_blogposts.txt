@@ -1,4 +1,9 @@
-﻿New Blog-post: "Interesting Stuff - Week 46, 2019".
+﻿New Blog-post: "Fix PolyBase in SQL Server 2019 Developers Edition"
+How to fix PolyBase not working out of the box, in SQL Server 2019 Developer edition.
+https://nielsberglund.com/2019/11/20/fix-polybase-in-sql-server-2019-developers-edition/
+#sqlserver2019 #PolyBase
+
+New Blog-post: "Interesting Stuff - Week 46, 2019".
 Pulumi & .NET Core, SQL Server 2019 Big Data Cluster, Microsoft Ignite The Tour, and other interesting topics.
 https://nielsberglund.com/2019/11/17/interesting-stuff---week-46-2019/
 #sqlserver2019 #MachineLearning #azure #dotnetcore #pulumi #MSIgniteTheTour #datascience

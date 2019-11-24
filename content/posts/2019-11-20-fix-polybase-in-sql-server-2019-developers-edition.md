@@ -12,7 +12,7 @@ categories:
 tags:
   - SQL Server 2019
   - Polybase
-description: How to fix PolyBase not working out of the box in SQL Server 2019 Developer edition.
+description: How to fix PolyBase not working out of the box, in SQL Server 2019 Developer edition.
 keywords:
   - SQL Server 2019
   - Polybase   
