@@ -1,4 +1,11 @@
-﻿New Blog-post: "Fix PolyBase in SQL Server 2019 Developers Edition"
+﻿New Blog-post: "Interesting Stuff - Week 47, 2019".
+Kafka & ksqlDB, SQL Server 2019 Big Data Cluster, Azure Data Studio, and other interesting topics.
+https://nielsberglund.com/2019/11/24/interesting-stuff---week-47-2019/
+#sqlserver2019 #apachekafka #ksqldb
+@SQLServerGeeks @thedatageeks @A_Bansal @jaykreps @confluentinc
+
+
+New Blog-post: "Fix PolyBase in SQL Server 2019 Developers Edition"
 How to fix PolyBase not working out of the box, in SQL Server 2019 Developer edition.
 https://nielsberglund.com/2019/11/20/fix-polybase-in-sql-server-2019-developers-edition/
 #sqlserver2019 #PolyBase
