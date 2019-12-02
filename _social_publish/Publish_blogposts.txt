@@ -1,4 +1,10 @@
-﻿New Blog-post: "Interesting Stuff - Week 47, 2019".
+﻿New Blog-post: "Interesting Stuff - Week 48, 2019".
+Kafka, ksqlDB & doughnuts, Azure Arc, Hadoop, and other interesting topics
+https://nielsberglund.com/2019/12/01/interesting-stuff---week-48-2019/
+#apachekafka #ksqldb #bigdata #hadoop
+@SQLServerGeeks @thedatageeks @A_Bansal @radtravis @charllamprecht
+
+New Blog-post: "Interesting Stuff - Week 47, 2019".
 Kafka & ksqlDB, SQL Server 2019 Big Data Cluster, Azure Data Studio, and other interesting topics.
 https://nielsberglund.com/2019/11/24/interesting-stuff---week-47-2019/
 #sqlserver2019 #apachekafka #ksqldb
