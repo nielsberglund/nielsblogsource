@@ -23,9 +23,9 @@ keywords:
   -   
 ---
 
-For you who follows my sporadic articles you wonder why I have yeat another post, (YAP), covering how to deploy a **SQL Server 2019 Big Data Cluster**, (BDC), using **Azure Data Studio**, (ADS).
+For you who follows my sporadic posts, you may wonder why I have yet another post, (YAP), covering how to deploy a **SQL Server 2019 Big Data Cluster**, (BDC), using **Azure Data Studio**, (ADS).
  
-The answer to that is that the version of BDC I deployed was a pre-release, and since then BDC has gone GA, (General Avalilability), and there are certain differences in ddeployment process between RC1, and RTM.
+The answer to that is that the version of BDC I deployed was a pre-release, and since then BDC has gone GA, (General Availability), and there are certain differences in deployment process between RC1, and RTM.
 
 So in this post let us look at how to deploy BDC RTM to Azure Kubernetes Service using ADS.
 
@@ -35,11 +35,11 @@ So in this post let us look at how to deploy BDC RTM to Azure Kubernetes Service
 
 To deploy using **Azure Data Studio**, (ADS), you need ADS (duh - see below), but you also need some other things.
 
-> **NOTE:** If you wonder where you have seen this pre-req section before, the answer is that it is almost identical to the pre-req section in my [previous install post].
+> **NOTE:** If you wonder where you have seen this pre-req section before, the answer is that it is almost identical to the pre-req section in my [previous install post][1].
 
 #### Azure Subscription
 
-As this post covers how to deploy a **SQL Server 2019 Big Data Cluster** to **Azure Kubernetes Service**, (AKS), you need an Azure subscription. If you do not have one you can sign up for a free trial subscription [here][6].
+As this post covers how to deploy a **SQL Server 2019 Big Data Cluster** to **Azure Kubernetes Service**, (AKS), you need an Azure subscription. If you do not have one, you can sign up for a free trial subscription [here][2].
 
 #### Python
 
@@ -47,9 +47,9 @@ Well, Python is not a tool as such, but you need Python installed on the machine
 
 #### azdata
 
-`azdata` is a Python command-line tool replacing `mssqlctl`. It enables cluster administrators to bootstrap and manages the big data cluster via REST APIs.
+`azdata` is a Python command-line tool enabling cluster administrators to bootstrap and manages the big data cluster via REST APIs. It replaces `mssqlctl`, which was the previous command-line tool for deploying a BDC.
 
-There are a couple of steps to install it:
+There are a couple of steps to install `azdata`:
 
 * If you have `mssqlctl` installed you need to uninstall it:
 
@@ -61,7 +61,7 @@ $ pip3 uninstall -r https://private-repo.microsoft.com/ \
 
 In *Code Snippet 1* above I have inserted a line continuation (`\`) to make the code fit the page.
 
-* If you have deployed CTP 3.2, or any later CTP's of the BDC, (including RC1), then you need to uninstall corresponding version of `azdata`:
+* If you have deployed CTP 3.2, or any later CTP's of the BDC, (including RC1), then you need to uninstall the corresponding version of `azdata`:
 
 ``` bash
 pip3 uninstall -r https://azdatacli.blob.core.windows.net/ \
@@ -69,14 +69,20 @@ pip3 uninstall -r https://azdatacli.blob.core.windows.net/ \
 ```
 **Code Snippet 2:** *Uninstall `azdata`*
 
-In *Code Snippet 2* you see how the uninstall command indicates a version of `azdata` to uninstall via `version-indicator>`. The value of the `<version-indicator> is as follows:
+In *Code Snippet 2* you see how the uninstall command indicates which version of `azdata` to uninstall via `<version-indicator>`. The value of the `<version-indicator> is as follows:
 
 * CTP 3.2: `2019-ctp3.2`.
 * RC1: `2019-rc1`.
 
+With the above in mind, the command I used to uninstall the `RC1` version of `azdata` looks like so:
 
+``` bash
+pip3 uninstall -r https://azdatacli.blob.core.windows.net/ \
+                  python/azdata/2019-rc1/requirements.txt
+```
+**Code Snippet 3:** *Uninstall RC1 `azdata`*
 
- takes the version of `azdata` to in `<version-indicatoruninstall: *`2019-ctp3.2`*. If you have the 3.2 version installed you need to confirm when you run the code in *Code Snippet 2* that you want to remove some installed components: 
+In *Code Snippet 3* we see how I have replaced `<version-indicator>` with `2019-rc1`. When you run the command, you have to confirm that you want to remove some installed components: 
 
 ![](/images/posts/inst-bdcrc1-uninst-azdata.png)
 
@@ -91,16 +97,16 @@ Just click `y` when asked to proceed.
 ``` bash
 $ pip3 install -U requests
 ```
-**Code Snippet 3:** *Install/Upgrade `requests`*
+**Code Snippet 4:** *Install/Upgrade `requests`*
 
-* When you have executed the code in *Code Snippet 3* you can install `azdata`:
+When you have executed the code in *Code Snippet 4* you can install `azdata`:
 
 ``` bash
 $ pip3 install -r https://aka.ms/azdata
 ```
-**Code Snippet 4:** *Installing `azdata`*
+**Code Snippet 5:** *Installing `azdata`*
 
-After executing the code in *Code Snippet 4* you can go ahead and install the other tools needed.
+After executing the code in *Code Snippet 5* you can go ahead and install the other tools needed.
 
 #### kubectl
 
@@ -110,45 +116,33 @@ You can install `kubectl` in different ways, and I installed it from [Chocolatey
 
 #### Azure CLI
 
-The Azure CLI is Microsoft's cross-platform command-line experience for managing Azure resources, and you install it on your local machine. You find install links for Azure CLI [here][4].
+The Azure CLI is Microsoft's cross-platform command-line experience for managing Azure resources, and you install it on your local machine. You find installation links for Azure CLI [here][4].
 
 ## Azure Data Studio
 
-Since this post is about installing and deploying a BDC using **Azure Data Studio**, you also need ADS. You may already have ADS installed, but to be able to install and deploy to the release candidate of BDC you need a specific install. If you have already installed ADS, this ADS version installs side-by-side with existing ADS installations.
+Since this post is about installing and deploying a BDC using **Azure Data Studio**, you also need ADS. Pre-releases of the BDC required special builds of ADS for deployment, (the Insiders builds), and the BDC RC1 release required the ADS RC build.
 
-The install link to the ADS RC version is [here][2].
-
-#### SQL Server 2019 (Preview)
-
-In addition to ADS, you also need the **SQL Server 2019 (Preview)** extension, which you install after installing ADS.
-
-As opposed to other ADS extensions, you need to download the extension to your machine before you can install it. You download it from [here][5]. After download, you install it from the **File** menu, and the **Install Extension from VSIX Package** item:
-
-![](/images/posts/inst-bdcrc1-inst-extension.png)
-
-**Figure 2:** *Install Extension*
-
-In *Figure 2* you see the **File** menu (outlined in blue), and the **Install Extension from VSIX Package** item outlined in red.
+This is not the case anymore; any ADS build from 1.13.0 is sufficient for deployment. You find installation links for ADS [here][5].
 
 #### Azure Data Studio Notebooks
 
-I mentioned above that you deploy the BDC using ADS deployment *Notebooks*. You may ask yourself what an **Azure Data Studio Notebook** is? Well, Notebooks come from the Data Science world where a Notebook can contain live code, equations, visualizations and narrative text. It is a tool for teaching or sharing information between people. A notebook makes it easy to link lots of docs and code together.
+You deploy the BDC using ADS deployment *Notebooks*. You may ask yourself what an **Azure Data Studio Notebook** is? Well, Notebooks come from the Data Science world where a Notebook can contain live code, equations, visualizations and narrative text. It is a tool for teaching or sharing information between people. A notebook makes it easy to link lots of docs and code together.
 
-When Microsoft developed ADS, the embedded the [Jupyter][7] service in ADS, which enables ADS to run Notebooks. When you talk about Notebooks, you also talk about *Kernels*. A *Kernel* is the programming language you can write and execute code in, in the *Notebook*:
+When Microsoft developed ADS, they embedded the [Jupyter][6] service in ADS, which enables ADS to run Notebooks. When you talk about Notebooks, you also talk about *Kernels*. A *Kernel* is the programming language you can write and execute code in, in the *Notebook*:
 
 ![](/images/posts/inst-bdcrc1-ads-notebook-kernels.png)
 
-**Figure 3:** *Notebook Kernels*
+**Figure 2:** *Notebook Kernels*
 
-The drop-down you see in *Figure 3* shows the *Kernels* ADS supports. When you deploy, you use the *Python 3* kernel.
+The drop-down you see in *Figure 2* shows the *Kernels* ADS supports. When you deploy, you use the *Python 3* kernel.
 
 If you have not used Python Notebooks before in ADS, you need to configure Python for use with Notebooks. You enter **Ctrl+Shift+P** to open the command palette, and you search for *Configure Python*:
 
 ![](/images/posts/inst-bdcrc1-ads-configure-notebooks.png)
 
-**Figure 4:** *Configure Notebooks*
+**Figure 3:** *Configure Notebooks*
 
-In *Figure 4* you see the command palette, and you choose *Configure Python for Notebooks*, and follow the instructions.
+In *Figure 3* you see the command palette, and you choose *Configure Python for Notebooks*, and follow the instructions.
 
 When you have configured Python for the notebooks, you are ready to deploy the BDC.
 
@@ -177,13 +171,12 @@ If you have comments, questions etc., please comment on this post or [ping][ma] 
 -->  
 
 
-
-[1]:
-[2]:
-[3]:
-[4]:
-[5]:
-[6]:
+[1]: {{< relref "2019-09-11-install-sql-server-2019-big-data-cluster-using-azure-data-studio.md" >}}
+[2]: https://azure.microsoft.com/en-us/free/
+[3]: https://chocolatey.org/packages/kubernetes-cli
+[4]: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest
+[5]: https://docs.microsoft.com/en-us/sql/azure-data-studio/download?view=sql-server-ver15
+[6]: https://jupyter.org/
 [7]:
 [8]:
 [9]:

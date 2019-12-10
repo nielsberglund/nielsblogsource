@@ -1,4 +1,10 @@
-﻿New Blog-post: "Interesting Stuff - Week 48, 2019".
+﻿New Blog-post: "Interesting Stuff - Week 49, 2019".
+Lock free durable sets, chaos engineering, stream processing APIs, and other interesting topics.
+https://nielsberglund.com/2019/12/08/interesting-stuff---week-49-2019/
+#bigdatacluster
+@SQLServerGeeks @thedatageeks @A_Bansal @adriancolyer 
+
+New Blog-post: "Interesting Stuff - Week 48, 2019".
 Kafka, ksqlDB & doughnuts, Azure Arc, Hadoop, and other interesting topics
 https://nielsberglund.com/2019/12/01/interesting-stuff---week-48-2019/
 #apachekafka #ksqldb #bigdata #hadoop
