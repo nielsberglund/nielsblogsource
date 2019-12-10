@@ -74,7 +74,7 @@ In *Code Snippet 2* you see how the uninstall command indicates which version of
 * CTP 3.2: `2019-ctp3.2`.
 * RC1: `2019-rc1`.
 
-With the above in mind, the command I used to uninstall the `RC1` version of `azdata` looks like so:
+* With the above in mind, the command I used to uninstall the `RC1` version of `azdata` looks like so:
 
 ``` bash
 pip3 uninstall -r https://azdatacli.blob.core.windows.net/ \
@@ -110,7 +110,7 @@ After executing the code in *Code Snippet 5* you can go ahead and install the ot
 
 #### kubectl
 
-The `kubectl` tool is a Kubernetes command-line tool, and it allows you to run commands against Kubernetes clusters. You can use `kubectl` to deploy applications, inspect and manage cluster resources, and view logs.
+The `kubectl` tool is a Kubernetes command-line tool, and it allows you to run commands against Kubernetes clusters. You use `kubectl` to deploy applications, inspect and manage cluster resources, and view logs.
 
 You can install `kubectl` in different ways, and I installed it from [Chocolatey][3]: `choco install kubernetes-cli`.
 
@@ -145,6 +145,10 @@ If you have not used Python Notebooks before in ADS, you need to configure Pytho
 In *Figure 3* you see the command palette, and you choose *Configure Python for Notebooks*, and follow the instructions.
 
 When you have configured Python for the notebooks, you are ready to deploy the BDC.
+
+## Deployment
+
+
 
 
 
