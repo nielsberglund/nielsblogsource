@@ -146,7 +146,19 @@ In *Figure 3* you see the command palette, and you choose *Configure Python for 
 
 When you have configured Python for the notebooks, you are ready to deploy the BDC.
 
-## Deployment
+## Deployment Settings
+
+
+
+
+So, above I said "you are ready to deploy ...". Well, that is not exactly true. Before you do the actual deployment you need to set settings for your cluster:
+
+* Number of nodes.
+* Size of disks.
+* Number of pool instances.
+* and more.
+
+In the case when deploying to AKS, as we do here, you also need to set Azure related settings. 
 
 
 
