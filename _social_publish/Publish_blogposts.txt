@@ -1,4 +1,11 @@
-﻿New Blog-post: "Interesting Stuff - Week 49, 2019".
+﻿New Blog-post: "Interesting Stuff - Week 50 & Year End, 2019".
+Kafka, ksqlDB, Kubernetes, SQL Server 2019 on Linux, and other interesting topics!
+https://nielsberglund.com/2019/12/15/interesting-stuff---week-50--year-end-2019/
+#apachekafka #ksqldb #bigdata
+@charllamprecht @IsTheArchitect
+
+
+New Blog-post: "Interesting Stuff - Week 49, 2019".
 Lock free durable sets, chaos engineering, stream processing APIs, and other interesting topics.
 https://nielsberglund.com/2019/12/08/interesting-stuff---week-49-2019/
 #bigdatacluster

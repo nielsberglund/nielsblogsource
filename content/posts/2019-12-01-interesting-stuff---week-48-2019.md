@@ -50,7 +50,7 @@ This blog-post is the "roundup" of the things that have been most interesting to
 ## Streaming
 
 * [Introduction to Event Streaming with Kafka and Kafdrop][5]. This post I link to here is an awesome introduction to Kafka and event streaming. I recommend the post highly!   
-* [Kafka Donuts - on KSQLDB - #1][6]. In las weeks [roundup][7] I covered the [introduction of **ksqlDB**][8]. My good friend, and colleague, [Charl Lamprecht][charl] who loves Kafka almost as much as he loves doughnuts had dive into how **ksqlDB** works and the post I link to here is the result. Please go ahead and read it - it gives you a good insight into **ksqlDB**!
+* [Kafka Donuts - on KSQLDB - #1][6]. In last weeks [roundup][7] I covered the [introduction of **ksqlDB**][8]. My good friend, and colleague, [Charl Lamprecht][charl] who loves Kafka almost as much as he loves doughnuts did a dive into how **ksqlDB** works and the post I link to here is the result. Please go ahead and read it - it gives you a good insight into **ksqlDB**!
 
 ## WIND (What Is Niels Doing)
 

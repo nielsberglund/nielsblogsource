@@ -146,7 +146,23 @@ In *Figure 3* you see the command palette, and you choose *Configure Python for 
 
 When you have configured Python for the notebooks, you are ready to deploy the BDC.
 
-## Deployment Settings
+## Deployment
+
+To deploy you can use the *Command Palette*, (as per above), and you enter *dep* in the textbox:
+
+![](/images/posts/ads-install-bdc-install3.png)
+
+**Figure 1:** *Command Palette Deploy SQL Server*
+
+We see in *Figure 1* the command palette and how I entered *dep* in the text box which then shows available commands. Among the commands we see *Deployment: Deploy SQL Server ...*, (outlined in red).
+
+Before we go any further I just want to mention that we do not necessarily need to use the command palette to get to the *Deploy ...* command:
+
+![](/images/posts/ads-install-bdc-install1.png)
+
+**Figure 2:** *Connections*
+
+
 
 
 
