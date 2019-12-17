@@ -154,15 +154,54 @@ To deploy you can use the *Command Palette*, (as per above), and you enter *dep*
 
 **Figure 1:** *Command Palette Deploy SQL Server*
 
-We see in *Figure 1* the command palette and how I entered *dep* in the text box which then shows available commands. Among the commands we see *Deployment: Deploy SQL Server ...*, (outlined in red).
+We see in *Figure 1* the command palette and how I entered *dep* in the text box, which then shows available commands. Among the commands we see *Deployment: Deploy SQL Server ...*, (outlined in red).
 
 Before we go any further I just want to mention that we do not necessarily need to use the command palette to get to the *Deploy ...* command:
 
-![](/images/posts/ads-install-bdc-install1.png)
+![](/images/posts/ads-install-bdc-install2.png)
 
-**Figure 2:** *Connections*
+**Figure 2:** *Deploy via Connections*
+
+In *Figure 2* we see the *Deploy SQL Server ...* command, (outlined in red), as we saw in *Figure 1*. In this case, we got to the command by:
+
+* Clicking on the first icon from the top, (outlined in yellow), in the activity bar. The activity bar is the leftmost panel in ADS.
+* Click on the ellipsis, (outlined in blue), in the *CONNECTIONS* panel.
+
+So, we get to the *Deploy* command either through the command palette or the *CONNECTIONS* panel.
+
+To start the deployment process, we click on the *Deploy* command as we see in *Figure 1*/*Figure 2*:
+
+![](/images/posts/ads-install-bdc-install4.png)
+
+**Figure 3:** *Deployment Options*
+
+We see in *Figure 3* how there are different SQL Server deployment options:
+
+* SQL on Windows.
+* SQL Container.
+* SQL Server Big Data Cluster.
+
+The default deployment option, as we see in *Figure 3*, is to deploy SQL Server as a container image. We also see that ADS checks whether we have the necessary tools installed for the deployment in question. In this case, I do not have `docker` installed, so there is an error.
+
+Fortunately, I do not want to deploy a container but the SQL Server Big Data Cluster, so I click on the BDC option, (outlined in red):
+
+![](/images/posts/ads-install-bdc-install6.png)
+
+**Figure 4:** *BDC Deployment Options*
+
+Clicking the BDC option we see something like in *Figure 4*: the *Select the deployment options* dialog. The dialog gives us the options for the BDC deployment:
+
+* Version - at this stage only SQL Server 2019.
+* Deployment target - where we want to deploy the BDC to. In *Figure 4* we see how I chose to deploy to a new Azure Kubernetes Service cluster.
+
+We also see in *Figure 4* how ADS ensure that we have the required tools installed.
 
 
+
+
+As we want to deploy to 
+
+You choose *SQL Server big data cluster*, (outlined in blue), the version *SQL Server 2019 RC big data cluster*, (outlined in yellow), and the target to deploy to: *New Azure Kubernetes Service cluster*. When you click **Select** in the dialog, you see a new dialog:
 
 
 
