@@ -194,7 +194,19 @@ Clicking the BDC option we see something like in *Figure 4*: the *Select the dep
 * Version - at this stage only SQL Server 2019.
 * Deployment target - where we want to deploy the BDC to. In *Figure 4* we see how I chose to deploy to a new Azure Kubernetes Service cluster.
 
-We also see in *Figure 4* how ADS ensure that we have the required tools installed.
+We also see in *Figure 4* how ADS ensure that we have the required tools installed. When we click **Select** we get a new dialog:
+
+![](/images/posts/ads-install-bdc-install7.png)
+
+**Figure 5:** *Configuration Template*
+
+The dialog we see in *Figure 5* allows us to choose a deployment profile.The profile to defines things like how many instances we want of the various BDC components, and storage requirements. These settings can be changed later during the deployment process. 
+
+I chose the `aks-dev-test` profile, and going on from there we see:
+
+![](/images/posts/ads-install-bdc-install8.png)
+
+**Figure 6:** *Azure Settings*
 
 
 
