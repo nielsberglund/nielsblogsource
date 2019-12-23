@@ -3,10 +3,10 @@ type: post
 layout: "post"
 title: How to Deploy SQL Server 2019 Big Data Cluster Using Azure Data Studio
 author: nielsb
-date: 
+date: 2019-12-23T19:35:36+02:00
 comments: true
 highlight: true
-draft: true
+draft: false
 categories:
   - SQL Server 2019
   - SQL Server 2019 Big Data Cluster
@@ -18,14 +18,20 @@ tags:
   - Spark
   - Hadoop
   - Python
-description: 
+description: WE look at using Azure Data Studio to deploy SQL Server 2019 Big Data Cluster.
 keywords:
-  -   
+  - SQL Server 2019 Big Data Cluster
+  - Kubernetes
+  - Azure Kubernetes Service
+  - Azure Data Studio
+  - Spark
+  - Hadoop
+  - Python  
 ---
 
 For you who follows my sporadic posts, you may wonder why I have yet another post, (YAP), covering how to deploy a **SQL Server 2019 Big Data Cluster**, (BDC), using **Azure Data Studio**, (ADS).
  
-The answer to that is that the version of BDC I deployed was a pre-release, and since then BDC has gone GA, (General Availability), and there are certain differences in deployment process between RC1, and RTM.
+The answer to that is that the version of BDC I deployed in [this][1] post was a pre-release, and since then BDC has gone GA, (General Availability), and there are certain differences in deployment process between RC1, and RTM.
 
 So in this post let us look at how to deploy BDC RTM to Azure Kubernetes Service using ADS.
 
@@ -106,7 +112,7 @@ $ pip3 install -r https://aka.ms/azdata
 ```
 **Code Snippet 5:** *Installing `azdata`*
 
-After executing the code in *Code Snippet 5* you can go ahead and install the other tools needed.
+After executing the code in *Code Snippet 5* you install the other tools needed.
 
 #### kubectl
 
@@ -128,7 +134,7 @@ This is not the case anymore; any ADS build from 1.13.0 is sufficient for deploy
 
 You deploy the BDC using ADS deployment *Notebooks*. You may ask yourself what an **Azure Data Studio Notebook** is? Well, Notebooks come from the Data Science world where a Notebook can contain live code, equations, visualizations and narrative text. It is a tool for teaching or sharing information between people. A notebook makes it easy to link lots of docs and code together.
 
-When Microsoft developed ADS, they embedded the [Jupyter][6] service in ADS, which enables ADS to run Notebooks. When you talk about Notebooks, you also talk about *Kernels*. A *Kernel* is the programming language you can write and execute code in, in the *Notebook*:
+When Microsoft developed ADS, they embedded the [Jupyter][6] service in ADS, which enables ADS to run Notebooks. When you talk about Notebooks, you also talk about *Kernels*. A *Kernel* is the programming language you write and execute code in, in the *Notebook*:
 
 ![](/images/posts/inst-bdcrc1-ads-notebook-kernels.png)
 
@@ -198,7 +204,7 @@ Clicking the BDC option we see something like in *Figure 4*: the *Select the dep
 
 We also see in *Figure 4* how ADS ensure that we have the required tools installed.  
 
-When deploying a BDC to AKS we have to do some configuration before the actual deployment can happen, and the configuration consists of five steps:
+When deploying a BDC to AKS, we have to do some configuration before the actual deployment can happen, and the configuration consists of five steps:
 
 * Configuration template / profile.
 * Azure settings.
@@ -208,13 +214,13 @@ When deploying a BDC to AKS we have to do some configuration before the actual d
 
 #### Configuration Template
 
-After we have chosen the SQL Server version and deployment target in *Figure 4* we click **Select** and we get the dialog for the configuration template:
+After we have chosen the SQL Server version and deployment target in *Figure 4*, we click **Select** and we get the dialog for the configuration template:
 
 ![](/images/posts/ads-install-bdc-install7.png)
 
 **Figure 5:** *Configuration Template*
 
-The dialog we see in *Figure 5* allows us to choose a deployment profile. The profile defines things like how many instances we want of the various BDC components and storage requirements. These settings can be changed later during the deployment process.
+The dialog we see in *Figure 5* allows us to choose a deployment profile. The profile defines things like how many instances we want of the various BDC components, and storage requirements. These settings can be changed later during the deployment process.
 
 I chose the `aks-dev-test` profile with default values, 
 
@@ -236,7 +242,7 @@ The thing to bear in mind here is that a BDC deployment requires at a minimum ar
 
 #### Cluster Settings
 
-Moving on from from Azure settings:
+Moving on from Azure settings:
 
 ![](/images/posts/ads-install-bdc-install9.png)
 
@@ -280,7 +286,7 @@ In this final step, (before actual deployment), we can:
 * Save the settings from previous steps to config files.
 * Go back and change settings.
 * Cancel out.
-* Script the settings to a notebook
+* Script the settings to a notebook.
 
 The last option in the list above is what we choose when we deploy.
 
@@ -292,7 +298,7 @@ When we click on **Script to Notebook** a Notebook opens:
 
 **Figure 10:** *Deploy Notebook*
 
-We see in *Figure 10* the notebook that has been scripted for us based on the settings we defined in the steps above. Since we said we wanted to deploy to a new Azure Kubernetes Service Cluster the Notebook creates a new AKS cluster for us together with deploying the BDC.
+We see in *Figure 10* the notebook that has been scripted for us based on the settings we defined in the steps above. Since we said we wanted to deploy to a new Azure Kubernetes Service Cluster, the Notebook creates a new AKS cluster for us together with deploying the BDC.
 
 When you scroll through the notebook, you see the various stages of the deployment and what it does in each stage:
 
@@ -319,7 +325,7 @@ An example of the Notebook is below:
 
 In *Figure 11* we see some cells with code, and above the cells describing text.
 
-To do the deployment, you can now either run each cell independently by clicking on the cell and hit F5 or click on the **Run Cells** command at the top of the notebook, (outlined in red in *Figure 10*). In either case, you see what command the cell executes as well as the result:
+To do the deployment, you can now either run each cell independently by clicking on the cell and hit F5 or click on the **Run Cells** command at the top of the notebook, (outlined in red in *Figure 10*). In either case, you see what command the cell executes as well as the outcome:
 
 ![](/images/posts/inst-bdcrc1-cell-output.png)
 
@@ -327,7 +333,7 @@ To do the deployment, you can now either run each cell independently by clicking
 
 What you see in *Figure 12* is the output from creating the Azure resource group.
 
-Be aware that the deployment takes a while, and especially the stage *Create SQL Server 2019 big data cluster*. Unfortunatley the Notebook does not give you much information where you are in the deployment, but you can use `kubectl` from the command line to get some feel for where you are in the process:
+Be aware that the deployment takes a while, and especially the stage *Create SQL Server 2019 big data cluster*. Unfortunately, the Notebook does not give you much information where you are in the deployment, but you can use `kubectl` from the command line to get some feel for where you are in the process:
 
 ![](/images/posts/ads-install-bdc-install16-get-pods.png)
 
@@ -337,17 +343,17 @@ We see in *Figure 13* how I have executed `kubectl get pods -n sqlbdc-cluster` e
 
 > **NOTE:** For the `-n` flag in the command I use the name of the BDC cluster I assigned in step 3, (*Cluster Settings*), above.
 
-We see that the deployment is busy deploying two controller service, (see below), related pods. If I run the same command a bit later I see:
+We see that the deployment is busy deploying two pods related to the controller service. If I run the same command a bit later, I see:
 
 ![](/images/posts/ads-install-bdc-install16-get-pods2.png)
 
 **Figure 14:** *Get Pods - II*
 
-Now we see in *Figure 14* how more pods are deployed, and some of them are also in a running state, amongst them the control pods. As the control pods is in a running state, the controller service should now be up and running.
+Now we see in *Figure 14* how more pods are deployed, and some of them also have a state of running, amongst them the control pods. As the control pods have a state of running, the controller service should now be up and running.
 
 #### Controller Service
 
-The controller service is, as the name implies, what controls the BDC, and it is the controller service which interacts with the Kubernetes cluster. When deploying a BDC the controller service is always deployed first so it can co-ordinate dployments with the Kubernetes service.
+The controller service is, as the name implies, what controls the BDC, and it is the controller service which interacts with the Kubernetes cluster. When deploying a BDC, the controller service is always deployed first so it can co-ordinate deployments with the Kubernetes service.
 
 The controller service exposes an endpoint with which we can monitor the BDC. While the deployment is in process we can get to the IP address for the endpoint via a `kubectl` command:
 
@@ -360,11 +366,11 @@ In *Code Snippet 6* we see how I call `kubectl get svc` with the name of the BDC
 
 When I run the code in *Code Snippet 6* I see the following:
 
-![](/images/posts/ads-install-bdc-install16-get-pods2.png)
+![](/images/posts/ads-install-bdc-get-svc.png)
 
 **Figure 15:** *Services*
 
-We see in *Figure 15* the controller service and its external IP adress, (outlined in red). With this in hand we can now use ADS to connect to the controller:
+We see in *Figure 15* the controller service and its external IP address and port, (outlined in red). With this in hand, we can now use ADS to connect to the controller:
 
 ![](/images/posts/ads-install-bdc-controller1.png)
 
@@ -376,72 +382,80 @@ To add a BDC controller we expand the *SQL SERVER BIG DATA CLUSTERS* panel in AD
 
 **Figure 17:** *Connect to BDC Controller*
 
-In the connection dialog we see in *Figure 17* we fill in the IP adress and port we retrieved when we executed *Code Snippet 6*. The user name and password are the ones we defined in *Cluster Settings*, (*Figure 7*).
+In the connection dialog we see in *Figure 17* we fill in the IP address and port we retrieved when we executed *Code Snippet 6*. The user name and password are the ones we defined in *Cluster Settings*, (*Figure 7*). We then click **Add** and the controller appears in the *SQL SERVER BIG DATA CLUSTERS* panel. Right-clicking on the controller we see:
 
+![](/images/posts/ads-install-bdc-controller-manage.png)
 
+**Figure 18:** *Controller Manage*
 
+We see in *Figure 18* how we get a menu where we choose **Manage**:
 
+![](/images/posts/ads-install-bdc-controller2.png)
 
-Seeing that the control pods are in a running state, we can use the controller endpoint to monitor the deployment process:
+**Figure 19:** *BDC Dashboard*
 
+When we click **Manage** as in *Figure 18* we get a BDC dashboard as we see in *Figure 19*, and the dashboard gives us an overview of the cluster. Since we have not finished deploying yet, we see that quite a few services are in an unhealthy state. By refreshing now and then we see how the services move from unhealthy to healthy.
 
+#### Deployment Finished
 
-.
-
-
-
-
-
-
-Eventually, the deployment finishes, and you get an output from the cell *Create SQL Server 2019 Big Data Cluster*:
+Eventually, the deployment finishes, and we get an output from the cell *Create SQL Server 2019 Big Data Cluster*:
 
 ![](/images/posts/ads-install-bdc-install17-finished.png)
 
-**Figure 15:** *Deployment Finished*
+**Figure 20:** *Deployment Finished*
 
-In *Figure 15* we see the output after a successful deployment.
+In *Figure 20* we see the output after a successful deployment. We can now go back to the controller service and see what it reports:
 
+![](/images/posts/ads-install-bdc-controller3.png)
 
+**Figure 21:** *Healthy Cluster*
 
+As we see in *Figure 21* all services are green, yay! What we also see in *Figure 21* are service endpoints. The BDC exposes external endpoints for various services, and those are the ones you see in *Figure 21*. It is beyond the scope of this post to discuss what all those endpoints are, but the one outlined in red is the endpoint for the SQL Server master instance.
 
+## Connect to Cluster
 
+To connect to the SQL Server master instance, we use the endpoint outlined in red in *Figure 21*. We can either try and connect via clicking on the link for the endpoint or via the **New Connection** icon in the servers panel:
 
+![](/images/posts/ads-install-bdc-connect-servers.png)
 
+**Figure 22:** *New Connection*
 
+Clicking on the **New Connection** icon as we see in *Figure 22* brings up a *Connection* dialog:
 
+![](/images/posts/ads-install-bdc-connect-admin.png)
 
+**Figure 23:** *Connect to SQL Server*
 
+There are two things to notice in *Figure 23*:
 
+* The Server IP includes a port number.
+* User name is not `sa` but the user name we defined in *Cluster Settings*, (*Figure 7*).
 
+The reason for the port number is that the default port number for SQL Server: `1433` is used within the BDC, and for external use `31433` is used as default. You can set the port number to something other than the default in the *Service Settings* step, (*Figure 8*).
 
+Why we use `admin` as user name, and not `sa` - which every SQL DBA/Developer worth his/her salt loves - is that `sa` is by default disabled.
 
+You would have noticed that if you tried to connect via the endpoint link, as that uses `sa` as user name. To enable `sa` we log in as `admin`, and then run the following code:
 
+``` sql
+USE master;
+GO
 
+ALTER LOGIN sa WITH PASSWORD=N'<some-secret-pwd>''
+GO
 
+ALTER LOGIN sa ENABLE;
+GO
+```
+**Code Snippet 7:** *Enable `sa`*
 
-As we want to deploy to 
+In *Code Snippet 7* we see how we set a super-secret password for `sa`, and then we enable the account.
 
-You choose *SQL Server big data cluster*, (outlined in blue), the version *SQL Server 2019 RC big data cluster*, (outlined in yellow), and the target to deploy to: *New Azure Kubernetes Service cluster*. When you click **Select** in the dialog, you see a new dialog:
+We now have a fully functional BDC!
 
+## Summary
 
-
-
-So, above I said "you are ready to deploy ...". Well, that is not exactly true. Before you do the actual deployment you need to set settings for your cluster:
-
-* Number of nodes.
-* Size of disks.
-* Number of pool instances.
-* and more.
-
-In the case when deploying to AKS, as we do here, you also need to set Azure related settings. 
-
-
-
-
-
-![](/images/posts/<image_name_incl_ext>)
-
-**Figure 1:** **
+In this post you saw how you can deploy a **SQL Server 2019 Big Data Cluster* using **Azure Data Studio** and notebooks.
 
 ## ~ Finally
 
@@ -455,35 +469,9 @@ If you have comments, questions etc., please comment on this post or [ping][ma] 
 [sqsk]: https://www.sqlskills.com
 [ba]: https://twitter.com/bob_albright
 
-
-<!--
-  post reference
-  [pkg1]: {{< relref "" >}}
--->  
-
-
 [1]: {{< relref "2019-09-11-install-sql-server-2019-big-data-cluster-using-azure-data-studio.md" >}}
 [2]: https://azure.microsoft.com/en-us/free/
 [3]: https://chocolatey.org/packages/kubernetes-cli
 [4]: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest
 [5]: https://docs.microsoft.com/en-us/sql/azure-data-studio/download?view=sql-server-ver15
 [6]: https://jupyter.org/
-[7]:
-[8]:
-[9]:
-[10]:
-[11]:
-[12]:
-[13]:
-[14]:
-[15]:   
-
-<!--
-[series1]: <> [SQL Server R Services](/series/sql_server_2k16_r_services)
-[series2]: <> [Install R Packages in SQL Server ML Services](/series/sql_server_ml_services_install_packages)
-[series3]: <> [sp_execute_external_script and SQL Server Compute Context](/series/spees_and_sql_compute_context)
--->
-
-<!--
-[findstr]: <> findstr /I \<word_to_find\> *
--->
