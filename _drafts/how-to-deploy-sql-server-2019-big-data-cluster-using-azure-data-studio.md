@@ -136,6 +136,8 @@ When Microsoft developed ADS, they embedded the [Jupyter][6] service in ADS, whi
 
 The drop-down you see in *Figure 2* shows the *Kernels* ADS supports. When you deploy, you use the *Python 3* kernel.
 
+Code in Notebooks exists in cells, and to run the code you execute the cell. 
+
 If you have not used Python Notebooks before in ADS, you need to configure Python for use with Notebooks. You enter **Ctrl+Shift+P** to open the command palette, and you search for *Configure Python*:
 
 ![](/images/posts/inst-bdcrc1-ads-configure-notebooks.png)
@@ -232,7 +234,6 @@ It is worth noting that I have changed the *VM size*, and *VM count* from its de
 
 The thing to bear in mind here is that a BDC deployment requires at a minimum around 24 hard disks altogether in your cluster, and each VM has a set number of disks. In my case, each `Standard_B8ms` VM has 16 disks so I should be good (3 * 16).
 
-
 #### Cluster Settings
 
 Moving on from from Azure settings:
@@ -272,7 +273,7 @@ We go on from the service settings:
 
 **Figure 9:** *Settings Summary*
 
-The last step is not so much of a step where we do things, but - as we see in *Figure 9 - it is a summary of the settings we have defined in the previous steps.
+The last step is not so much of a step where we do things, but - as we see in *Figure 9* - it is a summary of the settings we have defined in the previous steps.
 
 In this final step, (before actual deployment), we can: 
 
@@ -292,6 +293,116 @@ When we click on **Script to Notebook** a Notebook opens:
 **Figure 10:** *Deploy Notebook*
 
 We see in *Figure 10* the notebook that has been scripted for us based on the settings we defined in the steps above. Since we said we wanted to deploy to a new Azure Kubernetes Service Cluster the Notebook creates a new AKS cluster for us together with deploying the BDC.
+
+When you scroll through the notebook, you see the various stages of the deployment and what it does in each stage:
+
+* Check dependencies.
+* Required information.
+* Azure settings.
+* Default settings.
+* Login to Azure.
+* Set active Azure subscription.
+* Create Azure resource group.
+* Create AKS cluster.
+* Set the new AKS cluster as current context.
+* Create a deployment configuration file.
+* Create SQL Server 2019 big data cluster.
+* Login to SQL Server 2019 big data cluster.
+* Show SQL Server 2019 big data cluster endpoints.
+* Connect to master SQL Server instance in Azure Data Studio.
+
+An example of the Notebook is below:
+
+![](/images/posts/ads-install-bdc-install13.png)
+
+**Figure 11:** *Notebook Cells*
+
+In *Figure 11* we see some cells with code, and above the cells describing text.
+
+To do the deployment, you can now either run each cell independently by clicking on the cell and hit F5 or click on the **Run Cells** command at the top of the notebook, (outlined in red in *Figure 10*). In either case, you see what command the cell executes as well as the result:
+
+![](/images/posts/inst-bdcrc1-cell-output.png)
+
+**Figure 12:** *Cell Output*
+
+What you see in *Figure 12* is the output from creating the Azure resource group.
+
+Be aware that the deployment takes a while, and especially the stage *Create SQL Server 2019 big data cluster*. Unfortunatley the Notebook does not give you much information where you are in the deployment, but you can use `kubectl` from the command line to get some feel for where you are in the process:
+
+![](/images/posts/ads-install-bdc-install16-get-pods.png)
+
+**Figure 13:** *Get Pods - I*
+
+We see in *Figure 13* how I have executed `kubectl get pods -n sqlbdc-cluster` early in the deployment process. 
+
+> **NOTE:** For the `-n` flag in the command I use the name of the BDC cluster I assigned in step 3, (*Cluster Settings*), above.
+
+We see that the deployment is busy deploying two controller service, (see below), related pods. If I run the same command a bit later I see:
+
+![](/images/posts/ads-install-bdc-install16-get-pods2.png)
+
+**Figure 14:** *Get Pods - II*
+
+Now we see in *Figure 14* how more pods are deployed, and some of them are also in a running state, amongst them the control pods. As the control pods is in a running state, the controller service should now be up and running.
+
+#### Controller Service
+
+The controller service is, as the name implies, what controls the BDC, and it is the controller service which interacts with the Kubernetes cluster. When deploying a BDC the controller service is always deployed first so it can co-ordinate dployments with the Kubernetes service.
+
+The controller service exposes an endpoint with which we can monitor the BDC. While the deployment is in process we can get to the IP address for the endpoint via a `kubectl` command:
+
+``` bash
+kubectl get svc -n sqlbdc-cluster
+```
+**Code Snippet 6:** *Retrieve Endpoints*
+
+In *Code Snippet 6* we see how I call `kubectl get svc` with the name of the BDC cluster. The command lists all services in the specified namespace, (the `-n` flag), together with information about the services. Part of the information is the exposed IP address, (if any), of the service.
+
+When I run the code in *Code Snippet 6* I see the following:
+
+![](/images/posts/ads-install-bdc-install16-get-pods2.png)
+
+**Figure 15:** *Services*
+
+We see in *Figure 15* the controller service and its external IP adress, (outlined in red). With this in hand we can now use ADS to connect to the controller:
+
+![](/images/posts/ads-install-bdc-controller1.png)
+
+**Figure 16:** *Add Big Data Cluster Controller*
+
+To add a BDC controller we expand the *SQL SERVER BIG DATA CLUSTERS* panel in ADS as we see in *Figure 16*, and click on the `+` sign. That gives us a connection dialog:
+
+![](/images/posts/ads-install-bdc-add-controller.png)
+
+**Figure 17:** *Connect to BDC Controller*
+
+In the connection dialog we see in *Figure 17* we fill in the IP adress and port we retrieved when we executed *Code Snippet 6*. The user name and password are the ones we defined in *Cluster Settings*, (*Figure 7*).
+
+
+
+
+
+Seeing that the control pods are in a running state, we can use the controller endpoint to monitor the deployment process:
+
+
+
+.
+
+
+
+
+
+
+Eventually, the deployment finishes, and you get an output from the cell *Create SQL Server 2019 Big Data Cluster*:
+
+![](/images/posts/ads-install-bdc-install17-finished.png)
+
+**Figure 15:** *Deployment Finished*
+
+In *Figure 15* we see the output after a successful deployment.
+
+
+
 
 
 
