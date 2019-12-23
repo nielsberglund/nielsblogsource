@@ -146,9 +146,9 @@ In *Figure 3* you see the command palette, and you choose *Configure Python for 
 
 When you have configured Python for the notebooks, you are ready to deploy the BDC.
 
-## Deployment
+## Azure Data Studio Deployment Wizard
 
-To deploy you can use the *Command Palette*, (as per above), and you enter *dep* in the textbox:
+When you use ADS to to a deployment you use a deployment wizard who guides you through the steps necessary for the deployment. To start up the wizard you can use the *Command Palette*, (as per above), and you enter *dep* in the textbox:
 
 ![](/images/posts/ads-install-bdc-install3.png)
 
@@ -156,7 +156,7 @@ To deploy you can use the *Command Palette*, (as per above), and you enter *dep*
 
 We see in *Figure 1* the command palette and how I entered *dep* in the text box, which then shows available commands. Among the commands we see *Deployment: Deploy SQL Server ...*, (outlined in red).
 
-Before we go any further I just want to mention that we do not necessarily need to use the command palette to get to the *Deploy ...* command:
+Before we go any further I want to mention that we do not necessarily need to use the command palette to get to the *Deploy ...* command:
 
 ![](/images/posts/ads-install-bdc-install2.png)
 
@@ -169,13 +169,13 @@ In *Figure 2* we see the *Deploy SQL Server ...* command, (outlined in red), as 
 
 So, we get to the *Deploy* command either through the command palette or the *CONNECTIONS* panel.
 
-To start the deployment process, we click on the *Deploy* command as we see in *Figure 1*/*Figure 2*:
+To start the deployment wizard, we click on the *Deploy* command as we see in *Figure 1*/*Figure 2*:
 
 ![](/images/posts/ads-install-bdc-install4.png)
 
 **Figure 3:** *Deployment Options*
 
-We see in *Figure 3* how there are different SQL Server deployment options:
+We see in *Figure 3* how the deployment wizard supports different SQL Server deployment options:
 
 * SQL on Windows.
 * SQL Container.
@@ -194,19 +194,116 @@ Clicking the BDC option we see something like in *Figure 4*: the *Select the dep
 * Version - at this stage only SQL Server 2019.
 * Deployment target - where we want to deploy the BDC to. In *Figure 4* we see how I chose to deploy to a new Azure Kubernetes Service cluster.
 
-We also see in *Figure 4* how ADS ensure that we have the required tools installed. When we click **Select** we get a new dialog:
+We also see in *Figure 4* how ADS ensure that we have the required tools installed.  
+
+When deploying a BDC to AKS we have to do some configuration before the actual deployment can happen, and the configuration consists of five steps:
+
+* Configuration template / profile.
+* Azure settings.
+* BDC and Docker settings.
+* Service settings.
+* Summary of settings.
+
+#### Configuration Template
+
+After we have chosen the SQL Server version and deployment target in *Figure 4* we click **Select** and we get the dialog for the configuration template:
 
 ![](/images/posts/ads-install-bdc-install7.png)
 
 **Figure 5:** *Configuration Template*
 
-The dialog we see in *Figure 5* allows us to choose a deployment profile.The profile to defines things like how many instances we want of the various BDC components, and storage requirements. These settings can be changed later during the deployment process. 
+The dialog we see in *Figure 5* allows us to choose a deployment profile. The profile defines things like how many instances we want of the various BDC components and storage requirements. These settings can be changed later during the deployment process.
 
-I chose the `aks-dev-test` profile, and going on from there we see:
+I chose the `aks-dev-test` profile with default values, 
+
+#### Azure Settings
+
+Going on from the configuration template we see:
 
 ![](/images/posts/ads-install-bdc-install8.png)
 
 **Figure 6:** *Azure Settings*
+
+As we see in *Figure 6*, we now are at the settings for the Azure Kubernetes Service cluster.
+
+All of the settings are relatively self-explanatory, and if you are unsure about any of the settings, you can refer back to my [previous post][1] about deploying a BDC via ADS.
+
+It is worth noting that I have changed the *VM size*, and *VM count* from its default of `Standard_E4s_v3`, and `5` to `Standard_B8ms` and `3`. Reason for this is that having fewer nodes cuts down on install time. 
+
+The thing to bear in mind here is that a BDC deployment requires at a minimum around 24 hard disks altogether in your cluster, and each VM has a set number of disks. In my case, each `Standard_B8ms` VM has 16 disks so I should be good (3 * 16).
+
+
+#### Cluster Settings
+
+Moving on from from Azure settings:
+
+![](/images/posts/ads-install-bdc-install9.png)
+
+**Figure 7:** *BDC Settings*
+
+The dialog we see in *Figure 7* is for configuring settings for the SQL Server BDC. As we see, there are two sections: 
+
+* Cluster settings.
+* Docker settings.
+
+When I set up a BDC, I do not use the default value for cluster name, and as you see in the figure I named the cluster: `sqlbdc-cluster`. Make sure you remember the password as you need it later.
+
+At the moment, the only authentication mode supported is *Basic*, so we do not need to do anything there.
+
+For the Docker settings, I go with the default values, and no user-name or password is required.
+
+#### Service Settings
+
+Having done the cluster settings we are now almost finished, and we get to settings for the various BDC services:
+
+![](/images/posts/ads-install-bdc-install10.png)
+
+**Figure 8:** *Service Settings*
+
+In service settings, as we see in *Figure 8*, we define how many instances of various services we want, endpoints for services, and also settings for storage.
+
+When I deploy a BDC, I do not change any of these settings.
+
+#### Settings Summary
+
+We go on from the service settings:
+
+![](/images/posts/ads-install-bdc-install11.png)
+
+**Figure 9:** *Settings Summary*
+
+The last step is not so much of a step where we do things, but - as we see in *Figure 9 - it is a summary of the settings we have defined in the previous steps.
+
+In this final step, (before actual deployment), we can: 
+
+* Save the settings from previous steps to config files.
+* Go back and change settings.
+* Cancel out.
+* Script the settings to a notebook
+
+The last option in the list above is what we choose when we deploy.
+
+## Deployment Notebook
+
+When we click on **Script to Notebook** a Notebook opens:
+
+![](/images/posts/ads-install-bdc-install12.png)
+
+**Figure 10:** *Deploy Notebook*
+
+We see in *Figure 10* the notebook that has been scripted for us based on the settings we defined in the steps above. Since we said we wanted to deploy to a new Azure Kubernetes Service Cluster the Notebook creates a new AKS cluster for us together with deploying the BDC.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
