@@ -9,6 +9,7 @@ highlight: true
 draft: false
 categories:
   - SQL Server 2019
+  - Polybase
 tags:
   - SQL Server 2019
   - Polybase
