@@ -1,4 +1,10 @@
-﻿New Blog-post: "More PolyBase Issues in SQL Server 2019 Developers Edition"
+﻿New Blog-post: "Interesting Stuff - Christmas, New Year, Week 1, 2020".
+Kafka, testing KStream apps, Kubernetes, and other interesting topics.
+https://nielsberglund.com/2020/01/05/interesting-stuff---christmas-new-year-week-1-2020/
+#apachekafka #ksqldb #kubernetes
+@rmoff @infoq
+
+New Blog-post: "More PolyBase Issues in SQL Server 2019 Developers Edition"
 Here we look at how to fix weird error messages when we want to create External Tables.
 https://nielsberglund.com/2019/12/30/more-polybase-issues-in-sql-server-2019-developers-edition/
 #sqlserver2019 #PolyBase
