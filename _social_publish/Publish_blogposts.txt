@@ -1,4 +1,11 @@
-﻿New Blog-post: "Interesting Stuff - Christmas, New Year, Week 1, 2020".
+﻿New Blog-post: "Interesting Stuff - Week 2, 2020".
+Kafka, ksqlDB, data literacy, VS Code & Docker, MS Ignite The Tour, and other interesting topics.
+https://nielsberglund.com/2020/01/12/interesting-stuff---week-2-2020/
+#apachekafka #ksqldb #VSCode #Docker #machinelearning #datascience #msignitethetour
+@rmoff @BuckWoodyMSFT
+
+
+New Blog-post: "Interesting Stuff - Christmas, New Year, Week 1, 2020".
 Kafka, testing KStream apps, Kubernetes, and other interesting topics.
 https://nielsberglund.com/2020/01/05/interesting-stuff---christmas-new-year-week-1-2020/
 #apachekafka #ksqldb #kubernetes
