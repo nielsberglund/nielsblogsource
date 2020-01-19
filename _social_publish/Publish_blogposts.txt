@@ -1,4 +1,10 @@
-﻿New Blog-post: "Interesting Stuff - Week 2, 2020".
+﻿New Blog-post: "Interesting Stuff - Week 3, 2020".
+Kafka, ksqlDB, Debezium, Microsoft Ignite The Tour, and other interesting topics.
+https://nielsberglund.com/2020/01/19/interesting-stuff---week-3-2020/
+#apachekafka #ksqldb #machinelearning #datascience #msignitethetour
+
+
+New Blog-post: "Interesting Stuff - Week 2, 2020".
 Kafka, ksqlDB, data literacy, VS Code & Docker, MS Ignite The Tour, and other interesting topics.
 https://nielsberglund.com/2020/01/12/interesting-stuff---week-2-2020/
 #apachekafka #ksqldb #VSCode #Docker #machinelearning #datascience #msignitethetour
