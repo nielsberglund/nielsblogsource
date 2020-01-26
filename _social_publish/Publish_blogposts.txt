@@ -1,4 +1,10 @@
-﻿New Blog-post: "Interesting Stuff - Week 3, 2020".
+﻿New Blog-post: "Interesting Stuff - Week 4, 2020".
+Kafka, Flink, Kubernetes, Microsoft Ignite The Tour in Johannesburg, and other interesting topics.
+https://nielsberglund.com/2020/01/26/interesting-stuff---week-4-2020/
+#apachekafka #msignitethetour #flink #kubernetes
+
+
+New Blog-post: "Interesting Stuff - Week 3, 2020".
 Kafka, ksqlDB, Debezium, Microsoft Ignite The Tour, and other interesting topics.
 https://nielsberglund.com/2020/01/19/interesting-stuff---week-3-2020/
 #apachekafka #ksqldb #machinelearning #datascience #msignitethetour
