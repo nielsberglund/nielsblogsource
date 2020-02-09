@@ -1,4 +1,15 @@
-﻿New Blog-post: "Interesting Stuff - Week 4, 2020".
+﻿New Blog-post: "Interesting Stuff - Week 6, 2020".
+Kafka, ksqlDB, Azure SQL Hyperscale, and other interesting topics!
+https://nielsberglund.com/2020/02/09/interesting-stuff---week-6-2020/
+#apachekafka #kafka #ksqldb #azure #azuresqlserver
+
+New Blog-post: "Interesting Stuff - Week 5, 2020".
+Kafka, data lakes, SQL Big Data Cluster, and other interesting topics.
+https://nielsberglund.com/2020/02/02/interesting-stuff---week-5-2020/
+#apachekafka #msignitethetour #kubernetes #bigdatacluster #bigdata
+
+
+New Blog-post: "Interesting Stuff - Week 4, 2020".
 Kafka, Flink, Kubernetes, Microsoft Ignite The Tour in Johannesburg, and other interesting topics.
 https://nielsberglund.com/2020/01/26/interesting-stuff---week-4-2020/
 #apachekafka #msignitethetour #flink #kubernetes
