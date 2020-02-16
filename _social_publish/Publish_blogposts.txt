@@ -1,4 +1,9 @@
-﻿New Blog-post: "Interesting Stuff - Week 6, 2020".
+﻿New Blog-post: "Interesting Stuff - Week 7, 2020".
+Microsoft Application Inspector, ksqlDB, and other interesting topics.
+https://nielsberglund.com/2020/02/16/interesting-stuff---week-7-2020/
+#apachekafka #kafka #ksqldb
+
+New Blog-post: "Interesting Stuff - Week 6, 2020".
 Kafka, ksqlDB, Azure SQL Hyperscale, and other interesting topics!
 https://nielsberglund.com/2020/02/09/interesting-stuff---week-6-2020/
 #apachekafka #kafka #ksqldb #azure #azuresqlserver
