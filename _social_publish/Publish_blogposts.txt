@@ -1,4 +1,9 @@
-﻿New Blog-post: "Interesting Stuff - Week 8, 2020".
+﻿New post: "Interesting Stuff - Week 9, 2020".
+Kafka, SparkML, data architecture, Data Platform Geeks, and other interesting topics.
+https://nielsberglund.com/2020/03/01/interesting-stuff---week-9-2020/
+#apachekafka #kafka #bigdatacluster #eventdriven #DataPlatformGeeks #machinelearning #dataarchitecture #dataplatform
+
+New Blog-post: "Interesting Stuff - Week 8, 2020".
 Kafka, event driven architecture, SQL Server 2019 Big Data Cluster, and other interesting topics.
 https://nielsberglund.com/2020/02/23/interesting-stuff---week-8-2020/
 #apachekafka #kafka #bigdatacluster #eventdriven #DataPlatformGeeks
