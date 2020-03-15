@@ -90,7 +90,7 @@ A k8s cluster consists of:
 * Namespace - a virtual cluster of nodes.
 * Volume -  a directory that contains data accessible to containers in a given Pod. Since Pods and therefore containers come and go a Volume provides a mechanism to connect Pods/containers to persistent data stores elsewhere.
 
-Each k8s cluster has a master node, (sometimes also called the control plane). The master node runs a collection of processes which manages the cluster and its state. The master node also exposes the API layer which we interact with when managing the cluster. To interact with the cluster we use a tool called `kubectl`, and below we mention it some more.
+Each k8s cluster has a master node, (sometimes also called the control plane). The master node runs a collection of processes which manages the cluster and its state. The master node also exposes the API layer which we interact with when managing the cluster.
 
 > **NOTE:** If you create a k8s cluster in Azure, (AKS), the master is abstracted away from you.
 
@@ -100,6 +100,11 @@ As mentioned above, the nodes contain your application's pods. The nodes contain
 * `kube-proxy` - the proxy routes network traffic and manages IP addressing.
 
 Each node also contains a container runtime, which is the component that allows containerized applications to run.
+
+#### Managing a k8s Cluster
+
+Above I mentioned how one interacts with the API layer. We do this through a command-line tool, (CLI): `kubectl`
+
 
 The above barely scratches the surface of k8s, and there are so much more to k8s. If you are interested in knowing more about k8s I can recommend [this YouTube playlist][1], where [Brendan Burns][2], co-creator of Kubernetes, drills down into k8s.
 

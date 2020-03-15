@@ -1,4 +1,14 @@
-﻿New post: "Interesting Stuff - Week 9, 2020".
+﻿New post: "Interesting Stuff - Week 11, 2020".
+Kafka, ksqlDB, Kubernetes, SQL Server 2019 BDC, and other interesting topics.
+https://nielsberglund.com/2020/03/15/interesting-stuff---week-11-2020/
+#apachekafka #kafka #ksqldb #kubernetes #bigdatacluster
+
+New  post: "Interesting Stuff - Week 10, 2020".
+Kafka, Kubernetes, Druid, data pipelines, and other interesting topics.
+https://nielsberglund.com/2020/03/08/interesting-stuff---week-10-2020/
+#apachekafka #kafka #dataarchitecture #dataplatform #kubernetes
+
+New post: "Interesting Stuff - Week 9, 2020".
 Kafka, SparkML, data architecture, Data Platform Geeks, and other interesting topics.
 https://nielsberglund.com/2020/03/01/interesting-stuff---week-9-2020/
 #apachekafka #kafka #bigdatacluster #eventdriven #DataPlatformGeeks #machinelearning #dataarchitecture #dataplatform
