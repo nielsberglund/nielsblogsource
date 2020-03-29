@@ -173,15 +173,13 @@ So that was a bit about Kubernetes. Admittedly this barely scratches the surface
 
 So, we now know why we need the BDC, and we also know a bit about the platform the BDC runs on. Let us go on and look at how we install/deploy a BDC.
 
-To start with; think about how we install a "normal" SQL Server instance? We usually mount the install `.iso` file and click setup. Alternatively, we do more or less the same, but from the command line. 
-
-Installing a BDC is nothing like that! To begin with there is no `.iso` file, but the install happens via Python scripts, or via a wizard in **Azure Data Studio**, (ADS)!
+If you, like me, are a SQL Server guy, you are probably quite familiar with installing SQL Server instances by mounting an ISO file, and running setup. Well, you can forget all that when you deploy a BDC. The setup is all done via Python scripts, or a wizard in **Azure Data Studio**, (ADS)!
 
 #### Install Tools
 
 There are some tools needed when deploying a BDC:
 
-* Python - well, Python is not a tool as such, but you need Python installed on the machine you install from, as the deployment runs some Python scrips.
+* Python - well, Python is not a tool as such, but you need Python installed on the machine you install from.
 * `azdata` - command-line tool for installing and managing a big data cluster.
 * `kubectl` - I mentioned the command-line tool for monitoring the underlying Kubernetes cluster above.
 * Azure Data Studio - a cross-platform graphical tool for querying SQL Server and other data sources.
