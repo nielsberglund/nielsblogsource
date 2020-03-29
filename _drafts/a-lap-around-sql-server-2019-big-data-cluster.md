@@ -66,7 +66,9 @@ As the name implies, a BDC is a cluster of "things". When you deploy the BDC, yo
 
 > **NOTE:** Oh how things have changed. From once at a time shying away from Open Source, Microsoft now embraces Open Source: Linux, Apache Spark, Hadoop File System!
 
-A difference from a "normal" SQL Server installation is that the SQL Server instances in a BDC are SQL Server on Linux in containers. All components in a BDC run in containers, and since we now have multiple containers we need something that manages and orchestrates the containers and their workload. For this we use Kubernetes. So, when we deploy a BDC, we deploy into a Kubernetes cluster.
+A difference from a "normal" SQL Server installation is that the SQL Server instances in a BDC are SQL Server on Linux in containers. All components in a BDC run in containers, and since we now have multiple containers we need something that manages and orchestrates the containers and their workload. For this we use Kubernetes. So, when we deploy a BDC, we deploy into a Kubernetes cluster. 
+
+The type of Kubernetes cluster does not matter that much, it can be in the cloud, or on-prem. I always deploy to Azure, and the Azure Kubernetes Service, but as I said - it can essentially be any cluster.
 
 ## Kubernetes
 
@@ -103,12 +105,122 @@ Each node also contains a container runtime, which is the component that allows 
 
 #### Managing a k8s Cluster
 
-Above I mentioned how one interacts with the API layer. We do this through a command-line tool, (CLI): `kubectl`
+Above I mentioned how the master node exposes an API layer which we interact with when managing the cluster. 
 
+**`kubectl`
 
-The above barely scratches the surface of k8s, and there are so much more to k8s. If you are interested in knowing more about k8s I can recommend [this YouTube playlist][1], where [Brendan Burns][2], co-creator of Kubernetes, drills down into k8s.
+The way to manage a cluster is via a command-line tool - `kubectl` - which allows you to inspect cluster resources; create, delete, and update components; etc.
+
+To illustrate the use of `kubectl` I have created a small k8s cluster in Azure. The cluster is named `kubernetes-test`, (imaginative - I know), and the first thing we need to do is to configure `kubectl` to connect to the cluster.
+
+To configure `kubectl I use an Azure CLI command: `az aks get-credentials`, like so:
+
+```bash
+az aks get-credentials --name kubernetes-test
+                       --resource-group rg-k8s-test 
+                       --admin 
+                       --overwrite-existing
+```
+**Code Snippet 1:** *Configure `kubectl`*
+
+We see in *Code Snippet 1* how I pass in the name of the cluster and the resource group as parameters together with two optional parameters:
+
+* `admin` - gets cluster administrator credentials.
+* `overwrite-existing` - overwrites any existing cluster entry with the same name.
+
+When I execute the code in *Code Snippet 1* I get:
+
+![](/images/posts/bdc-lap-around-kubectl-cfg.png)
+
+**Figure 1:** *Configure `kubectl`*
+
+The `config` file we see outlined in red in *Figure 1* holds, among other things, the keys for the Kubernetes cluster. To ensure that I can connect to the cluster, I call `kubectl get nodes`:
+
+![](/images/posts/bdc-lap-around-kubectl-nodes.png)
+
+**Figure 2:** *View Nodes*
+
+We see in *Figure 2* the result after executing `kubectl get nodes`, and how my k8s cluster has three nodes. If I were to execute something like `kubectl get pods` I would not get a result back as I have not deployed anything to the cluster yet.
+
+** Kubernetes Dashboard
+
+You do not have to rely on `kubectl` solely for monitoring and managing a Kubernetes cluster, as you can also use the [Kubernetes Dashboard][3]. In Azure you access the dashboard by the `az aks browse` command, and - as with `get-credentials` - you pass in the names of the resource group and cluster: `az aks browse --resource-group rg-k8s-test --name kubernetes-test`, and a new tab opens in your browser:
+
+![](/images/posts/bdc-lap-around-k8s-dash-error.png)
+
+**Figure 3:** *Kubernetes Dashboard Errors*
+
+Hmm, what is this - the tab that opens up shows the dashboard as we see in *Figure 3*, but it is full of warnings!
+
+The problem here is that on AKS Role Based Access Control, (RBAC), is enabled by default and the service account used by the dashboard does not have enough permissions to access all resources.
+
+We fix that by running the following command:
+
+```bash
+kubectl create clusterrolebinding kubernetes-dashboard -n kube-system `
+              --clusterrole=cluster-admin `
+              --serviceaccount=kube-system:kubernetes-dashboard
+```
+**Code Snippet 2:** *Assign Permissions to Kubernetes Dashboard*
+
+After we execute the code in *Code Snippet 2* we can run the `az aks browse` command as per above, and now the dashboard comes up with no errors.
+
+Further down in this post, I revisit the dashboard in the context of a SQL Server 2019 Big Data Cluster.
+
+So that was a bit about Kubernetes. Admittedly this barely scratches the surface of k8s. If you are interested in knowing more about k8s I can recommend [this YouTube playlist][1], where [Brendan Burns][2], co-creator of Kubernetes, drills down into k8s.
 
 ## Deploying BDC to Kubernetes
+
+So, we now know why we need the BDC, and we also know a bit about the platform the BDC runs on. Let us go on and look at how we install/deploy a BDC.
+
+To start with; think about how we install a "normal" SQL Server instance? We usually mount the install `.iso` file and click setup. Alternatively, we do more or less the same, but from the command line. 
+
+Installing a BDC is nothing like that! To begin with there is no `.iso` file, but the install happens via Python scripts, or via a wizard in **Azure Data Studio**, (ADS)!
+
+#### Install Tools
+
+There are some tools needed when deploying a BDC:
+
+* Python - well, Python is not a tool as such, but you need Python installed on the machine you install from, as the deployment runs some Python scrips.
+* `azdata` - command-line tool for installing and managing a big data cluster.
+* `kubectl` - I mentioned the command-line tool for monitoring the underlying Kubernetes cluster above.
+* Azure Data Studio - a cross-platform graphical tool for querying SQL Server and other data sources.
+
+> **NOTE:** ADS is not required per se unless you use it for deployment, but it is an excellent tool when working with the BDC after deployment.
+
+#### Deployment
+
+The actual deployment of a BDC would require a couple of posts in itself, so here I point you to a couple of resources about BDC deployment:
+
+* [How to deploy SQL Server Big Data Clusters on Kubernetes][4]. This is the official Microsoft documentation for deploying a BDC.
+* [How to Deploy SQL Server 2019 Big Data Cluster Using Azure Data Studio][5]. The link here is to a blog post by "yours truly" about how to deploy using ADS.
+
+## Managing a BDC
+
+So now we have installed and deployed our BDC, let us look at how we can manage it.
+
+#### `kubectl`
+
+To begin with we can use `kubectl`, as I mentioned above, to get information about the k8s cluster. Above I said that a k8s cluster consists of, among other things, services, and in a k8s cluster services expose applications both internally and to the outside world.
+
+
+
+
+
+These services 
+
+
+
+
+
+
+
+
+
+
+
+
+Installing/deploying a BDC is nothing like installing a "normal" SQL Server
 
 
 
@@ -148,9 +260,9 @@ If you have comments, questions etc., please comment on this post or [ping][ma] 
 
 [1]: https://www.youtube.com/playlist?list=PLLasX02E8BPCrIhFrc_ZiINhbRkYMKdPT
 [2]: https://www.linkedin.com/in/brendan-burns-487aa590/
-[3]:
-[4]:
-[5]:
+[3]: https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
+[4]: https://docs.microsoft.com/en-us/sql/big-data-cluster/deployment-guidance?view=sql-server-ver15#deploy
+[5]: {{< relref "2019-12-23-how-to-deploy-sql-server-2019-big-data-cluster-using-azure-data-studio.md" >}}
 [6]:
 [7]:
 [8]:

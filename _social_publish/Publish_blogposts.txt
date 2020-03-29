@@ -1,4 +1,14 @@
-﻿New post: "Interesting Stuff - Week 11, 2020".
+﻿New post: "Interesting Stuff - Week 13, 2020".
+ksqlDB, data warehouses, .NET & Coyote, and other interesting topics.
+https://nielsberglund.com/2020/03/29/interesting-stuff---week-13-2020/
+#apachekafka #kafka #ksqldb #dotnet
+
+New post: "Interesting Stuff - Week 12, 2020".
+Git, Kafka & KStreams, ksqlDB, SQL Server 2019 Big Data Cluster, and other interesting topics.
+https://nielsberglund.com/2020/03/22/interesting-stuff---week-12-2020/
+#apachekafka #kafka #ksqldb #bigdatacluster #kstreams #Git
+
+New post: "Interesting Stuff - Week 11, 2020".
 Kafka, ksqlDB, Kubernetes, SQL Server 2019 BDC, and other interesting topics.
 https://nielsberglund.com/2020/03/15/interesting-stuff---week-11-2020/
 #apachekafka #kafka #ksqldb #kubernetes #bigdatacluster
