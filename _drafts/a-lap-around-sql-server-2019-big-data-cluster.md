@@ -197,6 +197,12 @@ The actual deployment of a BDC would require a couple of posts in itself, so her
 
 So now we have installed and deployed our BDC, let us look at how we can manage it.
 
+#### Kubernets Dashboard
+
+Above I mentioned the k8s dashboard, but we did not see it "in action". Let us spin it up against our BDC cluster and see what it looks like.
+
+
+
 #### `kubectl`
 
 To begin with we can use `kubectl`, as I mentioned above, to get information about the k8s cluster. Above I said that a k8s cluster consists of, among other things, services, and in a k8s cluster services expose applications both internally and to the outside world.
