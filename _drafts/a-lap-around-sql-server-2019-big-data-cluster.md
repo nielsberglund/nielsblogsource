@@ -193,13 +193,80 @@ The actual deployment of a BDC would require a couple of posts in itself, so her
 * [How to deploy SQL Server Big Data Clusters on Kubernetes][4]. This is the official Microsoft documentation for deploying a BDC.
 * [How to Deploy SQL Server 2019 Big Data Cluster Using Azure Data Studio][5]. The link here is to a blog post by "yours truly" about how to deploy using ADS.
 
+Following the [Azure Data Studio post][5] I now have a BDC deployed to the k8s `kubesqlbdc-cluster` in the Azure resource group `rg-ignite-sqlbdc`.
+
 ## Managing a BDC
 
 So now we have installed and deployed our BDC, let us look at how we can manage it.
 
 #### Kubernets Dashboard
 
-Above I mentioned the k8s dashboard, but we did not see it "in action". Let us spin it up against our BDC cluster and see what it looks like.
+Above I mentioned the k8s dashboard, but we did not see it "in action". Let us spin it up against our BDC cluster and see what it looks like. 
+
+So let us use the code we saw right above *Figure 3*, but change the `--resource-group` and `--name` options to what I deployed my BDC as:
+
+``` bash
+az aks browse --resource-group rg-ignite-sqlbdc `
+              --name kubesqlbdc-cluster
+```
+**Code Snippet 3:** *Kubernetes Dashboard*
+
+When I execute the code in *Code Snippet 3*, I see something like so:
+
+![](/images/posts/bdc-lap-around-bdc-dash1.png)
+
+**Figure 4:** *Kubernetes Start Dashboard*
+
+What we see in *Figure 4* is how the `az aks browse` command creates a secure channel from the dashboard in the k8s cluster to `localhost`, and at the same time a page opens in your browser:
+
+![](/images/posts/bdc-lap-around-bdc-dash2.png)
+
+**Figure 5:** *Kubernetes Dashboard*
+
+So, in *Figure 5* we see the overview page of the k8s dashboard. In the left, outlined in blue, we see a list of components making up the k8s cluster:
+
+* Nodes.
+* Pods.
+* Services.
+* Replica and Stateful Sets.
+* and more.
+
+By clicking on any of the entries you drill further down into that specific component. However, when I look at the dashboard I do not see anything that refers to a SQL Server Big Data Cluster at all, what is up with that?
+
+Well, cast your mind back to when you created and deployed your cluster - at that time you gave the BDC cluster a name. When deploying the cluster, a k8s namespace gets created with that name, and the BDC is created and deployed into that namespace. Look again at *Figure 5* and you see, outlined in red, a drop-down containing the various k8s namespaces in this k8s cluster:
+
+![](/images/posts/bdc-lap-around-bdc-dash3.png)
+
+**Figure 6:** *Kubernetes Dashboard*
+
+When I expand the drop-down, I see some more namespaces in addition to the `default` namespace, and among them, outlined in red, the namespace for the BDC cluster: `sqlbdc-cluster`:
+
+![](/images/posts/bdc-lap-around-bdc-dash4.png)
+
+**Figure 7:** *Overview BDC Cluster*
+
+When I click on "my" namespace, I see an overview as in *Figure 7*
+
+
+
+
+
+From here, I can now look at various components of the cluster; such as:
+
+
+And yes, as we see in *Figure 7*, there are some issues with some of my pods.
+
+
+
+
+
+
+
+
+
+
+az aks browse --resource-group rg-ignite-sqlbdc --name kubesqlbdc-cluster
+
 
 
 
