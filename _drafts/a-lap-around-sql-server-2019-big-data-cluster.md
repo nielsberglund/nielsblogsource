@@ -35,7 +35,7 @@ Therefore, in this post, (and maybe some follow-up posts), we look at what **SQL
 
 Before we "drill into" what a Big Data Cluster is, let us discuss why Microsoft felt the need for BDC. It all comes down to data:
 
-We are getting more and more data, and to stay competitive we need to be able to use that data; to integrate it, manage it and analyze it.
+We are getting more and more data, and to stay competitive, we need to be able to use that data; to integrate it, manage it and analyze it.
 
 The problem is that the data comes in all shapes and types; relational data, NoSQL, files, etc., etc. So how do we integrate and analyze this data?
 
@@ -102,6 +102,8 @@ As mentioned above, the nodes contain your application's pods. The nodes contain
 * `kube-proxy` - the proxy routes network traffic and manages IP addressing.
 
 Each node also contains a container runtime, which is the component that allows containerized applications to run.
+
+In k8s, we also have the notion of `StatefulSet`, which is a workload API used to manage stateful applications. It manages the deployment and scaling of a set of Pods and provides guarantees about the ordering and uniqueness of these Pods. This is important in the context of the BDC since we really want the BDC to have stateful services - think databases.
 
 #### Managing a k8s Cluster
 
@@ -231,46 +233,41 @@ So, in *Figure 5* we see the overview page of the k8s dashboard. In the left, ou
 * Replica and Stateful Sets.
 * and more.
 
-By clicking on any of the entries you drill further down into that specific component. However, when I look at the dashboard I do not see anything that refers to a SQL Server Big Data Cluster at all, what is up with that?
+By clicking on any of the entries you drill further down into that specific component. However, when I look at the dashboard I do not see anything that refers to a SQL Server Big Data Cluster at all. I mean, I am certain that there should be able to see something under Stateful Sets pods for example:
+
+![](/images/posts/bdc-lap-around-dash-default-ns.png)
+
+**Figure 6:** *Empty Stateful Sets*
+
+In *Figure 6* we see the result when I click on Stateful Sets, (outlined in red), in the dashboards Web UI: nothing. What is up with that?
 
 Well, cast your mind back to when you created and deployed your cluster - at that time you gave the BDC cluster a name. When deploying the cluster, a k8s namespace gets created with that name, and the BDC is created and deployed into that namespace. Look again at *Figure 5* and you see, outlined in red, a drop-down containing the various k8s namespaces in this k8s cluster:
 
 ![](/images/posts/bdc-lap-around-bdc-dash3.png)
 
-**Figure 6:** *Kubernetes Dashboard*
+**Figure 7:** *Kubernetes Dashboard*
 
 When I expand the drop-down, I see some more namespaces in addition to the `default` namespace, and among them, outlined in red, the namespace for the BDC cluster: `sqlbdc-cluster`:
 
 ![](/images/posts/bdc-lap-around-bdc-dash4.png)
 
-**Figure 7:** *Overview BDC Cluster*
+**Figure 8:** *Overview BDC Cluster*
 
-When I click on "my" namespace, I see an overview as in *Figure 7*
+When I click on "my" namespace, (once again outlined in red), I see an overview as in *Figure 8*. When we now are in the BDC namespace let us revisit the Stateful Sets as in *Figure 6*:
 
+![](/images/posts/bdc-lap-around-bdc-dash5.png)
 
+**Figure 9:** *BDC Stateful Sets*
 
-
-
-From here, I can now look at various components of the cluster; such as:
-
-
-And yes, as we see in *Figure 7*, there are some issues with some of my pods.
-
-
-
-
-
-
-
-
-
-
-az aks browse --resource-group rg-ignite-sqlbdc --name kubesqlbdc-cluster
-
-
-
+What we see in *Figure 9* is definitely more like it, as we can see quite a few stateful sets, and amongst them; `master`, (outlined in red). Master is the stateful set for the SQL Server master instance in a BDC, and we look at `master` in a bit.
 
 #### `kubectl`
+
+So the k8s dashboard is one way to manage and get information about a BDC, another way is `kubectl` which I mentioned above. 
+
+So above I said that if I would execute `kubectl get pods` against my test cluster I would not see anything as I have not deployed anything on that cluster. If I did the same against the `kubesqlbdc-cluster` however:
+
+
 
 To begin with we can use `kubectl`, as I mentioned above, to get information about the k8s cluster. Above I said that a k8s cluster consists of, among other things, services, and in a k8s cluster services expose applications both internally and to the outside world.
 
