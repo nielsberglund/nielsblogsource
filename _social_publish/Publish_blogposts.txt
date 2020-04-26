@@ -3,10 +3,6 @@ Kafka, monitor Kafka, ksqlDB, Coyote webinar, time series forecasting, and other
 https://nielsberglund.com/2020/04/19/interesting-stuff---week-16-2020/
 #apachekafka #kafka #ksqldb #machinelearning #eventdriven #event
 
-
-
-
-
 New post: "Interesting Stuff - Week 15, 2020".
 Kafka and how acks work, KSQL in the cloud, KStreams, and other interesting topics.
 https://nielsberglund.com/2020/04/12/interesting-stuff---week-15-2020/
