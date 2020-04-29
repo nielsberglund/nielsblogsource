@@ -1,4 +1,15 @@
-﻿New post: "Interesting Stuff - Week 15, 2020".
+﻿New post: "Interesting Stuff - Week 17, 2020".
+Kafka, Java language in SQL Server, Big Data Cluster, and other interesting topics.
+https://nielsberglund.com/2020/04/26/interesting-stuff---week-17-2020/
+#apachekafka #kafka #eventdriven #event #java #sqlserver2019 #bigdata #bigdatacluster #MVPBuzz
+
+
+New Blog-post: "A Lap Around SQL Server 2019 Big Data Cluster: Background & Technology".
+A post around the background of SQL Server 2019 Big Data Cluster, and the technology behind it.
+https://nielsberglund.com/2020/04/26/a-lap-around-sql-server-2019-big-data-cluster-background--technology/
+#kubernetes #sqlserver2019 #azurdatastudio #bigdatacluster #MVPBuzz 
+
+New post: "Interesting Stuff - Week 16, 2020".
 Kafka, monitor Kafka, ksqlDB, Coyote webinar, time series forecasting, and other interesting topics.
 https://nielsberglund.com/2020/04/19/interesting-stuff---week-16-2020/
 #apachekafka #kafka #ksqldb #machinelearning #eventdriven #event
