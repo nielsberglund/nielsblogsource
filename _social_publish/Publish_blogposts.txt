@@ -1,4 +1,10 @@
-﻿New post: "Interesting Stuff - Week 17, 2020".
+﻿New post: "Interesting Stuff - Week 18, 2020".
+Kafka, ksqlDB, MS Build Virtual Conference, SQL Server 2019 Virtual Symposium, and other interesting topics.
+https://nielsberglund.com/2020/05/03/interesting-stuff---week-18-2020/
+#apachekafka #kafka #sqlserver2019 #bigdata #bigdatacluster #MVPBuzz
+
+
+New post: "Interesting Stuff - Week 17, 2020".
 Kafka, Java language in SQL Server, Big Data Cluster, and other interesting topics.
 https://nielsberglund.com/2020/04/26/interesting-stuff---week-17-2020/
 #apachekafka #kafka #eventdriven #event #java #sqlserver2019 #bigdata #bigdatacluster #MVPBuzz
