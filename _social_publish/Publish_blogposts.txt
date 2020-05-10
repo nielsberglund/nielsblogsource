@@ -1,7 +1,12 @@
-﻿New post: "Interesting Stuff - Week 18, 2020".
+﻿New post: "Interesting Stuff - Week 19, 2020".
+Kafka, ksqlDB, data quality, data lakes, domain driven design, and other interesting topics.
+https://nielsberglund.com/2020/05/10/interesting-stuff---week-19-2020/
+#apachekafka #kafka #bigdata #MVPBuzz #eventdriven #event #machinelearning
+
+New post: "Interesting Stuff - Week 18, 2020".
 Kafka, ksqlDB, MS Build Virtual Conference, SQL Server 2019 Virtual Symposium, and other interesting topics.
 https://nielsberglund.com/2020/05/03/interesting-stuff---week-18-2020/
-#apachekafka #kafka #sqlserver2019 #bigdata #bigdatacluster #MVPBuzz
+#apachekafka #kafka #sqlserver2019 #bigdata #bigdatacluster #MVPBuzz #DataPlatformGeeks
 
 
 New post: "Interesting Stuff - Week 17, 2020".
