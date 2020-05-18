@@ -1,4 +1,9 @@
-﻿New post: "Interesting Stuff - Week 19, 2020".
+﻿New post: "Interesting Stuff - Week 20, 2020".
+Kafka & ZooKeeper, kqslDB, Paxos consensus protocol, and other interesting topics.
+https://nielsberglund.com/2020/05/17/interesting-stuff---week-20-2020/
+#apachekafka #kafka #ksqlDB #distributedcomputing #MVPBuzz 
+
+New post: "Interesting Stuff - Week 19, 2020".
 Kafka, ksqlDB, data quality, data lakes, domain driven design, and other interesting topics.
 https://nielsberglund.com/2020/05/10/interesting-stuff---week-19-2020/
 #apachekafka #kafka #bigdata #MVPBuzz #eventdriven #event #machinelearning
