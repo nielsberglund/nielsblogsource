@@ -1,4 +1,10 @@
-﻿New post: "Interesting Stuff - Week 20, 2020".
+﻿New post: "Interesting Stuff - Week 21, 2020".
+Kafka, ksqlDB, Derivco Tech Thursday, Apache Flink, and other interesting topics.
+https://nielsberglund.com/2020/05/24/interesting-stuff---week-21-2020/
+#apachekafka #kafka #ksqlDB #distributedcomputing #derivcotechthursday #flink #MVPBuzz 
+
+
+New post: "Interesting Stuff - Week 20, 2020".
 Kafka & ZooKeeper, kqslDB, Paxos consensus protocol, and other interesting topics.
 https://nielsberglund.com/2020/05/17/interesting-stuff---week-20-2020/
 #apachekafka #kafka #ksqlDB #distributedcomputing #MVPBuzz 
