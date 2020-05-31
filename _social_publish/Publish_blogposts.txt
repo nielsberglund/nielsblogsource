@@ -1,4 +1,9 @@
-﻿New post: "Interesting Stuff - Week 21, 2020".
+﻿New post: "Interesting Stuff - Week 22, 2020".
+Kafka, ksqlDB, Derivco Webinar, risk management with Databricks, and other interesting topics.
+https://nielsberglund.com/2020/05/31/interesting-stuff---week-22-2020/
+#apachekafka #kafka #ksqlDB #machinelearning #bigdata #databricks #derivcotechthursday #MVPBuzz 
+
+New post: "Interesting Stuff - Week 21, 2020".
 Kafka, ksqlDB, Derivco Tech Thursday, Apache Flink, and other interesting topics.
 https://nielsberglund.com/2020/05/24/interesting-stuff---week-21-2020/
 #apachekafka #kafka #ksqlDB #distributedcomputing #derivcotechthursday #flink #MVPBuzz 
