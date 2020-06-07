@@ -25,7 +25,7 @@ keywords:
 
 This post is the second in series about **SQL Server 2019 Big Data Cluster** based on a presentation I do: **A Lap Around SQL Server 2019 Big Data Cluster**.
 
-In the first post [A Lap Around SQL Server 2019 Big Data Cluster: Background & Technology][1] we looked at - as the title implies - the background of SQL Server 2019 Big Data Cluster, (BDC), and the technology behind it.
+In the first post [**A Lap Around SQL Server 2019 Big Data Cluster: Background & Technology**][1] we looked at - as the title implies - the background of SQL Server 2019 Big Data Cluster, (BDC), and the technology behind it.
 
 In this post, we look at the architecture and components of a BDC.
 
@@ -55,7 +55,15 @@ The SQL Server itself is not enough to achieve what we want, so in addition to S
 * Elasticsearch
 * more ...
 
-Oh, and a BDC is not only one SQL server, but quite a few instances. The SQL Server instances are SQL on Linux containers, and the whole BDC are deployed to and runs on Kubernetes.
+Oh, and a BDC is not only one SQL server, but quite a few instances. The SQL Server instances are SQL on Linux containers, and the whole BDC are deployed to and runs on Kubernetes (k8s).
+
+We spoke a bit about k8s, and what constitutes a k8s cluster, (nodes, pods, etc.). In the post we tried to illustrate a k8s cluster like so:
+
+![](/images/posts/bdc-lap-around-bdc-kubernetes-1.png)
+
+**Figure 1:** *Kubernetes*
+
+In *Figure 1* we see some of the parts of a two-node Kubernetes cluster, with a Master node. Later in this post, we talk some more about the Master node, and the role it plays.
 
 In the post, we briefly mentioned how we deploy a BDC, and we said we have essentially two options:
 
@@ -69,7 +77,46 @@ We looked at how to manage and monitor a BDC, and we spoke about the tools for m
 
 In this post, looking at the architecture, we use the tools above, so ensure you have them installed if you want to follow along.
 
+## Architecture
 
+How can we figure out what the architecture looks like? Well, in the [**A Lap Around SQL Server 2019 Big Data Cluster: Background & Technology**][1] post, we discussed k8s pods and how we could get information about the pod by executing some `kubectl` commands.
+
+So let us go back to the pod we looked at briefly in the last post: `master-0`, and see if we can get some information from it which will help us in getting insight into the architecture of a BDC. The code we use looks like so:
+
+``` bash
+kubectl get pods master-0 -n sqlbdc-cluster -o JSON
+```
+**Code Snippet 1:** *Get Pod Information*
+
+In *Code Snippet 1* above we see how we use `kubectl get pods` and we:
+
+* Send in the name of the pod we are interested in,
+* Indicate the k8s namespace the pod is in.
+* Want the output, `-o` flag, formatted as JSON.
+
+When we execute the code in *Code Snippet 1* we see something like so:
+
+![](/images/posts/bdc-lap-around-arch-pods1.png)
+
+**Figure 2:** *Get Pods*
+
+The `kubectl get pods master-0` command returns all information about that particular pod, and in *Figure 2* we see the first 20 lines or so of the JSON output.
+
+Notice the section outlined in red, the `metadata` section. This section contains general information about the pod, and if we look closer we can the the two labels outlined in yellow and green respectively: `plane`, and `role`. I wonder if we looked at all pods, if we can gain some information based on those two labels.
+
+
+
+
+Let us see if we can find anything th
+
+So let us refresh our memories around that and also see if we can find anything interesting which we can use to get some insights into the architecture of a BDC. We use the pod we looked briefly at in the last post; the pod for the master instance of SQL Server in a BDC, `master-0`.
+
+
+
+
+
+
+So let us do that. The pod we are, to begin with, interested in is same pod we looked at in the previous post, the `master-0` pod. Remember, this is the pod for the master SQL Server instance in a BDC. 
 
 
 
