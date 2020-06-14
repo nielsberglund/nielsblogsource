@@ -1,4 +1,14 @@
-﻿New post: "Interesting Stuff - Week 22, 2020".
+﻿New post: "Interesting Stuff - Week 24, 2020".
+Kafka, ksqlDB, Apache Hudi, distributed systems, Azure Sketches, and other interesting topics.
+https://nielsberglund.com/2020/06/14/interesting-stuff---week-24-2020/
+#apachekafka #kafka #ksqlDB #apachehudi #bigdata #MVPBuzz 
+
+New post: "Interesting Stuff - Week 23, 2020".
+Kafka, ksqlDB, Apache Flink, SQL Server at MS Build, and other interesting topics.
+https://nielsberglund.com/2020/06/07/interesting-stuff---week-23-2020/
+#apachekafka #kafka #ksqlDB #sqlserver #apacheflink #flink #MVPBuzz 
+
+New post: "Interesting Stuff - Week 22, 2020".
 Kafka, ksqlDB, Derivco Webinar, risk management with Databricks, and other interesting topics.
 https://nielsberglund.com/2020/05/31/interesting-stuff---week-22-2020/
 #apachekafka #kafka #ksqlDB #machinelearning #bigdata #databricks #derivcotechthursday #MVPBuzz 

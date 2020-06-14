@@ -102,7 +102,40 @@ When we execute the code in *Code Snippet 1* we see something like so:
 
 The `kubectl get pods master-0` command returns all information about that particular pod, and in *Figure 2* we see the first 20 lines or so of the JSON output.
 
-Notice the section outlined in red, the `metadata` section. This section contains general information about the pod, and if we look closer we can the the two labels outlined in yellow and green respectively: `plane`, and `role`. I wonder if we looked at all pods, if we can gain some information based on those two labels.
+Notice the section outlined in red, the `metadata` section. This section contains general information about the pod, and if we look closer we can see three labels outlined in, purple, yellow and green respectively: 
+
+* `app` with a value of `master`.
+* `plane` with a value of `data`.
+* `role` with a value of `master-pool`.
+
+Maybe these labels would give us some insight if we were to look at all pods? Ok, so let's do that, and we will use some `kubectl -o` "magic" to get the information we want:
+
+```bash
+kubectl get pods -n sqlbdc-cluster \ 
+                 -o custom-columns=NAME:.metadata.name, \
+                    APP:.metadata.labels.app, \
+                    ROLE:.metadata.labels.role,\
+                    PLANE:.metadata.labels.plane
+```
+**Code Snippet 2:** *Custom Columns*
+
+To get the information we want we use the `custom-columns` output option. We see in *Code Snippet 2* how we say we want four columns back: `NAME`, `APP`, `ROLE, and `PLANE`, and what labels those are. We then execute:
+
+![](/images/posts/bdc-lap-around-arch-roles-planes.png)
+
+**Figure 3:** *Pods with Custom Output*
+
+IOn *Figure 3* we see the result from executing the code in *Code Snippet 2* and we see all pods in the `sqlbdc-cluster` namespace, i.e. all pods in the BDC. Wee see how the BDC has two planes, the control plane and the data plane.
+
+#### Control & Data Plane
+
+Let us make a short diversion here and talk a bit about control and data planes.
+
+In distributed systems/services we need a way to manage and monitor our services, and that is the role of the control plane. In the previous [post] we spoke about the master node in a k8s cluster and how we interact with the master node for management of the cluster. The master node in the k8s cluster interacts with the control plane in the BDC cluster. When doing deployments to the BDC the control plane acts as the coordinator and ensures services etc., are "spun up" in correct order. The control plane also handles monitoring of the BDC.
+
+
+
+`plane`, and `role`. I wonder if we looked at all pods, if we can gain some information based on those two labels? 
 
 
 
