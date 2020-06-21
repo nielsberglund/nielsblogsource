@@ -81,7 +81,7 @@ In this post, looking at the architecture, we use the tools above, so ensure you
 
 How can we figure out what the architecture looks like? Well, in the [**A Lap Around SQL Server 2019 Big Data Cluster: Background & Technology**][1] post, we discussed k8s pods and how we could get information about the pod by executing some `kubectl` commands.
 
-So let us go back to the pod we looked at briefly in the last post: `master-0`, and see if we can get some information from it which will help us in getting insight into the architecture of a BDC. The code we use looks like so:
+So let us go back to the pod we looked at briefly in the last post: `master-0`, which is the pod containing the SQL Server master instance. We look at that pod to see if we can get some information from it, which will help us in gaining insight into the architecture of a BDC. The code we use looks like so:
 
 ``` bash
 kubectl get pods master-0 -n sqlbdc-cluster -o JSON
@@ -102,7 +102,7 @@ When we execute the code in *Code Snippet 1* we see something like so:
 
 The `kubectl get pods master-0` command returns all information about that particular pod, and in *Figure 2* we see the first 20 lines or so of the JSON output.
 
-Notice the section outlined in red, the `metadata` section. This section contains general information about the pod, and if we look closer we can see three labels outlined in, purple, yellow and green respectively: 
+Notice the section outlined in red, the `metadata` section. This section contains general information about the pod, and if we look closer, we can see three labels outlined in, purple, yellow and green respectively: 
 
 * `app` with a value of `master`.
 * `plane` with a value of `data`.
@@ -119,41 +119,29 @@ kubectl get pods -n sqlbdc-cluster \
 ```
 **Code Snippet 2:** *Custom Columns*
 
-To get the information we want we use the `custom-columns` output option. We see in *Code Snippet 2* how we say we want four columns back: `NAME`, `APP`, `ROLE, and `PLANE`, and what labels those are. We then execute:
+To retrieve the information we want, we use the `custom-columns` output option. We see in *Code Snippet 2* how we say we want four columns back: `NAME`, `APP`, `ROLE, and `PLANE`, and what labels those are. We then execute:
 
 ![](/images/posts/bdc-lap-around-arch-roles-planes.png)
 
 **Figure 3:** *Pods with Custom Output*
 
-IOn *Figure 3* we see the result from executing the code in *Code Snippet 2* and we see all pods in the `sqlbdc-cluster` namespace, i.e. all pods in the BDC. Wee see how the BDC has two planes, the control plane and the data plane.
+In *Figure 3* we see the result from executing the code in *Code Snippet 2* and we see all pods in the `sqlbdc-cluster` namespace, i.e. all pods in the BDC. Wee see how the BDC has two planes, the control plane and the data plane.
 
 #### Control & Data Plane
 
 Let us make a short diversion here and talk a bit about control and data planes.
 
-In distributed systems/services we need a way to manage and monitor our services, and that is the role of the control plane. In the previous [post] we spoke about the master node in a k8s cluster and how we interact with the master node for management of the cluster. The master node in the k8s cluster interacts with the control plane in the BDC cluster. When doing deployments to the BDC the control plane acts as the coordinator and ensures services etc., are "spun up" in correct order. The control plane also handles monitoring of the BDC.
+In distributed systems/services, we need a way to manage and monitor our services, and that is the role of the control plane. In the previous [post][1] we spoke about the master node in a k8s cluster and how we interact with the master node for management of the cluster. 
 
+However, k8s has no idea about a SQL Server 2019 Big Data Cluster; in which order pods should be deployed etc. This is where the BDC control plane comes in. It knows about the BDC, so whenever there needs to be an interaction between the Kubernetes cluster and the BDC the k8s master node interacts with the BDC's control plane. Take a deployment as an example; when deploying to the BDC, the control plane acts as the coordinator and ensures services, etc., are "spun up" in the correct order. 
 
+That is, however, not the only thing the control plane does. Remember from my previous [post][1] how we briefly discussed monitoring of a BDC and how we said we use Grafana, and Kibana together with the underlying InfluxDB and EleasticSearch as persistent stores. Well, the control plane is also responsible for monitoring, and in *Figure 3* you see some examples of this, where there are `APP`'s related to logs and metrics.
 
-`plane`, and `role`. I wonder if we looked at all pods, if we can gain some information based on those two labels? 
+The data plane is what we communicate with when working with the BDC, doing queries etc. - the application traffic. In addition to that, the data plane is also responsible for:
 
-
-
-
-Let us see if we can find anything th
-
-So let us refresh our memories around that and also see if we can find anything interesting which we can use to get some insights into the architecture of a BDC. We use the pod we looked briefly at in the last post; the pod for the master instance of SQL Server in a BDC, `master-0`.
-
-
-
-
-
-
-So let us do that. The pod we are, to begin with, interested in is same pod we looked at in the previous post, the `master-0` pod. Remember, this is the pod for the master SQL Server instance in a BDC. 
-
-
-
-We started looking at how SQL Server has constantly evolved from a very basic RDBMS based on Ashton Tate/Sybase code base to what it is today. At the same time we are getting more and more data. This data comes in all types and sizes, and we need a system to be able to manage, integrate and analyze all this data.
+* Routing.
+* Load balancing.
+* Observability.
 
 
 
