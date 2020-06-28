@@ -1,4 +1,10 @@
-﻿New post: "Interesting Stuff - Week 25, 2020".
+﻿New post: "Interesting Stuff - Week 26, 2020".
+Kafka, ksqlDB, Apache Ignite, Big Data Cluster on Open Shift, and other interesting topics.
+https://nielsberglund.com/2020/06/28/interesting-stuff---week-26-2020/
+#apachekafka #kafka #ksqlDB #bigdata #bigdatacluster #MVPBuzz
+
+
+New post: "Interesting Stuff - Week 25, 2020".
 Kafka, Flink and machine learning, Azure Data Studio, Azure Sketches, and other interesting topics!
 https://nielsberglund.com/2020/06/21/interesting-stuff---week-25-2020/
 #apachekafka #kafka #flink #machinelearning #MVPBuzz 
