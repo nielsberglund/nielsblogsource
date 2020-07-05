@@ -1,4 +1,9 @@
-﻿New post: "Interesting Stuff - Week 26, 2020".
+﻿New post: "Interesting Stuff - Week 27, 2020".
+Kafka, WSL2, Azure User Group, Domain Driven Design, and other interesting topics.
+https://nielsberglund.com/2020/07/05/interesting-stuff---week-27-2020/
+#apachekafka #kafka #eventdriven #event #domaindriven #MVPBuzz
+
+New post: "Interesting Stuff - Week 26, 2020".
 Kafka, ksqlDB, Apache Ignite, Big Data Cluster on Open Shift, and other interesting topics.
 https://nielsberglund.com/2020/06/28/interesting-stuff---week-26-2020/
 #apachekafka #kafka #ksqlDB #bigdata #bigdatacluster #MVPBuzz
