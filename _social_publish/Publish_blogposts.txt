@@ -1,4 +1,9 @@
-﻿New post: "Interesting Stuff - Week 27, 2020".
+﻿New post: "Interesting Stuff - Week 28, 2020".
+Kafka & schema registry, Azure Databricks, Delta Lake, trends in big data, and other interesting topics.
+https://nielsberglund.com/2020/07/12/interesting-stuff---week-28-2020/
+#apachekafka #kafka #bigdata #machinelearning #Azure #databricks #MVPBuzz
+
+New post: "Interesting Stuff - Week 27, 2020".
 Kafka, WSL2, Azure User Group, Domain Driven Design, and other interesting topics.
 https://nielsberglund.com/2020/07/05/interesting-stuff---week-27-2020/
 #apachekafka #kafka #eventdriven #event #domaindriven #MVPBuzz
