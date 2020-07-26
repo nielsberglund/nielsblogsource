@@ -143,6 +143,10 @@ The data plane is what we communicate with when working with the BDC, doing quer
 * Load balancing.
 * Observability.
 
+Now, knowing a bit about the planes, let us have a look at roles.
+
+#### Roles
+
 
 
 
