@@ -1,4 +1,9 @@
-﻿New post: "Interesting Stuff - Week 30, 2020".
+﻿New post: "Interesting Stuff - Week 31, 2020".
+Kafka, ksqlDB and keys, Apache Flink, Derivco Webinar, and other interesting topics.
+https://nielsberglund.com/2020/08/02/interesting-stuff---week-31-2020/ 
+#apachekafka #kafka #ksqlDB #flink #apacheflink #MVPBuzz
+
+New post: "Interesting Stuff - Week 30, 2020".
 Kafka, Kafka and private data, Apache Spark date and Time data-types, and other interesting topics.
 https://nielsberglund.com/2020/07/26/interesting-stuff---week-30-2020/
 #apachekafka #kafka #bigdata #machinelearning #Azure #Spark #databricks #MVPBuzz
