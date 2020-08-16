@@ -1,4 +1,14 @@
-﻿New post: "Interesting Stuff - Week 31, 2020".
+﻿New post: "Interesting Stuff - Week 33, 2020".
+Internals of Kafka & ksqlDB, monitoring at Netflix, Azure Data Studio, Azure Sketches, and other interesting topics.
+https://nielsberglund.com/2020/08/16/interesting-stuff---week-33-2020/
+#apachekafka #kafka #ksqlDB #azuredatastudio #patterns #MVPBuzz
+
+New post: "Interesting Stuff - Week 32, 2020".
+Kafka, ksqlDB, Confluent Cloud everywhere, Azure SQL, and other interesting topics.
+https://nielsberglund.com/2020/08/09/interesting-stuff---week-32-2020/
+#apachekafka #kafka #ksqlDB #azuresql #machinelearning #MVPBuzz
+
+New post: "Interesting Stuff - Week 31, 2020".
 Kafka, ksqlDB and keys, Apache Flink, Derivco Webinar, and other interesting topics.
 https://nielsberglund.com/2020/08/02/interesting-stuff---week-31-2020/ 
 #apachekafka #kafka #ksqlDB #flink #apacheflink #MVPBuzz

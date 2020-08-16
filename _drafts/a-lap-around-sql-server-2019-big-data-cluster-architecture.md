@@ -147,7 +147,7 @@ Now, knowing a bit about the planes, let us have a look at roles.
 
 #### role
 
-In Kubernetes you have the notion of a `Role`, and that has to do with security: a `Role` sets permissions within a namespace. The `role` I refer to here has nothing to do with that. No, a `role` in this context is a way to describe the role of a Kubernetes component, i.e. what it does or belongs to. With that in mind we can "glean" some information/insight about the architecture of the BDC from it. 
+In Kubernetes you have the notion of a `Role`, and that has to do with security: a `Role` sets permissions within a namespace. The `role` I refer to here has nothing to do with that. No, a `role` in this context is a way to describe the role of a Kubernetes component, i.e. what it does or belongs to. With that in mind we can get some information/insight about the architecture of the BDC from it. 
 
 
 
