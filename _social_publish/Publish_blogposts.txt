@@ -1,4 +1,15 @@
-﻿New post: "Interesting Stuff - Week 33, 2020".
+﻿New post: "Interesting Stuff - Week 34, 2020".
+Kafka, Kafka virtual summit, testing Kafka Streams, Delta Lakes, Data Platform Summit, and other interesting topics.
+https://nielsberglund.com/2020/08/23/interesting-stuff---week-34-2020/
+#apachekafka #kafka #bigdata #kubernetes #databricks #AzureSQL #PowerBI #Analytics #AI #SQLServer #DPS10 #MSFTAdvocate #MVPBuzz
+@DataAISummit 
+
+
+
+
+
+
+New post: "Interesting Stuff - Week 33, 2020".
 Internals of Kafka & ksqlDB, monitoring at Netflix, Azure Data Studio, Azure Sketches, and other interesting topics.
 https://nielsberglund.com/2020/08/16/interesting-stuff---week-33-2020/
 #apachekafka #kafka #ksqlDB #azuredatastudio #patterns #MVPBuzz

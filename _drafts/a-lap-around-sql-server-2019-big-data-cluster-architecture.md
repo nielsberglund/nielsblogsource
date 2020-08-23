@@ -152,6 +152,8 @@ In Kubernetes you have the notion of a `Role`, and that has to do with security:
 
 
 
+
+
 ![](/images/posts/<image_name_incl_ext>)
 
 **Figure 1:** **
