@@ -1,4 +1,4 @@
-hUSE master;
+USE master;
 GO
 
 DROP DATABASE IF EXISTS GamePlayDB;
@@ -10,14 +10,14 @@ GO
 USE GamePlayDB;
 GO
 
-
+--drop table dbo.tb_GamePlay
 CREATE TABLE dbo.tb_GamePlay
 (
   RowID bigint identity PRIMARY KEY,
   UserID int NOT NULL,
   GameID int NOT NULL,
-  WagerAmount decimal(10, 2) NOT NULL,
-  PayoutAmount decimal(10, 2) NOT NULL,
+  WagerAmount bigint NOT NULL,
+  PayoutAmount bigint NOT NULL,
   EventTime datetime2 NOT NULL
 );
 GO
@@ -111,8 +111,8 @@ GO
 
 CREATE PROCEDURE dbo.pr_LogWager @UserID INT,
                                  @GameID INT,
-                                 @WagerAmount decimal(10, 2),
-                                 @PayoutAmount decimal(10, 2),
+                                 @WagerAmount bigint,
+                                 @PayoutAmount bigint,
                                  @EventTime datetime2
 AS
 BEGIN
@@ -128,11 +128,11 @@ BEGIN
       --do some more tx "stuff" here
     COMMIT TRAN
 
-    EXEC dbo.pr_GenerateAndPublishWagerEvent @UserID = @UserID,
-                                          @GameID = @GameID,
-                                          @WagerAmount = @WagerAmount,
-                                          @PayoutAmount = @PayoutAmount,
-                                          @EventTime = @EventTime;
+    -- EXEC dbo.pr_GenerateAndPublishWagerEvent @UserID = @UserID,
+    --                                       @GameID = @GameID,
+    --                                       @WagerAmount = @WagerAmount,
+    --                                       @PayoutAmount = @PayoutAmount,
+    --                                       @EventTime = @EventTime;
 
   END TRY
   BEGIN CATCH
@@ -142,7 +142,7 @@ BEGIN
 END  
 GO
 
-CREATE PROCEDURE dbo.pr_EmulateGamePlay @Loops int = 10,
+ALTER PROCEDURE dbo.pr_EmulateGamePlay @Loops int = 10,
                                         @MinDelay int = 50,
                                         @MaxDelay int = 500
 AS
@@ -150,14 +150,14 @@ BEGIN
   DECLARE @delay int;
   DECLARE @waitfor varchar(25);
   DECLARE @winMultiplier int;
-  DECLARE @wager decimal(10, 2);
+  DECLARE @wager bigint;
   DECLARE @userId int;
   DECLARE @gameId int;
-  DECLARE @payout decimal(10, 2) = 0.00;
+  DECLARE @payout bigint = 0;
   DECLARE @minUserId int = 100;
   DECLARE @maxUserId int = 125;
-  DECLARE @minwager int = 25;
-  DECLARE @maxwager int = 5000;
+  DECLARE @minwager int = 250;
+  DECLARE @maxwager int = 500000;
   DECLARE @minWinMult int = 1;
   DECLARE @maxWinMult int = 10;
   DECLARE @minGameId int = 1000;
@@ -202,38 +202,7 @@ END
 GO
 
 
--- SELECT * FROM dbo.tb_GamePlay
-
--- DECLARE @min int;
--- DECLARE @max int;
-
--- SELECT @min = 1, @max = 12
--- IF(CAST((@min + ROUND(RAND() * (@max + 1 - @min), 0)) AS int) % 3) = 0
--- BEGIN
---   PRINT 'WIN'
--- END
-
--- GO
-
---   DECLARE @MinDelay int = 50;
---   DECLARE @MaxDelay int = 500;
---   DECLARE @delay int;
---   DECLARE @waitfor varchar(25);
-  
---   -- calculate waitfor delay betwwen @MinDelay and @MaxDelay
---   SELECT @delay = @MinDelay + ROUND(RAND() * (@MaxDelay + 1 - @MinDelay), 0)
-  
---   SELECT @waitfor = FORMATMESSAGE('00:00:00.%i', @delay)
-
---   WAITFOR DELAY @waitfor;
---   PRINT 'HELLO'
-
-
---   SELECT CONVERT( DECIMAL(18, 6), 10 + (30-10)*RAND(CHECKSUM(NEWID())))
-
-
---   DECLARE @minwager int = 25;
---   DECLARE @maxwager int = 5000;
-
---   SELECT (@minwager + ROUND(RAND() * (@maxwager + 1 - @minwager), 0)) / 100
+-- EXECUTE dbo.pr_EmulateGamePlay @Loops = 3
+-- TRUNCATE TABLE dbo.tb_GamePlay
+--SELECT * FROM dbo.tb_GamePlay
 
