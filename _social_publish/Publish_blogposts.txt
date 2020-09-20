@@ -1,4 +1,20 @@
-﻿New post: "Interesting Stuff - Week 36, 2020".
+﻿New post: "Interesting Stuff - Week 38, 2020".
+Kafka & Azure Data Explorer, Azure Kubernetes, Big Data Analytics, Data Platform Summit, and other interesting topics.
+https://nielsberglund.com/2020/09/20/interesting-stuff---week-38-2020/
+#apachekafka #bigdata #kubernetes #azuresql #DPS10 #MVPBuzz
+#sqlserver #sql
+@DataAISummit @bobwardms
+
+
+New post: "Interesting Stuff - Week 37, 2020".
+Kafka & machine learning, priority messages in Kafka, Derivco webinar, and other interesting topics.
+https://nielsberglund.com/2020/09/13/interesting-stuff---week-37-2020/
+#apachekafka #kafka #bigdata #bigdatacluster #DerivcoTechThursday #MVPBuzz #machinelearning
+@derivco
+
+
+
+New post: "Interesting Stuff - Week 36, 2020".
 Kafka, Confluent Cloud & Azure, Presto & analytics, Derivco webinar, and other interesting topics.
 https://nielsberglund.com/2020/09/06/interesting-stuff---week-36-2020/
 #apachekafka #kafka #bigdata #bigdatacluster #sqlfamily #DerivcoTechThursday #MVPBuzz
