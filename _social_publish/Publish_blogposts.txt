@@ -1,4 +1,9 @@
-﻿New post: "Interesting Stuff - Week 38, 2020".
+﻿New post: "Interesting Stuff - Week 39, 2020".
+Kafka & machine learning, R & Python SQL Server language extensions, Azure Data Studio, and other interesting topics.
+https://nielsberglund.com/2020/09/27/interesting-stuff---week-39-2020/
+#apachekafka #sqlserver #sql #machinelearning #rstats #python #MVPBuzz
+
+New post: "Interesting Stuff - Week 38, 2020".
 Kafka & Azure Data Explorer, Azure Kubernetes, Big Data Analytics, Data Platform Summit, and other interesting topics.
 https://nielsberglund.com/2020/09/20/interesting-stuff---week-38-2020/
 #apachekafka #bigdata #kubernetes #azuresql #DPS10 #MVPBuzz
