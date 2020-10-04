@@ -1,4 +1,10 @@
-﻿New post: "Interesting Stuff - Week 39, 2020".
+﻿New post: "Interesting Stuff - Week 40, 2020".
+New version Confluent Platform, cool ksqlDB stuff, me at SQLBits and other interesting topics.
+https://nielsberglund.com/2020/10/04/interesting-stuff---week-40-2020/
+#apachekafka #sqlserver #sql #kafka #ksqldb #sqlbits #MVPBuzz
+
+
+New post: "Interesting Stuff - Week 39, 2020".
 Kafka & machine learning, R & Python SQL Server language extensions, Azure Data Studio, and other interesting topics.
 https://nielsberglund.com/2020/09/27/interesting-stuff---week-39-2020/
 #apachekafka #sqlserver #sql #machinelearning #rstats #python #MVPBuzz
