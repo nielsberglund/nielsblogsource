@@ -1,4 +1,10 @@
-﻿New post: "Interesting Stuff - Week 40, 2020".
+﻿New post: "Interesting Stuff - Week 41, 2020".
+Trace Kafka messages, link Kafka clusters, start and stop Big Data Clusters, and other interesting topics.
+https://nielsberglund.com/2020/10/11/interesting-stuff---week-41-2020/
+#apachekafka #sqlserver #bigdatacluster #kafka #MVPBuzz
+@mwdarab
+
+New post: "Interesting Stuff - Week 40, 2020".
 New version Confluent Platform, cool ksqlDB stuff, me at SQLBits and other interesting topics.
 https://nielsberglund.com/2020/10/04/interesting-stuff---week-40-2020/
 #apachekafka #sqlserver #sql #kafka #ksqldb #sqlbits #MVPBuzz
