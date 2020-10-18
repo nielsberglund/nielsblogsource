@@ -1,4 +1,10 @@
-﻿New post: "Interesting Stuff - Week 41, 2020".
+﻿New post: "Interesting Stuff - Week 42, 2020".
+Kafka, ksqlDB, analytics using Druid and KStreams, Kubernetes and chaos, and other interesting topics.
+https://nielsberglund.com/2020/10/18/interesting-stuff---week-42-2020/
+#apachekafka #kafka #kubernetes #druid #MVPBuzz
+@rmoff
+
+New post: "Interesting Stuff - Week 41, 2020".
 Trace Kafka messages, link Kafka clusters, start and stop Big Data Clusters, and other interesting topics.
 https://nielsberglund.com/2020/10/11/interesting-stuff---week-41-2020/
 #apachekafka #sqlserver #bigdatacluster #kafka #MVPBuzz
