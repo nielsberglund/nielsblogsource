@@ -1,4 +1,9 @@
-﻿New post: "Interesting Stuff - Week 42, 2020".
+﻿New post: "Interesting Stuff - Week 43, 2020".
+Kafka, the many uses of ksqlDB, how to trace events, Pinot for big data analytics, and other interesting topics.
+https://nielsberglund.com/2020/10/25/interesting-stuff---week-43-2020/
+#apachekafka #kafka #kubernetes #ksqldb #bigdata #pinot #MVPBuzz
+
+New post: "Interesting Stuff - Week 42, 2020".
 Kafka, ksqlDB, analytics using Druid and KStreams, Kubernetes and chaos, and other interesting topics.
 https://nielsberglund.com/2020/10/18/interesting-stuff---week-42-2020/
 #apachekafka #kafka #kubernetes #druid #MVPBuzz
