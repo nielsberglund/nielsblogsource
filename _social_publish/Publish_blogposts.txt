@@ -1,4 +1,10 @@
-﻿New post: "Interesting Stuff - Week 43, 2020".
+﻿New post: "Interesting Stuff - Week 44, 2020".
+Kafka, Kafka and Machine Learning, NGINX service mesh, concensus algorithms, and other interesting topics.
+https://nielsberglund.com/2020/11/01/interesting-stuff---week-44-2020/
+#apachekafka #kafka #raft #machinelearning #bigdata #MVPBuzz
+
+
+New post: "Interesting Stuff - Week 43, 2020".
 Kafka, the many uses of ksqlDB, how to trace events, Pinot for big data analytics, and other interesting topics.
 https://nielsberglund.com/2020/10/25/interesting-stuff---week-43-2020/
 #apachekafka #kafka #kubernetes #ksqldb #bigdata #pinot #MVPBuzz
