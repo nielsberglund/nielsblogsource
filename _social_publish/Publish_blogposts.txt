@@ -1,5 +1,11 @@
-﻿New post: "Interesting Stuff - Week 44, 2020".
-Kafka, Kafka and Machine Learning, NGINX service mesh, concensus algorithms, and other interesting topics.
+﻿New post: "Interesting Stuff - Week 45, 2020".
+Kafka, ksqlDDB pull queries in Confluent Cloud, Kafka and SQL Server at Data Platform Summit, and other interesting topics.
+https://nielsberglund.com/2020/11/08/interesting-stuff---week-45-2020/
+#apachekafka #bigdata #kafka #DPS10 #sqlserver #MVPBuzz
+@DataAISummit
+
+New post: "Interesting Stuff - Week 44, 2020".
+Kafka, Kafka and Machine Learning, NGINX service mesh, Raft concensus algorithms, and other interesting topics.
 https://nielsberglund.com/2020/11/01/interesting-stuff---week-44-2020/
 #apachekafka #kafka #raft #machinelearning #bigdata #MVPBuzz
 
