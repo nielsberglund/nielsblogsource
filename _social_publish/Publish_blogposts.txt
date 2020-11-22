@@ -1,4 +1,12 @@
-﻿New post: "Interesting Stuff - Week 46, 2020".
+﻿New post: "Interesting Stuff - Week 47, 2020".
+Kafka & retries, distributed ksqlDB, distributed systems course, Data Platform Summit 2020, and other interesting topics!
+https://nielsberglund.com/2020/11/22/interesting-stuff---week-47-2020/
+#apachekafka #kafka #DPS10 #DPS2020 #MVPBuzz
+@DataAISummit
+
+
+
+New post: "Interesting Stuff - Week 46, 2020".
 Kafka and Apache Pinot, R and Python in VSCode, Data Platform Summit 2020, and other interesting topics!
 https://nielsberglund.com/2020/11/15/interesting-stuff---week-46-2020/
 #apachekafka #bigdata #kafka #apachepinot #machinelearning #DPS10 #DPS2020 #MVPBuzz
