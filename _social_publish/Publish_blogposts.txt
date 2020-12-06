@@ -1,4 +1,9 @@
-﻿New post: "Interesting Stuff - Week 48, 2020".
+﻿New post: "Interesting Stuff - Week 49, 2020".
+Kafka and event streaming, .NET for Apache Spark, Service Mesh, and other interesting topics.
+https://nielsberglund.com/2020/12/06/interesting-stuff---week-49-2020/
+#apachekafka #kafka #machinelearning #kubernetes #apachespark #MVPBuzz
+
+New post: "Interesting Stuff - Week 48, 2020".
 Kafka & SQL Server, machine learning on Kubernetes, Data Platform Summit 2020, and other interesting topics!
 https://nielsberglund.com/2020/11/29/interesting-stuff---week-48-2020/
 #apachekafka #kafka #machinelearning #kubernetes #sqlserver #DPS10 #DPS2020 #MVPBuzz
