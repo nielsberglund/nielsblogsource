@@ -1,4 +1,9 @@
-﻿New post: "Interesting Stuff - Week 49, 2020".
+﻿New post: "Interesting Stuff - Week 50, 2020".
+Kafka & transactional machine learning, distributed query engines, SQL Big Data Cluster, and other interesting topics!
+https://nielsberglund.com/2020/12/13/interesting-stuff---week-50-2020/
+#apachekafka #kafka #machinelearning #bigdatacluster #MVPBuzz
+
+New post: "Interesting Stuff - Week 49, 2020".
 Kafka and event streaming, .NET for Apache Spark, Service Mesh, and other interesting topics.
 https://nielsberglund.com/2020/12/06/interesting-stuff---week-49-2020/
 #apachekafka #kafka #machinelearning #kubernetes #apachespark #MVPBuzz
