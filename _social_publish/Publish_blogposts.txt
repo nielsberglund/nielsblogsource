@@ -1,4 +1,9 @@
-﻿New post: "Interesting Stuff - Week 50, 2020".
+﻿New Blog-post: "A Lap Around SQL Server 2019 Big Data Cluster: Architecture".
+Here we look at the architecture of a SQL Server 2019 Big Data Cluster, and the various components.
+https://nielsberglund.com/2020/12/21/a-lap-around-sql-server-2019-big-data-cluster-architecture/
+#kubernetes #sqlserver #sqlserver2019 #bigdatacluster #MVPBuzz 
+
+New post: "Interesting Stuff - Week 50, 2020".
 Kafka & transactional machine learning, distributed query engines, SQL Big Data Cluster, and other interesting topics!
 https://nielsberglund.com/2020/12/13/interesting-stuff---week-50-2020/
 #apachekafka #kafka #machinelearning #bigdatacluster #MVPBuzz
