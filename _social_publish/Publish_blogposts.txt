@@ -1,4 +1,10 @@
-﻿New Blog-post: "A Lap Around SQL Server 2019 Big Data Cluster: Architecture".
+﻿New Blog-post: "Bring Your Own R & Python Runtimes to SQL Server Extensibility Framework".
+We look at how you can bring your own R or Python runtime to SQL Server Machine Learning Services.
+https://nielsberglund.com/2020/12/29/bring-your-own-r--python-runtimes-to-sql-server-extensibility-framework/
+#sqlserver2019 #machinelearning #java #python #rstats #MVPBuzz 
+
+
+New Blog-post: "A Lap Around SQL Server 2019 Big Data Cluster: Architecture".
 Here we look at the architecture of a SQL Server 2019 Big Data Cluster, and the various components.
 https://nielsberglund.com/2020/12/21/a-lap-around-sql-server-2019-big-data-cluster-architecture/
 #kubernetes #sqlserver #sqlserver2019 #bigdatacluster #MVPBuzz 
