@@ -1,4 +1,14 @@
-﻿New Blog-post: "Bring Your Own R & Python Runtimes to SQL Server Extensibility Framework".
+﻿New Blog-post: "Build Boost.Python & Numpy in Windows".
+How to build Boost.Python with the view to be able to create a Python SQL Language extension.
+https://nielsberglund.com/2021/01/03/build-boost.python--numpy-in-windows/
+#sqlserver2019 #boost #python #cpp #MVPBuzz 
+
+New post: "Interesting Stuff - Christmas, New Year, Week 1, 2021".
+Kafka, ksqlDB, new book about Kafka Streams and ksqlDB, use your own Python in SQL Server, and other interesting topics.
+https://nielsberglund.com/2021/01/03/interesting-stuff---christmas-new-year-week-1-2021/
+#apachekafka #kafka #ksqldb #machinelearning #bigdatacluster
+
+New Blog-post: "Bring Your Own R & Python Runtimes to SQL Server Extensibility Framework".
 We look at how you can bring your own R or Python runtime to SQL Server Machine Learning Services.
 https://nielsberglund.com/2020/12/29/bring-your-own-r--python-runtimes-to-sql-server-extensibility-framework/
 #sqlserver2019 #machinelearning #java #python #rstats #MVPBuzz 
