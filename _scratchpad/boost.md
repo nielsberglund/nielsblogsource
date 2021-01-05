@@ -29,7 +29,7 @@ user-config.jam
    ;
 
 
-b2 --with-python --prefix=c:\\boost175 --debug-configuration -d0 address-model=64 variant=release link=static threading=multi runtime-link=static install
+b2 --with-python --prefix=c:\\boost175 --debug-configuration -d0 address-model=64 variant=release link=static threading=multi runtime-link=shared install
 
 
 RuntimeError: The current Numpy installation ('C:\\Python39\\lib\\site-packages\\numpy\\__init__.py') fails to pass a sanity check due to a bug in the windows runtime. See this issue for more information: https://tinyurl.com/y3dm3h86
@@ -60,4 +60,51 @@ precated by Microsoft and will be REMOVED. It is superseded by the C++17 <filesy
 . [W:\nielsb-work\Github-Repos\gh-nielsberglund\sql-lang-ext\sql-server-language-extensions\build-output\pythonextensio
 n\windows\release\PythonExtension.vcxproj]
 
+88
+call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\Tools\VsDevCmd.bat" -arch=amd64 -host_arch=amd64
 
+call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat" -arch=amd64 -host_arch=amd64
+
+99
+CALL "%CMAKE_ROOT%\bin\cmake.exe" ^
+  -G "Visual Studio 15 2017 Win64" ^
+  -DPLATFORM=Windows ^
+  -DENL_ROOT="%ENL_ROOT%" ^
+  -DCMAKE_BUILD_TYPE=%CMAKE_CONFIGURATION% ^
+  -DPYTHONHOME="%PYTHONHOME%" ^
+  -DBOOST_ROOT="%BOOST_ROOT%" ^
+  -DBOOST_PYTHON_ROOT="%BOOST_PYTHON_ROOT%" ^
+  %PYTHONEXTENSION_HOME%/src
+
+CALL "%CMAKE_ROOT%\bin\cmake.exe" ^
+  -G "Visual Studio 16 2019" ^
+  -A x64 ^
+  -DPLATFORM=Windows ^
+  -DENL_ROOT="%ENL_ROOT%" ^
+  -DCMAKE_BUILD_TYPE=%CMAKE_CONFIGURATION% ^
+  -DPYTHONHOME="%PYTHONHOME%" ^
+  -DBOOST_ROOT="%BOOST_ROOT%" ^
+  -DBOOST_PYTHON_ROOT="%BOOST_PYTHON_ROOT%" ^
+  %PYTHONEXTENSION_HOME%/src  
+
+  PythonLibrarySession.h
+
+  #include <experimental/filesystem> -> #include <filesystem>
+
+  CMakeLists.txt
+
+  74
+  find_library(PYTHON_LIB python37 ${PYTHONHOME}/libs) -> find_library(PYTHON_LIB python39 ${PYTHONHOME}/libs)
+
+  84
+  find_library(BOOST_PYTHON_LIB libboost_python37-vc140-mt-x64-1_69 ${BOOST_PYTHON_ROOT}) -> find_library(BOOST_PYTHON_LIB libboost_python39-vc142-mt-x64-1_75 ${BOOST_PYTHON_ROOT})
+
+  85
+  find_library(BOOST_NUMPY_LIB libboost_numpy37-vc140-mt-x64-1_69 ${BOOST_PYTHON_ROOT}) ->  find_library(BOOST_NUMPY_LIB libboost_numpy39-vc142-mt-x64-1_75 ${BOOST_PYTHON_ROOT})
+
+
+
+PythonExtension.cpp, PythonExtensionUtils_win.cpp, PythonLibrarySession.cppPythonLibrarySession.cpp
+#include <experimental/filesystem>
+...
+namespace fs = std::experimental::filesystem;

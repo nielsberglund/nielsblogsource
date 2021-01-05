@@ -1,4 +1,9 @@
-﻿New Blog-post: "Build Boost.Python & Numpy in Windows".
+﻿New Blog-post: "Write a Python 3.9 Language Extension for SQL Server Machine Learning Services".
+We look at how to write a Python 3.9 SQL Server Language extension to use in SQL Server.
+https://nielsberglund.com/2021/01/05/write-a-python-3.9-language-extension-for-sql-server-machine-learning-services/
+#sqlserver2019 #python #cpp #machinelearning #python #MVPBuzz 
+
+New Blog-post: "Build Boost.Python & Numpy in Windows".
 How to build Boost.Python with the view to be able to create a Python SQL Language extension.
 https://nielsberglund.com/2021/01/03/build-boost.python--numpy-in-windows/
 #sqlserver2019 #boost #python #cpp #MVPBuzz 
@@ -12,7 +17,6 @@ New Blog-post: "Bring Your Own R & Python Runtimes to SQL Server Extensibility F
 We look at how you can bring your own R or Python runtime to SQL Server Machine Learning Services.
 https://nielsberglund.com/2020/12/29/bring-your-own-r--python-runtimes-to-sql-server-extensibility-framework/
 #sqlserver2019 #machinelearning #java #python #rstats #MVPBuzz 
-
 
 New Blog-post: "A Lap Around SQL Server 2019 Big Data Cluster: Architecture".
 Here we look at the architecture of a SQL Server 2019 Big Data Cluster, and the various components.
