@@ -1,7 +1,7 @@
 ---
 type: post
 layout: "post"
-title: Write a Python 3.9 Language Extension for SQL Server Machine Learning Services
+title: "UPDATED: Write a Python 3.9 Language Extension for SQL Server Machine Learning Services"
 author: nielsb
 date: 2021-01-05T04:57:43+02:00
 comments: true
@@ -24,6 +24,8 @@ keywords:
   - SQL Server Extensibility Framework
 ---
 
+> **NOTE:** This post has been updated after it was originally published. I have edited information about the `PYTHONHOME` system variable, as well as `PATH` requirements.
+
 In my post, [**Bring Your Own R & Python Runtimes to SQL Server Extensibility Framework**][1] I wrote about how we can use other R and Python runtimes in SQL Server Machine Learning Services than the ones that come "out of the box". In the post, I wrote that if you want to bring a Python runtime other than version 3.7.x, (like 3.8, 3.9, etc.), you need to build your own Python language extension, and we'd look at it in a future post.
 
 > **NOTE:** For R and Java the existing language extension can be used regardless of R/Java version, (at least as far as I know).
@@ -42,7 +44,8 @@ In the post, we looked at using Python 3.7.9, and what we did was:
 
 * installed Python 3.7.9.
 * after installing Python, we installed the `pandas` module, as it is not installed by default: `pip install pandas`.
-* created a system environment variable `PYTHONHOME` pointing to the install directory of Python 3.7.9.
+* ensured that Python was on the `PATH`,
+* created a system environment variable `PYTHONHOME` pointing to the install directory of Python 3.7.9. The  post has been updated since, and the `PYTHONHOME` variable is not necessarily needed.
 * assigned read and write permissions for the SQL Server instance-specific *Launchpad* service, and the `ALL APPLICATION PACKAGES` group to the Python install directory.
 * downloaded the Python language extension zip file to a location accessible by SQL Server.
 
@@ -116,11 +119,13 @@ Instead of Python 3.7.9, we use Python 3.9.1. When installing Python on the SQL 
 
 In *Figure 1* we see how I have checked the "Install for all users" box. On the SQL Server box you also should install `pandas`: `pip install pandas`, as we will use that in our testing script. When you install `pandas`, actually when installing any Python modules, ensure they are installed system-wide, and not for the installing user. 
 
+> **NOTE:** Make sure the Python installation on the SQL Server box is on the `PATH`.
+
 If you create the Python extension on another machine than where SQL Server is, you do not need to install `pandas`, but you should at least install `numpy`, (`numpy` is part of `pandas`).
 
 #### CMake for Windows
 
-CMake is an open-source, cross-platform family of tools designed to build, test and package software. I install it via Chocolatey: `choco install cmake -y'. Alternatively, you can download CMake from [here][5]. 
+CMake is an open-source, cross-platform family of tools designed to build, test and package software. I install it via Chocolatey: `choco install cmake -y`. Alternatively, you can download CMake from [here][5]. 
 
 CMake is used when building the extension, so install it on the box where you will do the build.
 
@@ -166,7 +171,7 @@ The [Python Language Extension][4] page mentions these variables:
 
 * `CMAKE_ROOT`: pointing at CMake's install directory. On my box, it is `C:\Program Files\CMake`.
 * `BOOST_ROOT`: from my experiments that should point to the Boost output directory mentioned above, (`C:\boost175` on my box).
-* `PYTHONHOME`:  this is not build related, but a variable that SQL Server uses to find the Python installation. On my SQL Server machine, it is `C:\Python39`.
+* `PYTHONHOME`:  ~~this is not build related, but a variable that SQL Server uses to find the Python installation.~~ This variable is required on the box where you build the extension. The variable bonds the correct Python version to the extension.
 
 When I first tried building with the variables as above the build scripts threw an error saying it needed an extra variable: `BOOST_PYTHON_ROOT`. So set `BOOST_PYTHON_ROOT` to point to the directory containing the two `lib` files we saw in *Figure 2*. For me it is `C:\boost175\lib`, (as in *Figure 2*).
 
@@ -285,20 +290,21 @@ What is left is now to use this Python 3.9 extension dll.
 To make sure our extension works, we do pretty much what we did in the [**Bring Your Own R & Python Runtimes to SQL Server Extensibility Framework**][1] post:
 
 1. Copy the `python-lang-extension.zip` file to a location on the SQL Server box accessible to the SQL Server instance.
-1. Ensure that the `PYTHONHOME` environment variable is set on the SQL Server box and points to to the Python 3.9 installation, (on the SQL Server box).
+1. Make sure the Python installation is on the `PATH` on the SQL Server box.
+1. Ensure that the `PYTHONHOME` environment variable is set on the SQL Server box and points to to the Python 3.9 installation, (on the SQL Server box). This step is not required unless you want to be able to create external libraries for your language.
 
-Having set the `PYTHONHOME` environment variable we have to assign read and execute permissions to that location. We assign the permissions to the *Launchpad* service of the SQL Server, and to the `ALL APPLICATION PACKAGES` group. From an elevated command prompt, we do:
+Having ~~set the `PYTHONHOME` environment variable~~ done the above, we have to assign read and execute permissions to the Python location. We assign the permissions to the *Launchpad* service of the SQL Server, and to the `ALL APPLICATION PACKAGES` group. From an elevated command prompt, we do:
 
 ```bash
 # permissions for the Launchpad service
-icacls "%PYTHONHOME%" /grant "NT Service\MSSQLLAUNCHPAD$INST2":(OI)(CI)RX /T
+icacls <python-path> /grant "NT Service\MSSQLLAUNCHPAD$INST2":(OI)(CI)RX /T
 
 # permissions for ALL APPLICATION PACKAGES
-icacls "%PYTHONHOME%" /grant *S-1-15-2-1:(OI)(CI)RX /T
+icacls <python-path> /grant *S-1-15-2-1:(OI)(CI)RX /T
 ```
 **Code Snippet 6:** *Setting Permissions*
 
-Notice in *Code Snippet 6* how I define the instance with `$instance_name`. If you do this for the default instance the command is without `$instance_name`, like so: `icacls "%PYTHONHOME%" /grant "NT Service\MSSQLLAUNCHPAD":(OI)(CI)RX /T`. The `ALL APPLICATION PACKAGES` is defined by SID `S-1-15-2-1`.
+Notice in *Code Snippet 6* how I define the instance with `$instance_name`. If you do this for the default instance the command is without `$instance_name`, like so: `icacls "<python-path> /grant "NT Service\MSSQLLAUNCHPAD":(OI)(CI)RX /T`. The `ALL APPLICATION PACKAGES` is defined by SID `S-1-15-2-1`.
 
 Let us create the external language in SQL Server:
 
@@ -379,4 +385,4 @@ If you have comments, questions etc., please comment on this post or [ping][ma] 
 [7]: https://boostorg.github.io/build/manual/develop/index.html
 [8]: https://boostorg.github.io/build/manual/develop/index.html#bbv2.overview.invocation.options
 [9]: {{< relref "2021-01-03-build-boostpython--numpy-in-windows.md" >}}
-[10]: https://developercommunity.visualstudio.com/content/problem/1207405/fmod-after-an-update-to-windows-2004-is-causing-a.htmlhttps://developercommunity.visualstudio.com/content/problem/1207405/fmod-after-an-update-to-windows-2004-is-causing-a.html
+[10]: https://developercommunity.visualstudio.com/content/problem/1207405/fmod-after-an-update-to-windows-2004-is-causing-a.html

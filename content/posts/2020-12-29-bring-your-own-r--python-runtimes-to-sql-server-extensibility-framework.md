@@ -1,7 +1,7 @@
 ---
 type: post
 layout: "post"
-title: Bring Your Own R & Python Runtimes to SQL Server Extensibility Framework
+title: "UPDATED: Bring Your Own R & Python Runtimes to SQL Server Extensibility Framework"
 author: nielsb
 date: 2020-12-29T12:47:45+02:00
 comments: true
@@ -29,6 +29,8 @@ keywords:
   - SQL Server Extensibility Framework
   - SQL Server External Languages   
 ---
+
+> **NOTE:** This post has been updated after it was originally published. I have edited information about the `PYTHONHOME` system variable, as well as `PATH` requirements.
 
 Back in the day I wrote quite a few blog posts about [**SQL Server Machine Learning Services**][1] as well as [**SQL Server Extensibility Framework**][2], and [**External Languages**][2]. **SQL Server Machine Learning Services** is very cool, but a complaint has been that you are restricted in what versions of R and Python you use.
 
@@ -125,9 +127,13 @@ This was the "lie of the land" up until September this year, (2020).
 
 When Java became a supported language in SQL Server 2019, Microsoft mentioned that communication between *ExternalHost* and the language extension should be based on an API, regardless of the external language. The API is the [Extensibility Framework API for SQL Server][9]. Having an API ensures simplicity and ease of use for the extension developer.
 
-From the paragraph above, one can assume that Microsoft would like to see 3rd party development of language extensions. That assumption turned out to be accurate as, mentioned above, Microsoft open-sourced the [Java language extension][3], together with the [include files for the extension API][4], in September 2020! This means that anyone interested can now create a language extension for their own favorite language!
+**Start edit: edited when Java was open-sourced**
 
-However, open sourcing the Java extension was not the only thing Microsoft did. They also created and open-sourced language extensions for R and Python! 
+From the paragraph above, one can assume that Microsoft would like to see 3rd party development of language extensions. That assumption turned out to be accurate as, Microsoft open-sourced the [Java language extension][3], together with the [include files for the extension API][4], in ~~September~~ March 2020! This means that anyone interested can now create a language extension for their own favorite language!
+
+~~However, open sourcing the Java extension was not the only thing Microsoft did.~~ Furthermore, in September 2020,  they also created and open-sourced language extensions for R and Python! 
+
+**End Edit**
 
 > **NOTE:** Microsoft did not open-source the R and Python launcher dll's, but they developed new extensions which do not require the Microsoft implementation of the R and Python runtimes.
 
@@ -206,7 +212,13 @@ In *Code Snippet 4* I use Python's `sys.version` to get the version, and I add t
 
 **Figure 4:** *Python Version*
 
-The version of Python, as we see in *Figure 4* is 3.7.1. For some reason or another, I would like to use 3.7.9. So we need to ensure we have Python 3.7.9 [downloaded][6] and installed.
+The version of Python, as we see in *Figure 4* is 3.7.1. For some reason or another, I would like to use 3.7.9. So we need to ensure we have Python 3.7.9 [downloaded][6] and installed on the SQL Server box.
+
+**Start edit: following NOTE added 2021-01-09**
+
+> **NOTE:** When installing Python you need install it with administrator permissions: "Run as administrator". The top level Python directory as well as the `.\Scripts` directory needs to be added to the `PATH`.
+
+**End Edit**
 
 After you have installed Python install the `pandas` module, as it is not installed by default: `pip install pandas`.
 
@@ -275,29 +287,31 @@ So, it turns out that when installing Python, (as well as R), we need to do some
 
 #### Path & Permissions
 
-When we execute `sp_execute_external_script` and after *ExternalHost* has loaded the python extension dll, the extension needs to know where Python is installed, so it looks for an environment variable named `PYTHONHOME`. So the first thing we need to do is to create that variable as a system variable:
+**Start edit: edited around paths and environment variables 2021-01-09**
 
-![](/images/posts/byor-r-and-p-pythonhome.png)
+~~When we execute `sp_execute_external_script` and after *ExternalHost* has loaded the python extension dll, the extension needs to know where Python is installed, so it looks for an environment variable named `PYTHONHOME`. So the first thing we need to do is to create that variable as a system variable:~~
 
-**Figure 8:** *Create PYTHONHOME*
+When we execute `sp_execute_external_script` and after *ExternalHost* has loaded the python extension dll, the extension needs to know where the Python runtime is. For this it uses the `PATH` variable on the SQL Server box. The extension knows which version of Python it is as the extension is compiled against a specific version, (more about that below). So, as mentioned above we need to ensure that Python is on the `PATH`.
 
-In *Figure 8*, we see how I set the value of `PYTHONHOME` to where Python is installed. The *Launchpad* service needs to read and write to the Python directory, so we need to set permissions for that:
+When executing code, the *Launchpad* service needs to read and write to the Python directory, so we need to set permissions for that:
 
 ```bash
-icacls "%PYTHONHOME%" /grant "NT Service\MSSQLLAUNCHPAD$INST2":(OI)(CI)RX /T
+icacls <python-path> /grant "NT Service\MSSQLLAUNCHPAD$INST2":(OI)(CI)RX /T
 ```
 **Code Snippet 6:** *Grant Permissions to Launchpad*
 
-We need to run the code in *Code Snippet 6* from an elevated command prompt. It has to be command prompt, PowerShell will not work. Notice in *Code Snippet 6* how I define the instance with `$instance_name`. If you do this for the default instance the command is without `$instance_name`, like so: `icacls "%PYTHONHOME%" /grant "NT Service\MSSQLLAUNCHPAD":(OI)(CI)RX /T`.
+We need to run the code in *Code Snippet 6* from an elevated command prompt, (Powershell will not work). Notice in *Code Snippet 6* how I define the instance with `$instance_name`. If you do this for the default instance the command is without `$instance_name`, like so: `icacls "<python-path> /grant "NT Service\MSSQLLAUNCHPAD":(OI)(CI)RX /T`.
 
-Having granted read and execute access to the *Launchpad* service for the instance, we do the same for the `SID` `S-1-15-2-1`:
+Having granted read and execute access to the *Launchpad* service for the instance, we do the same for the `ALL APPLICATION PACKAGES` group, which is represented by the `SID` `S-1-15-2-1`:
 
 ```bash
-icacls "%PYTHONHOME%" /grant *S-1-15-2-1:(OI)(CI)RX /T
+icacls <python-path> /grant *S-1-15-2-1:(OI)(CI)RX /T
 ```
 **Code Snippet 7:** *Grant Permissions to ALL APPLICATION PACKAGES*
 
-The code, which needs to be run from an elevated command prompt,  in *Code Snippet 7* grants read and execute permissions to `ALL APPLICATION PACKAGES`. 
+**End Edit**
+
+The code in *Code Snippet 7*, which needs to be run from an elevated command prompt, grants read and execute permissions to the `ALL APPLICATION PACKAGES` group. 
 
 > **NOTE:** You can read more about `ALL APPLICATION PACKAGES`, and why we need it, [here][8].
 
@@ -305,11 +319,31 @@ After you have granted the necessary permissions, restart the *Launchpad* servic
 
 ![](/images/posts/byor-r-and-p-python-version-2.png)
 
-**Figure 9:** *Python 3.7.9*
+**Figure 8:** *Python 3.7.9*
 
-Wohoo, as we see in *Figure 9*, it works! We are now using version 3.7.9 of Python! 
+Wohoo, as we see in *Figure 8*, it works! We are now using version 3.7.9 of Python! 
 
 > **NOTE:** If you run the code on a Windows 10 20H2 version you may get an error along the lines of *The current Numpy installation (<path to numpy) fails to pass a sanity check due to a bug in the windows runtime*. As the error says, it is an issue with Windows and `Numpy`. The easiest way to fix it is to downgrade `Numpy` to version `1.19.3`. You do it like so: `pip install --upgrade numpy==1.19.3`.
+
+**Start edit: editing around `PYTHONHOME`**
+
+When looking at the official [Microsoft documentation for the Python language extension][10] it mentions we need to add a system environment variable `PYTHONHOME`, what is that?
+
+#### PYTHONHOME
+
+Initially I thought the `PYTHONHOME` variable was used by the extension host to find the Python runtime, but that is not entirely correct. The `PYTHONHOME` variable is used when creating external libraries for the external Python language. So if you are only calling `sp_execute_external_script` the variable is not needed.
+
+However, if we want to be able to create external libraries we need to create the variable:
+
+![](/images/posts/byor-r-and-p-pythonhome.png)
+
+**Figure 9:** *Create PYTHONHOME*
+
+In *Figure 9*, we see how I set the value of `PYTHONHOME` to where Python is installed. Having the variable makes it somewhat easier to set the required permissions we saw in *Code Snippet 6*, and *Code Snippet 7* as we can doe something like so: `icacls "%PYTHONHOME%" /grant ...`. We do not need to explicitly set the path.
+
+There is a downside with `PYTHONHOME` where it can cause unexpected errors, and we look at that in the [**Solve Python Issues in SQL Server Machine Learning Services After Deploying Python 3.9**][11] post. That post led to the updates to this post.
+
+**End Edit: `PYTHONHOME`**
 
 We are almost ready for a summary, but one last thing.
 
@@ -317,9 +351,10 @@ We are almost ready for a summary, but one last thing.
 
 Cool, so above we've seen how I can bring my own Python runtime, and in this case, it was 3.7.9. What about if I wanted a later version, let's say 3.9?
 
-It so happens that I have Python 3.9.0 installed on my machine, so I:
+It so happens that I have Python 3.9.1 installed on my machine, so I:
 
-* change `PYTHONHOME` to point to where 3.9 is.
+* ~~change `PYTHONHOME` to point to where 3.9 is.~~
+* ensure Python 3.9.1 is on the `PATH`
 * apply the necessary permissions for the *Launchpad* service and `ALL APPLICATION PACKAGES`.
 
 However, when I execute the code as previous, I get the same error as in *Figure 7*. This is because the Python language extension is Python version-specific, and the release we use here is for Python 3.7.x. For other versions of Python (3.8, 3.9, etc.) you must modify and rebuild the Python Extension binaries. Look out for a future post around targeting different Python versions.
@@ -332,9 +367,10 @@ In this post, we discussed how Microsoft has open-sourced language extensions fo
 
 We looked at using a later version of Python, (3.7.9), than the Python version included in SQL Server Machine Learning Services. To use another version, after we have installed the version in question we:
 
+* ensure that the Python version you want to is on the `PATH` on the SQL Server box.
 * download the Python language extension.
-* create a system environment variable `PYTHONHOME` pointing to the install directory of the version.
-* assign read and write permissions for the SQL Server instance-specific *Launchpad* service, and the `ALL APPLICATION PACKAGES` group.
+* create a system environment variable `PYTHONHOME` pointing to the install directory of the version. Not necessary unless you want to create external libraries for your language.
+* assign read and write permissions to the SQL Server instance-specific *Launchpad* service, and the `ALL APPLICATION PACKAGES` group.
 * create an external language using the `CREATE EXTERNAL LANGUAGE` syntax, with a unique name, (we cannot name it Python/R).
 
 When we've done the above, we can execute using `sp_execute_external_script`. 
@@ -365,3 +401,5 @@ If you have comments, questions etc., please comment on this post or [ping][ma] 
 [7]: https://github.com/microsoft/sql-server-language-extensions/releases
 [8]: https://docs.microsoft.com/en-us/sql/machine-learning/install/sql-server-machine-learning-services-2019?view=sql-server-ver15
 [9]: https://docs.microsoft.com/en-us/sql/language-extensions/reference/extensibility-framework-api?view=sql-server-ver15
+[10]: https://docs.microsoft.com/en-us/sql/machine-learning/install/custom-runtime-python
+[11]: {{< relref "2021-01-09-solve-python-issues-in-sql-server-machine-learning-services-after-deploying-python-39.md" >}}

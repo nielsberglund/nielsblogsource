@@ -1,4 +1,10 @@
-﻿New Blog-post: "Write a Python 3.9 Language Extension for SQL Server Machine Learning Services".
+﻿New Blog-post: "Solve Python Issues in SQL Server Machine Learning Services After Deploying Python 3.9".
+Solve Python issues in SQL server after having deployed a new Python language.
+https://nielsberglund.com/2021/01/09/solve-python-issues-in-sql-server-machine-learning-services-after-deploying-python-3.9/
+#sqlserver2019 #python #machinelearning #python #MVPBuzz 
+
+
+New Blog-post: "Write a Python 3.9 Language Extension for SQL Server Machine Learning Services".
 We look at how to write a Python 3.9 SQL Server Language extension to use in SQL Server.
 https://nielsberglund.com/2021/01/05/write-a-python-3.9-language-extension-for-sql-server-machine-learning-services/
 #sqlserver2019 #python #cpp #machinelearning #python #MVPBuzz 
