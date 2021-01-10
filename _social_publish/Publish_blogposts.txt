@@ -1,4 +1,9 @@
-﻿New Blog-post: "Solve Python Issues in SQL Server Machine Learning Services After Deploying Python 3.9".
+﻿New post: "Interesting Stuff - Week 2, 2021".
+Kafka and SMTs, Data Architecture with Data Mesh, resources for data engineering, Python language extensions, and other interesting topics.
+https://nielsberglund.com/2021/01/10/interesting-stuff---week-2-2021/
+#apachekafka #kafka #machinelearning #sqlserver2019 #python #MVPBuzz
+
+New Blog-post: "Solve Python Issues in SQL Server Machine Learning Services After Deploying Python 3.9".
 Solve Python issues in SQL server after having deployed a new Python language.
 https://nielsberglund.com/2021/01/09/solve-python-issues-in-sql-server-machine-learning-services-after-deploying-python-3.9/
 #sqlserver2019 #python #machinelearning #python #MVPBuzz 
