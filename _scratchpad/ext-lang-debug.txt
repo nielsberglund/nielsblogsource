@@ -1,0 +1,15 @@
+x launchpad!*
+
+.childdbg 1
+
+!peb
+
+x *!
+
+x ExtHost *!
+
+x ExtHost!*Init*Session*
+
+x ExtHost!*Execute*
+
+x ExtHost!CExthostExtensionManager*

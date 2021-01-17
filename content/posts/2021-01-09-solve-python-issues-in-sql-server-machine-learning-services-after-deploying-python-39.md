@@ -7,6 +7,7 @@ date: 2021-01-09T11:38:09+02:00
 comments: true
 highlight: true
 draft: false
+categories:
   - SQL Server 2019
   - SQL Server Machine Learning Services
   - SQL Server Extensibility Framework
