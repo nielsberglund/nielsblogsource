@@ -59,3 +59,7 @@ pipresult = subprocess.run(['C:/Python39/python.exe', '-m', 'pip', 'install', 'C
  PythonLibrarySession::InstallLibrary
 
  bp::exec(installScript.c_str(), m_mainNamespace);
+
+
+string setTemp = "import os;os.environ['TMPDIR'] = '" + tempFolder + "'";
+bp::exec(setTemp.c_str(), m_mainNamespace);
