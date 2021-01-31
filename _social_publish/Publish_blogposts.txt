@@ -1,4 +1,17 @@
-﻿New Blog-post: "SQL Server 2019 External Libraries and Your Python Runtime".
+﻿New post: "Interesting Stuff - Week 5, 2021".
+Kafka, kafka & machine learning, lakehouses and table formats, Apache Iceberg, and other interesting topics.
+https://nielsberglund.com/2021/01/31/interesting-stuff---week-5-2021/
+#apachekafka #kafka #apachepinot #dataarchitecture #machinelearning #bigdata #MVPBuzz
+@apachepinot
+
+
+New post: "Interesting Stuff - Week 4, 2021".
+Kafka tools, Kafka & Pinot for analytics, MinIO & Trino, and other interesting topics.
+https://nielsberglund.com/2021/01/24/interesting-stuff---week-4-2021/
+#apachekafka #kafka #apachepinot #trino #dataarchitecture #MVPBuzz
+
+
+New Blog-post: "SQL Server 2019 External Libraries and Your Python Runtime".
 We look at how we can create external libraries for our Python external language..
 https://nielsberglund.com/2021/01/24/sql-server-2019-external-libraries-and-your-python-runtime/
 #sqlserver2019 #python #machinelearning #python #MVPBuzz 
