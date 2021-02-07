@@ -1,4 +1,10 @@
-﻿New post: "Interesting Stuff - Week 5, 2021".
+﻿New post: "Interesting Stuff - Week 6, 2021".
+Kafka, Kafka, Confluent Cloud & Azure Databricks, Presto & Pinot, Lakehouses, and other interesting topics.
+https://nielsberglund.com/2021/02/07/interesting-stuff---week-6-2021/
+#apachekafka #kafka #apachepinot #dataarchitecture #bigdata #MVPBuzz
+@apachepinot
+
+New post: "Interesting Stuff - Week 5, 2021".
 Kafka, kafka & machine learning, lakehouses and table formats, Apache Iceberg, and other interesting topics.
 https://nielsberglund.com/2021/01/31/interesting-stuff---week-5-2021/
 #apachekafka #kafka #apachepinot #dataarchitecture #machinelearning #bigdata #MVPBuzz
