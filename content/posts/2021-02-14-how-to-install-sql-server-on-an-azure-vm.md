@@ -3,19 +3,22 @@ type: post
 layout: "post"
 title: How To Install SQL Server on an Azure VM
 author: nielsb
-date: 
+date: 2021-02-14T09:17:27+02:00
 comments: true
 highlight: true
-draft: true
+draft: false
 categories:
   - SQL Server
   - Azure
 tags:
   - SQL Server
   - Azure
-description: 
+  - Azure VM
+description: We look at how we deploy SQL Server to an Azure Virtual Machine.
 keywords:
-  -   
+  - SQL Server
+  - Azure
+  - Azure VM   
 ---
 
 A while ago, I wanted to do a quick test on a new SQL installation, and I wanted the SQL installation to be on a "pristine" server. I was not keen on creating a new virtual machine on my local dev-box, as for that I would need to create a VM image etc., and it seemed like too much hassle for a lazy person like me. The obvious choice then is to do it in the cloud. How hard can that be, what could possibly go wrong?!
@@ -36,15 +39,15 @@ When we have an account/subscription we log onto the portal:
 
 **Figure 1:** *Azure Portal*
 
-After we have logged in to the portal, we see something like in *Figure 1*. We now want to create a new Azure resource. We do that via the *Create a resource* menu.  We click on the "hamburger" menu we see outlined in red in *Figure 1* to get to that menu. When clicking on the menu, a list is presented where the first item is *Create a resource*. Click on that, and we see:
+After we have logged in to the portal, we see something like in *Figure 1*. To create anything in Azure, we create a new Azure resource. We do that via the *Create a resource* menu.  We click on the "hamburger" menu we see outlined in red in *Figure 1* to get to that menu. When clicking on the menu, a list is presented where the first item is *Create a resource*. Click on that, and we see:
 
 ![](/images/posts/azure-vm-sql-create-resource-1.png)
 
-**Figure 2:** *Create Resource* 
+**Figure 2:** *Create Resource*
 
-When we look at *Figure 2* there is nothing that really stands out. Sure, we see some items outlined in red in the figure that relates to data and databases. However, when we "drill down" into those items there are nothing there that refers to SQL installations on a VM, it is all more related to managed databases.
+Looking at *Figure 2*, I do not see anything that really stands out. Sure, we see some items outlined in red in the figure that relates to data and databases. However, when we "drill down" into those items there is nothing there that refers explicitly to SQL installations on a VM, it is all more related to managed databases.
 
-I guess we could go into the *Compute* item and deploying a VM, and after having done that we upload the SQL Server install media and we do a manual installation on the VM. I don't see that being much better than doing it on my local machine, and I thought there has to be something better.
+I guess we could go into the *Compute* item and deploy a VM. Having done that, we upload the SQL Server install media and do a manual installation of SQL Server on the VM. However, I don't see that being much better than doing it on a VM on my local machine, and I thought there has to be something better.
 
 #### Azure SQL
 
@@ -92,7 +95,7 @@ In *Figure 7* we see the top part of the *Create a virtual machine* page. We see
 
 #### Basics
 
-We start at the *Basics* tab, and as the name implies here we set the base settings for the VM:
+We start at the *Basics* tab and, as the name implies, here we set the base settings for the VM:
 
 ![](/images/posts/azure-vm-sql-createvm-basics.png)
 
@@ -213,3 +216,6 @@ If you have comments, questions etc., please comment on this post or [ping][ma] 
 [re]: http://blog.revolutionanalytics.com
 [sqsk]: https://www.sqlskills.com
 [ba]: https://twitter.com/bob_albright
+hrome
+
+[1]: https://azure.microsoft.com/en-gb/free/

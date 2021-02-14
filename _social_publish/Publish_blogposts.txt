@@ -1,4 +1,10 @@
-﻿New post: "Interesting Stuff - Week 7, 2021".
+﻿New Blog-post: "How To Install SQL Server on an Azure VM".
+We look at how we deploy SQL Server to an Azure Virtual Machine.
+https://nielsberglund.com/2021/02/14/how-to-install-sql-server-on-an-azure-vm/
+#sqlserver2019 #sqlserver #azure #sqlonazure #MVPBuzz 
+
+
+New post: "Interesting Stuff - Week 7, 2021".
 Kafka, ksqlDB, the ins & out of Data Lakes, Apache Pinot & analysis, and other interesting topics.
 https://nielsberglund.com/2021/02/14/interesting-stuff---week-7-2021/
 #apachekafka #kafka #ksqldb #apachepinot #dataarchitecture #bigdata #MVPBuzz
