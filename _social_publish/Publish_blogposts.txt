@@ -1,4 +1,9 @@
-﻿New Blog-post: "How To Install SQL Server on an Azure VM".
+﻿New post: "Interesting Stuff - Week 8, 2021".
+Kafka & ZooKeeper, keys in ksqlDB, Uber does log analytics, SQL Server Big Data Cluster, and other interesting topics.
+https://nielsberglund.com/2021/02/21/interesting-stuff---week-8-2021/
+#apachekafka #kafka #ksqldb #bigdata #bigdatacluster #MVPBuzz
+
+New Blog-post: "How To Install SQL Server on an Azure VM".
 We look at how we deploy SQL Server to an Azure Virtual Machine.
 https://nielsberglund.com/2021/02/14/how-to-install-sql-server-on-an-azure-vm/
 #sqlserver2019 #sqlserver #azure #sqlonazure #MVPBuzz 
