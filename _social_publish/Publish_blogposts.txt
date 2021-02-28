@@ -1,4 +1,11 @@
-﻿New post: "Interesting Stuff - Week 8, 2021".
+﻿New post: "Interesting Stuff - Week 9, 2021".
+Kafka @ Pinterest, GraphQL vs. Rest, Apache Pinot & massive datasets, Data Architecture & Data lakes, and other interesting topics.
+https://nielsberglund.com/2021/02/28/interesting-stuff---week-9-2021/
+#apachekafka #kafka #apachepinot #dataarchitecture #MVPBuzz
+@apachepinot
+
+
+New post: "Interesting Stuff - Week 8, 2021".
 Kafka & ZooKeeper, keys in ksqlDB, Uber does log analytics, SQL Server Big Data Cluster, and other interesting topics.
 https://nielsberglund.com/2021/02/21/interesting-stuff---week-8-2021/
 #apachekafka #kafka #ksqldb #bigdata #bigdatacluster #MVPBuzz
