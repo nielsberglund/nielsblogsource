@@ -1,4 +1,9 @@
-﻿New post: "Interesting Stuff - Week 9, 2021".
+﻿New post: "Interesting Stuff - Week 10, 2021".
+Kafka Summit 2021, new heap in .NET Core, database talks, and other interesting topics.
+https://nielsberglund.com/2021/03/07/interesting-stuff---week-10-2021/
+#apachekafka #kafka #kafkasummit #dotnetcore #machinelearning #databases #MVPBuzz
+
+New post: "Interesting Stuff - Week 9, 2021".
 Kafka @ Pinterest, GraphQL vs. Rest, Apache Pinot & massive datasets, Data Architecture & Data lakes, and other interesting topics.
 https://nielsberglund.com/2021/02/28/interesting-stuff---week-9-2021/
 #apachekafka #kafka #apachepinot #dataarchitecture #MVPBuzz
