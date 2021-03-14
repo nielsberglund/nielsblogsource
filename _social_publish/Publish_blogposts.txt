@@ -1,4 +1,10 @@
-﻿New post: "Interesting Stuff - Week 10, 2021".
+﻿New post: "Interesting Stuff - Week 11, 2021".
+Kafka & Apache Pinot, KStreams & state using RocksDB, distributed tracing, and other interesting topics.
+https://nielsberglund.com/2021/03/14/interesting-stuff---week-11-2021/
+#apachekafka #kafka #apachepinot #dataarchitecture #trino #MVPBuzz
+@apachepinot
+
+New post: "Interesting Stuff - Week 10, 2021".
 Kafka Summit 2021, new heap in .NET Core, database talks, and other interesting topics.
 https://nielsberglund.com/2021/03/07/interesting-stuff---week-10-2021/
 #apachekafka #kafka #kafkasummit #dotnetcore #machinelearning #databases #MVPBuzz

@@ -216,6 +216,5 @@ If you have comments, questions etc., please comment on this post or [ping][ma] 
 [re]: http://blog.revolutionanalytics.com
 [sqsk]: https://www.sqlskills.com
 [ba]: https://twitter.com/bob_albright
-hrome
 
 [1]: https://azure.microsoft.com/en-gb/free/

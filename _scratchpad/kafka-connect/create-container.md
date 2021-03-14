@@ -1,3 +1,7 @@
+How to Setup Kafka Connect & Debezium in Docker to Stream Data from MS SQL Server
+
+
+
 
 
 retrieve and start docker:
