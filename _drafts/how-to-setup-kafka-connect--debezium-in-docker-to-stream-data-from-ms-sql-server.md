@@ -14,11 +14,11 @@ keywords:
   -   
 ---
 
-I have been doing a couple of conference talks lately, (virtual of course), about streaming data from SQL Server to Kafka. The title of the presentation is: **Free Your SQL Server Data With Kafka**.
+I have been doing a couple of conference talks lately (virtual, of course) about streaming data from SQL Server to Kafka. The title of the presentation is **Free Your SQL Server Data With Kafka**.
 
-In the presentation I talk, (and show), various ways of getting data from SQL Server to Kafka. One of the ways I cover is Microsoft CDC together with Debezium. 
+In the presentation, I talk (and show) various ways of getting data from SQL Server to Kafka. One of the ways I cover is Microsoft CDC, together with Debezium. 
 
-When I do the presentation I always have a SQL Server installed locally and I run Kafka in Docker. Without a fail, every time I set up the environment I cannot remember how to do the Docker "stuff", so therefore I decided to write this post to have something to go back to for next time.
+When I do the presentation, I always have a SQL Server installed locally, and I run Kafka in Docker. Without fail, every time I set up the environment, I cannot remember how to do the Docker "stuff". Therefore I decided to write this post to have something to go back to for next time.
 
 <!--more-->
 
@@ -30,9 +30,34 @@ Debezium is an open source distributed platform for change data capture, (I "sto
 
 > **NOTE:** Debezium *can* work without a Kafka cluster, in which case it is embedded in your application, and the application receives the change notifications. Read more about that [here][2].
 
-Debezium works by means of Connectors. A connector is a piece of code that that captures changes from database systems and produces events with similar structures. When interacting with Kafka, the connector(s) is deployed to Kafka Connect.
+Debezium works by means of Connectors. A connector is a piece of code, specific to the underlying database system that that captures changes from the database. Regardless of underlying system it produces events with similar structures. When interacting with Kafka, the connector(s) is deployed to Kafka Connect.
 
 ## Kafka Connect
+
+Kafka Connect is a tool for streaming data between Apache Kafka and other systems in a scalable and reliable way. The way you move data between systems and Kafka is using connectors, such as the Debezium connectors mentioned above, and there are two flavors of connectors:
+
+* Source connectors such as Debezium that understand how to interact with the source system send records into Kafka
+* Sink connectors that propagate records from Kafka topics to other systems.
+
+Kafka Connect is a JVM process, and it operates separately from the Kafka Broker. Connectors are `.jar` files loaded by the connect process. The diagram below shows a high-level overview of what it looks like:
+
+![](/images/posts/kafka-connect-1.png)
+
+**Figure 1:** *Kafka Connect Overview*
+
+In *Figure 1* we see, (from left to right):
+
+* Source systems, i.e. systems we want to get data from. These systems can be databases, Hadoop, files, etc.
+* The Kafka Connect worker with source connectors. The connectors know how to interact with the source system, whether querying a database, using CDC, reading from a filesystem, etc. The connectors publish data to Kafka topics.
+* The Kafka broker(s). The broker(s) contain topics that are the "sinks" for the source connectors.
+* Kafka Connect worker with sink connectors. Source and sink connectors can be in the same Kafka Connect worker. The sink connectors know how to consume events from Kafka topics and ingest them into sink systems.
+* Sink systems. These are systems we ingest data into. As with source systems, these can be databases, Hadoop, files, etc.
+
+With the above in mind, let us look at how this works with SQL Server.
+
+## SQL Server, Debezium, and Kafka
+
+With SQL Server our aim is to get data out of some table(s) in a database(s), and stream it to a topic(s) in Kafka. 
 
 
 
