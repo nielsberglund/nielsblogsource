@@ -1,12 +1,12 @@
-﻿New post: "Interesting Stuff - Week 13, 2021".
+﻿New post: "Interesting Stuff - Week 14, 2021".
+Kafka & ZooKeper, Kafka Prometheus & Graphana, Delta Lake, Machine Learning & Feature Stores, and other interesting topics.
+https://nielsberglund.com/2021/04/04/interesting-stuff---week-14-2021/
+#apachekafka #kafka #dataarchitecture #machinelearning #MVPBuzz
+
+New post: "Interesting Stuff - Week 13, 2021".
 Kafka & event arch., Feature stores & Machine Learning, SQL Server & k8s, data arch, and other interesting topics.
 https://nielsberglund.com/2021/03/28/interesting-stuff---week-13-2021/
 #apachekafka #kafka #dataarchitecture #dotnetcore #dapr #kubernetes #machinelearning #MVPBuzz
-
-
-https://nielsberglund.com/2021/03/28/interesting-stuff---week-13-2021/
-
-
 
 New post: "Interesting Stuff - Week 12, 2021".
 Kafka & RocksetDB & realtime analysis, distributed tracing in .NET, dbt for data pipelines, and other interesting topics.
