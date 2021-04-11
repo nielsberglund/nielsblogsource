@@ -1,4 +1,11 @@
-﻿New post: "Interesting Stuff - Week 14, 2021".
+﻿New post: "Interesting Stuff - Week 15, 2021".
+Kafka & data quality, upserts & Apache Pinot, SQL Server Big Data Cluster CU10,  & other interesting topics.
+https://nielsberglund.com/2021/04/11/interesting-stuff---week-15-2021/
+#apachekafka #dataarchitecture #machinelearning #apachepinot #bigdatacluster #MVPBuzz
+@apachepinot
+
+
+New post: "Interesting Stuff - Week 14, 2021".
 Kafka & ZooKeper, Kafka Prometheus & Graphana, Delta Lake, Machine Learning & Feature Stores, and other interesting topics.
 https://nielsberglund.com/2021/04/04/interesting-stuff---week-14-2021/
 #apachekafka #kafka #dataarchitecture #machinelearning #MVPBuzz

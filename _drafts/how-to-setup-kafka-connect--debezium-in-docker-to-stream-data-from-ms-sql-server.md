@@ -181,7 +181,7 @@ services:
 
 
 
-
+https://github.com/confluentinc/demo-scene/blob/master/mssql-to-kafka-with-ksqldb/docker-compose.yml
 
 
 
