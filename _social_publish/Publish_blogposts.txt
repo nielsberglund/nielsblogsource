@@ -1,4 +1,9 @@
-﻿New post: "Interesting Stuff - Week 15, 2021".
+﻿New post: "Interesting Stuff - Week 16, 2021".
+The ins and outs of Kafka Connect, awesome deep learning, Azure SQL digital event, and other interesting topics.
+https://nielsberglund.com/2021/04/18/interesting-stuff---week-16-2021/
+#apachekafka #kafkaconnect #azuresql #machinelearning #deeplearning #MVPBuzz
+
+New post: "Interesting Stuff - Week 15, 2021".
 Kafka & data quality, upserts & Apache Pinot, SQL Server Big Data Cluster CU10,  & other interesting topics.
 https://nielsberglund.com/2021/04/11/interesting-stuff---week-15-2021/
 #apachekafka #dataarchitecture #machinelearning #apachepinot #bigdatacluster #MVPBuzz
