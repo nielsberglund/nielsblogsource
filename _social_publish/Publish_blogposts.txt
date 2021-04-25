@@ -1,4 +1,10 @@
-﻿New post: "Interesting Stuff - Week 16, 2021".
+﻿New post: "Interesting Stuff - Week 17, 2021".
+Kafka version without ZooKeeper, table formats for data lakes, SQL engines, and other interesting topics.
+https://nielsberglund.com/2021/04/25/interesting-stuff---week-17-2021/
+#apachekafka #dataarchiteture #deltalake #hudi #iceberg #trino #MVPBuzz
+
+
+New post: "Interesting Stuff - Week 16, 2021".
 The ins and outs of Kafka Connect, awesome deep learning, Azure SQL digital event, and other interesting topics.
 https://nielsberglund.com/2021/04/18/interesting-stuff---week-16-2021/
 #apachekafka #kafkaconnect #azuresql #machinelearning #deeplearning #MVPBuzz

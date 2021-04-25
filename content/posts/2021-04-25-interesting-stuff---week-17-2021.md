@@ -1,22 +1,23 @@
-# A template for weekly roundup blogposts
 ---
 type: post
 layout: "post"
-title: Interesting Stuff - Week #
+title: Interesting Stuff - Week 17, 2021
 author: nielsb
-date: ${1}
+date: 2021-04-25T08:21:37+02:00
 comments: true
 highlight: true
 draft: false
 categories:
   - roundup
 tags:
-  - data science
-  - distributed computing
-  - SQL Server
-description: Weekly roundup of what interesting stuff I have read in blogs etc.
+  - data-lake-table-formats
+  - sql-engines
+  - Kafka
+description: Kafka version without ZooKeeper, table formats for data lakes, SQL engines, and other interesting topics.
 keywords:
-  -   
+  - data-lake-table-formats
+  - sql-engines
+  - Kafka   
 ---
 
 Throughout the week, I read a lot of blog-posts, articles, and so forth that has to do with things that interest me:
@@ -34,26 +35,15 @@ This blog-post is the "roundup" of the things that have been most interesting to
 
 <!--more-->
 
+## Data Architecture
 
-* [][].
-* [][].
-* [][].
+* [Hudi, Iceberg and Delta Lake: Data Lake Table Formats Compared][1]. This blog post compares the lake formats Hudi, Iceberg, and Delta Lake on their platform compatibility, performance & throughput, and concurrency. Interesting! 
+* [Benchmarking SQL engines for Data Serving: PrestoDb, Trino, and Redshift][2]. The linked-to post benchmarks the SQL engines, Redshift, Trino & Presto. Read the post for some interesting findings.
 
-* [][].
-* [][].
-* [][].
+## Streaming
 
-* [][].
-* [][].
-* [][].
-
-* [][].
-* [][].
-* [][].
-
-![](/images/posts/<image_name_incl_ext>)
-
-**Figure 1:** **
+* [2021 Q1 roundup][3]. The author of this post is a freelance researcher, and he is doing quite a lot of work related to streaming. This post is a roundup of what he has done during the first quarter of this year. There are some very interesting pieces in there!
+* [What's New in Apache Kafka 2.8][4]. This post, as the title implies, announces the latest version of Apache Kafka: 2.8. Ok, so what is the big deal with that? The big deal is that this version is the first version where you can run Kafka without ZooKeeper! This is not recommended for production, but you can definitely test it out!
 
 ## ~ Finally
 
@@ -108,27 +98,7 @@ That's all for this week. I hope you enjoy what I did put together. Please comme
 [emilk]: https://twitter.com/IsTheArchitect
 [netflx]: https://netflixtechblog.com/
 
-[1]:
-[2]:
-[3]:
-[4]:
-[5]:
-[6]:
-[7]:
-[8]:
-[9]:
-[10]:
-[11]:
-[12]:
-[13]:
-[14]:
-[15]:
-
-<!-- [postref]: {{< relref "file_name_incl_ext" >}} -->
-
-<!-- [series1]: [SQL Server R Services](/sql_server_2k16_r_services) -->
-<!-- [series2]: [Install R Packages in SQL Server ML Services](/sql_server_ml_services_install_packages) -->
-<!-- [series3]: [sp_execute_external_script and SQL Server Compute Context](/spees_and_sql_compute_context) -->
-
-
-<!-- [findstr]: findstr /I <word_to_find> * -->
+[1]: https://lakefs.io/hudi-iceberg-and-delta-lake-data-lake-table-formats-compared/
+[2]: https://medium.com/explorium-ai/benchmarking-sql-engines-for-data-serving-prestodb-trino-and-redshift-1c5f16d6e5da
+[3]: https://scattered-thoughts.net/writing/2021-q1-roundup/
+[4]: https://www.confluent.io/blog/kafka-2-8-0-features-and-improvements-with-early-access-to-kip-500/
