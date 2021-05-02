@@ -69,7 +69,7 @@ We do not necessarily need to use Debezium as there are other Kafka Connect conn
 
 **Figure 2:** *Kafka Connect SQL Server & Debezium*
 
-We see in *Figure 2 how the source system is SQL Server and how the source connector is the Debezium SQL Server connector. I the diagram we publish to one topic as we only retrieve data from one table. If we were to retrieve data from multiple tables, we'd publish to multiple topics.
+We see in *Figure 2 how the source system is SQL Server and how the source connector is the Debezium SQL Server connector. In the diagram we publish to one topic as we only retrieve data from one table. If we were to retrieve data from multiple tables, we'd publish to multiple topics.
 
 We have several sink connectors reading from our topic and ingest into various sink systems.
 

@@ -1,4 +1,11 @@
-﻿New post: "Interesting Stuff - Week 17, 2021".
+﻿New post: "Interesting Stuff - Week 18, 2021".
+Handle Kafka outages, new version ksqlDB, ONNX as SQL External Language, and other interesting topics.
+https://nielsberglund.com/2021/05/02/interesting-stuff---week-18-2021/
+#apachekafka #ksqldb #machinelearning #apachepinot #onnx #MVPBuzz
+@apachepinot
+
+
+New post: "Interesting Stuff - Week 17, 2021".
 Kafka version without ZooKeeper, table formats for data lakes, SQL engines, and other interesting topics.
 https://nielsberglund.com/2021/04/25/interesting-stuff---week-17-2021/
 #apachekafka #dataarchiteture #deltalake #hudi #iceberg #trino #MVPBuzz
