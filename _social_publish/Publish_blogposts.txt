@@ -1,4 +1,9 @@
-﻿New post: "Interesting Stuff - Week 18, 2021".
+﻿New post: "Interesting Stuff - Week 19, 2021".
+Kafka and routing messages using ksqlDB, integration of event driven architecture, and other interesting topics.
+https://nielsberglund.com/2021/05/09/interesting-stuff---week-19-2021/
+#apachekafka #kafka #ksqldb #machinelearning #MVPBuzz
+
+New post: "Interesting Stuff - Week 18, 2021".
 Handle Kafka outages, new version ksqlDB, ONNX as SQL External Language, and other interesting topics.
 https://nielsberglund.com/2021/05/02/interesting-stuff---week-18-2021/
 #apachekafka #ksqldb #machinelearning #apachepinot #onnx #MVPBuzz

@@ -98,7 +98,15 @@ In *Code Snippet 1* we create a directory for the repo files and clone the [`cp-
 
 We see in *Figure 3* that `cp-all-in-one`, (outlined in red), have some sub-directories. These directories contain Docker Compose files for various setups of Kafka. We are interested in the directory outlined in blue: `cp-all-in-one`, (yeah I know - same name as the parent directory).
 
-When going into that directory we see a `docker-compose.yml`. Opening it in an editor it looks like:
+When going into that directory we see a `docker-compose.yml`. Opening it in an editor we see the various images being deployed as services when we run the `docker-compose` command. The service, (and image), we are interested in from a Kafka Connect perspective is the service named `connect`.
+
+
+
+
+
+kafka-connect-docker-compose-1.png
+
+it looks somewhat like below, (I have "snipped" out parts for brevity):
 
 ```bash
 ---
