@@ -1,4 +1,10 @@
-﻿New post: "Interesting Stuff - Week 19, 2021".
+﻿New post: "Interesting Stuff - Week 20, 2021".
+Kafka on Kubernetes, data from Kafka to data-lakes, Data Platform Summit 2021, and other interesting topics.
+https://nielsberglund.com/2021/05/16/interesting-stuff---week-20-2021/
+#apachekafka #kafka #kubernetes #DPS10 #bigdatacluster #DPS2021 #MVPBuzz
+@DataAISummit 
+
+New post: "Interesting Stuff - Week 19, 2021".
 Kafka and routing messages using ksqlDB, integration of event driven architecture, and other interesting topics.
 https://nielsberglund.com/2021/05/09/interesting-stuff---week-19-2021/
 #apachekafka #kafka #ksqldb #machinelearning #MVPBuzz
