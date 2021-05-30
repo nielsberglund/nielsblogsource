@@ -1,4 +1,10 @@
-﻿New post: "Interesting Stuff - Week 21, 2021".
+﻿New post: "Interesting Stuff - Week 22, 2021".
+Kafka, Databricks Machine Learning, Microsoft & GPT-3, Data Platform Summit 2021, and other interesting topics.
+https://nielsberglund.com/2021/05/30/interesting-stuff---week-22-2021/
+#apachekafka #kafka #DPS10 #databricks #gpt3 #machinelearning #DPS2021 #MVPBuzz
+@DataAISummit
+
+New post: "Interesting Stuff - Week 21, 2021".
 Kafka & error handling, Kafka & Apache Pinot, Data Platform Summit 2021, and other interesting topics.
 https://nielsberglund.com/2021/05/23/interesting-stuff---week-21-2021/
 #apachekafka #kafka #apachepinot #DPS10 #bigdatacluster #DPS2021 #MVPBuzz
