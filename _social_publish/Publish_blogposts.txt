@@ -1,4 +1,17 @@
-﻿New post: "Interesting Stuff - Week 22, 2021".
+﻿New post: "Interesting Stuff - Week 24, 2021".
+Kafka, Flink & ML, Databricks AutoML, Azure Data Explorer, and other interesting topics!
+https://nielsberglund.com/2021/06/13/interesting-stuff---week-24-2021/
+#apachekafka #azuredataexplorer #apacheflink #DPS10 #machinelearning #DPS2021 #MVPBuzz #futuredatadriven
+@DataAISummit @AzDataExplorer
+
+New post: "Interesting Stuff - Week 23, 2021".
+Kafka, ksqlDB pattern matching, Databricks Accelerators, Azure Data Explorer, and other interesting topics.
+https://nielsberglund.com/2021/06/06/interesting-stuff---week-23-2021/
+#apachekafka #azuredataexplorer #DPS2021 #DPS10 #machinelearning #DPS2021 #MVPBuzz
+@DataAISummit @AzDataExplorer
+
+
+New post: "Interesting Stuff - Week 22, 2021".
 Kafka, Databricks Machine Learning, Microsoft & GPT-3, Data Platform Summit 2021, and other interesting topics.
 https://nielsberglund.com/2021/05/30/interesting-stuff---week-22-2021/
 #apachekafka #kafka #DPS10 #databricks #gpt3 #machinelearning #DPS2021 #MVPBuzz
