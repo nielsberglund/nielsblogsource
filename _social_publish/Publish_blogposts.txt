@@ -1,4 +1,9 @@
-﻿New post: "Interesting Stuff - Week 24, 2021".
+﻿New post: "Interesting Stuff - Week 25, 2021".
+Kafka & Consistency & Completeness, Apache Pinot & Geospatial, Derivco Tech-Thursday, and other interesting topics! 
+https://nielsberglund.com/2021/06/20/interesting-stuff---week-25-2021/
+#apachekafka #bigdata #databricks #derivco #DerivcoTechThursday #onederivco #MVPBuzz 
+
+New post: "Interesting Stuff - Week 24, 2021".
 Kafka, Flink & ML, Databricks AutoML, Azure Data Explorer, and other interesting topics!
 https://nielsberglund.com/2021/06/13/interesting-stuff---week-24-2021/
 #apachekafka #azuredataexplorer #apacheflink #DPS10 #machinelearning #DPS2021 #MVPBuzz #futuredatadriven
