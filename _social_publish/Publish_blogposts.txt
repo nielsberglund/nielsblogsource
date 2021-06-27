@@ -1,4 +1,12 @@
-﻿New post: "Interesting Stuff - Week 25, 2021".
+﻿New post: "Interesting Stuff - Week 26, 2021".
+Kafka in Data Mesh Architecture, Delta Lake Book, Geospatial & Azure Data Explorer, and other interesting topics! 
+https://nielsberglund.com/2021/06/27/interesting-stuff---week-26-2021/
+#apachekafka #bigdata #databricks #azuredataexplorer #DPS2021 #MVPBuzz 
+@DataAISummit @AzDataExplorer
+
+
+
+New post: "Interesting Stuff - Week 25, 2021".
 Kafka & Consistency & Completeness, Apache Pinot & Geospatial, Derivco Tech-Thursday, and other interesting topics! 
 https://nielsberglund.com/2021/06/20/interesting-stuff---week-25-2021/
 #apachekafka #bigdata #databricks #derivco #DerivcoTechThursday #onederivco #MVPBuzz 
