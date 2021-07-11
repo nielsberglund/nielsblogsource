@@ -40,6 +40,19 @@ in the container un-tar the file to the path it should be /usr/share/java
 
 tar -xvf ./debezium-connector-sqlserver-1.5.0-20210220.001004-190-plugin.tar.gz -C /usr/share/java/
 
+# get the id for the connect container
+
+docker ps
+
+# commit the changes
+
+docker commit <id> nielsb/kafka-connect-inc-sql:dbz1.17
+
+# push to repo
+
+docker push nielsb/kafka-connect-inc-sql:dbz1.17
+
+# edit the docker file to point to the new image
 
 
 
