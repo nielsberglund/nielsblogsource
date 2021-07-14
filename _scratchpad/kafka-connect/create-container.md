@@ -1,4 +1,4 @@
-How to Setup Kafka Connect & Debezium in Docker to Stream Data from MS SQL Server
+poll.interval.msHow to Setup Kafka Connect & Debezium in Docker to Stream Data from MS SQL Server
 
 
 
@@ -57,3 +57,4 @@ docker push nielsb/kafka-connect-inc-sql:dbz1.17
 
 
 
+poll.interval.ms
