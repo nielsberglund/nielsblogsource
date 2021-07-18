@@ -1,4 +1,10 @@
-﻿New post: "Interesting Stuff - Week 28, 2021".
+﻿New post: "Interesting Stuff - Week 29, 2021".
+Kafka & Apache Spark, Spark 3.0 SQL Server connector, Azure Data Explorer, and other interesting topics.
+https://nielsberglund.com/2021/07/18/interesting-stuff---week-29-2021/
+#apachekafka #bigdata #apachespark #bigdata #azuredataexplorer #MVPBuzz 
+@AzDataExplorer
+
+New post: "Interesting Stuff - Week 28, 2021".
 Kafka & Apache Pinot @ Uber, SQL Server BDC CU11, SQLServerGeeks Magazine, and other interesting topics.
 https://nielsberglund.com/2021/07/11/interesting-stuff---week-28-2021/
 #apachekafka #DPS10 #DPS2021 #apachepinot #bigdatacluster #MVPBuzz 
