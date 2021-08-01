@@ -1,4 +1,11 @@
-﻿New post: "Interesting Stuff - Week 30, 2021".
+﻿New post: "Interesting Stuff - Week 31, 2021".
+Kafka & performance in the cloud, Azure Data Explorer & Apache Spark, Apache Pinot, and other interesting topics.
+https://nielsberglund.com/2021/08/01/interesting-stuff---week-31-2021/
+#apachekafka #kafka #azuredataexplorer #apachepinot #bigdata #MVPBuzz 
+@AzDataExplorer @apachepinot
+
+
+New post: "Interesting Stuff - Week 30, 2021".
 Kafka & stream - table duality, ksqlDB & foreign key joins, data discovery in data meshes, and other interesting topics.
 https://nielsberglund.com/2021/07/25/interesting-stuff---week-30-2021/
 #apachekafka #kafka #ksqldb #bigdata #MVPBuzz 
