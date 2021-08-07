@@ -3,10 +3,10 @@ type: post
 layout: "post"
 title: "How to Deploy the Debezium SQL Server Connector to Docker"
 author: nielsb
-date: 
+date: 2021-08-07T06:02:12+02:00
 comments: true
 highlight: true
-draft: true
+draft: false
 categories:
   - Kafka
   - Debezium
@@ -16,7 +16,7 @@ tags:
   - CDC
   - Docker
   - SQL Server
-description: 
+description: We learn how to deploy the Debezium SQL Server Connector to Docker.
 keywords:
   - Kafka
   - CDC
@@ -79,13 +79,13 @@ We do not necessarily need to use Debezium as there are other Kafka Connect conn
 
 **Figure 2:** *Kafka Connect SQL Server & Debezium*
 
-We see in *Figure 2 how the source system is SQL Server and how the source connector is the Debezium SQL Server connector. In the diagram we publish to one topic as we only retrieve data from one table. If we were to retrieve data from multiple tables, we'd publish to multiple topics.
+We see in *Figure 2* how the source system is SQL Server and how the source connector is the Debezium SQL Server connector. In the diagram we publish to one topic as we only retrieve data from one table. If we were to retrieve data from multiple tables, we'd publish to multiple topics.
 
 We have several sink connectors reading from our topic and ingest into various sink systems.
 
 Ok, enough background; before we get into the "nitty-gritty", let's see what you need if you want to follow along.
 
-## Pre-reqs & Setup Code 
+## Pre-reqs & Code 
 
 There are not many pre-reqs, but here goes:
 
@@ -129,7 +129,7 @@ CREATE TABLE dbo.tb_CDCTab1 (RowID int identity primary key,
 GO
 
 ```
-**Code Snippet 1:** *DB Objects Creation Script
+**Code Snippet 1:** *DB Objects Creation Script*
 
 The code in *Code Snippet 1* creates a database, `DebeziumTest` and a table, `dbo.tb_CDCTab1` in the database. Later in the post, we enable the table for CDC. Enabling it allows us to check that our Kafka Connect/Debezium "stuff" works as expected. So, if you want to follow along, run the script, and after you have run it, ensure you have the database and the table.
 
@@ -142,8 +142,6 @@ Let us start with getting the necessary Docker images and compose files.
 #### Docker Kafka Image
 
 There are quite a few Docker images, and Docker composes files around for setting up Kafka and Kafka Connect. The ones I usually use are from Confluent's [`cp-all-in-one`][3] repository. 
-
-> **NOTE:**
 
 Let us get started:
 
@@ -268,7 +266,7 @@ Ah, that's where the "magic" of Docker compose files comes in. It turns out that
 
 Let us edit our `docker-compose.yml` file and add the command configuration:
 
-```yml
+```bash
 connect:
     image: cnfldemos/cp-server-connect-datagen:0.5.0-6.2.0
     
@@ -325,7 +323,7 @@ So, what you can do instead is build your own connect worker image, include the 
 
 I mentioned above that we need a file telling Docker what to do. This file is essentially a build file. It is common practice to name that file `Dockerfile`. To achieve what we did above in *Code Snippet 5*, we create an empty file, name it `Dockerfile` and add the following:
 
-``` docker
+``` bash
 FROM confluentinc/cp-server-connect-base:6.2.0
 
 RUN confluent-hub install --no-prompt \

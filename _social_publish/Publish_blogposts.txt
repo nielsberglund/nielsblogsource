@@ -1,4 +1,10 @@
-﻿New post: "Interesting Stuff - Week 31, 2021".
+﻿New post: "How to Deploy the Debezium SQL Server Connector to Docker".
+We learn how to deploy the Debezium SQL Server Connector to Docker.
+https://nielsberglund.com/2021/08/07/how-to-deploy-the-debezium-sql-server-connector-to-docker/
+#apachekafka #kafka #debezium #docker #kafkaconnect #sqlserver #MVPBuzz 
+
+
+New post: "Interesting Stuff - Week 31, 2021".
 Kafka & performance in the cloud, Azure Data Explorer & Apache Spark, Apache Pinot, and other interesting topics.
 https://nielsberglund.com/2021/08/01/interesting-stuff---week-31-2021/
 #apachekafka #kafka #azuredataexplorer #apachepinot #bigdata #MVPBuzz 
