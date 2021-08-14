@@ -1,0 +1,4 @@
+test_cluster_1:
+
+Key: 5WWUDHIMHF4MXASV
+Secret: aPKNGZUhSh436nh6cFsonLkVf0MjwLfULUZ+hmcTAQPsmzmGSUcwPhXJCL9YSIUk

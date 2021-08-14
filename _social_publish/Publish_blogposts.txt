@@ -1,4 +1,15 @@
-﻿New post: "How to Deploy the Debezium SQL Server Connector to Docker".
+﻿New post: "Run Confluent Cloud & Serverless Apache Kafka on Azure".
+Read about how to deploy and run serverless Apache Kafka on Azure using Confluent Platform.
+https://nielsberglund.com/2021/08/14/run-confluent-cloud--serverless-apache-kafka-on-azure/
+#apachekafka #kafka #Azure #confluentcloud #serverless #MVPBuzz 
+
+New post: "Interesting Stuff - Week 32, 2021".
+Kafka learning center, Apache Pinot and user-facing analytics, Data Platform Summit, and other interesting topics.
+https://nielsberglund.com/2021/08/08/interesting-stuff---week-32-2021/
+#apachekafka #DPS10 #DPS2021 #apachepinot #bigdata #MVPBuzz 
+@DataAISummit @apachepinot
+
+New post: "How to Deploy the Debezium SQL Server Connector to Docker".
 We learn how to deploy the Debezium SQL Server Connector to Docker.
 https://nielsberglund.com/2021/08/07/how-to-deploy-the-debezium-sql-server-connector-to-docker/
 #apachekafka #kafka #debezium #docker #kafkaconnect #sqlserver #MVPBuzz 
