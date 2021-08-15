@@ -1,4 +1,11 @@
-﻿New post: "Run Confluent Cloud & Serverless Apache Kafka on Azure".
+﻿New post: "Interesting Stuff - Week 33, 2021".
+Kafka via Confluent Cloud on Azure, the cost of Big Data, real-time retraining, and other interesting topics.
+https://nielsberglund.com/2021/08/15/interesting-stuff---week-33-2021/
+#apachekafka #kafka #ksqldb #DPS10 #DPS2021 #bigdata #MVPBuzz 
+@DataAISummit
+
+
+New post: "Run Confluent Cloud & Serverless Apache Kafka on Azure".
 Read about how to deploy and run serverless Apache Kafka on Azure using Confluent Platform.
 https://nielsberglund.com/2021/08/14/run-confluent-cloud--serverless-apache-kafka-on-azure/
 #apachekafka #kafka #Azure #confluentcloud #serverless #MVPBuzz 
