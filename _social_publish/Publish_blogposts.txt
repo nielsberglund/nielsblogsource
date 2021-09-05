@@ -1,4 +1,17 @@
-﻿New post: "Interesting Stuff - Week 34, 2021".
+﻿New post: "Interesting Stuff - Week 36, 2021".
+Kafka & async. consumer, Windows Terminal bling, fallacies around distributed computing, and other interesting topics.
+https://nielsberglund.com/2021/09/05/interesting-stuff---week-36-2021/
+#apachekafka #kafka #windowsterminal #distributedcomputing #MVPBuzz 
+
+
+New post: "Interesting Stuff - Week 35, 2021".
+Kafka, ksqlDB internals, Data Platform Summit 2021, time series in ADX, and other interesting topics!
+https://nielsberglund.com/2021/08/29/interesting-stuff---week-35-2021/
+#apachekafka #kafka #ksqldb #bigdata #DPS10 #DPS2021 #azuredataexplorer #MVPBuzz 
+@ksqldb @AzDataExplorer @DataAISummit
+
+
+New post: "Interesting Stuff - Week 34, 2021".
 ksqlDB new version, lazy developers & testing, Azure Bootcamp 2021 South Africa, and other interesting topics.
 https://nielsberglund.com/2021/08/22/interesting-stuff---week-34-2021/
 #apachekafka #kafka #ksqldb #AzureBootcampSouthAfrica #MVPBuzz 
