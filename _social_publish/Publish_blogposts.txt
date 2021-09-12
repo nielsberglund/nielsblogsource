@@ -1,4 +1,18 @@
-﻿New post: "Interesting Stuff - Week 36, 2021".
+﻿New post: "Interesting Stuff - Week 37, 2021".
+Kafka & materialized views, SQL Server & C#, parallel programming, Azure Data Explorer, and other cool topics
+https://nielsberglund.com/2021/09/12/interesting-stuff---week-37-2021/
+#apachekafka #kafka #distributedcomputing #azuredataexplorer #MVPBuzz 
+@AzDataExplorer @dunithd
+
+
+New post: "Run Self-Managed Kusto Kafka Connector Serverless in Azure Container Instances".
+Run a self-managed Kafka Connector in Azure Container Instances
+https://nielsberglund.com/2021/09/06/run-self-managed-kusto-kafka-connector-serverless-in-azure-container-instances/
+#apachekafka #Azure #confluentcloud #serverless #azuredataexplorer #MVPBuzz
+@rmoff @AzDataExplorer
+
+
+New post: "Interesting Stuff - Week 36, 2021".
 Kafka & async. consumer, Windows Terminal bling, fallacies around distributed computing, and other interesting topics.
 https://nielsberglund.com/2021/09/05/interesting-stuff---week-36-2021/
 #apachekafka #kafka #windowsterminal #distributedcomputing #MVPBuzz 
