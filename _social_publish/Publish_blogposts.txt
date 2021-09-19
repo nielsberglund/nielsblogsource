@@ -1,4 +1,9 @@
-﻿New post: "Interesting Stuff - Week 37, 2021".
+﻿New post: "Interesting Stuff - Week 38, 2021".
+Kafka Summit highlights, Kafka & stream governance, Databricks regulatory reporting, and other interesting topics!
+https://nielsberglund.com/2021/09/19/interesting-stuff---week-38-2021/
+#apachekafka #kafka #bigdata #databricks #MVPBuzz 
+
+New post: "Interesting Stuff - Week 37, 2021".
 Kafka & materialized views, SQL Server & C#, parallel programming, Azure Data Explorer, and other cool topics
 https://nielsberglund.com/2021/09/12/interesting-stuff---week-37-2021/
 #apachekafka #kafka #distributedcomputing #azuredataexplorer #MVPBuzz 
