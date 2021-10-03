@@ -1,4 +1,10 @@
-﻿New post: "Interesting Stuff - Week 39, 2021".
+﻿New post: "Interesting Stuff - Week 40, 2021".
+Kafka & AWS Lambdas, Monitoring ingestion in Azure Data Explorer, Azure Purview, and other interesting topics.
+https://nielsberglund.com/2021/10/03/interesting-stuff---week-40-2021/
+#apachekafka #kafka #azuredataexplorer #azurepurview #serverless #MVPBuzz 
+
+
+New post: "Interesting Stuff - Week 39, 2021".
 Kafka 3.0, ksqlDB 0.21, Kappa vs. Lambda, Azure Data Explorer, Azure Databricks, and other interesting topics!
 https://nielsberglund.com/2021/09/26/interesting-stuff---week-39-2021/
 #apachekafka #kafka #ksqldb #azuredataexplorer #databricks #MVPBuzz 
