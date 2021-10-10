@@ -1,4 +1,9 @@
-﻿New post: "Interesting Stuff - Week 40, 2021".
+﻿New post: "Interesting Stuff - Week 41, 2021".
+Kafka Stream Governance, VSCode & Python, timeseries in ADX, and other interesting topics.
+https://nielsberglund.com/2021/10/10/interesting-stuff---week-41-2021/
+#apachekafka #kafka #azuredataexplorer #vscode #python #timeseries #MVPBuzz 
+
+New post: "Interesting Stuff - Week 40, 2021".
 Kafka & AWS Lambdas, Monitoring ingestion in Azure Data Explorer, Azure Purview, and other interesting topics.
 https://nielsberglund.com/2021/10/03/interesting-stuff---week-40-2021/
 #apachekafka #kafka #azuredataexplorer #azurepurview #serverless #MVPBuzz 
