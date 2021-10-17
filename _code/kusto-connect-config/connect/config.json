@@ -1,0 +1,29 @@
+{
+    "name": "KustoSinkConnectorWagersStreaming",
+    "config": {
+        "connector.class": "com.microsoft.azure.kusto.kafka.connect.sink.KustoSinkConnector",
+        "topics": "wagers",
+        "kusto.ingestion.url":"https://ingest-nielsbadxtest.northeurope.kusto.windows.net",
+        "kusto.query.url":"https://nielsbadxtest.northeurope.kusto.windows.net",
+        "aad.auth.authority": "6778d36c-50b7-4320-8d62-6a5091d6e2e7",
+        "aad.auth.appid":"97e1b942-8739-4fa1-8d52-62073752e41e",
+        "aad.auth.appkey":"01XDhi4n4NUvctt--J0t92vHGT8U_Trc01",
+        "kusto.tables.topics.mapping": "[{'topic': 'wagers','db': 'nielsbadxstream', 'table': 'wagersstream','format': 'json', 'mapping':'wagers_json_mapping', 'streaming': 'true'}]", 
+        "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+        "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+        "key.converter.schemas.enable":"false",
+        "value.converter.schemas.enable":"false",
+        "tasks.max": "4",
+        "tempdir.path":"/var/tmp/",
+        "flush.size.bytes":"10485760",
+        "flush.interval.ms": "100",
+        "behavior.on.error": "LOG",
+        "consumer.override.bootstrap.servers": "PLAINTEXT://pkc-lz6r3.northeurope.azure.confluent.cloud:9092",
+        "consumer.override.ssl.endpoint.identification.algorithm": "https",
+        "consumer.override.security.protocol": "SASL_SSL",
+        "consumer.override.sasl.mechanism": "PLAIN",
+        "consumer.override.sasl.jaas.config": "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"3FIJEXFAJAOPCC2N\" password=\"ygPiikQI9n67Va4HtjgHoDrKivfTmcAT+6KpID37MhYlRmtBgm1IO56wwNbZ5V3t\";",
+        "consumer.override.request.timeout.ms": "1000",
+        "consumer.override.retry.backoff.ms": "500"
+    }
+}
