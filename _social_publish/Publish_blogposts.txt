@@ -1,4 +1,9 @@
-﻿New post: "Interesting Stuff - Week 42, 2021".
+﻿New post: "Interesting Stuff - Week 43, 2021".
+Best Kafka books, Azure Data Lake Storage best practices, PASS Summit and Azure Data Explorer, and other interesting topics.
+https://nielsberglund.com/2021/10/24/interesting-stuff---week-43-2021/
+#apachekafka #kafka #azuredataexplorer #apachespark #databricks #bigdata #MVPBuzz 
+
+New post: "Interesting Stuff - Week 42, 2021".
 Kafka connectors, kafka & machine learning, ingestion into Azure Data Explorer, and other interesting topics!
 https://nielsberglund.com/2021/10/17/interesting-stuff---week-42-2021/
 #apachekafka #kafka #azuredataexplorer #apachespark #databricks #machinelearning #rstats #MVPBuzz 
