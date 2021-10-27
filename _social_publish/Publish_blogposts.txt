@@ -1,4 +1,11 @@
-﻿New post: "Interesting Stuff - Week 43, 2021".
+﻿New post: "How to Ingest Into Azure Data Explorer From Apache Kafka using Kafka Connect"
+We look at how to configure and set up Kafka Connect to allow ingestion into Azure Data Explorer.
+https://nielsberglund.com/2021/10/27/how-to-ingest-into-azure-data-explorer-from-apache-kafka-using-kafka-connect/
+#apachekafka #Azure #confluentcloud #azuredataexplorer #kusto #kafkaconnect  #MVPBuzz
+@AzDataExplorer
+
+
+New post: "Interesting Stuff - Week 43, 2021".
 Best Kafka books, Azure Data Lake Storage best practices, PASS Summit and Azure Data Explorer, and other interesting topics.
 https://nielsberglund.com/2021/10/24/interesting-stuff---week-43-2021/
 #apachekafka #kafka #azuredataexplorer #apachespark #databricks #bigdata #MVPBuzz 

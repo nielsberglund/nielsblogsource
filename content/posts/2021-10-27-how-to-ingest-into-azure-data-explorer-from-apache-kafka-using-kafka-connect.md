@@ -1,12 +1,12 @@
 ---
 type: post
 layout: "post"
-title: How to Ingest Into Azure Data Explorer From Apache Kafka using Kafka Connect.
+title: How to Ingest Into Azure Data Explorer From Apache Kafka using Kafka Connect
 author: nielsb
-date: 
+date: 2021-10-27T14:13:37+02:00
 comments: true
 highlight: true
-draft: true
+draft: false
 categories:
   - Azure
   - Azure Data Explorer
@@ -14,13 +14,20 @@ tags:
   - Azure Data Explorer
   - Kusto
   - KQL
-  
-description: 
+  - Kafka Connect
+  - Confluent Cloud
+  - Kusto Sink Connector
+description: We look at how to configure and set up Kafka Connect to allow ingestion into Azure Data Explorer.
 keywords:
-  -   
+  - Azure Data Explorer
+  - Kusto
+  - KQL
+  - Kafka Connect
+  - Confluent Cloud 
+  - Kusto Sink Connector 
 ---
 
-If you follow my blog, you probably know that I am a huge fan of Apache Kafka and event streaming/stream processing. Recently **Azure Data Explorer** (*ADX**) has caught my eye. In fact, in the last few weeks, I did two conference sessions about ADX. A month ago, I published a blog post related to Kafka and ADX: [**Run Self-Managed Kusto Kafka Connector Serverless in Azure Container Instances**][7]. 
+If you follow my blog, you probably know that I am a huge fan of **Apache Kafka** and event streaming/stream processing. Recently **Azure Data Explorer** (**ADX**) has caught my eye. In fact, in the last few weeks, I did two conference sessions about ADX. A month ago, I published a blog post related to Kafka and ADX: [**Run Self-Managed Kusto Kafka Connector Serverless in Azure Container Instances**][7]. 
 
 As the title of that post implies, it looked at the ADX Kafka sink connector and how to run it in Azure. What the post did not look at was how to configure the connector and connect it to ADX. That is what we will do in this post (and maybe in a couple of more posts).
 
@@ -39,9 +46,11 @@ This section is here if you want to follow along. This is what you need:
 
 #### Confluent Cloud CLI
 
-We need a way to post messages/events to Kafka, and usually, I do it using a .NET Core application. Since in this post I only will send a few messages, I am going to use the [**Confluent Cloud CLI**][13] (ccloud) tool. This tool is a must for anyone using Confluent Cloud as it enables developers to create, manage, and deploy their Confluent components.
+We need a way to post messages/events to Kafka, and usually, I do it using a .NET Core application. Since in this post I only will send a few messages, I am going to use the [**Confluent Cloud CLI**][13] (ccloud) tool. 
 
-You find download and install instructions [here][12] and some examples of how to use it [here][14]. If your Kafka is "bare metal", or Docker based, there are commands based on script files for various operations. In this post, the following commands are what you need if you are not using Confluent Cloud:
+This tool is a must for anyone using Confluent Cloud as it enables developers to create, manage, and deploy their Confluent components. You find download and install instructions [here][12] and some examples of how to use it [here][14]. 
+
+If your Kafka is "bare metal", or Docker based, there are commands based on script files for various operations. In this post, the following commands are what you need if you are not using Confluent Cloud:
 
 * `/kafka-topics`: handle topics; list, create, etc.
 * `/kafka-console-producer`: publish messages to a topic.
@@ -108,7 +117,7 @@ We start with setting up a listener in a terminal window, so we can see when dat
 ccloud kafka topic consume gameplay -b
 Starting Kafka Consumer. Use Ctrl-C to exit.
 ```
-** Code Snippet 3:** *Consume from Topic*
+**Code Snippet 3:** *Consume from Topic*
 
 The code in *Code Snippet 3* sets up a listener. After clicking enter, you see the "Starting Kafka Consumer ..." as in the code snippet, and the listener is now ready to receive messages.
 
@@ -119,7 +128,7 @@ $ ccloud kafka topic produce gameplay --parse-key --delimiter ,
 33, {"playerId":33, "gameId":23, "win":55, "score":123, \ 
       "eventTime":"2021-10-24 04:14:39.572"}
 ```
-** Code Snippet 4:** *Publish to Topic*
+**Code Snippet 4:** *Publish to Topic*
 
 In *Code Snippet 4*, we see how we use the `ccloud kafka topic produce` command to publish to our `gameplay` topic. The two flags we see are:
 
@@ -289,9 +298,7 @@ The easiest way to add the created service principal is to do it from the *Query
 I have in *Figure 9* logged in to my Azure subscription and navigated to my ADX cluster (highlighted in yellow). In the cluster, I have one database (outlined in blue). The database is selected, and to get to the query explorer, I click on the *Query* button outlined in red. When the query explorer opens, I can create the service principal as an admin user in the database:
 
 ``` sql
-.add database nielsblogpostsdb1 admins  \
-('aadapp=The-AppId; \
- The-Tenant') 'AAD App'
+.add database nielsblogpostsdb1 admins ('aadapp=The-AppId;The-Tenant') 'AAD App'
 ```
 **Code Snippet 6** *Create Service Principal Admin User in Database*
 
@@ -364,9 +371,7 @@ A future blog post, will talk in detail about ADX various ingestion options, and
 
 ``` sql
 .alter table GamePlay policy ingestionbatching 
-@'{"MaximumBatchingTimeSpan":"00:00:10", 
-"MaximumNumberOfItems": 5, 
-"MaximumRawDataSizeMB": 100}'
+@'{"MaximumBatchingTimeSpan":"00:00:10", "MaximumNumberOfItems": 5, "MaximumRawDataSizeMB": 100}'
 ```
 **Code Snippet 8:** *Ingestion Batching Policy*
 
@@ -413,10 +418,8 @@ Above, I said we'd come back to `kusto.tables.topics.mapping`, so let us do that
 As the name implies, this property defines the mapping between the topic and the table(s) in the database(s). My mapping looks like so:
 
 ``` json
-[{'topic': 'gameplay','db': 'nielsblogpostsdb1', \
-   'table': 'GamePlay','format': 'json', \
-   'mapping':'gameplay_json_mapping', 
-   'streaming': 'false'}]
+[{'topic': 'gameplay','db': 'nielsblogpostsdb1', 'table': 'GamePlay',' \
+   format': 'json', 'mapping':'gameplay_json_mapping', 'streaming': 'false'}]
 ```
 **Code Snippet 9:** *Tables Topic Mapping*
 
@@ -434,7 +437,7 @@ When we have created the config JSON, we are ready to create the connector on th
 
 **Figure 14:** *Create the Connector*
 
-In *Figure 14*, we see part of the configuration file in *Figure 13*, and how we `POST` it to the `/connectors` endpoint on Kafka Connect. When running the code (doing the `POST`), we should get a `201` response back, indicating all is well.
+In *Figure 14*, we see part of the configuration file in *Figure 13*, and how we `POST` it to Kafka Connect's `/connectors` endpoint. When running the code (doing the `POST`), we should get a `201` response back, indicating all is well.
 
 I didn't mention the 'name' property we see at line 2 in *Figure 13*. The name is an arbitrary string, and it comes in useful if you want to manage this particular connector. Things you can do are:
 
@@ -475,7 +478,7 @@ $ ccloud kafka topic produce gameplay --parse-key --delimiter ,
 45, {"playerId":45, "gameId":17, "win":10, "score":103, \ 
       "eventTime":"2021-10-27 07:56:39.572"}       
 ```
-** Code Snippet 10:** *Publish More Events to Topic*
+**Code Snippet 10:** *Publish More Events to Topic*
 
 In *Code Snippet 10*, we see how we publish more events. While you publish, execute the `GamePlay | count` call. You should see how the count increases, not as fast as you publish due to the ingestion batching, but with a slight latency. After a while, you should see the correct count, and if you execute: `GamePlay`, you should see something similar to this:
 
@@ -498,9 +501,9 @@ Phew, this was quite a journey, but we made it. So, in this post we have looked 
 * Created the connector configuration file and got an insight into some of its properties.
 * Created the connector from the connector configuration file.
 
-When we had done all that we published some messages to Kafka and saw how they were ingested in the table. Notice that dependent on the batching policy you may see different results in the latency when ingesting.
+After the above, we published some messages to Kafka. We saw when publishing how the messages were ingested into the table. Notice that depending on the batching policy, you may see different results in the latency when ingesting.
 
-In a future post we will look more in detail into the different ingestion methods we have, and how to configure for them. Until then!
+In a future post, we will look more in detail into the different ingestion methods and how to configure them. Until then!
 
 ##  Finally
 
@@ -525,3 +528,4 @@ If you have comments, questions etc., please comment on this post or [ping][ma] 
 [15]: https://docs.microsoft.com/en-us/azure/data-explorer/kusto/management/show-ingestion-mapping-command 
 [16]: https://github.com/Azure/kafka-sink-azure-kusto#5-sink-properties
 [17]: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli
+

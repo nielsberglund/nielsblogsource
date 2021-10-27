@@ -1,0 +1,22 @@
+﻿//create the table
+.create table GamePlay 
+(
+  PlayerID: int, GameID: int, 
+  Win: long, Score: int, 
+  EventTime: datetime
+)
+
+.show tables
+
+.create table GamePlay ingestion json mapping 'gameplay_json_mapping' '[{"column":"PlayerID", "Properties":{"path":"$.playerId"}}, {"column":"GameID", "Properties":{"path":"$.gameId"}}, {"column":"Win", "Properties":{"path":"$.win"}}, {"column":"Score", "Properties":{"path":"$.score"}}, {"column":"EventTime", "Properties":{"path":"$.eventTime"}} ]'
+
+.show table GamePlay ingestion mappings
+
+
+.alter table GamePlay policy ingestionbatching @'{"MaximumBatchingTimeSpan":"00:00:10", "MaximumNumberOfItems": 5, "MaximumRawDataSizeMB": 100}'
+
+
+.show table GamePlay policy ingestionbatching 
+
+
+

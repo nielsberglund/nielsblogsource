@@ -1,0 +1,75 @@
+docker exec -it broker /bin/bash
+
+./kafka-topics --list --zookeeper zookeeper:2181
+./kafka-topics --zookeeper zookeeper:2181 --create --topic testTopic --replication-factor 1 --partitions 4
+
+
+
+
+I have a completely new Azure Confluent Cloud cluster set up as per this [post][5]. When I open the Confluent Control Center in my browser and look at *Topics*:
+
+![](/images/posts/kusto-conn-kafka-topics-1.png)
+
+**Figure 5:** *Kafka Topics - I*
+
+I see something like in *Figure 5*, only one topic.
+
+
+
+
+
+Get-Date -Format "yyyy-MM-dd HH:mm:ss.fff"
+
+
+for ($x='' ;$x.length -le 30;$x=$x+'x'){
+    Write-Host $x
+    Start-Sleep -Milliseconds 20
+}
+
+
+
+❯ for($i = 0; $i -le 10; $i++) {
+>> $orderId = $i + 1
+>> $userId = Get-Random -Minimum 50 -Maximum 55
+>> $orderValue = Get-Random -Minimum 100 -Maximum 300
+>> $d = (Get-Date).ToUniversalTime().ToString( "yyyy-MM-dd HH:mm:ss.fff")
+>> $event = '{"orderId": ' + $orderId + ', "userId": ' + $userId + ', "orderAmount": ' + $orderValue + ', "orderDate": '
+ + '"' + $d + '"}'
+>> Write-Output $event
+>> Start-Sleep -Milliseconds 10
+>> }
+
+
+❯ for($i = 0; $i -le 10; $i++) {
+>> $orderId = $i + 1
+>> $userId = Get-Random -Minimum 50 -Maximum 55
+>> $orderValue = Get-Random -Minimum 100 -Maximum 300
+>> $d = (Get-Date).ToUniversalTime().ToString( "yyyy-MM-dd HH:mm:ss.fff")
+>> $event = @"
+>> {
+>>   "orderId": $orderId,
+>>   "userId": $userId,
+>>   "orderAmount": $orderValue,
+>>   "orderDate": "$d"
+>> }
+>> "@
+>> Write-Output $event
+>> Start-Sleep -Milliseconds 10
+>> }
+
+
+❯ $event = '{
+>> "userId": 1,
+>> "orderId": 13
+>> }'
+
+
+
+❯ $event = '{
+>> "playerId": 1,
+>> "gameId": 23,
+>> "win": 23,
+>> "score": 125,
+>> "eventTime": ' + '"' + (Get-Date).ToUniversalTime().ToString( "yyyy-MM-dd HH:mm:ss.fff") + '"
+>> }'
+

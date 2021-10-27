@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "1d48fe47-997f-431c-8d1d-e86465d84d35",
+		"name": "blog-posts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "blog-kusto-config Copy",
+			"item": [
+				{
+					"name": "get-available-connectors-localhost",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": " application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8083/connector-plugins",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"connector-plugins"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-connector-batching",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"KustoSinkConnectorWagersBatch\",\r\n    \"config\": {\r\n        \"connector.class\": \"com.microsoft.azure.kusto.kafka.connect.sink.KustoSinkConnector\",\r\n        \"topics\": \"gameplay\",\r\n        \"kusto.ingestion.url\":\"https://ingest-nielsblogpostscluster.northeurope.kusto.windows.net\",\r\n        \"kusto.query.url\":\"https://nielsblogpostscluster.northeurope.kusto.windows.net\",\r\n        \"aad.auth.authority\": \"6778d36c-50b7-4320-8d62-6a5091d6e2e7\",\r\n        \"aad.auth.appid\":\"e53146db-0f90-4839-baf3-dc63d4f35bf7\",\r\n        \"aad.auth.appkey\":\"p.Ci1V-DTMt6GOpmgBpvbSZtMODmSRm1-J\",\r\n        \"kusto.tables.topics.mapping\": \"[{'topic': 'gameplay','db': 'nielsblogpostsdb1', 'table': 'GamePlay','format': 'json', 'mapping':'gameplay_json_mapping', 'streaming': 'false'}]\", \r\n        \"key.converter\": \"org.apache.kafka.connect.storage.StringConverter\",\r\n        \"value.converter\": \"org.apache.kafka.connect.json.JsonConverter\",\r\n        \"key.converter.schemas.enable\":\"false\",\r\n        \"value.converter.schemas.enable\":\"false\",\r\n        \"tasks.max\": \"1\",\r\n        \"tempdir.path\":\"/var/tmp/\",\r\n        \"flush.size.bytes\":\"10485760\",\r\n        \"flush.interval.ms\": \"100\",\r\n        \"behavior.on.error\": \"LOG\",\r\n        \"consumer.override.bootstrap.servers\": \"PLAINTEXT://pkc-lz6r3.northeurope.azure.confluent.cloud:9092\",\r\n        \"consumer.override.ssl.endpoint.identification.algorithm\": \"https\",\r\n        \"consumer.override.security.protocol\": \"SASL_SSL\",\r\n        \"consumer.override.sasl.mechanism\": \"PLAIN\",\r\n        \"consumer.override.sasl.jaas.config\": \"org.apache.kafka.common.security.plain.PlainLoginModule required username=\\\"3FIJEXFAJAOPCC2N\\\" password=\\\"ygPiikQI9n67Va4HtjgHoDrKivfTmcAT+6KpID37MhYlRmtBgm1IO56wwNbZ5V3t\\\";\",\r\n        \"consumer.override.request.timeout.ms\": \"1000\",\r\n        \"consumer.override.retry.backoff.ms\": \"500\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8083/connectors/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"connectors",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-configured-connectors-localhost",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": " application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8083/connectors/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"connectors",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-connector-status-batching",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " "
+						},
+						"url": {
+							"raw": "http://localhost:8083/connectors/KustoSinkConnectorWagersBatch/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"connectors",
+								"KustoSinkConnectorWagersBatch",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-connector-batching",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " "
+						},
+						"url": {
+							"raw": "http://localhost:8083/connectors/KustoSinkConnectorWagersBatch/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"connectors",
+								"KustoSinkConnectorWagersBatch",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
