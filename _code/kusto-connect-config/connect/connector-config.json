@@ -2,14 +2,14 @@
     "name": "KustoSinkConnectorWagersBatch",
     "config": {
         "connector.class": "com.microsoft.azure.kusto.kafka.connect.sink.KustoSinkConnector",
-        "topics": "wagers",
-        "kusto.ingestion.url":"https://ingest-nielsbadxtest.northeurope.kusto.windows.net",
-        "kusto.query.url":"https://nielsbadxtest.northeurope.kusto.windows.net",
+        "topics": "gameplay",
+        "kusto.ingestion.url":"https://ingest-nielsblogpostscluster.northeurope.kusto.windows.net",
+        "kusto.query.url":"https://nielsblogpostscluster.northeurope.kusto.windows.net",
         "aad.auth.authority": "6778d36c-50b7-4320-8d62-6a5091d6e2e7",
         "aad.auth.appid":"97e1b942-8739-4fa1-8d52-62073752e41e",
         "aad.auth.appkey":"01XDhi4n4NUvctt--J0t92vHGT8U_Trc01",
-        "kusto.tables.topics.mapping": "[{'topic': 'wagers','db': 'nielsbadxstream', 'table': 'wagersbatch','format': 'json', 'mapping':'wagers_json_mapping', 'streaming': 'false'}]", 
-        "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+        "kusto.tables.topics.mapping": "[{'topic': 'gameplay','db': 'nielsblogpostsdb1', 'table': 'GamePlay','format': 'json', 'mapping':'gameplay_json_mapping', 'streaming': 'false'}]", 
+        "key.converter": "org.apache.kafka.connect.storage.StringConverter",
         "value.converter": "org.apache.kafka.connect.json.JsonConverter",
         "key.converter.schemas.enable":"false",
         "value.converter.schemas.enable":"false",
@@ -27,3 +27,4 @@
         "consumer.override.retry.backoff.ms": "500"
     }
 }
+
