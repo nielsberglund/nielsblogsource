@@ -1,4 +1,12 @@
-﻿New post: "Interesting Stuff - Week 44, 2021".
+﻿New post: "Interesting Stuff - Week 45, 2021".
+Kafka, ksqlDB & streaming databases, Niels @ PASS & Cloud Data Driven, and other interesting topics.
+https://nielsberglund.com/2021/11/07/interesting-stuff---week-45-2021/
+#apachekafka #kafka #databricks #ksqldb #PASSDataCommunitySummit
+@dunithd @CloudDataDriven @redgate 
+
+
+
+New post: "Interesting Stuff - Week 44, 2021".
 Kafka & retail, Azure Data Explorer & Kafka, Kafka Stream Governance, and other interesting topics.
 https://nielsberglund.com/2021/10/31/interesting-stuff---week-44-2021/
 #apachekafka #kafka #azuredataexplorer #databricks #machinelearning #PASSDataCommunitySummit
