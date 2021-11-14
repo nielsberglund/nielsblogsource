@@ -1,4 +1,10 @@
-﻿New post: "Interesting Stuff - Week 45, 2021".
+﻿New post: "Interesting Stuff - Week 46, 2021".
+Kafka & cluster linking, Azure Data Explorer & Apache Spark, Chaos in Azure, and other interesting topics
+https://nielsberglund.com/2021/11/14/interesting-stuff---week-46-2021/
+#apachekafka #databricks #spark #azuredataexplorer #machinelearning #azuresynapse #python #MVPBuzz
+
+
+New post: "Interesting Stuff - Week 45, 2021".
 Kafka, ksqlDB & streaming databases, Niels @ PASS & Cloud Data Driven, and other interesting topics.
 https://nielsberglund.com/2021/11/07/interesting-stuff---week-45-2021/
 #apachekafka #kafka #databricks #ksqldb #PASSDataCommunitySummit
