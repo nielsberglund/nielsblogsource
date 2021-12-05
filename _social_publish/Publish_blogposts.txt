@@ -1,4 +1,17 @@
-﻿New post: "Interesting Stuff - Week 47, 2021".
+﻿New post: "Interesting Stuff - Week 49, 2021".
+Kafka, ksqlDB & planes, Delta Lake roadmap, Trino & BigData, Azure Data Explorer @ SQLBits 2022, other interesting topics.
+https://nielsberglund.com/2021/12/05/interesting-stuff---week-49-2021/
+#apachekafka #databricks #ksqldb #bigdata #azuredataexplorer #MVPBuzz
+@AzDataExplorer
+
+New post: "Interesting Stuff - Week 48, 2021".
+Kafka & billions of messages, Databricks vs. Synapse, Azure Data Explorer goodness, and other interesting topics.
+https://nielsberglund.com/2021/11/28/interesting-stuff---week-48-2021/
+#apachekafka #databricks #azuresynapse #bigdata #azuredataexplorer #MVPBuzz
+@AzDataExplorer
+
+
+New post: "Interesting Stuff - Week 47, 2021".
 Kafka, ksqlDB & push queries, Ray on Databricks, SynapseML, NewSQL, and other interesting topics.
 https://nielsberglund.com/2021/11/21/interesting-stuff---week-47-2021/
 #apachekafka #ksqldb #databricks #spark #azuresynapse #machinelearning #python #MVPBuzz

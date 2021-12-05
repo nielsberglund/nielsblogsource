@@ -132,3 +132,4 @@ That's all for this week. I hope you enjoy what I did put together. Please comme
 
 
 <!-- [findstr]: findstr /I <word_to_find> * -->
+<!-- [findstr]: findstr /I /c:<"phrase to find"> * -->
