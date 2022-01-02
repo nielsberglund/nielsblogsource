@@ -1,0 +1,42 @@
+﻿
+// check what tables we have
+.show tables
+
+
+//create the table
+.create table GamePlay 
+(
+  PlayerID: int, GameID: int, 
+  Win: long, Score: int, 
+  EventTime: datetime
+)
+
+// ingestion mapping GamePlay
+.create table GamePlay ingestion json mapping 'gameplay_json_mapping' '[{"column":"PlayerID", "Properties":{"path":"$.playerId"}}, {"column":"GameID", "Properties":{"path":"$.gameId"}}, {"column":"Win", "Properties":{"path":"$.win"}}, {"column":"Score", "Properties":{"path":"$.score"}}, {"column":"EventTime", "Properties":{"path":"$.eventTime"}} ]'
+
+.show table GamePlay ingestion json mappings 
+
+//enable streaming
+// .alter table ['GamePlay'] policy streamingingestion enable
+
+
+
+
+// batch ingestion for GamePlay
+// .alter table GamePlay policy ingestionbatching @'{"MaximumBatchingTimeSpan":"00:00:10", "MaximumNumberOfItems": 5, "MaximumRawDataSizeMB": 100}'
+
+// .show table GamePlay policy ingestionbatching 
+
+// .show table GamePlay policy streamingingestion
+
+GamePlay
+| count
+
+GamePlay 
+| extend ingestionTime = ingestion_time() 
+| order by ingestionTime, EventTime 
+| top 1000 by ingestionTime desc 
+
+GamePlay 
+| extend IngestionTime = ingestion_time(),  diffTime =  datetime_diff('millisecond',ingestion_time(), EventTime) 
+| order by EventTime

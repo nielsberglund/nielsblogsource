@@ -1,0 +1,5 @@
+Endpoint=sb://kafkaeventhubs.servicebus.windows.net/;
+SharedAccessKeyName=publishconsumepolicy;
+SharedAccessKey=p/yYvM6gIGbWN+2TuO3fpoUf+BtMCAi4kq0pM0pMxc4=;
+EntityPath=testtopic
+

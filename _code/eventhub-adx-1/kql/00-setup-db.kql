@@ -1,0 +1,14 @@
+﻿
+// look at the cluster
+.show cluster
+
+// add spn
+.add database ['eventhubdb'] admins  ('aadapp=73d38c9b-5dc8-45bb-a76a-de35f1277c6a;6778d36c-50b7-4320-8d62-6a5091d6e2e7') 'AAD Conf SPN'
+
+// add msa user
+.add database ['eventhubdb'] admins ('msauser=niels.it.berglund@gmail.com') 'Niels - GMail'
+
+//having done the above we can now connect with Kusto Explorer or ADS, 
+// and go on with creating tables, etc.
+
+.show tables

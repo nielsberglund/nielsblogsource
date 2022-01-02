@@ -1,4 +1,12 @@
-﻿New post: "Interesting Stuff - Week 50, 2021".
+﻿New post: "Interesting Stuff - Christmas, New Year 2021".
+Kafka podcasts, Kafka & perf, Data Meshes, Kafka client & Event Hubs, and other interesting topics.
+https://nielsberglund.com/2022/01/02/interesting-stuff---christmas-new-year-2021/
+#apachekafka #kafka #azuredataexplorer #bigdata #datamesh #confluentcloud #MVPBuzz
+New post: "How to Use Kafka Client with Azure Event Hubs".
+We look at how to use a Kafka client to connect to Azure Event Hubs.
+https://nielsberglund.com/2022/01/02/how-to-use-kafka-client-with-azure-event-hubs/
+#apachekafka #bigdata #azuredataexplorer #Azure #EventHubs #Python #MVPBuzz
+New post: "Interesting Stuff - Week 50, 2021".
 Kafka & serverless stream processing, dbt & Databricks, SQL Cape & Azure Data Explorer,other interesting topics.
 https://nielsberglund.com/2021/12/12/interesting-stuff---week-50-2021/
 #apachekafka #databricks #ksqldb #bigdata #azuredataexplorer #MVPBuzz
