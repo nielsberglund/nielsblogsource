@@ -1,0 +1,39 @@
+version: '3.4'
+services:
+  dbz-eventhub:
+    image: confluentinc/cp-server-connect-base:latest
+    container_name: dbz-eventhub-cont
+    ports:
+      - 8083:8083
+    environment:
+      CONNECT_BOOTSTRAP_SERVERS: "dbzeventhubs.servicebus.windows.net:9093"
+      # deleted data for readibility      
+          
+      # end of the basics part
+
+      # connect worker
+      CONNECT_SECURITY_PROTOCOL: SASL_SSL
+      CONNECT_SASL_MECHANISM: PLAIN
+      CONNECT_SASL_JAAS_CONFIG: "org.apache.kafka.common.security.plain.PlainLoginModule \ 
+                                 required username=\"$$ConnectionString\" \ 
+                                 configs: password=\"<connection-string-from-policy>\";"
+
+      # connect producer
+      CONNECT_PRODUCER_SECURITY_PROTOCOL: SASL_SSL
+      CONNECT_PRODUCER_SASL_MECHANISM: PLAIN
+      CONNECT_PRODUCER_SASL_JAAS_CONFIG: "org.apache.kafka.common.security.plain.PlainLoginModule \ 
+                                 required username=\"$$ConnectionString\" \ 
+                                 configs: password=\"<connection-string-from-policy>\";"
+      
+    command: 
+      - bash 
+      - -c 
+      - |
+        echo "Installing connector plugins"
+        confluent-hub install --no-prompt debezium/debezium-connector-sqlserver:latest
+        #
+        echo "Launching Kafka Connect worker"
+        /etc/confluent/docker/run & 
+        #
+        sleep infinity      
+

@@ -1,0 +1,29 @@
+version: '3.4'
+services:
+  dbz-eventhub:
+    image: confluentinc/cp-server-connect-base:latest
+    container_name: dbz-eventhub-cont
+    ports:
+      - 8083:8083
+    environment:
+      CONNECT_BOOTSTRAP_SERVERS: "dbzeventhubs.servicebus.windows.net:9093"
+      
+      # deleted data for readibility      
+            
+      # end security
+    command: 
+      - bash 
+      - -c 
+      - |
+        echo "Installing connector plugins"
+        confluent-hub install --no-prompt debezium/debezium-connector-sqlserver:latest
+        #
+        echo "Launching Kafka Connect worker"
+        /etc/confluent/docker/run & 
+        #
+        sleep infinity 
+
+    # end docker-compose.yml file     
+
+
+

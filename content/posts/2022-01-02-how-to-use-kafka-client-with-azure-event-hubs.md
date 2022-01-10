@@ -64,7 +64,7 @@ So if your application uses a Kafka client version 1.0+, you can use the Event H
 
 > **NOTE:** When I above say you only need to change the configuration, I assume that the Kafka topics have corresponding EventHubs (remember Kafka topic = Event Hubs EventHub).
 
-An interesting point here is that it is not only your Kafka applications that can consume from Event Hubs but any application that uses Kafka Client 1.0+, like Kafka Connect connectors!
+An interesting point here is that it is not only your Kafka applications that can ~consume from~ publish to Event Hubs but any application that uses Kafka Client 1.0+, like Kafka Connect connectors!
 
 ## Pre-Reqs
 

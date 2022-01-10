@@ -1,25 +1,23 @@
 ---
 type: post
 layout: "post"
-title: Interesting Stuff - Week 20, 2021
+title: Interesting Stuff - Week 1, 2022
 author: nielsb
-date: 2021-05-16T08:36:10+02:00
+date: 2022-01-09T10:55:27+02:00
 comments: true
 highlight: true
 draft: false
 categories:
   - roundup
 tags:
-  - big data cluster
-  - SQL Server
+  - database engines
   - Kafka
-  - dps2021
-description: Kafka on Kubernetes, data from Kafka to data-lakes, Data Platform Summit 2021, and other interesting topics.
+  - Confluent Cloud
+description: Kafka and when NOT to use it, building Confluent Cloud, different types of database engines, and other interesting topics.
 keywords:
-  - big data cluster
-  - SQL Server
+  - database engines
   - Kafka
-  - dps2021   
+  - Confluent Cloud   
 ---
 
 Throughout the week, I read a lot of blog-posts, articles, and so forth that has to do with things that interest me:
@@ -39,25 +37,20 @@ This blog-post is the "roundup" of the things that have been most interesting to
 
 ## Databases
 
-* [Change Data Capture for Distributed Databases @Netflix][1]. In this [Infoq][iq] presentation, the presenter covers the challenges associated with capturing CDC events from Cassandra, discussing the Flink ecosystem and the use of RocksDB. Very interesting!
+* [Database storage engines][1]. This is an awesome post, looking at various database storage engines!
 
 ## Streaming
 
-* [Why query planning for streaming systems is hard][2]. This post looks at some of the issues of doing query plans for streaming systems. Really interesting, and I would like to hear more about this.
-* [Cooling down hot data: From Kafka to Athena][3]. The post linked to looks at how to move data from online Kafka Clusters to a data lake for long term data retention, analytics, legal requirements, and as input for machine learning. 
-* [Introducing Confluent for Kubernetes][4]. This post looks at Confluent for Kubernetes (CFK), a cloud-native control plane for deploying and managing Confluent in private cloud environments. It provides a standard and simple interface to customize, deploy, and manage Confluent Platform through declarative APIs.
+* [Building Confluent Cloud – Here's What We've Learned][2]. I was pointed to this post by a smart guy on the Confluent Cloud Slack channel - thanks, Ryan! The post explores the current architecture of Confluent Cloud, how the experience with the product has benefitted both Apache Kafka and Kafka in Confluent Cloud. Finally, the post lists some of the lessons learned.
+* [When NOT to use Apache Kafka?][3]. So, [Kai Waehner][4] is a Global Technology Advisor at Confluent and evangelises Apache Kafka and Confluent Cloud. Therefore, it is very cool to see this post, where he looks at scenarios where Kafka may not fit.
 
 ## WIND (What Is Niels Doing)
 
-A couple of days ago, I received some very good news:
+A while ago, I wrote the post [**How to Use Kafka Client with Azure Event Hubs**][5], where I looked at how to use the Kafka client to publish messages to - not only - **Apache Kafka** but also **Azure Event Hubs**. In my post, I said something like:
 
-![](/images/posts/data-summit-2021.jpg)
+*An interesting point here is that it is not only your Kafka applications that can publish to Event Hubs but any application that uses Kafka Client 1.0+, like Kafka Connect connectors!*
 
-**Figure 1:** *Big Data & Analytics*
-
-As you see in *Figure 1* I will be giving a training class at the 2021 Data Platform Summit. The class is **Big Data & Analytics with SQL Server 2019 Big Data Cluster**. So right now, I am creating the content for that class - it will be awesome.
-
-If you are interested, [sign up][5] for the class. When signing up, you also get free access to the Summit! Hope to see you there!
+Obviously (if you know me), I said that without having tested it properly, but: *how hard can it be? What could possibly go wrong?*. Well, I was called upon it by a guy who had read the post. He told me he had tried what I said at one time or the other, and it hadn't worked. Therefore I started writing a post looking at using Debezium and Kafka Connect to publish events to Event Hubs. The jury is still out whether you can do it or not. So, that is what I am doing right now.
 
 ## ~ Finally
 
@@ -112,9 +105,8 @@ That's all for this week. I hope you enjoy what I did put together. Please comme
 [emilk]: https://twitter.com/IsTheArchitect
 [netflx]: https://netflixtechblog.com/
 
-[1]: https://www.infoq.com/presentations/netflix-cdc-events-cassandra/
-[2]: https://scattered-thoughts.net/writing/why-query-planning-for-streaming-systems-is-hard/
-[3]: https://medium.com/leboncoin-engineering-blog/cooling-down-hot-data-from-kafka-to-athena-5918a628bd98
-[4]: https://www.confluent.io/blog/confluent-for-kubernetes-offers-cloud-native-kafka-automation/
-[5]: http://bit.ly/dps_2021
-
+[1]: https://ajay-yadav.medium.com/database-storage-engines-de757b03bd44
+[2]: https://www.confluent.io/blog/what-we-learned-building-confluent-cloud/
+[3]: https://www.kai-waehner.de/blog/2022/01/04/when-not-to-use-apache-kafka/
+[4]: https://twitter.com/kaiwaehner
+[5]: {{< relref "2022-01-02-how-to-use-kafka-client-with-azure-event-hubs.md" >}}
