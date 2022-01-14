@@ -5,10 +5,6 @@ https://nielsberglund.com/2022/01/14/how-to-stream-data-to-event-hubs-from-datab
 @rmoff
 
 
-
-
-
-
 New post: "How to Stream Data to Event Hubs from Databases Using Kafka Connect & Debezium in Docker - I".
 We look at how to configure Kafka Connect if we want to stream data to Event Hubs, using Debezium & Docker.
 https://nielsberglund.com/2022/01/10/how-to-stream-data-to-event-hubs-from-databases-using-kafka-connect--debezium-in-docker---i/
