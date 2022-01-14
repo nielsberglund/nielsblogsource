@@ -30,6 +30,10 @@ keywords:
 
 This post is the first of two looking at if and how we can stream data to Event Hubs from Debezium. Initially I had planned only one post covering this, but it turned out that the post would be too long, so therefore I split it in two.
 
+The second post in the series is:
+
+* [**How to Stream Data to Event Hubs from Databases Using Kafka Connect & Debezium in Docker - II**][8]. Here we look at the Debezium connector configuration needed if we want to stream data to Event Hubs.
+
 It started with the post, [**How to Use Kafka Client with Azure Event Hubs**][1]. In that post, I looked at how the Kafka client can publish messages to - not only - **Apache Kafka** but also **Azure Event Hubs**. In the post, I said something like:
 
 *An interesting point here is that it is not only your Kafka applications that can publish to Event Hubs but any application that uses Kafka Client 1.0+, like Kafka Connect connectors!*
@@ -291,7 +295,7 @@ The main takeaways from this post are:
 * When setting up a username/password, you use a JAAS configuration.
 * When using SASL with Event Hubs, the username is hard-coded to `$ConnectionString`. Using `docker-compose.yml` you need to use two dollar signs: `$$ConnectionString`. You can read more about it [here][7].
 
-In the next post, we look at configuring the connector, and we will see whether Debezium to Event Hubs actually works.
+In the [next post][8], we look at configuring the connector, and we will see whether Debezium to Event Hubs actually works.
 
 ## ~ Finally
 
@@ -304,3 +308,6 @@ If you have comments, questions etc., please comment on this post or [ping][ma] 
 [5]: https://rmoff.net/2019/10/16/using-kafka-connect-and-debezium-with-confluent-cloud/
 [6]: https://docs.confluent.io/home/connect/confluent-hub/
 [7]: https://docs.docker.com/compose/environment-variables/#substitute-environment-variables-in-compose-files
+[8]: {{< relref "2022-01-14-how-to-stream-data-to-event-hubs-from-databases-using-kafka-connect--debezium-in-docker---ii.md" >}}
+
+
