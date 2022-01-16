@@ -1,4 +1,10 @@
-﻿New post: "How to Stream Data to Event Hubs from Databases Using Kafka Connect & Debezium in Docker - II".
+﻿New post: "Interesting Stuff - Week 2, 2022".
+Kafka, ksqlDB recipes, Debezium & Event Hubs, Data Sharding tech, and other interesting topics.
+https://nielsberglund.com/2022/01/16/interesting-stuff---week-2-2022/
+#apachekafka #kafka #ksqldb #azuredataexplorer #dataarchitecture #MVPBuzz
+
+
+New post: "How to Stream Data to Event Hubs from Databases Using Kafka Connect & Debezium in Docker - II".
 Here we look at the Debezium connector configuration needed if we want to stream data to Event Hubs.
 https://nielsberglund.com/2022/01/14/how-to-stream-data-to-event-hubs-from-databases-using-kafka-connect--debezium-in-docker---ii/
 #apachekafka #Azure #EventHubs #Debezium
