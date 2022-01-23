@@ -1,4 +1,9 @@
-﻿New post: "Interesting Stuff - Week 2, 2022".
+﻿New post: "Interesting Stuff - Week 3, 2022".
+Kafka, ksqlDB, Confluent Cloud, real-time OLAP databases, Azure Data Explorer at SQLBits 2022, and other interesting topics.
+https://nielsberglund.com/2022/01/23/interesting-stuff---week-3-2022/
+#apachekafka #kafka #ksqldb #azuredataexplorer #databases #sqlbits #MVPBuzz
+
+New post: "Interesting Stuff - Week 2, 2022".
 Kafka, ksqlDB recipes, Debezium & Event Hubs, Data Sharding tech, and other interesting topics.
 https://nielsberglund.com/2022/01/16/interesting-stuff---week-2-2022/
 #apachekafka #kafka #ksqldb #azuredataexplorer #dataarchitecture #MVPBuzz
