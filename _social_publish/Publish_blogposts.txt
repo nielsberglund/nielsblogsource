@@ -1,4 +1,9 @@
-﻿New post: "Interesting Stuff - Week 4, 2022".
+﻿New post: "Interesting Stuff - Week 5, 2022".
+Kafka & Salesforce data, Azure Data Explorer & Kibana, Delta Lake perf., Azure Data Explorer training at SQLBits, and other cool topics.
+https://nielsberglund.com/2022/02/06/interesting-stuff---week-5-2022/
+#apachekafka #kafka #azuredataexplorer #sqlbits #databricks #MVPBuzz
+
+New post: "Interesting Stuff - Week 4, 2022".
 Kafka 3.1.0, Databricks & Snowflake, dashboards in Azure Data Explorer, Azure Data Explorer training at SQLBits, and other cool topics.
 https://nielsberglund.com/2022/01/30/interesting-stuff---week-4-2022/
 #apachekafka #kafka #azuredataexplorer #databases #sqlbits #MVPBuzz
