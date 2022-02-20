@@ -1,4 +1,15 @@
-﻿New post: "Interesting Stuff - Week 5, 2022".
+﻿New post: "Interesting Stuff - Week 7, 2022".
+Kafka and monitoring in Confluent Cloud, Druid vs. Pinot, Lakehouse for crypto, SQLBits 2022, and other interesting topics.
+https://nielsberglund.com/2022/02/20/interesting-stuff---week-7-2022/
+#apachekafka #kafka #azuredataexplorer #databricks #sqlbits #MVPBuzz
+@Derivco
+
+New post: "Interesting Stuff - Week 6, 2022".
+Kafka & ksqlDB architecture, Databricks Delta Live tables & CDC, Databricks & Spark streaming, and other interesting topics.
+https://nielsberglund.com/2022/02/13/interesting-stuff---week-6-2022/
+#apachekafka #kafka #ksqldb #databricks #apachespark #sparkstreaming #MVPBuzz
+
+New post: "Interesting Stuff - Week 5, 2022".
 Kafka & Salesforce data, Azure Data Explorer & Kibana, Delta Lake perf., Azure Data Explorer training at SQLBits, and other cool topics.
 https://nielsberglund.com/2022/02/06/interesting-stuff---week-5-2022/
 #apachekafka #kafka #azuredataexplorer #sqlbits #databricks #MVPBuzz
