@@ -1,4 +1,10 @@
-﻿New post: "Interesting Stuff - Week 8, 2022".
+﻿New post: "Interesting Stuff - Week 9, 2022".
+Kafka at Linkedin, Free clusters for KQL and Azure Data Explorer, Delta Lake & Synapse, SQLBits 2022, and other interesting topics.
+https://nielsberglund.com/2022/03/05/interesting-stuff---week-9-2022/
+#apachekafka #kafka #databricks #azuresynapse #sqlbits #MVPBuzz
+@Derivco
+
+New post: "Interesting Stuff - Week 8, 2022".
 Kafka for real-time applications, Databricks SQL, Microsoft Singularity AI, SQLBits sessions, and other interesting topics.
 https://nielsberglund.com/2022/02/27/interesting-stuff---week-8-2022/
 #apachekafka #kafka #databricks #singularity #sqlbits #MVPBuzz
