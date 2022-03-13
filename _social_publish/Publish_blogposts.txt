@@ -1,4 +1,10 @@
-﻿New post: "Interesting Stuff - Week 9, 2022".
+﻿New post: "Interesting Stuff - Week 10, 2022".
+Kafka streaming with Faust in Python, Azure Data Explorer goodness, SQLBits 2022, and other interesting topics.
+https://nielsberglund.com/2022/03/12/interesting-stuff---week-10-2022/
+#apachekafka #kafka #faust #azuredataexplorer #sqlbits #MVPBuzz
+@Derivco @AzDataExplorer @SQLBits
+
+New post: "Interesting Stuff - Week 9, 2022".
 Kafka at Linkedin, Free clusters for KQL and Azure Data Explorer, Delta Lake & Synapse, SQLBits 2022, and other interesting topics.
 https://nielsberglund.com/2022/03/05/interesting-stuff---week-9-2022/
 #apachekafka #kafka #databricks #azuresynapse #sqlbits #MVPBuzz
