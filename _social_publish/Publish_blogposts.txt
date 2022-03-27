@@ -1,4 +1,15 @@
-﻿New post: "Interesting Stuff - Week 10, 2022".
+﻿New post: "Interesting Stuff - Week 12, 2022".
+Kafka ZooKeeper & KRaft, Azure Data Explorer one click policies, Synapse & Lakehouse architecture, and other interesting topics.
+https://nielsberglund.com/2022/03/27/interesting-stuff---week-12-2022/
+#apachekafka #kafka #azuredataexplorer #azuresynapse #deltalake #MVPBuzz
+
+
+New post: "Interesting Stuff - Week 11, 2022".
+Kafka & new features in ksqlDB 0.24.0, how to run MSDTC and SQL server in containers on Kubernetes, and other interesting stuff.
+https://nielsberglund.com/2022/03/20/interesting-stuff---week-11-2022/
+#apachekafka #kafka #ksqldb #sqlserver #kubernetes #MVPBuzz
+
+New post: "Interesting Stuff - Week 10, 2022".
 Kafka streaming with Faust in Python, Azure Data Explorer goodness, SQLBits 2022, and other interesting topics.
 https://nielsberglund.com/2022/03/12/interesting-stuff---week-10-2022/
 #apachekafka #kafka #faust #azuredataexplorer #sqlbits #MVPBuzz
