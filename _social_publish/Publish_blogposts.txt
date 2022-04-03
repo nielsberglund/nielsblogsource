@@ -1,4 +1,10 @@
-﻿New post: "Interesting Stuff - Week 12, 2022".
+New post: "Interesting Stuff - Week 13, 2022".
+Kafka & ksqlDB recipes, easy deployment of Azure Data Explorer, Niels & Macs, and other interesting topics!
+https://nielsberglund.com/2022/04/03/interesting-stuff---week-13-2022/
+#apachekafka #kafka #azuredataexplorer #ksqldb #macbookpro #mbp #MVPBuzz
+
+
+New post: "Interesting Stuff - Week 12, 2022".
 Kafka ZooKeeper & KRaft, Azure Data Explorer one click policies, Synapse & Lakehouse architecture, and other interesting topics.
 https://nielsberglund.com/2022/03/27/interesting-stuff---week-12-2022/
 #apachekafka #kafka #azuredataexplorer #azuresynapse #deltalake #MVPBuzz
