@@ -1,3 +1,9 @@
+
+New post: "Interesting Stuff - Week 15, 2022".
+Kafka internals, Kafka & Trino @ Uber, Feathr feature store, IoT & Azure Data Explorer, and other interesting topics.
+https://nielsberglund.com/2022/04/17/interesting-stuff---week-15-2022/
+#apachekafka #kafka #azuredataexplorer #azuresynapse #MVPBuzz
+
 New post: "Interesting Stuff - Week 14, 2022".
 Kafka & gaming apps, ingest data into Azure Synapse from Confluent Cloud, and other interesting topics!
 https://nielsberglund.com/2022/04/10/interesting-stuff---week-14-2022/
