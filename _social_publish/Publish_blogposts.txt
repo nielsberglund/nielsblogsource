@@ -1,3 +1,8 @@
+New post: "Interesting Stuff - Week 16, 2022".
+Kafka CLI, autoscale Azure Data Explorer, Modern Datawarehouse, Databricks AutoML, and other interesting topics!
+https://nielsberglund.com/2022/04/24/interesting-stuff---week-16-2022/
+#apachekafka #kafka #azuredataexplorer #machinelearning #databricks #datawarehousing #MVPBuzz
+
 New post: "Interesting Stuff - Week 15, 2022".
 Kafka internals, Kafka & Trino @ Uber, Feathr feature store, IoT & Azure Data Explorer, and other interesting topics.
 https://nielsberglund.com/2022/04/17/interesting-stuff---week-15-2022/
