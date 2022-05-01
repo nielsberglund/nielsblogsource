@@ -1,3 +1,8 @@
+New post: "Interesting Stuff - Week 17, 2022".
+Kafka & clickstream analysis in ksqlDB, F1 telemetry & Azure Data Explorer, IoT & Azure Data Explorer, and other interesting topics!
+https://nielsberglund.com/2022/05/01/interesting-stuff---week-17-2022/
+#apachekafka #kafka #ksqldb #azuredataexplorer #machinelearning #MVPBuzz
+
 New post: "Interesting Stuff - Week 16, 2022".
 Kafka CLI, autoscale Azure Data Explorer, Modern Datawarehouse, Databricks AutoML, and other interesting topics!
 https://nielsberglund.com/2022/04/24/interesting-stuff---week-16-2022/
