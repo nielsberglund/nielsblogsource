@@ -1,3 +1,10 @@
+
+New post: "Interesting Stuff - Week 20, 2022".
+Kafka & Confluent Cloud with Databricks, streaming analytics with Delta Live tables & Databricks SQL, and other interesting topics!
+https://nielsberglund.com/2022/05/22/interesting-stuff---week-20-2022/
+#apachekafka #kafka #databricks #databrickssql #deltalive #MVPBuzz
+
+
 New post: "Interesting Stuff - Week 19, 2022".
 Kafka in retail, Azure Digital Twins & Synapse & Azure Data Explorer, Software performance, and other interesting topics!
 https://nielsberglund.com/2022/05/15/interesting-stuff---week-19-2022/
