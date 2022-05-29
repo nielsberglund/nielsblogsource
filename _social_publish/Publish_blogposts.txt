@@ -1,3 +1,8 @@
+New post: "Interesting Stuff - Week 21, 2022".
+Kafka & what is new in 3.2, Azure EventHubs Premium 4 performance, Predictive scaling in Azure Data Explorer, and other interesting topics.
+https://nielsberglund.com/2022/05/29/interesting-stuff---week-21-2022/
+#apachekafka #kafka #azuredataexplorer #eventhubs #python #MVPBuzz
+
 
 New post: "Interesting Stuff - Week 20, 2022".
 Kafka & Confluent Cloud with Databricks, streaming analytics with Delta Live tables & Databricks SQL, and other interesting topics!
