@@ -1,3 +1,8 @@
+New post: "Interesting Stuff - Week 23, 2022".
+Kafka & scaling Confluent Cloud clusters, Microsoft Intelligent Data Platform, Debezium & Snowflake, and other interesting topics.
+https://nielsberglund.com/2022/06/12/interesting-stuff---week-23-2022/
+#apachekafka #kafka #microsoftdata #confluentcloud #databricks #snowflake
+
 New post: "Interesting Stuff - Week 22, 2022".
 Kafka elasticity vs. Confluent Cloud, new Sample Gallery for Azure Data Explorer, ADX & bounding boxes, and other interesting topics.
 https://nielsberglund.com/2022/06/05/interesting-stuff---week-22-2022/
