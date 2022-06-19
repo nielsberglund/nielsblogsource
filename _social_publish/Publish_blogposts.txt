@@ -1,3 +1,10 @@
+New post: "Interesting Stuff - Week 24, 2022".
+Kafka & Confluent Cloud incidents, performant software, tools 4 SQL Server, Azure Data Explorer features, and other topics!
+https://nielsberglund.com/2022/06/19/interesting-stuff---week-24-2022/
+#apachekafka #kafka #azuredataexplorer #confluentcloud #MVPBuzz
+@AzDataExplorer
+
+
 New post: "Interesting Stuff - Week 23, 2022".
 Kafka & scaling Confluent Cloud clusters, Microsoft Intelligent Data Platform, Debezium & Snowflake, and other interesting topics.
 https://nielsberglund.com/2022/06/12/interesting-stuff---week-23-2022/
