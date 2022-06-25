@@ -1,3 +1,9 @@
+New post: "Solution to GIT: unsafe repository ('some-repo' is owned by someone else)".
+A look at what causes the Git error: unsafe repository ('some-repo' is owned by someone else), and how to solve it.
+https://nielsberglund.com/2022/06/25/solution-to-git-unsafe-repository-some-repo-is-owned-by-someone-else/
+#git #github #MVPBuzz
+
+
 New post: "Interesting Stuff - Week 24, 2022".
 Kafka & Confluent Cloud incidents, performant software, tools 4 SQL Server, Azure Data Explorer features, and other topics!
 https://nielsberglund.com/2022/06/19/interesting-stuff---week-24-2022/
