@@ -1,3 +1,9 @@
+New post: "Interesting Stuff - Week 25, 2022".
+Kafka & Azure Functions, Databricks Data Lakehouse & modelling, Microsoft OpenHack, and other interesting topics!
+https://nielsberglund.com/2022/06/26/interesting-stuff---week-25-2022/
+#apachekafka #kafka #azuresynapse #synapseanalytics #databricks #bigdata #openhack #MVPBuzz
+
+
 New post: "Solution to GIT: unsafe repository ('some-repo' is owned by someone else)".
 A look at what causes the Git error: unsafe repository ('some-repo' is owned by someone else), and how to solve it.
 https://nielsberglund.com/2022/06/25/solution-to-git-unsafe-repository-some-repo-is-owned-by-someone-else/
