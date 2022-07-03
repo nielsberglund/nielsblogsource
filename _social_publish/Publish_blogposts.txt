@@ -1,3 +1,11 @@
+New post: "Interesting Stuff - Week 26, 2022".
+Kafka & KStreams, SQL Server 2022 blog links, Azure Data Explorer & Playfab, Databricks Data Vault, plus other topics!
+https://nielsberglund.com/2022/07/03/interesting-stuff---week-26-2022/
+#apachekafka #kafka #databricks #bigdata #azuredataexplorer #MVPBuzz
+@AzDataExplorer
+
+https://nielsberglund.com/2022/07/03/interesting-stuff---week-26-2022/
+
 New post: "Interesting Stuff - Week 25, 2022".
 Kafka & Azure Functions, Databricks Data Lakehouse & modelling, Microsoft OpenHack, and other interesting topics!
 https://nielsberglund.com/2022/06/26/interesting-stuff---week-25-2022/
