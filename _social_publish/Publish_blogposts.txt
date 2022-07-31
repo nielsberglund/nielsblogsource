@@ -1,3 +1,9 @@
+New post: "Interesting Stuff - Week 30, 2022".
+Kafka & Data Mesh, CI/CD with Kafka, Azure Data Explorer book, Databricks vs. Snowflake, and other interesting topics.
+https://nielsberglund.com/2022/07/31/interesting-stuff---week-30-2022/
+#apachekafka #azuredataexplorer #databricks #bigdata #MVPBuzz
+@AzDataExplorer
+
 New post: "Interesting Stuff - Week 29, 2022".
 Kafka & Terraform, Spark Notebooks & Azure Data Explorer, Niels at Data Platform Summit 2022, and other interesting topics.
 https://nielsberglund.com/2022/07/24/interesting-stuff---week-29-2022/
