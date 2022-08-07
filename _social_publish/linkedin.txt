@@ -1,0 +1,22 @@
+New post: "Interesting Stuff - Week 31, 2022".
+
+Time for my weekly "roundup" post where I link to:
+
+* For the peeps interested in Deep Learning a post with links to some very cool white-papers about some of the newer fundamentals in the Deep Learning space.
+* The second post in a series about using Kafka and Confluent Cloud for modernizing databases.
+* A post in a series how to build a Data Mesh using Azure technologies.
+* Netflix Data Mesh, which is not a Data Mesh - but still a Data Mesh. Confusing, I know!
+
+https://nielsberglund.com/2022/08/07/interesting-stuff---week-31-2022/
+
+#apachekafka #azuredataexplorer #databricks #bigdata #machinelearning
+
+
+New post: "Interesting Stuff - Week 30, 2022".
+
+In this weekly post, I link to:
+
+* The "battle" between Databricks and Snowflake to see who will be the "king" of the Enterprise Data Cloud.
+* An awesome article about Kafka and CI/CD. If you do Kafka, you should definitely read it.
+* A post by Kai Waehner about how and why Kafka is a must for the data mesh.
+* A book about Azure Data Explorer. Apart from being a great book, I wrote an editorial review of the book
