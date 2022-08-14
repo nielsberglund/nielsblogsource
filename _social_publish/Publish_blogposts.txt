@@ -1,3 +1,9 @@
+New post: "Interesting Stuff - Week 32, 2022".
+Kafka & ksqlDB stream processing, Azure Data Explorer & Kafka, SynapseML & .NET, and other interesting topics.
+https://nielsberglund.com/2022/08/14/interesting-stuff---week-32-2022/
+#apachekafka #azuredataexplorer #databricks #synapseml #AI 
+@AzDataExplorer
+
 New post: "Interesting Stuff - Week 31, 2022".
 Kafka & modernizing databases, deep learning papers,  data mesh on Azure, Netflix data mesh, other interesting topics.
 https://nielsberglund.com/2022/08/07/interesting-stuff---week-31-2022/
