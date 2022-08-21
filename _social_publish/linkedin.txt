@@ -1,3 +1,18 @@
+New post: "Interesting Stuff - Week 33, 2022".
+
+Another Sunday, another post with links to "stuff" I find interesting:
+
+* You probably know that I am a big fan of Azure Data Explorer, but the link to benchmarks for ADX compared to Big Query and Snowflake blew my mind.
+* Kafka, and Kafka triggers for Azure Serverless functions. Very cool - we actually use them for a very cool project here at Derivco.
+* Is Kafka only for big data analytics, and not transactional workloads? Check out the link in my post.
+
+https://nielsberglund.com/2022/08/21/interesting-stuff---week-33-2022/
+
+#apachekafka #azuredataexplorer #serverless #azure #azurefunctions
+
+@AzDataExplorer
+
+
 New post: "Interesting Stuff - Week 32, 2022".
 
 Time for my weekly "roundup" post where I link to:
