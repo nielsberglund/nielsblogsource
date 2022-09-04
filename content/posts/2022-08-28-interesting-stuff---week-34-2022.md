@@ -1,28 +1,32 @@
-# A template for weekly roundup blogposts
 ---
 type: post
 layout: "post"
-title: Interesting Stuff - Week #
+title: Interesting Stuff - Week 34, 2022
 author: nielsb
-date: ${1}
+date: 2022-08-28T10:41:25+02:00
 comments: true
 highlight: true
 draft: false
 categories:
   - roundup
 tags:
-  - data science
-  - distributed computing
-  - SQL Server
-description: Weekly roundup of what interesting stuff I have read in blogs etc.
+  - Azure Data Explorer
+  - AWS S3
+  - data pipelines
+  - Kafka
+  - machinelearning
+description: Kafka & streaming ML, declarative data pipelines, ingest data into Azure Data Explorer from Amazon S3, and other interesting topics.
 keywords:
-  -   
+  - Azure Data Explorer
+  - AWS S3
+  - data pipelines
+  - Kafka
+  - machinelearning   
 ---
 
-![](/images/posts/<image_name_incl_ext>)
+![](/images/posts/streaming-particles.jpg)
 
-**<p style="text-align: center;"><em><title></em></p>**
-**<p style="text-align: center;"><em><credits></em></p>**
+**<p style="text-align: center;"><em>Photo Credit: <a href="https://www.istockphoto.com/portfolio/KBDS">KBDS</a> on <a href="https://www.istockphoto.com/">iStock</a></em></p>**
 
 Throughout the week, I read a lot of blog-posts, articles, and so forth that has to do with things that interest me:
 
@@ -39,29 +43,18 @@ This blog post is the "roundup" of the things that have been most interesting to
 
 <!--more-->
 
+## Azure Data Explorer
 
-* [][].
-* [][].
-* [][].
+* [Azure Data Explorer supports native ingestion from Amazon S3][1]. The title of this post says it all. The post announces a new feature of **Azure Data Explorer**, the ability to ingest into ADX from Amazon S3.
 
-* [][].
-* [][].
-* [][].
+## Data Architecture
 
-* [][].
-* [][].
-* [][].
+* [Automating data pipelines: How Upsolver aims to reduce complexity][2]. Today, when you create a data pipeline, you most likely code the pipeline and its intricacies manually. The post linked to looks at, instead of coding data pipelines manually, how you can do it in a declarative way, handling transformations etc.
 
-* [][].
-* [][].
-* [][].
+## Streaming
 
-![](/images/posts/<image_name_incl_ext>)
-
-**Figure 1:** **
-
-## WIND (What Is Niels Doing)
-
+* [Streaming-First Infrastructure for Real-Time Machine Learning][3]. This article covers the benefits of streaming-first infrastructure for two scenarios of real-time ML. First is online prediction, where a model can receive a request and make predictions as soon as the request arrives. The second is continual learning when machine learning models can adapt to changes in production data distributions. Very, very cool! We have just now started looking at it at [Derivco](/derivco).
+* [Machine Learning Streaming with Kafka, Debezium, and BentoML][4]. This post looks at using modern data-related tools to integrate a Machine Learning model with a "production" database. This is so we can make real-time predictions as new records are added.
 
 ## ~ Finally
 
@@ -116,28 +109,7 @@ That's all for this week. I hope you enjoy what I did put together. Please comme
 [emilk]: https://twitter.com/IsTheArchitect
 [netflx]: https://netflixtechblog.com/
 
-[1]:
-[2]:
-[3]:
-[4]:
-[5]:
-[6]:
-[7]:
-[8]:
-[9]:
-[10]:
-[11]:
-[12]:
-[13]:
-[14]:
-[15]:
-
-<!-- [postref]: {{< relref "file_name_incl_ext" >}} -->
-
-<!-- [series1]: [SQL Server R Services](/sql_server_2k16_r_services) -->
-<!-- [series2]: [Install R Packages in SQL Server ML Services](/sql_server_ml_services_install_packages) -->
-<!-- [series3]: [sp_execute_external_script and SQL Server Compute Context](/spees_and_sql_compute_context) -->
-
-
-<!-- [findstr]: findstr /I <word_to_find> * -->
-<!-- [findstr]: findstr /I /c:<"phrase to find"> * -->
+[1]: https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/azure-data-explorer-supports-native-ingestion-from-amazon-s3/ba-p/3606746
+[2]: https://venturebeat.com/data-infrastructure/upsolver-simplifies-data-pipelines
+[3]: https://www.infoq.com/articles/streaming-first-real-time-ml
+[4]: https://towardsdatascience.com/machine-learning-streaming-with-kafka-debezium-and-bentoml-c5f3996afe8f

@@ -1,3 +1,16 @@
+New post: "Interesting Stuff - Week 35, 2022".
+Kafka & KRaft - no ZooKeeper, Microsoft Dev Box, ADX Web Explorer goodies, Deep Learning to find papers, and other interesting topics.
+https://nielsberglund.com/2022/09/04/interesting-stuff---week-35-2022/
+#apachekafka #azuredataexplorer #machinelearning #ai
+@AzDataExplorer
+
+New post: "Interesting Stuff - Week 34, 2022".
+Kafka & streaming ML, declarative data pipelines, ingest data into Azure Data Explorer from Amazon S3, and other interesting topics!
+https://nielsberglund.com/2022/08/28/interesting-stuff---week-34-2022/
+#apachekafka #azuredataexplorer #machinelearning #debezium
+@AzDataExplorer
+
+
 New post: "Interesting Stuff - Week 33, 2022".
 Kafka triggers & Azure Functions, Kafka transactional workloads, awesome Azure Data Explorer performance, and other interesting topics!
 https://nielsberglund.com/2022/08/21/interesting-stuff---week-33-2022/
