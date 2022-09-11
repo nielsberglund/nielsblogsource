@@ -1,3 +1,17 @@
+New post: "Interesting Stuff - Week 36, 2022".
+
+It is interesting how some weeks you have quite a few interesting links for the weekly roundup, and other weeks just a few. This week it is definitely the latter:
+
+* Some "cool stuff" from Microsoft Research related to reinforcement learning.
+* Microsoft has just released a Docker image for the @Azure Data Explorer's query engine endpoint. How cool is that?!
+* It just to be that if you wanted to write KStreams applications you had to use Java/Scala. Nothing wrong with that, but I am a .NET guy myself. , so i was very happy to hear about an Open Source project of KStreams for .NET!
+* #DataPlatformVirtualSummit2022 is just around the corner and I present a session there!
+
+https://nielsberglund.com/2022/09/11/interesting-stuff---week-36-2022/
+
+#apachekafka #kstreams #azuredataexplorer #machinelearning #ai #DataPlatformSummit #DPS2022
+
+
 New post: "Interesting Stuff - Week 35, 2022".
 
 Another Sunday, another "what's been interesting" post. Some "stuff" in this post:

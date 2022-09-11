@@ -1,3 +1,10 @@
+New post: "Interesting Stuff - Week 36, 2022".
+Kafka-KStreams-.NET, reinforcement learning, Kusto emulator, Niels @ DPS 2022, and other interesting topics.
+https://nielsberglund.com/2022/09/11/interesting-stuff---week-36-2022/
+#apachekafka #kstreams #azuredataexplorer #machinelearning #ai #DataPlatformSummit
+@AzDataExplorer
+
+
 New post: "Interesting Stuff - Week 35, 2022".
 Kafka & KRaft - no ZooKeeper, Microsoft Dev Box, ADX Web Explorer goodies, Deep Learning to find papers, and other interesting topics.
 https://nielsberglund.com/2022/09/04/interesting-stuff---week-35-2022/
