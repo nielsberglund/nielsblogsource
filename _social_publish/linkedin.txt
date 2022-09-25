@@ -1,3 +1,39 @@
+-----------------------------------------------------
+New post: "Interesting Stuff - Week 38, 2022".
+
+Some interesting things this week:
+
+* Churn predictions in Apache Spark
+* What is a Confusion Matrix, and how to create one in Python. So, note to self - a confusion matrix is not called Confusion Matrix becuase you become confused trying to interpret it!
+* A very cool visualization of the Raft consensus protocol.
+* Thoughtworks compendium around Distributed Systems is done!
+* Learn Azure Data Explorer via MS Learn!
+* Databases, Kafka Connect, JDBC and CDC. Cool stuff!
+* Even cooler - awesome functionality in the Kafka Extension for Azure Functions!
+* Niels doing an Azure Data Explorer presentation at Durban's Azure Usergroup!
+
+https://nielsberglund.com/2022/09/25/interesting-stuff---week-38-2022/
+
+#apachekafka #ksqldb #azuredataexplorer #apachespark #python #machinelearning 
+
+---------------------------------------------------
+New post: "Interesting Stuff - Week 37, 2022".
+
+Some more stuff caught my eye this week compared to last:
+
+* Useful Python extensions for VSCode.
+* How the Kusto (KQL) language in Azure Data Explorer makes it easier to format date-time.
+* Speaking of Kusto, they have just opened a detective agency, and you can apply!
+* Apache Spark and serving MLLib models.
+* Robin Moffat (Mr Kafka) looks at data engineering. Must read!
+* Kafka, ksqlDB and iGaming. Very cool!
+* Finally, just pointing out to Lee-Anne that I present at Data Platform Summit 2022 :)
+
+https://nielsberglund.com/2022/09/18/interesting-stuff---week-37-2022/
+
+#apachekafka #ksqldb #azuredataexplorer #apachespark #python #DataPlatformSummit
+
+
 New post: "Interesting Stuff - Week 36, 2022".
 
 It is interesting how some weeks you have quite a few interesting links for the weekly roundup, and other weeks just a few. This week it is definitely the latter:

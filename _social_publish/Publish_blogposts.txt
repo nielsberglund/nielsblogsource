@@ -1,3 +1,17 @@
+New post: "Interesting Stuff - Week 38, 2022".
+Kafka & Azure Serverless functions, Spark & churn predictions, the Raft protocol, confusion matrices, other interesting topics!
+https://nielsberglund.com/2022/09/25/interesting-stuff---week-38-2022/
+#apachekafka #ksqldb #azuredataexplorer #apachespark #python 
+@AzDataExplorer
+
+
+New post: "Interesting Stuff - Week 37, 2022".
+Kafka-ksqlDB-iGaming, date-time & ADX, Kusto detective agency, Spark & MLLib, and other interesting topics.
+https://nielsberglund.com/2022/09/18/interesting-stuff---week-37-2022/
+#apachekafka #ksqldb #azuredataexplorer #apachespark #python #DataPlatformSummit
+@AzDataExplorer
+
+
 New post: "Interesting Stuff - Week 36, 2022".
 Kafka-KStreams-.NET, reinforcement learning, Kusto emulator, Niels @ DPS 2022, and other interesting topics.
 https://nielsberglund.com/2022/09/11/interesting-stuff---week-36-2022/
