@@ -1,3 +1,10 @@
+New post: "Interesting Stuff - Week 39, 2022".
+Kafka & Terraform, distributed system architecture, Protobuf - Kafka & Azure Data Explorer, and other interesting topics.
+https://nielsberglund.com/2022/10/02/interesting-stuff---week-39-2022/
+#apachekafka #azuredataexplorer #apachespark #apacheflink #python 
+@AzDataExplorer
+
+
 New post: "Interesting Stuff - Week 38, 2022".
 Kafka & Azure Serverless functions, Spark & churn predictions, the Raft protocol, confusion matrices, other interesting topics!
 https://nielsberglund.com/2022/09/25/interesting-stuff---week-38-2022/

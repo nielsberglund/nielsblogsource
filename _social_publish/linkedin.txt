@@ -1,3 +1,20 @@
+-------------------------------------------------
+New post: "Interesting Stuff - Week 39, 2022".
+
+Things I picked up this week:
+
+* Very cool article around distributed systems design. The article led to links to other posts around the same topic. Very interesting, and I am sharing those links with people at @Derivco.
+* It wouldn't be a weekly roundup without something related to Azure Data Explorer. This time it is a link how to set up the ADX Kafka sink connector to ingest Protobuf data into ADX. Cool!
+* We are all using Confluent Cloud, yes?! I linked to an article about the new Terraform provider for Confluent Cloud.
+* Dunith Dhanushka wrote an excellent post comparing stateful stream processing and streaming databases. Well worth a read!
+* Another link around stream processing. This one is a post by Gary Stafford and it compares various stream processing technologies. The post is absolutely awesome!
+
+If the above sounds interesting, hit the link to my roundup post at:
+
+https://nielsberglund.com/2022/10/02/interesting-stuff---week-39-2022/
+
+#apachekafka #azuredataexplorer #apachespark #apacheflink #python 
+
 -----------------------------------------------------
 New post: "Interesting Stuff - Week 38, 2022".
 
