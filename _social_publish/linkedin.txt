@@ -1,4 +1,21 @@
 -------------------------------------------------
+New post: "Interesting Stuff - Week 40, 2022"
+
+Interesting things during the week just gone:
+
+* I was quite into the external tables in SQL Server 2019 Big Data Cluster. The new PolyBase in SQL Server 2022, now inherits all that cool functionality.
+* I found a downloadable eMag book discussing modern data architectures. The part about Real-Time Machine Learning was very, very cool, especially since I have "dabbled" in that a bit (look out for a blogpost in the near future).
+* Oooh, visual stream designer for Kafka. I sooo want it!
+* Kafka 3.3 released. The biggie in this release is KRaft!
+* I am doing a presentation about ingestion in Azure Data Explorer at Durban's Azure Usergroup!
+
+https://nielsberglund.com/2022/10/09/interesting-stuff---week-40-2022/
+
+
+#apachekafka #azuredataexplorer #bigdata #confluentcloud
+
+
+-------------------------------------------------
 New post: "Interesting Stuff - Week 39, 2022".
 
 Things I picked up this week:
