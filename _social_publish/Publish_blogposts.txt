@@ -1,3 +1,10 @@
+New post: "Interesting Stuff - Week 41, 2022".
+Kafka Confluent & Microsoft, data engineering terminology, load testing Azure Data Explorer, other interesting topics.
+https://nielsberglund.com/2022/10/16/interesting-stuff---week-41-2022/
+#apachekafka #azuredataexplorer #azuresynapse #bigdata #confluentcloud
+@AzDataExplorer
+
+
 New post: "Interesting Stuff - Week 40, 2022".
 Kafka 3.3 released, Kafka Stream Designer, Polybase & SQL Server 2022, and other interesting topics.
 https://nielsberglund.com/2022/10/09/interesting-stuff---week-40-2022/

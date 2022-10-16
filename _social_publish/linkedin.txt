@@ -1,3 +1,21 @@
+-----------------------------------------------
+New post: "Interesting Stuff - Week 41, 2022".
+
+Some "cool" stuff the week gone by:
+
+* Robin Moffat explains ETL vs. ELT. I think I finally get it!
+* Found a new data engineering newsletter. Read my post and you'll see what it is.
+* Tips and tricks to evaluate query performance in @Azure Data Explorer.
+* Something very cool; a Synapse Analytics environment sandbox. And yes, it includes @Azure Data Explorer!
+* Confluent is one of the initial partners of Microsoft Intelligent Data Platform!
+* Speaking of Confluent, Microsoft. I am speaking at the Confluent Data In Motion Tour in Johannesburg October 22! Pinging Lee-Anne and Jack!
+
+Read more about all of the above at:
+
+https://nielsberglund.com/2022/10/16/interesting-stuff---week-41-2022/
+
+#apachekafka #azuredataexplorer #azuresynapse #bigdata #confluentcloud
+
 -------------------------------------------------
 New post: "Interesting Stuff - Week 40, 2022"
 
