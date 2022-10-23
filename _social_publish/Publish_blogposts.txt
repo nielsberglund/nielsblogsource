@@ -1,3 +1,10 @@
+New post: "Interesting Stuff - Week 42, 2022".
+ksqlDB new version, new features in Azure Data Explorer, Netflix AI/ML orchestrator, Dapr & AKS, and other interesting topics.
+https://nielsberglund.com/2022/10/23/interesting-stuff---week-42-2022/
+#apachekafka #azuredataexplorer #ksqldb #confluentcloud
+@AzDataExplorer
+
+
 New post: "Interesting Stuff - Week 41, 2022".
 Kafka Confluent & Microsoft, data engineering terminology, load testing Azure Data Explorer, other interesting topics.
 https://nielsberglund.com/2022/10/16/interesting-stuff---week-41-2022/
