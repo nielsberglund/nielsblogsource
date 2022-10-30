@@ -1,3 +1,19 @@
+----------------------------------------------
+New post: "Interesting Stuff - Week 43, 2022".
+
+Hmm, for some reason not much to report from the week:
+
+* Quite a cool post about how Pinterest is doing pin recommendations.
+* A post about debugging ksqlDB joins. I so wish I had seen it a couple of months ago when my team and I were battling ksqlDB.
+* A post linking to a Kafka Schema Registry course. Another one I had wished to have seen before.
+
+To see more about the above go here:
+
+https://nielsberglund.com/2022/10/30/interesting-stuff---week-43-2022/
+
+
+#apachekafka #ksqldb #machinelearning
+
 ------------------------------------------------
 New post: "Interesting Stuff - Week 42, 2022".
 
