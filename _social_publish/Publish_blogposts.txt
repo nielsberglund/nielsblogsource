@@ -1,3 +1,9 @@
+New post: "Interesting Stuff - Week 44, 2022".
+Kafka and ETL, Pinterest using realtime user actions, Niels going to PASS, and other interesting topics!
+https://nielsberglund.com/2022/11/06/interesting-stuff---week-44-2022/
+#apachekafka #ksqldb #machinelearning #mastodon
+
+
 New post: "Interesting Stuff - Week 43, 2022".
 Kafka, debugging ksqlDB joins, Kafka schema registry course, Pinterest pin recommendations, and other interesting topics.
 https://nielsberglund.com/2022/10/30/interesting-stuff---week-43-2022/

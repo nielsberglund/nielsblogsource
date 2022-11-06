@@ -1,3 +1,19 @@
+-----------------------------------------
+New post: "Interesting Stuff - Week 44, 2022".
+
+My roundup for the week just gone by:
+
+* Pinterest and leveraging real-time user actions
+* How to build real-time ETL pipelines with Kafka
+* Niels joining Mastodon
+* Niels presenting ksqlDB at PASS Summit
+
+Read all about it:
+
+https://nielsberglund.com/2022/11/06/interesting-stuff---week-44-2022/
+
+#kafka #ai #ml #ksqlDB
+
 ----------------------------------------------
 New post: "Interesting Stuff - Week 43, 2022".
 
