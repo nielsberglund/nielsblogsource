@@ -1,3 +1,10 @@
+New post: "Interesting Stuff - Week 45, 2022".
+Kafka CDC & Debezium, Azure Functions & SQL triggers, Azure Data Explorer e-book, Azure BootCamp SA 2022, and other interesting topics.
+https://nielsberglund.com/2022/11/13/interesting-stuff---week-45-2022/
+#apachekafka #ksqldb #dataengineering #azure #serverless
+
+
+
 New post: "Interesting Stuff - Week 44, 2022".
 Kafka and ETL, Pinterest using realtime user actions, Niels going to PASS, and other interesting topics!
 https://nielsberglund.com/2022/11/06/interesting-stuff---week-44-2022/
