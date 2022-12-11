@@ -1,4 +1,16 @@
-New post: "Interesting Stuff - Week 45, 2022".
+New post: "Interesting Stuff - Week 49, 2022".
+Kafka consumer groups, ChatGPT VM, autoscaling data pipelines, can we handle analysis, and other interesting topics.
+https://nielsberglund.com/2022/12/11/interesting-stuff---week-49-2022/
+#apachekafka #ai #ml #bigdata #chatgpt
+
+
+New post: "Interesting Stuff - Week 48, 2022".
+Kafka & real-time or not real-time, Azure Data Explorer architecture, OpenAI ChatGPT awesomeness, and other interesting topics.
+https://nielsberglund.com/2022/12/04/interesting-stuff---week-48-2022/
+#apachekafka #azuredataexplorer #ai #ml #chatgpt
+@AzDataExplorer
+
+New post: "Interesting Stuff - Week 47, 2022".
 Kafka & partitions, distributed databases, Blockchain & AWS, Netflix anomaly detection, and other interesting topics.
 https://nielsberglund.com/2022/11/27/interesting-stuff---week-47-2022/
 #apachekafka #azuresqldb #ai #ml #sqlserver2022
