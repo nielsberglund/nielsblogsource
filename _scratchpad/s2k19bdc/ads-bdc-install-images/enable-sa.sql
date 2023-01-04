@@ -1,8 +1,0 @@
-USE master;
-GO
-
-ALTER LOGIN sa WITH PASSWORD=N'password1234$'
-GO
-
-ALTER LOGIN sa ENABLE;
-GO

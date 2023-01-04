@@ -1,7 +1,0 @@
-W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sql_ml_install_packages\VSCode\BinaryConverter\bin\Debug\BinaryConverter.exe.config
-W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sql_ml_install_packages\VSCode\BinaryConverter\bin\Debug\BinaryConverter.exe
-W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sql_ml_install_packages\VSCode\BinaryConverter\bin\Debug\BinaryConverter.pdb
-W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sql_ml_install_packages\VSCode\BinaryConverter\obj\Debug\BinaryConverter.csprojAssemblyReference.cache
-W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sql_ml_install_packages\VSCode\BinaryConverter\obj\Debug\BinaryConverter.csproj.CoreCompileInputs.cache
-W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sql_ml_install_packages\VSCode\BinaryConverter\obj\Debug\BinaryConverter.exe
-W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sql_ml_install_packages\VSCode\BinaryConverter\obj\Debug\BinaryConverter.pdb

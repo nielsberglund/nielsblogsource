@@ -1,3 +1,0 @@
-
-# load prophet
-library(prophet)

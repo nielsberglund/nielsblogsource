@@ -1,10 +1,10 @@
 ---
-type: page
-layout: "page"
+layout: page
+
 title: "SQL Server 2019 Extensibility Framework & Java"
-showcomments: false
-showfeedplug: false
 ---
+
+# SQL Server 2019 Extensibility Framework & Java
 
 This is a collection of posts about the Java language extensions introduced in **SQL Server 2019**. In other words, how we can execute Java code from inside SQL Server 2019.
 

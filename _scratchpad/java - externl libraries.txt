@@ -1,6 +1,0 @@
-
-
-So, Microsoft introduced in SQL Server 2017 the ability to create external libraries for R packages, and those packages live in the database and load from the database. In SQL Server 2019 CTP 2.3 the functionality extends to both Python as well as Java, and in this post we see how we can create external libraries of our Java code.
-
-
-> **NOTE:** At this point in time you can only create external libraries for Python and Java on SQL Server for Windows. The functionality does not exist yet on SQL Server for Linux, and  - as mentioned above - this requires SQL Server 2019 CTP 2.3.

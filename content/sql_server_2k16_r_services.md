@@ -1,10 +1,8 @@
 ---
-type: page
-layout: "page"
-title: "SQL Server R Services Series TOC"
-showcomments: false
-showfeedplug: false
+layout: page
 ---
+
+# SQL Server R Services Series TOC
 
 Microsoft released **SQL Server 2016** mid 2016 and with the release came quite a few new features:
 

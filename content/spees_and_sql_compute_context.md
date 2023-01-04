@@ -1,10 +1,8 @@
 ---
-type: page
-layout: "page"
-title: "sp_execute_external_script and SQL Server Compute Context"
-showcomments: false
-showfeedplug: false
+layout: page
 ---
+
+# sp_execute_external_script and SQL Server Compute Context
 
 This is a collection of posts about `sp_execute_external_script` (SPEES) and **SQL Server Compute Context** (SQLCC).
 

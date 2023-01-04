@@ -1,7 +1,0 @@
-Blog: What are Doomed Transactions in SQL Server
-http://www.nielsberglund.com/2017/01/27/doomed-we-are-all-doomed-i-say/
-We drill into doomed transactions in SQL Server
-
-
-How to Install Your Favorite R Package in SQL Server Machine Learning Services!
-http://www.nielsberglund.com/2018/06/23/installing-r-packages-in-sql-server-machine-learning-services---i/

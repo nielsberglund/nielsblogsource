@@ -1,7 +1,0 @@
-https://nugaemeae.wordpress.com/2012/08/30/the-why-and-the-how-of-installing-rtools/
-
-https://docs.microsoft.com/en-us/sql/advanced-analytics/r/packages-installed-in-user-libraries?view=sql-server-2017
-
-https://docs.microsoft.com/en-us/sql/advanced-analytics/r/install-additional-r-packages-on-sql-server?view=sql-server-2017
-
-https://cran.r-project.org/web/packages/dplyr/index.html

@@ -1,10 +1,14 @@
 ---
-type: page
-layout: "page"
+layout: page
+
 title: "Blog Post Series"
-showcomments: false
-showfeedplug: false
+subtitle: ""
+metadata:
+  - text: "Blog Post Series"
+showtoc: false
 ---
+
+# Blog Post Series
 
 Sometimes my blog-posts turns into "mini series" and this is the page where you find what series I have.
 

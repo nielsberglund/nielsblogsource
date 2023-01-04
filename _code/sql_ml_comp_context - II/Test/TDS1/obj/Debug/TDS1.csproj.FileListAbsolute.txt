@@ -1,7 +1,0 @@
-W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sql_ml_comp_context - II\Test\TDS1\bin\Debug\TDS1.exe.config
-W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sql_ml_comp_context - II\Test\TDS1\bin\Debug\TDS1.exe
-W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sql_ml_comp_context - II\Test\TDS1\bin\Debug\TDS1.pdb
-W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sql_ml_comp_context - II\Test\TDS1\obj\Debug\TDS1.csprojAssemblyReference.cache
-W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sql_ml_comp_context - II\Test\TDS1\obj\Debug\TDS1.csproj.CoreCompileInputs.cache
-W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sql_ml_comp_context - II\Test\TDS1\obj\Debug\TDS1.exe
-W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sql_ml_comp_context - II\Test\TDS1\obj\Debug\TDS1.pdb

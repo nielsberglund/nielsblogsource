@@ -1,6 +1,0 @@
-test_cluster_1:
-
-Key: 3FIJEXFAJAOPCC2N
-Secret: ygPiikQI9n67Va4HtjgHoDrKivfTmcAT+6KpID37MhYlRmtBgm1IO56wwNbZ5V3t
-
-Bootstrap server: pkc-lz6r3.northeurope.azure.confluent.cloud:9092

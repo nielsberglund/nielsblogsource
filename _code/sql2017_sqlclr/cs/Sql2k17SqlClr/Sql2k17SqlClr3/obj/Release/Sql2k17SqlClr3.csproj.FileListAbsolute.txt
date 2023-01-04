@@ -1,7 +1,0 @@
-W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sql2017_sqlclr\cs\Sql2k17SqlClr\Sql2k17SqlClr3\bin\Release\Sql2k17SqlClr3.dll
-W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sql2017_sqlclr\cs\Sql2k17SqlClr\Sql2k17SqlClr3\bin\Release\Sql2k17SqlClr3.pdb
-W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sql2017_sqlclr\cs\Sql2k17SqlClr\Sql2k17SqlClr3\bin\Release\Sql2k17SqlClr2.dll
-W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sql2017_sqlclr\cs\Sql2k17SqlClr\Sql2k17SqlClr3\bin\Release\Sql2k17SqlClr2.pdb
-W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sql2017_sqlclr\cs\Sql2k17SqlClr\Sql2k17SqlClr3\obj\Release\Sql2k17SqlClr3.csprojResolveAssemblyReference.cache
-W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sql2017_sqlclr\cs\Sql2k17SqlClr\Sql2k17SqlClr3\obj\Release\Sql2k17SqlClr3.dll
-W:\nielsb-work\GitHub-Repos\nielsberglund.com\_code\sql2017_sqlclr\cs\Sql2k17SqlClr\Sql2k17SqlClr3\obj\Release\Sql2k17SqlClr3.pdb

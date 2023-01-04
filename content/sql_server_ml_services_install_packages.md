@@ -1,10 +1,8 @@
 ---
-type: page
-layout: "page"
-title: "Install R Packages in SQL Server ML Services Series"
-showcomments: false
-showfeedplug: false
+layout: page
 ---
+
+# Install R Packages in SQL Server ML Services Series
 
 This is a series of posts about how to install R packages in **SQL Server Machine Learning Services**.
 
