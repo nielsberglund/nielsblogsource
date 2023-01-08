@@ -67,7 +67,7 @@ home = ["HTML", "RSS", "Algolia"]
  
 
   [params.social]
-  rss            = true 
+  rss            = "https://nielsberglund.com/index.xml"
   email          = "niels.it.berglund@gmail.com"
   twitter        = "https://twitter.com/nielsberglund"
   linkedin       = "https://www.linkedin.com/in/niels-berglund-0122593"
@@ -75,7 +75,7 @@ home = ["HTML", "RSS", "Algolia"]
   github         = "https://github.com/nielsberglund"
   medium         = "https://medium.com/@nielsberglund"
   mastodon       = "https://fosstodon.org/@nielsb"
-  
+
   
   # [[params.friend_link]]
   # title = "Linda的博客"
