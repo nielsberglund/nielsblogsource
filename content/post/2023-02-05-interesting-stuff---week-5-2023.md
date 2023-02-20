@@ -7,7 +7,8 @@ date: 2023-02-05T10:15:43+02:00
 comments: true
 highlight: true
 draft: false
-image: "/images/banner/posts/canary-wharf-resized.png"
+image: images/banner/posts/canary-wharf-resized.png
+thumbnail: images/banner/posts/canary-wharf-resized.png
 categories:
   - roundup
 tags:

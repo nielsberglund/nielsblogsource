@@ -7,7 +7,8 @@ date: 2023-01-08T12:04:35+02:00
 comments: true
 highlight: true
 draft: false
-image: "/images/banner/posts/sunrise.jpg"
+image: images/banner/posts/sunrise.jpg
+thumbnail: images/banner/posts/sunrise.jpg
 categories:
   - roundup
 tags:

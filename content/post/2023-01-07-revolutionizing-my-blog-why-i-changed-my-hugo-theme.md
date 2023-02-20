@@ -7,7 +7,8 @@ date: 2023-01-07T12:19:12+02:00
 comments: true
 highlight: true
 draft: false
-image: "/images/banner/posts/blogging.jpg"
+image: images/banner/posts/blogging.jpg
+thumbnail: images/banner/posts/blogging.jpg
 tags:
   - hugo
 description: A couple of days ago I switched to a new Hugo theme. In this post I look at the reasoning behind that.

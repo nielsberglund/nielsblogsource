@@ -7,7 +7,8 @@ date: 2023-02-12T09:46:31+02:00
 comments: true
 highlight: true
 draft: false
-image: "/images/banner/posts/wrup-06-23.jpg"
+image: images/banner/posts/wrup-06-23.jpg
+thumbnail: images/banner/posts/wrup-06-23.jpg
 categories:
   - roundup
 tags:
