@@ -7,8 +7,8 @@ date: 2023-02-26T09:40:43+02:00
 comments: true
 highlight: true
 draft: false
-image: images/banner/posts/leaderboard-kafka.jpg
-thumbnail: images/thumbnails/posts/leaderboard-kafka.jpg
+image: /images/banner/posts/leaderboard-kafka.jpg
+thumbnail: /images/thumbnails/posts/leaderboard-kafka.jpg
 categories:
   - Azure
   - Azure Data Explorer
