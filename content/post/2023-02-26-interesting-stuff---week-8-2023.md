@@ -19,10 +19,10 @@ tags:
   - OpenAI
   - SQL Server
   - MacOS
-description: This week I cover Linux containers on Apple Silicone. There is also how to use Mastodon, Kafka and Open Search together. Let us not forget my post about leaderboards and Azure Data Explorer.
+description: This week I cover Linux containers on Apple Silicon. There is also how to use Mastodon, Kafka and Open Search together. Let us not forget my post about leaderboards and Azure Data Explorer.
 ---
 
-As opposed to last week with no Kafka related "stuff", this week there is a fair chunk. So, in this roundup you get a link to Linux containers on Apple Silicone. A deep dive into Microsoft LMOps, Mastodon, Kafka and OpenSearch.
+As opposed to last week with no Kafka related "stuff", this week there is a fair chunk. So, in this roundup you get a link to Linux containers on Apple Silicon. A deep dive into Microsoft LMOps, Mastodon, Kafka and OpenSearch.
 
 I appear in this roundup with a link to the first post in a series about developing Leaderboards using Kafka and Azure Data Explorer. Oh, there is also something about running Kafka on Kubernetes.
 
@@ -30,7 +30,7 @@ I appear in this roundup with a link to the first post in a series about develop
 
 ## Misc.
 
-* [You can run a SQL Server Docker container on Apple M1 and M2 Silicon][2]. This link is thanks to a colleague (and mate) of mine [Yannick Dufour][2]. He is a "sh*t hot" SQL Server Developer and DBA. He went over to the "dark side" (Apple Mac) many, many years ago while MacOS was still Intel based. Since then, he has upgraded to the newer Macs with Apple Silicone. He has been despondent since the Apple Silicone upgrade as he needs to run SQL Server, and SQL Server containers have not been supported on Apple Silicone (no ARM-based SQL containers). As you may know, I also switched over to Mac [a while ago][3] and have had the same issues as Yannick. So back to the link that Yannick sent me - the linked post discusses how you can now run Linux based containers on Apple Silicone. Yay!   
+* [You can run a SQL Server Docker container on Apple M1 and M2 Silicon][2]. This link is thanks to a colleague (and mate) of mine [Yannick Dufour][2]. He is a "sh*t hot" SQL Server Developer and DBA. He went over to the "dark side" (Apple Mac) many, many years ago while MacOS was still Intel based. Since then, he has upgraded to the newer Macs with Apple Silicon. He has been despondent since the Apple Silicon upgrade as he needs to run SQL Server, and SQL Server containers have not been supported on Apple Silicon (no ARM-based SQL containers). As you may know, I also switched over to Mac [a while ago][3] and have had the same issues as Yannick. So back to the link that Yannick sent me - the linked post discusses how you can now run Linux based containers on Apple Silicon. Yay!   
 
 ## AI/ML
 

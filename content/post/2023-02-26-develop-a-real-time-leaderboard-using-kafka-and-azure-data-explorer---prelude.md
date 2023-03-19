@@ -12,6 +12,7 @@ thumbnail: /images/thumbnails/posts/leaderboard-kafka.jpg
 categories:
   - Azure
   - Azure Data Explorer
+  - leaderboards
 tags:
   - Azure Data Explorer
   - Kusto
@@ -37,7 +38,7 @@ Arguably, this first post has little to do with ADX, which is why the title says
 
 This section is here to list what you need if you want to follow along:
 
-* Docker Desktop. We use Docker to "spin up" containers for Kafka and a Python application. The Python application generates and publishes events to Kafka. Caveat: If you are on an Apple Silicone Mac (M1 or M2), you need Python installed as the container for the event generation application won't build on Apple silicone. This is because there is no "wheel" for the Confluent Kafka Python client that installs in an ARM-based container. 
+* Docker Desktop. We use Docker to "spin up" containers for Kafka and a Python application. The Python application generates and publishes events to Kafka. Caveat: If you are on an Apple Silicon Mac (M1 or M2), you need Python installed as the container for the event generation application won't build on Apple Silicon. This is because there is no "wheel" for the Confluent Kafka Python client that installs in an ARM-based container. 
 
 For this post, the above is the only thing you need. If you want to "prep" for the follow-up posts you also need this:
 
@@ -193,7 +194,7 @@ In *Code Snippet 3*, you see the Docker file used to build the `event-gen` app. 
 1. Three Python source files are copied into the container.
 1. Finally, I install the Confluent Kafka Python client into the container.
 
-At the beginning of this post, I mentioned a caveat when running this on an Apple Silicone machine, and it is step 4 above that will not work. If you are on an Apple Silicone machine, you need to run the Python application independently. This also means you need to install the Confluent Kafka Python client into your Python installation: `pip install confluent-kafka`.
+At the beginning of this post, I mentioned a caveat when running this on an Apple Silicon machine, and it is step 4 above that will not work. If you are on an Apple Silicon machine, you need to run the Python application independently. This also means you need to install the Confluent Kafka Python client into your Python installation: `pip install confluent-kafka`.
 
 ### Application Source Code
 
@@ -263,7 +264,7 @@ The "loop" related parameters are: `-l`, `-e`, `-m`, `-x`, and `-n`, as seen in 
 
 Now it is time to put this together and "spin up" the Kafka cluster with the application to ensure it works. What you first need to do is to `cd` into the `docker` folder.
 
-> **NOTE:** If you are on Apple Silicone, open the `docker-compose.yml` file and comment out the `event-gen` part, as you will run the Python application independently.
+> **NOTE:** If you are on Apple Silicon, open the `docker-compose.yml` file and comment out the `event-gen` part, as you will run the Python application independently.
 
 Now you:
 
@@ -276,7 +277,7 @@ Having spun up the containers you should see in Docker Desktop something like so
 
 **Figure 4:** *Docker Desktop*
 
-Initially, the status is 5/5 (Apple Silicone 4/4), as in *Figure 4*. After some seconds, the status will change to 4/5 (Apple 3/4) as the `kafka-init-topics` container exits after creating the `gameplay` topic.
+Initially, the status is 5/5 (Apple Silicon 4/4), as in *Figure 4*. After some seconds, the status will change to 4/5 (Apple 3/4) as the `kafka-init-topics` container exits after creating the `gameplay` topic.
 
 To ensure everything is OK, in your browser, you browse: `localhost:8080`:
 
@@ -290,9 +291,9 @@ After opening my browser and browsing to the **UI for Kafka** (`localhost:8080`)
 
 You are now ready to publish. However, you also want to ensure that what you publish IS published, so you start with "spinning up" the consumer.
 
-#### Apple Silicone
+#### Apple Silicon
 
-Before we look at consuming (and publishing): the instructions below assume running the application container. If you are on Apple Silicone, you have to run the application independently.
+Before we look at consuming (and publishing): the instructions below assume running the application container. If you are on Apple Silicon, you have to run the application independently.
 
 So instead of executing the Python scripts from the container (see below), you `cd` into the `app` folder and run the scripts from there.
 
