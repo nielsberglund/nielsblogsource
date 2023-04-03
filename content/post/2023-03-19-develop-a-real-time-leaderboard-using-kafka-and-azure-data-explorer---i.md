@@ -24,7 +24,11 @@ description: "This post continues the journey towards creating a leaderboard sys
 
 ---
 
-This is the second post in a series about using Kafka and **Azure Data Explorer** (ADX) to develop a real-time leaderboard for online gaming. Hmm, the second post you say - why is it that the post title says " - I"? Good question; that is because the [initial post][1] was more of an intro, where I introduced a framework for generating and publishing events to Kafka.
+This is the second post in a series about using Kafka and **Azure Data Explorer** (ADX) to develop a real-time leaderboard for online gaming. Hmm, the second post you say - why is it that the post title says " - I"? Good question; that is because the [initial post][1] was more of an intro, where I introduced a framework for generating and publishing events to Kafka. Posts in the series are:
+
+* [**Develop a Real-Time Leaderboard Using Kafka and Azure Data Explorer - Prelude**][1]
+* **Develop a Real-Time Leaderboard Using Kafka and Azure Data Explorer - I** (this post)
+* [**Develop a Real-Time Leaderboard Using Kafka and Azure Data Explorer - II**][10]
 
 Anyway, in this post, you will learn more about ADX and why it is an excellent choice for near real-time applications, how to "hook up" Kafka to ADX and how to ingest data into an ADX database.
 
@@ -533,7 +537,7 @@ After having done the above, you published some events to Kafka. You saw that yo
 
 Finally, you published events in a loop and had a KQL query calculating the highest win/stake ratio for the individual players in real-time.
 
-The next post will cover more about KQL and how to use Azure Data Explorer's REST API to query ADX.
+The [next post][10] will cover more about KQL and how to use Azure Data Explorer's REST API to query ADX.
 
 ## ~ Finally
 
@@ -551,3 +555,4 @@ If you have comments, questions etc., please comment on this post or [ping][ma] 
 [7]: https://docs.microsoft.com/en-us/azure/data-explorer/kusto/management/show-ingestion-mapping-command
 [8]: https://github.com/Azure/kafka-sink-azure-kusto#5-sink-properties
 [9]: https://github.com/nielsberglund/leaderboard-adx.git
+[10]: {{< relref "2023-04-03-develop-a-real-time-leaderboard-using-kafka-and-azure-data-explorer---ii.md" >}}

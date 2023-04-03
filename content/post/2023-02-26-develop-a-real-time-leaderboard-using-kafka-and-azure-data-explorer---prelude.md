@@ -22,7 +22,11 @@ tags:
 description: This post is the first in a series about developing online gaming leaderboards. This post sets the foundation and you use Docker to run Kafka as well as Python in a container generating and publishing events. 
 ---
 
-This blog post series is inspired by my conference talk [**Analyze Billions of Rows of Data in Real-Time Using Azure Data Explorer**][1]. 
+This blog post series is inspired by my conference talk [**Analyze Billions of Rows of Data in Real-Time Using Azure Data Explorer**][1]. Posts in the series are:
+
+* **Develop a Real-Time Leaderboard Using Kafka and Azure Data Explorer - Prelude** (this post)
+* [**Develop a Real-Time Leaderboard Using Kafka and Azure Data Explorer - I**][6]
+* [**Develop a Real-Time Leaderboard Using Kafka and Azure Data Explorer - II**][7]
 
 In the presentation, I talk about "user-facing" analytics. Historically analytics has been limited to a small set of users in an organization (think the C-suite, power users, etc.). User-facing analytics changes that and makes analytics available to the end-users. An example of "user-facing analytics" is LinkedIn's: "Who's viewed your profile". Another example is leaderboards, which are popular in online gaming.
 
@@ -376,5 +380,7 @@ If you have comments, questions etc., please comment on this post or [ping][ma] 
 [2]: https://azure.microsoft.com/en-us/free/
 [3]: https://docs.microsoft.com/en-us/azure/data-explorer/create-cluster-database-portal
 [5]: https://github.com/nielsberglund/leaderboard-prelude
+[6]: {{< relref "2023-03-19-develop-a-real-time-leaderboard-using-kafka-and-azure-data-explorer---i.md" >}}
+[7]: {{< relref "2023-04-03-develop-a-real-time-leaderboard-using-kafka-and-azure-data-explorer---ii.md" >}}
 
 

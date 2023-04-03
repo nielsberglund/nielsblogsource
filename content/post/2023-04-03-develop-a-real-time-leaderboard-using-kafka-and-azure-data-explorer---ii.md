@@ -6,7 +6,7 @@ author: nielsb
 date: 2023-04-03T07:26:29+02:00
 comments: true
 highlight: true
-draft: true
+draft: false
 image: "/images/banner/posts/leaderboard-II.jpg"
 thumbnail: "/images/thumbnails/posts/leaderboard-II.jpg"
 categories:
@@ -90,7 +90,7 @@ The code for this post is in the [leaderboard-KQL][4] GitHub repo. To follow alo
 
 Now you have an ADX cluster with a `leaderboard` database and the `GamePlay` table. You have it, either from following along in the [previous post][2] or you have just created it.
 
-The table may have data from the [last][2] post, and if it does, you should clean it out: `  GamePlay data`, as you will a little bit later ingest new data in the table.
+The table may have data from the [last][2] post, and if it does, you should clean it out: `.clean GamePlay data`, as you will a little bit later ingest new data in the table.
 
 ### Azure Data Explorer Web UI
 
