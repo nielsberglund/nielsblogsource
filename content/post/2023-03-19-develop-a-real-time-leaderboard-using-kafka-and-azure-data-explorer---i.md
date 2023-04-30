@@ -306,7 +306,7 @@ As the event lands in Kafka as JSON (or some other format), ADX needs to underst
 ```
 **Code Snippet 5:** *Ingestion Mapping*
 
-The code in *Code Snippet 5* shows how you create a JSON ingestion mapping, naming it `gameplay_json_mapping`. You see how the columns in the table are mapped against the event fields, where `$` represents the event's root. 
+The code in *Code Snippet 5* shows how you create a JSON ingestion mapping, naming it `gameplay_json_mapping`.  
 
 After running the code in *Code Snippet 5*, you can check that the mapping exists executing: `.show table GamePlay ingestion mappings`, which returns all mappings for that table. 
 
@@ -423,7 +423,7 @@ As the name implies, this property defines the mapping between the topic and the
 
 ``` json
 [{'topic': 'gameplay','db': 'leaderboard', 'table': 'GamePlay',' \
-   format': 'json', 'mapping':'gameplay_json_mapping', 'streaming': 'false'}]
+   format': 'json', 'mapping':'gameplay_json_mapping', 'streaming': 'true'}]
 ```
 **Code Snippet 9:** *Tables Topic Mapping*
 
