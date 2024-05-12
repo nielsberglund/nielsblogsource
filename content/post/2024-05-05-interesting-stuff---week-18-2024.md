@@ -118,21 +118,3 @@ That's all for this week. I hope you enjoy what I did put together. Please comme
 [5]: https://www.confluent.io/blog/introducing-confluent-cloud-freight-clusters/
 [6]: {{< relref "2024-04-28-interesting-stuff---week-17-2024.md" >}}
 [7]: https://aimldatadurban.org/events/2024/data-ai-community-day-dbn-1/
-[8]:
-[9]:
-[10]:
-[11]:
-[12]:
-[13]:
-[14]:
-[15]:
-
-<!-- [postref]: {{< relref "file_name_incl_ext" >}} -->
-
-<!-- [series1]: [SQL Server R Services](/sql_server_2k16_r_services) -->
-<!-- [series2]: [Install R Packages in SQL Server ML Services](/sql_server_ml_services_install_packages) -->
-<!-- [series3]: [sp_execute_external_script and SQL Server Compute Context](/spees_and_sql_compute_context) -->
-
-
-<!-- [findstr]: findstr /I <word_to_find> * -->
-<!-- [findstr]: findstr /I /c:<"phrase to find"> * -->
