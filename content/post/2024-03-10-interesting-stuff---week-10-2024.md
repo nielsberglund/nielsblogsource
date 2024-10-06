@@ -117,18 +117,3 @@ That's all for this week. I hope you enjoy what I did put together. Please comme
 [8]: https://www.meetup.com/azure-transformation-labs/
 [9]: https://betsoftware.com/
 [10]: https://sessionize.com/data-and-ai-community-day-dbn-april-24/
-[11]:
-[12]:
-[13]:
-[14]:
-[15]:
-
-<!-- [postref]: {{< relref "file_name_incl_ext" >}} -->
-
-<!-- [series1]: [SQL Server R Services](/sql_server_2k16_r_services) -->
-<!-- [series2]: [Install R Packages in SQL Server ML Services](/sql_server_ml_services_install_packages) -->
-<!-- [series3]: [sp_execute_external_script and SQL Server Compute Context](/spees_and_sql_compute_context) -->
-
-
-<!-- [findstr]: findstr /I <word_to_find> * -->
-<!-- [findstr]: findstr /I /c:<"phrase to find"> * -->

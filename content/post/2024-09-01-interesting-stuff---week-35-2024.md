@@ -88,14 +88,3 @@ That's all for this week. I hope you find this information valuable. Please shar
 [1]: https://www.infoq.com/news/2024/08/llm-agent-team-enablers/
 [2]: https://techcommunity.microsoft.com/t5/ai-azure-ai-services-blog/fine-tune-gpt-4o-on-azure-openai-service/ba-p/4228693
 [3]: https://towardsdatascience.com/exploring-the-strategic-capabilities-of-llms-in-a-risk-game-setting-43c868d83c3b
-
-
-<!-- [postref]: {{< relref "file_name_incl_ext" >}} -->
-
-<!-- [series1]: [SQL Server R Services](/sql_server_2k16_r_services) -->
-<!-- [series2]: [Install R Packages in SQL Server ML Services](/sql_server_ml_services_install_packages) -->
-<!-- [series3]: [sp_execute_external_script and SQL Server Compute Context](/spees_and_sql_compute_context) -->
-
-
-<!-- [findstr]: findstr /I <word_to_find> * -->
-<!-- [findstr]: findstr /I /c:<"phrase to find"> * -->

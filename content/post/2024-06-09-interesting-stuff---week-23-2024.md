@@ -105,20 +105,3 @@ That's all for this week. I hope you find this information valuable. Please shar
 [6]: https://genai-handbook.github.io/
 [7]: https://thenewstack.io/5-best-practices-for-building-reliable-genai-apps/
 [8]: https://www.confluent.io/blog/how-to-use-flinksql-streamlit-kafka-part-1/
-[9]:
-[10]:
-[11]:
-[12]:
-[13]:
-[14]:
-[15]:
-
-<!-- [postref]: {{< relref "file_name_incl_ext" >}} -->
-
-<!-- [series1]: [SQL Server R Services](/sql_server_2k16_r_services) -->
-<!-- [series2]: [Install R Packages in SQL Server ML Services](/sql_server_ml_services_install_packages) -->
-<!-- [series3]: [sp_execute_external_script and SQL Server Compute Context](/spees_and_sql_compute_context) -->
-
-
-<!-- [findstr]: findstr /I <word_to_find> * -->
-<!-- [findstr]: findstr /I /c:<"phrase to find"> * -->

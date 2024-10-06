@@ -104,21 +104,3 @@ That's all for this week. I hope you find this information valuable. Please shar
 [5]: https://www.marktechpost.com/2024/09/07/scalable-multi-agent-reinforcement-learning-framework-for-efficient-decision-making-in-large-scale-systems/
 [6]: https://www.confluent.io/blog/kafka-producer-internals-preparing-event-data/
 [7]: https://www.confluent.io/blog/mastering-real-time-retrieval-augmented-generation-rag-with-flink/
-[8]:
-[9]:
-[10]:
-[11]:
-[12]:
-[13]:
-[14]:
-[15]:
-
-<!-- [postref]: {{< relref "file_name_incl_ext" >}} -->
-
-<!-- [series1]: [SQL Server R Services](/sql_server_2k16_r_services) -->
-<!-- [series2]: [Install R Packages in SQL Server ML Services](/sql_server_ml_services_install_packages) -->
-<!-- [series3]: [sp_execute_external_script and SQL Server Compute Context](/spees_and_sql_compute_context) -->
-
-
-<!-- [findstr]: findstr /I <word_to_find> * -->
-<!-- [findstr]: findstr /I /c:<"phrase to find"> * -->
