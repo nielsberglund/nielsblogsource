@@ -25,13 +25,13 @@ Yesterday, the [**Data & AI Community Day Durban: Season of AI - Copilots & Agen
 
 <!--more-->
 
-<!-- ## Podcast
+## Podcast
 
 If you rather listen to the summary:
 
+<iframe title="Interesting Stuff - Week 47, 2024" allowtransparency="true" height="150" width="100%" style="border: none; min-width: min(100%, 430px);height:150px;" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=g4gse-1756cee-pb&from=pb6admin&share=1&download=1&rtl=0&fonts=Arial&skin=1&font-color=auto&logo_link=episode_page&btn-skin=7" loading="lazy"></iframe>
 
-
-Click on the link above to listen to the podcast. Oh, the direct link to the episode is [here](). -->
+Click on the link above to listen to the podcast. Oh, the direct link to the episode is [here](https://nielsitberglund.podbean.com/e/interesting-stuff).
 
 ## Generative AI
 
