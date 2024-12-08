@@ -12,9 +12,11 @@ thumbnail: "/images/thumbnails/posts/wrup-49-24.jpg"
 categories:
   - roundup
 tags:
-  - data science
-  - distributed computing
   - SQL Server
+  - Generative AI
+  - AI Agents
+  - Streaming
+  - Real-Time Processing
 description: "This week's blog explores cutting-edge tech advancements, including SQL Server 2025's AI-ready features, LangChain tools for smarter app development, and Large Action Models revolutionizing decision-making. Dive into strategies for optimizing LLM performance and integrating real-time intelligence with proactive agents, showcasing how technology is pushing boundaries like never before!"
 ---
 
