@@ -3,36 +3,36 @@ type: post
 layout: "post"
 title: Interesting Stuff - Xmas, New Year 2024, Week 1 2025
 author: nielsb
-date: 
+date: 2025-01-06T08:40:02+02:00
 comments: true
 highlight: true
 draft: false
-image: "/images/banner/posts/<file_name_incl_ext>"
-thumbnail: "/images/thumbnails/posts/<file_name_incl_ext>"
+image: "/images/banner/posts/xmas-newyear-25.jpg"
+thumbnail: "/images/thumbnails/posts/xmas-newyear-25.jpg"
 categories:
   - roundup
 tags:
-  - data science
-  - distributed computing
-  - SQL Server
-description: Weekly roundup of what interesting stuff I have read in blogs etc.
+  - generative ai
+  - openai
+  - o3
+  - ai-ml
+  - ai agents
+description: "This blog post dives into the most exciting advancements in AI, from the rise of agentic workflows and transformative frameworks to the shrinking of models and plummeting costs. With insights into Proximal Policy Optimization and bold predictions for 2025, it's a snapshot of the trends shaping the future of tech."
 ---
 
+The tech landscape continues to evolve at lightning speed, and this roundup captures some of the most compelling developments in AI and data. From groundbreaking advancements in Proximal Policy Optimization to the rise of agentic workflows and transformative frameworks like aiXplain's Multi-Agent Autonomous Framework, AI's potential seems boundless. 
 
+Add to that the shrinking models, plummeting costs, and bold predictions for 2025, and it's clear we're witnessing a pivotal moment in tech innovation. Dive in to explore the trends shaping our future!
 
 <!--more-->
 
-<!--
 ## Podcast
 
 If you rather listen to the summary:
 
+<iframe title="Interesting Stuff - Xmas, New Year 2024, Week 1 2025" allowtransparency="true" height="150" width="100%" style="border: none; min-width: min(100%, 430px);height:150px;" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=ch3pz-179994e-pb&from=pb6admin&share=1&download=1&rtl=0&fonts=Arial&skin=1&font-color=auto&logo_link=episode_page&btn-skin=7" loading="lazy"></iframe>
 
-
-Click on the link above to listen to the podcast. Oh, the direct link to the episode is [here]().
--->
-
-
+Click on the link above to listen to the podcast. Oh, the direct link to the episode is [here](https://nielsitberglund.podbean.com/e/interesting-stuff-xmas-new-year-2024-week-1-2025/).
 
 ## AI/ML
 
@@ -112,22 +112,3 @@ That's all for this week. I hope you find this information valuable. Please shar
 [4]: https://towardsdatascience.com/understanding-the-mathematics-of-ppo-in-reinforcement-learning-467618b2f8d4
 [5]: https://www.marktechpost.com/2024/12/28/aixplain-introduces-a-multi-ai-agent-autonomous-framework-for-optimizing-agentic-ai-systems-across-diverse-industries-and-applications/
 [6]: https://www.deeplearning.ai/the-batch/issue-281/
-[7]:
-[8]:
-[9]:
-[10]:
-[11]:
-[12]:
-[13]:
-[14]:
-[15]:
-
-<!-- [postref]: {{< relref "file_name_incl_ext" >}} -->
-
-<!-- [series1]: [SQL Server R Services](/sql_server_2k16_r_services) -->
-<!-- [series2]: [Install R Packages in SQL Server ML Services](/sql_server_ml_services_install_packages) -->
-<!-- [series3]: [sp_execute_external_script and SQL Server Compute Context](/spees_and_sql_compute_context) -->
-
-
-<!-- [findstr]: findstr /I <word_to_find> * -->
-<!-- [findstr]: findstr /I /c:<"phrase to find"> * -->
