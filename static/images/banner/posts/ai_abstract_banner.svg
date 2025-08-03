@@ -1,0 +1,205 @@
+<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Neural network gradient -->
+    <radialGradient id="neuralGradient" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#3b82f6;stop-opacity:0.8" />
+      <stop offset="80%" style="stop-color:#1e40af;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#0f172a;stop-opacity:1" />
+    </radialGradient>
+    
+    <!-- Data flow gradient -->
+    <linearGradient id="dataFlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:0" />
+      <stop offset="30%" style="stop-color:#06d6a0;stop-opacity:0.8" />
+      <stop offset="70%" style="stop-color:#3b82f6;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0" />
+    </linearGradient>
+    
+    <!-- Code matrix gradient -->
+    <linearGradient id="codeMatrix" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00ff41;stop-opacity:0.3" />
+      <stop offset="50%" style="stop-color:#39ff14;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#00ff41;stop-opacity:0.05" />
+    </linearGradient>
+    
+    <!-- Particle glow -->
+    <filter id="particleGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Connection pulse -->
+    <filter id="connectionPulse">
+      <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Binary pattern -->
+    <pattern id="binaryPattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+      <rect width="60" height="60" fill="none"/>
+      <text x="10" y="20" fill="#00ff41" font-family="monospace" font-size="8" opacity="0.3">01</text>
+      <text x="30" y="35" fill="#00ff41" font-family="monospace" font-size="8" opacity="0.2">10</text>
+      <text x="15" y="50" fill="#00ff41" font-family="monospace" font-size="8" opacity="0.25">11</text>
+      <text x="40" y="15" fill="#00ff41" font-family="monospace" font-size="8" opacity="0.2">00</text>
+    </pattern>
+  </defs>
+  
+  <!-- Main background -->
+  <rect width="1200" height="400" fill="url(#neuralGradient)"/>
+  
+  <!-- Binary code overlay -->
+  <rect width="1200" height="400" fill="url(#binaryPattern)" opacity="0.4"/>
+  
+  <!-- Central neural network hub -->
+  <g transform="translate(600, 200)">
+    <!-- Core processing unit -->
+    <circle cx="0" cy="0" r="40" fill="#8b5cf6" opacity="0.9" filter="url(#particleGlow)">
+      <animate attributeName="r" values="35;45;35" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Inner processing rings -->
+    <circle cx="0" cy="0" r="25" fill="none" stroke="#a855f7" stroke-width="2" opacity="0.6">
+      <animateTransform attributeName="transform" type="rotate" values="0;360" dur="20s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="0" cy="0" r="15" fill="none" stroke="#c084fc" stroke-width="1" opacity="0.4">
+      <animateTransform attributeName="transform" type="rotate" values="360;0" dur="15s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Neural nodes layer 1 -->
+  <g opacity="0.8">
+    <!-- Left side nodes -->
+    <circle cx="150" cy="100" r="18" fill="#3b82f6" filter="url(#particleGlow)">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite" begin="0s"/>
+    </circle>
+    <circle cx="200" cy="180" r="15" fill="#06d6a0" filter="url(#particleGlow)">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+    <circle cx="120" cy="280" r="20" fill="#10b981" filter="url(#particleGlow)">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2.2s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+    <circle cx="80" cy="200" r="12" fill="#14b8a6" filter="url(#particleGlow)">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="1.8s" repeatCount="indefinite" begin="1.5s"/>
+    </circle>
+    
+    <!-- Right side nodes -->
+    <circle cx="1050" cy="120" r="16" fill="#f59e0b" filter="url(#particleGlow)">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2.3s" repeatCount="indefinite" begin="2s"/>
+    </circle>
+    <circle cx="1000" cy="220" r="19" fill="#ef4444" filter="url(#particleGlow)">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2.1s" repeatCount="indefinite" begin="2.5s"/>
+    </circle>
+    <circle cx="1080" cy="300" r="14" fill="#ec4899" filter="url(#particleGlow)">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="1.9s" repeatCount="indefinite" begin="3s"/>
+    </circle>
+    <circle cx="1120" cy="180" r="17" fill="#8b5cf6" filter="url(#particleGlow)">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2.4s" repeatCount="indefinite" begin="3.5s"/>
+    </circle>
+  </g>
+  
+  <!-- Secondary layer nodes -->
+  <g opacity="0.6">
+    <circle cx="300" cy="80" r="10" fill="#60a5fa" filter="url(#particleGlow)"/>
+    <circle cx="350" cy="160" r="12" fill="#34d399" filter="url(#particleGlow)"/>
+    <circle cx="280" cy="240" r="8" fill="#fbbf24" filter="url(#particleGlow)"/>
+    <circle cx="320" cy="320" r="11" fill="#f87171" filter="url(#particleGlow)"/>
+    
+    <circle cx="900" cy="90" r="9" fill="#a78bfa" filter="url(#particleGlow)"/>
+    <circle cx="850" cy="170" r="13" fill="#fb7185" filter="url(#particleGlow)"/>
+    <circle cx="920" cy="250" r="10" fill="#fcd34d" filter="url(#particleGlow)"/>
+    <circle cx="880" cy="330" r="8" fill="#6ee7b7" filter="url(#particleGlow)"/>
+  </g>
+  
+  <!-- Neural connections -->
+  <g opacity="0.4" filter="url(#connectionPulse)">
+    <!-- Left to center connections -->
+    <path d="M 150,100 Q 400,150 600,200" stroke="url(#dataFlow)" stroke-width="2" fill="none">
+      <animate attributeName="stroke-dasharray" values="0 300;150 150;300 0" dur="4s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 200,180 Q 400,190 600,200" stroke="url(#dataFlow)" stroke-width="1.5" fill="none">
+      <animate attributeName="stroke-dasharray" values="0 250;125 125;250 0" dur="3.5s" repeatCount="indefinite" begin="0.5s"/>
+    </path>
+    <path d="M 120,280 Q 360,240 600,200" stroke="url(#dataFlow)" stroke-width="2" fill="none">
+      <animate attributeName="stroke-dasharray" values="0 280;140 140;280 0" dur="4.2s" repeatCount="indefinite" begin="1s"/>
+    </path>
+    
+    <!-- Center to right connections -->
+    <path d="M 600,200 Q 800,150 1050,120" stroke="url(#dataFlow)" stroke-width="2" fill="none">
+      <animate attributeName="stroke-dasharray" values="0 300;150 150;300 0" dur="3.8s" repeatCount="indefinite" begin="1.5s"/>
+    </path>
+    <path d="M 600,200 Q 800,210 1000,220" stroke="url(#dataFlow)" stroke-width="1.5" fill="none">
+      <animate attributeName="stroke-dasharray" values="0 250;125 125;250 0" dur="4.1s" repeatCount="indefinite" begin="2s"/>
+    </path>
+    <path d="M 600,200 Q 840,250 1080,300" stroke="url(#dataFlow)" stroke-width="2" fill="none">
+      <animate attributeName="stroke-dasharray" values="0 280;140 140;280 0" dur="3.7s" repeatCount="indefinite" begin="2.5s"/>
+    </path>
+  </g>
+  
+  <!-- Data streams -->
+  <g opacity="0.3">
+    <!-- Horizontal data streams -->
+    <rect x="0" y="50" width="1200" height="2" fill="url(#dataFlow)">
+      <animate attributeName="opacity" values="0.1;0.5;0.1" dur="5s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="0" y="150" width="1200" height="1" fill="url(#dataFlow)">
+      <animate attributeName="opacity" values="0.1;0.4;0.1" dur="6s" repeatCount="indefinite" begin="1s"/>
+    </rect>
+    <rect x="0" y="350" width="1200" height="2" fill="url(#dataFlow)">
+      <animate attributeName="opacity" values="0.1;0.6;0.1" dur="4.5s" repeatCount="indefinite" begin="2s"/>
+    </rect>
+  </g>
+  
+  <!-- Floating particles -->
+  <g opacity="0.7">
+    <circle cx="400" cy="300" r="3" fill="#10b981" filter="url(#particleGlow)">
+      <animateTransform attributeName="transform" type="translate" values="0,0;100,-50;200,0;300,50;400,0" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0.5;1;0" dur="15s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="800" cy="100" r="2" fill="#3b82f6" filter="url(#particleGlow)">
+      <animateTransform attributeName="transform" type="translate" values="0,0;-80,40;-160,0;-240,-40;-320,0" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;1;0.8;0" dur="12s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="300" cy="50" r="2.5" fill="#f59e0b" filter="url(#particleGlow)">
+      <animateTransform attributeName="transform" type="translate" values="0,0;150,80;300,0;450,-80;600,0" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0.7;1;0" dur="18s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Quantum field effect -->
+  <g opacity="0.15">
+    <circle cx="600" cy="200" r="150" fill="none" stroke="#8b5cf6" stroke-width="0.5">
+      <animate attributeName="r" values="120;180;120" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.1;0.3;0.1" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="600" cy="200" r="200" fill="none" stroke="#3b82f6" stroke-width="0.5">
+      <animate attributeName="r" values="180;240;180" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.05;0.2;0.05" dur="10s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Digital rain effect -->
+  <g opacity="0.2">
+    <rect x="100" y="0" width="2" height="400" fill="url(#codeMatrix)">
+      <animate attributeName="opacity" values="0;0.4;0" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="300" y="0" width="1" height="400" fill="url(#codeMatrix)">
+      <animate attributeName="opacity" values="0;0.3;0" dur="4s" repeatCount="indefinite" begin="1s"/>
+    </rect>
+    <rect x="700" y="0" width="2" height="400" fill="url(#codeMatrix)">
+      <animate attributeName="opacity" values="0;0.5;0" dur="3.5s" repeatCount="indefinite" begin="2s"/>
+    </rect>
+    <rect x="1000" y="0" width="1" height="400" fill="url(#codeMatrix)">
+      <animate attributeName="opacity" values="0;0.3;0" dur="5s" repeatCount="indefinite" begin="0.5s"/>
+    </rect>
+  </g>
+</svg>

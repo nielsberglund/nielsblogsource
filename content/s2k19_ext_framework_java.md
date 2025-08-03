@@ -36,4 +36,3 @@ This is a collection of posts about the Java language extensions introduced in *
 [9]: {{< relref "2019-08-03-sql-server-2019-ctp32--java.md" >}}
 [10]: {{< relref "2019-10-26-sql-server-2019--java-null-handling-take-two.md" >}}
 [11]: {{< relref "2019-11-03-sql-server-2019--java-parameters.md" >}}
-

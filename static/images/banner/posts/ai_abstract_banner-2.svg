@@ -1,0 +1,234 @@
+<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background gradients -->
+    <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#1e293b;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#334155;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#475569;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Terminal gradient -->
+    <linearGradient id="terminalBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1f2937;stop-opacity:0.95" />
+      <stop offset="100%" style="stop-color:#111827;stop-opacity:0.95" />
+    </linearGradient>
+    
+    <!-- Code flow gradient -->
+    <linearGradient id="codeFlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00ff41;stop-opacity:0" />
+      <stop offset="20%" style="stop-color:#00ff41;stop-opacity:0.3" />
+      <stop offset="50%" style="stop-color:#39ff14;stop-opacity:0.7" />
+      <stop offset="80%" style="stop-color:#00ff41;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#00ff41;stop-opacity:0" />
+    </linearGradient>
+    
+    <!-- Installation progress gradient -->
+    <linearGradient id="installProgress" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.3" />
+      <stop offset="50%" style="stop-color:#06d6a0;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:0.3" />
+    </linearGradient>
+    
+    <!-- Node.js glow -->
+    <filter id="nodeGlow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Circuit pattern -->
+    <pattern id="circuitPattern" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+      <rect width="80" height="80" fill="none"/>
+      <path d="M20,20 L60,20 L60,60 L20,60 Z" stroke="#3b82f6" stroke-width="0.5" fill="none" opacity="0.2"/>
+      <circle cx="20" cy="20" r="1" fill="#3b82f6" opacity="0.4"/>
+      <circle cx="60" cy="20" r="1" fill="#3b82f6" opacity="0.4"/>
+      <circle cx="60" cy="60" r="1" fill="#3b82f6" opacity="0.4"/>
+      <circle cx="20" cy="60" r="1" fill="#3b82f6" opacity="0.4"/>
+      <path d="M40,0 L40,80" stroke="#10b981" stroke-width="0.3" opacity="0.3"/>
+      <path d="M0,40 L80,40" stroke="#10b981" stroke-width="0.3" opacity="0.3"/>
+    </pattern>
+  </defs>
+  
+  <!-- Main background -->
+  <rect width="1200" height="400" fill="url(#mainGradient)"/>
+  
+  <!-- Circuit pattern overlay -->
+  <rect width="1200" height="400" fill="url(#circuitPattern)" opacity="0.4"/>
+  
+  <!-- Windows logo and setup representation -->
+  <g transform="translate(50, 50)">
+    <!-- Windows flag -->
+    <g transform="scale(1.5)">
+      <rect x="0" y="0" width="15" height="15" fill="#00d4ff" opacity="0.9"/>
+      <rect x="17" y="0" width="15" height="15" fill="#00d4ff" opacity="0.9"/>
+      <rect x="0" y="17" width="15" height="15" fill="#00d4ff" opacity="0.9"/>
+      <rect x="17" y="17" width="15" height="15" fill="#00d4ff" opacity="0.9"/>
+    </g>
+    
+    <!-- WSL installation arrow -->
+    <path d="M60,25 Q 90,25 120,50" stroke="#06d6a0" stroke-width="3" fill="none" marker-end="url(#arrowhead)" opacity="0.8">
+      <animate attributeName="stroke-dasharray" values="0 100;50 50;100 0" dur="3s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#06d6a0"/>
+    </marker>
+  </defs>
+  
+  <!-- Terminal window representing WSL/Ubuntu -->
+  <g transform="translate(180, 80)">
+    <!-- Terminal frame -->
+    <rect x="0" y="0" width="300" height="200" rx="8" fill="url(#terminalBg)" stroke="#374151" stroke-width="2" opacity="0.95"/>
+    
+    <!-- Terminal header -->
+    <rect x="0" y="0" width="300" height="25" rx="8" fill="#374151"/>
+    <rect x="0" y="20" width="300" height="5" fill="#374151"/>
+    
+    <!-- Terminal buttons -->
+    <circle cx="15" cy="12" r="4" fill="#ef4444"/>
+    <circle cx="30" cy="12" r="4" fill="#f59e0b"/>
+    <circle cx="45" cy="12" r="4" fill="#10b981"/>
+    
+    <!-- Ubuntu/WSL indicator -->
+    <text x="250" y="17" text-anchor="middle" fill="#e97743" font-family="monospace" font-size="10" font-weight="bold">Ubuntu</text>
+    
+    <!-- Installation commands -->
+    <text x="15" y="50" fill="#10b981" font-family="monospace" font-size="10">$ wsl --install</text>
+    <text x="15" y="70" fill="#e5e7eb" font-family="monospace" font-size="9">Installing Ubuntu...</text>
+    
+    <text x="15" y="100" fill="#10b981" font-family="monospace" font-size="10">$ curl -o- https://raw.githubusercontent.com/</text>
+    <text x="15" y="115" fill="#10b981" font-family="monospace" font-size="10">  nvm-sh/nvm/v0.40.3/install.sh | bash</text>
+    
+    <text x="15" y="140" fill="#10b981" font-family="monospace" font-size="10">$ nvm install --lts</text>
+    <text x="15" y="155" fill="#e5e7eb" font-family="monospace" font-size="9">Installing Node.js v20.11.0...</text>
+    
+    <text x="15" y="180" fill="#10b981" font-family="monospace" font-size="10">$ npm install -g @anthropic-ai/claude-code</text>
+    
+    <!-- Installation progress bar -->
+    <rect x="15" y="190" width="200" height="4" fill="#1f2937" stroke="#374151" stroke-width="1"/>
+    <rect x="15" y="190" width="120" height="4" fill="url(#installProgress)">
+      <animate attributeName="width" values="0;200;200" dur="5s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  
+  <!-- Node.js logo representation -->
+  <g transform="translate(520, 120)">
+    <!-- Node.js hexagon-like shape -->
+    <polygon points="25,10 45,20 45,40 25,50 5,40 5,20" fill="#68a063" filter="url(#nodeGlow)" opacity="0.9"/>
+    <text x="25" y="35" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">N</text>
+    
+    <!-- npm package indicator -->
+    <rect x="0" y="60" width="50" height="15" rx="3" fill="#cb3837" opacity="0.8"/>
+    <text x="25" y="72" text-anchor="middle" fill="white" font-family="monospace" font-size="8">npm</text>
+  </g>
+  
+  <!-- Data flow from installation to Claude Code -->
+  <g opacity="0.6">
+    <path d="M480,180 Q 550,160 620,180" stroke="url(#codeFlow)" stroke-width="2" fill="none">
+      <animate attributeName="stroke-dasharray" values="0 200;100 100;200 0" dur="4s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Claude Code logo area -->
+  <g transform="translate(650, 100)">
+    <!-- Claude C logo representation -->
+    <circle cx="30" cy="30" r="25" fill="none" stroke="#d97706" stroke-width="4" opacity="0.9"/>
+    <path d="M15,20 Q 15,15 20,15 Q 35,15 35,30 Q 35,45 20,45 Q 15,45 15,40" stroke="#d97706" stroke-width="4" fill="none" opacity="0.9"/>
+    
+    <!-- "Code" text representation -->
+    <text x="70" y="40" fill="#d97706" font-family="Arial, sans-serif" font-size="16" font-weight="bold" opacity="0.9">Code</text>
+    
+    <!-- Terminal brackets around logo -->
+    <text x="10" y="45" fill="#00ff41" font-family="monospace" font-size="20" opacity="0.7">[</text>
+    <text x="110" y="45" fill="#00ff41" font-family="monospace" font-size="20" opacity="0.7">]</text>
+  </g>
+  
+  <!-- Claude Code terminal interaction -->
+  <g transform="translate(800, 80)">
+    <!-- Mini terminal -->
+    <rect x="0" y="0" width="350" height="180" rx="6" fill="url(#terminalBg)" stroke="#374151" stroke-width="1" opacity="0.9"/>
+    
+    <!-- Terminal header -->
+    <rect x="0" y="0" width="350" height="20" rx="6" fill="#374151"/>
+    <circle cx="12" cy="10" r="3" fill="#ef4444"/>
+    <circle cx="24" cy="10" r="3" fill="#f59e0b"/>
+    <circle cx="36" cy="10" r="3" fill="#10b981"/>
+    <text x="175" y="14" text-anchor="middle" fill="#9ca3af" font-family="monospace" font-size="8">Claude Code</text>
+    
+    <!-- Interactive session -->
+    <text x="10" y="40" fill="#10b981" font-family="monospace" font-size="9">$ claude</text>
+    <text x="10" y="55" fill="#a855f7" font-family="monospace" font-size="8">Welcome to Claude Code!</text>
+    
+    <text x="10" y="75" fill="#e5e7eb" font-family="monospace" font-size="8">Human: Create a simple Hello World Node.js</text>
+    <text x="10" y="87" fill="#e5e7eb" font-family="monospace" font-size="8">application with an HTML frontend.</text>
+    
+    <text x="10" y="105" fill="#3b82f6" font-family="monospace" font-size="8">Claude: I'll help you create a Node.js app</text>
+    <text x="10" y="117" fill="#3b82f6" font-family="monospace" font-size="8">with Express and HTML frontend...</text>
+    
+    <text x="10" y="135" fill="#10b981" font-family="monospace" font-size="8">✓ Creating package.json</text>
+    <text x="10" y="147" fill="#10b981" font-family="monospace" font-size="8">✓ Creating server.js</text>
+    <text x="10" y="159" fill="#10b981" font-family="monospace" font-size="8">✓ Creating public/index.html</text>
+    
+    <!-- Cursor -->
+    <rect x="10" y="165" width="8" height="10" fill="#10b981">
+      <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  
+  <!-- Code particles floating upward -->
+  <g opacity="0.4">
+    <text x="100" y="350" fill="#00ff41" font-family="monospace" font-size="8" opacity="0.6">01010011</text>
+    <animateTransform attributeName="transform" type="translate" values="0,0;50,-100;100,-200" dur="8s" repeatCount="indefinite"/>
+    
+    <text x="300" y="380" fill="#3b82f6" font-family="monospace" font-size="10" opacity="0.5">npm</text>
+    <animateTransform attributeName="transform" type="translate" values="0,0;-30,-120;-60,-240" dur="10s" repeatCount="indefinite" begin="2s"/>
+    
+    <text x="500" y="360" fill="#10b981" font-family="monospace" font-size="9" opacity="0.7">{ }</text>
+    <animateTransform attributeName="transform" type="translate" values="0,0;80,-150;160,-300" dur="12s" repeatCount="indefinite" begin="4s"/>
+    
+    <text x="900" y="370" fill="#d97706" font-family="monospace" font-size="8" opacity="0.6">claude</text>
+    <animateTransform attributeName="transform" type="translate" values="0,0;-50,-130;-100,-260" dur="9s" repeatCount="indefinite" begin="1s"/>
+  </g>
+  
+  <!-- Installation progress timeline -->
+  <g transform="translate(100, 330)">
+    <!-- Progress line -->
+    <line x1="0" y1="20" x2="1000" y2="20" stroke="#374151" stroke-width="2"/>
+    
+    <!-- Installation steps -->
+    <circle cx="0" cy="20" r="5" fill="#00d4ff"/>
+    <text x="0" y="40" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Windows</text>
+    
+    <circle cx="200" cy="20" r="5" fill="#e97743"/>
+    <text x="200" y="40" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">WSL</text>
+    
+    <circle cx="400" cy="20" r="5" fill="#68a063"/>
+    <text x="400" y="40" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Node.js</text>
+    
+    <circle cx="600" cy="20" r="5" fill="#d97706"/>
+    <text x="600" y="40" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Claude Code</text>
+    
+    <circle cx="800" cy="20" r="5" fill="#10b981"/>
+    <text x="800" y="40" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">First App</text>
+    
+    <circle cx="1000" cy="20" r="5" fill="#8b5cf6"/>
+    <text x="1000" y="40" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">AI Development</text>
+    
+    <!-- Progress indicator -->
+    <circle cx="600" cy="20" r="8" fill="none" stroke="#d97706" stroke-width="2" opacity="0.8">
+      <animate attributeName="r" values="5;12;5" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0.2;0.8" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Event management system preview -->
+  <g transform="translate(50, 20)" opacity="0.3">
+    <text x="0" y="0" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12" opacity="0.7">Future: Data & AI Community Day Event Management System</text>
+  </g>
+</svg>

@@ -1,0 +1,5 @@
+<figure>
+    {{ $url := .Get 0 }}
+    <img src="{{ $url }}">
+    {{ with .Get 1 }}<figcaption>{{ . }}</figcaption>{{ end }}
+</figure>
