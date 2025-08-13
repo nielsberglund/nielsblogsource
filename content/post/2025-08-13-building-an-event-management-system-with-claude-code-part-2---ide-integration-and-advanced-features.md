@@ -6,7 +6,7 @@ author: nielsb
 date: 2025-08-13T06:09:38+02:00
 comments: true
 highlight: true
-draft: true
+draft: false
 image: "/images/banner/posts/claude_code_header-2.png"
 thumbnail: "/images/thumbnails/posts/claude_code_header-2.png"
 categories:
@@ -346,14 +346,3 @@ That's all for now. I hope you find this information valuable. Please share your
 
 [1]: https://docs.anthropic.com/en/docs/claude-code/ide-integrations#jet-brains
 [2]: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack
-
-<!--
-  post reference
-  [pkg1]: {{< relref "" >}}
--->  
-
-<!--
-{{< imgfig2 "<image-path /images/posts/image.ext" "Fig Num: " "Caption" >}}
-<figcaption><br><b>Code Snippet 15:</b> <em>Claude Code Command</em></br></figcaption>
--->
-
