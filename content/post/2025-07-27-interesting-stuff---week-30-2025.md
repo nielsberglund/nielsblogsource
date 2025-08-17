@@ -12,9 +12,12 @@ thumbnail: "/images/thumbnails/posts/wrup-30-25.jpg"
 categories:
   - roundup
 tags:
-  - data science
-  - distributed computing
-  - SQL Server
+  - Generative AI
+  - GitHub Copilot
+  - AI-assisted Coding
+  - Kafka
+  - Streaming
+  - Data & AI Community Day Durban
 description: "Week 30 tech roundup: GitHub Copilot's AI debugging breakthrough, ChatGPT Agent reality check, GitHub Spark's no-code revolution & reimagining Kafka. Call for help finding a venue for our next Data & AI Community Day Durban event."
 ---
 
