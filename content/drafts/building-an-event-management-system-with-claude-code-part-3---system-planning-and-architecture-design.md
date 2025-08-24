@@ -99,12 +99,16 @@ Open your Claude Code shell in VSCode and let's start with understanding what we
 ``` bash
 Analyze and think about the typical functionality provided by event management 
 platforms like Brevo for organizing tech conferences. Think about what 
-features would be essential for managing "Data & AI Community Day Durban" 
-events, including speaker management, participant registration, communication 
-workflows, and reporting. Keep in mind that the creation of an event and 
-registration of speakers happens through a third party system: Sessionize. 
-Participant registration also happens via a third party system: Quicket. 
-What are the key pain points that a custom solution could address better than generic platforms?
+features would be essential for managing "Data & AI Community Day Durban". 
+Keep in mind that speakers and participants are registered through third part 
+systems; Sessionize and Quicket respectively. The system should support 
+batch-uploading of speakers, registrations, and paricipations of events.
+Part of the system is communication and reporting.
+The system should also provide robust reporting capabilities to track 
+key metrics such as registration numbers, attendee engagement, 
+and speaker performance. This will help event organizers make data-driven 
+decisions and improve future events. What are the key pain points that 
+a custom solution could address better than generic platforms?
 ```
 
 
