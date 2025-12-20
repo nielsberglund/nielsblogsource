@@ -10,8 +10,8 @@ This is the "Table of Content" for the **Building an Event Management System wit
 
 ## Table of Content
 
-* [**Building an Event Management System with Claude Code: Installing Claude Code**][1]: We introduced the project and looked at the steps to install Claude Code on both macOS as well as Windows.
-* [**Building an Event Management System with Claude Code: IDE Integration**][2]: Learn VS Code integration with Claude Code for AI-assisted development. Includes WSL setup, CLAUDE.md configuration, and building your first API endpoints.
+* [**Building an Event Management System with Claude Code: Installing Claude Code**][1]: We introduced the project and looked at the steps to install Claude Code on both macOS as well as Windows. (Edited: 2025-12-20)
+* [**Building an Event Management System with Claude Code: IDE Integration**][2]: Learn VS Code integration with Claude Code for AI-assisted development. Includes WSL setup, CLAUDE.md configuration, and building your first API endpoints. (Edited: 2025-12-20)
 
 
 

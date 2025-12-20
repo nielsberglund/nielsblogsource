@@ -21,7 +21,9 @@ tags:
 description: "Learn VS Code integration with Claude Code for AI-assisted development. Includes WSL setup, CLAUDE.md configuration, and building your first API endpoints."
 ---
 
-Welcome back to our Claude Code development series! In Part 1, we successfully installed Claude Code on both macOS and Windows and created our first AI-assisted `Node.js` application. Today, we're taking our development workflow to the next level by integrating Claude Code with popular IDEs and exploring advanced features that will significantly boost our productivity.
+**Claude Code Version**: This post is based on Claude Code v2.x (December 2025). Installation methods may vary for earlier versions.
+
+Welcome back to our Claude Code development series! In Part 1, we successfully installed Claude Code on both macOS and Windows (now much simpler with direct Windows support!) and created our first AI-assisted `Node.js` application. Today, we're taking our development workflow to the next level by integrating Claude Code with popular IDEs and exploring advanced features that will significantly boost our productivity.
 
 * To see all the posts in the series, go to: [**Building an Event Management System with Claude Code**](/contact-event-claude-code).
 
@@ -31,6 +33,8 @@ At **Derivco**, where we're implementing AI-assisted coding across development t
 
 <!--more-->
 
+---
+
 ## Recap: Part 1 Accomplishments
 
 Before exploring IDE integration, let's quickly review what we covered in our previous post:
@@ -39,9 +43,9 @@ Before exploring IDE integration, let's quickly review what we covered in our pr
 
 🛠️ **Installation Process:** We completed the full Claude Code installation on macOS/Windows, including:
 
-* Windows Subsystem for Linux (WSL) setup
+* ~Windows Subsystem for Linux (WSL) setup~ (no longer needed for Windows. Claude Code can now be installed directly on Windows)
 * `Node.js` installation using Node Version Manager (`nvm`)
-* Claude Code installation via `npm`
+* Claude Code installation via scripts.
 * Authentication and initial configuration
 
 🚀 **First Steps with Claude Code:** We explored the interactive shell, learned about different usage modes (REPL vs. non-interactive), and discovered essential shortcuts and commands for efficient operation.
@@ -52,15 +56,29 @@ Before exploring IDE integration, let's quickly review what we covered in our pr
 
 With this foundation in place, we're ready to explore more sophisticated development workflows.
 
+---
+
 ## IDE Integration: Bringing AI Into Your Editor
 
 Claude Code works great with any Integrated Development Environment (IDE) that has a terminal. Just run `claude`, and you’re ready to go. However, while the terminal interface is powerful, whether in the Claude Code interactive shell or in the terminal window of your IDE, most developers prefer working within their IDE, seeing source files being created, file diffs, and more. Claude Code offers excellent integration with popular editors, allowing you to leverage AI assistance without leaving your familiar environment.
 
 > **NOTE:** In this post, we talk only about VSCode integration. The steps below work for all VSCode forks, such as Cursor, Windsurf, etc. For JetBrains IDEs, like IntelliJ, PyCharm, Android Studio, WebStorm, PhpStorm and GoLand, you can find detailed instructions in the [Claude Code documentation][1].
 
-Claude Code works directly within VSCode, providing contextual assistance right where you need it. Setting up Claude Code in VSCode is a straightforward process. However, if you are on Windows and using WSL, you need to enable VSCode for WSL. The following section discusses this. If you are on macOS, you can skip this step and go directly to [Integrating Claude Code into VSCode](#integrating-claude-code-into-vscode).  
+Claude Code works directly within VSCode, providing contextual assistance right where you need it. Setting up Claude Code in VSCode is a straightforward process. However, if you are on Windows and using WSL, you need to enable VSCode for WSL. The following section discusses this. 
 
-### VSCode & WSL
+If you are on macOS, or on Windows and not interested in a WSL integration, you can skip this step and go directly to [Integrating Claude Code into VSCode](#integrating-claude-code-into-vscode).  
+
+### VSCode Integration
+
+Claude Code works directly within VSCode on all platforms, providing contextual assistance right where you need it. 
+
+### For Windows Users
+
+**Note**: In Part 1, we installed Claude Code directly on Windows. You can use Claude Code in VSCode either:
+1. **Native Windows** (Recommended for simplicity): Use VSCode on Windows with Claude Code
+2. **WSL Environment** (Optional, for Linux workflow preference): If you prefer Linux development environment
+
+If you choose to use WSL, you need to set up VSCode to work seamlessly with WSL. The following steps guide you through the process of enabling VSCode for WSL.
 
 To enable seamless integration between VSCode (which runs in Windows) and WSL, you need to install the [Remote Development extension pack][2] in your VSCode. The Remote Development extension pack is the "secret tunnel" that lets VSCode treat your Linux distro as if it were native. The bundle installs a tiny VSCode Server inside WSL (and also gives you Remote-SSH, Dev Containers and Remote Tunnels), so all the heavyweight work, IntelliSense, debugging, Git ops, and even running your test suite execute in Linux while the UI stays snappy on Windows. That means no duplicated tool-chains, no path-translation weirdness, and perfect environment parity with the Ubuntu box you’ll eventually deploy to.
 
@@ -104,9 +122,11 @@ As in *Figure 6*, you open the folder by clicking on the **Open Folder** button 
 
 In *Figure 7*, you see the folder `claude-test` opened in VSCode, and you can now start working on your project directly in WSL.
 
-### Integrating Claude Code into VSCode
+---
 
-Now, whether you are a macOS or Windows user using WSL, you are ready to integrate Claude Code into VSCode. The integration process is straightforward and allows you to leverage Claude Code's AI capabilities directly within your IDE. To integrate Claude Code into VSCode, you need to have the **Claude Code for VSCode** extension installed. The extension provides a seamless experience for using Claude Code within your IDE.
+## Integrating Claude Code into VSCode
+
+Now, whether you are a macOS, Windows, or Windows user using WSL, you are ready to integrate Claude Code into VSCode. The integration process is straightforward and allows you to leverage Claude Code's AI capabilities directly within your IDE. To integrate Claude Code into VSCode, you need to have the **Claude Code for VSCode** extension installed. The extension provides a seamless experience for using Claude Code within your IDE.
 
 You can install the extension as you would any other extension, go to the Extensions view in VSCode, search for "Claude Code", and click on the **Install** button. Once the extension is installed, when you choose a source file in the Explorer view, you will see a new button in the top right corner of the editor window:
 
@@ -118,7 +138,7 @@ Clicking on the button, outlined in red in *Figure 8*, opens the Claude Code int
 
 In *Figure 9*, you see the Claude Code interactive shell opened inside VSCode.You can now start typing commands and interacting with Claude Code just like you would in the terminal. Why is this good?
 
-#### Context-Aware Development
+### Context-Aware Development
 
 IDE integration's key advantage is context awareness. Claude Code doesn't just see isolated code snippets; it understands your entire project structure, including:
 
@@ -129,6 +149,8 @@ IDE integration's key advantage is context awareness. Claude Code doesn't just s
 * Code style and naming conventions
 
 Let us look at some of this, but before we do that, we need to look at one integral part of Claude Code: the `CLAUDE.md` file.
+
+---
 
 ## CLAUDE.md
 
@@ -173,6 +195,8 @@ The `CLAUDE.md` file you see in *Figure 11* has not been created yet in the file
 > **NOTE:** If you want more information about `CLAUDE.md`, the article [**What's a Claude.md File? 5 Best Practices to Use Claude.md for Claude Code**](/https://apidog.com/blog/claude-md/) is definitely worth reading.
 
 Now, let's get onto "brass-tacks" and see how to use Claude Code in your IDE.
+
+---
 
 ## Using Claude Code in VSCode
 
@@ -292,6 +316,8 @@ Executing the code in *Code Snippet 6* should give you the result you see beneat
 
 Congratulations! You have now used Claude Code to create some new functionality in the application. The application is no longer a *glorified static file server* - so there!
 
+---
+
 ## Summary
 
 This post significantly expanded our Claude Code development capabilities by focusing on IDE integration and advanced project management features. We successfully integrated Claude Code with VS Code (including WSL setup for Windows users), transforming our development experience from terminal-based interactions to seamless in-editor AI assistance.
@@ -314,6 +340,8 @@ The integration of Claude Code into our IDE workflow has transformed how we appr
 
 This foundation prepares us for the more advanced planning work coming in Part 3, where we'll use Claude Code's analytical capabilities to design the complete architecture for our event management system before diving into implementation.
 
+---
+
 ## What's Next?
 
 Our next instalment will focus on using Claude Code's planning and architectural capabilities to design our event management system:
@@ -333,6 +361,8 @@ Our next instalment will focus on using Claude Code's planning and architectural
 We'll also explore advanced Claude Code planning techniques, including how to use it for technical documentation generation, risk assessment, and creating comprehensive project documentation that will guide our development efforts throughout the series.
 
 This planning-focused approach will ensure we have a solid foundation before diving into implementation, demonstrating how Claude Code can be invaluable not just for writing code but for the crucial planning and design phases that determine project success.
+
+---
 
 ## ~ Finally
 
