@@ -1,0 +1,13 @@
+<div class="callout callout-{{ .Get 0 }}">
+  <div class="callout-title">
+    {{ if eq (.Get 0) "tip" }}💡 TIP{{ end }}
+    {{ if eq (.Get 0) "warning" }}⚠️ WARNING{{ end }}
+    {{ if eq (.Get 0) "note" }}📝 NOTE{{ end }}
+    {{ if eq (.Get 0) "info" }}ℹ️ INFO{{ end }}
+    {{ if eq (.Get 0) "danger" }}🚨 DANGER{{ end }}
+    {{ if eq (.Get 0) "success" }}✅ SUCCESS{{ end }}
+  </div>
+  <div class="callout-content">
+    {{ .Inner | markdownify }}
+  </div>
+</div>

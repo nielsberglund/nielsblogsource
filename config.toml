@@ -137,6 +137,9 @@ params = ["categories", "tags"]
     style = "solarized-light"
     lineNos = true
 
+[params.mermaid]
+  enable = true
+
 [sitemap]
   changefreq = 'monthly'
   filename = 'sitemap.xml'
