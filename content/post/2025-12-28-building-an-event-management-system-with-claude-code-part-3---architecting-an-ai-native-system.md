@@ -315,7 +315,7 @@ Above, I said Claude's recommendation was unexpected. The reason is that, in the
 
 Since we are now going truly down the rabbit hole, I decided to as Claude Code to compare the three options: Brevo, MailGun, and MailJet. Here is the comparison I got back:
 
-```
+
 | Feature                   | Brevo            | MailJet                  | Mailgun                  |
 |---------------------------|------------------|--------------------------|--------------------------|
 | Free Tier (emails/year)   | 109,500          | 72,000                   | 36,000                   |
@@ -328,7 +328,7 @@ Since we are now going truly down the rabbit hole, I decided to as Claude Code t
 | Unrestricted Sending      | ✅ Yes           | ⚠️ Yes (Essential+)      | ❌ No (Foundation+)      |
 | Marketing + Transactional | ✅ Both          | ✅ Both                  | ❌ Transactional only    |
 | Ease of Use               | ⭐⭐⭐⭐⭐      | ⭐⭐⭐⭐                | ⭐⭐ (dev-only)         |
-```
+
 **Code Snippet 7:** *Claude Code Email Service Comparison*
 
 So, according to *Code Snippet 7*, Brevo is the best option for my use case. It offers the highest free tier, supports both marketing and transactional emails, includes a drag-and-drop editor, and doesn't require a contact database on its end. MailJet is a close second, but it costs $25/month for my usage. MailGun falls short in several areas, especially since I want both marketing and transactional emails. The final question then is whether there are existing MCP servers for Brevo. Asking Claude Code again, I get the answer that there are a couple of existing Brevo MCP servers, and it recommended one: `houtini-ai/brevo-mcp`.

@@ -1,7 +1,7 @@
 
 figure {
     margin:0px;
-    margin-top:-20px;
+    margin-top:-10px;
 }
 
 img {
@@ -11,7 +11,35 @@ img {
 
 figcaption{
     margin-top: -20px;
-    margin-bottom: -20px;
+}
+
+/* Override paragraph spacing */
+p {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Reduce spacing before/after lists */
+ul, ol {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.75rem !important;
+}
+
+/* Reduce spacing between list items */
+li {
+  margin-bottom: 0.25rem !important;
+}
+
+/* Reduce spacing between paragraph and following list */
+p + ul,
+p + ol {
+  margin-top: 0.5rem !important;
+}
+
+/* Reduce spacing between list and following paragraph */
+ul + p,
+ol + p {
+  margin-top: 0.75rem !important;
 }
 
 /* Base callout styles */
