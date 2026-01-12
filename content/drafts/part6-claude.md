@@ -1,8 +1,8 @@
-# Building an Event Management System with Claude Code: Part 6 - Building a Custom Import MCP Server
-
-**Posted by nielsb on [Date TBD]**
-
-**Tags:** Generative AI, Claude Code, Anthropic, AI-assisted Coding, PostgreSQL, MCP Servers, AI-Native Development, FastMCP
+---
+type: post
+layout: "post"
+draft: true
+---
 
 Welcome back to the **Building an Event Management System with Claude Code** series! If you've been following along, you know we've made significant progress: we've installed Claude Code, integrated it with our IDE, designed an AI-native architecture, set up our cloud database, and created a complete schema with natural language query capabilities.
 
@@ -233,9 +233,9 @@ Why does this matter? Because real data reveals requirements that mental models 
 ---
 
 
-## The Architecture: Hybrid MCP Approach
 
-Based on our research in Part 3, we decided on a hybrid approach following the 80/20 principle:
+
+
 
 ```
 ┌─────────────────────────────────────────────────────────────┐

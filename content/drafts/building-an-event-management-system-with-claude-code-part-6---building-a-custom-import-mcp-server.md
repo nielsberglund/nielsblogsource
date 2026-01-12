@@ -3,7 +3,7 @@ type: post
 layout: "post"
 title: "Building an Event Management System with Claude Code: Part 6 - Building a Custom Import MCP Server"
 author: nielsb
-date: 2026-01-10T15:30:52+02:00
+date: 2026-01-30T15:30:52+02:00
 comments: true
 highlight: true
 draft: true
