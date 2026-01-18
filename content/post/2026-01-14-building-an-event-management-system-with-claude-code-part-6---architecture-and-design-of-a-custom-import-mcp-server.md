@@ -256,6 +256,7 @@ The speaker evaluations come from an "in-house" Microsoft Forms survey and looks
 5. **Error handling** - Partial failures, rollback strategies
 
 **Our additional complexity:**
+
 6. **Group purchases** - Multiple tickets per order, different attendees from the purchaser
 7. **Speaker/attendee duality** - Same person might attend one year, speak the next
 8. **Fuzzy matching** - Feedback forms don't have exact session IDs
