@@ -64,7 +64,7 @@ This led to our architectural decision: **the Import MCP Server is self-containe
 
 {{< imgfig2 "/images/posts/claude-code-8-1.png" "Figure 1: " "MCP Server Isolation Constraint" >}}
 
-Shown in *Figure 1*, is the this isolation between MCP servers. It means our Import MCP Server must implement all import logic itself, without relying on external MCP servers. However, this isolation also means we can optimize the Import MCP Server specifically for import tasks, without worrying about interfering with other MCP servers.
+What *Figure 1* depicts is the isolation between MCP servers. It means our Import MCP Server must implement all import logic itself, without relying on external MCP servers. However, this isolation also means we can optimise the Import MCP Server specifically for import tasks, without worrying about interfering with other MCP servers.
 
 This self-contained approach gives us:
 
@@ -81,7 +81,7 @@ Now let's build it.
 
 Let's pick up where we left off. In Part 7, we had our project structure ready with the core functions (`validate_import_data` and `preview_import`) working. Now we need to implement the actual import functions.
 
-I started Claude Code in our project directory, with the ususal `claude --continue` command:
+I started Claude Code in our project directory, with the usual (by now) `claude --continue` command:
 
 ```
  ✨ What Was Implemented
@@ -114,7 +114,7 @@ I started Claude Code in our project directory, with the ususal `claude --contin
 ```
 {{< gen-cap "Code Snippet 1" "Claude Code Startup" >}}
 
-We see in *Code Snippet 1* that Claude Code has picked up where we left off, thanks to the `--continue` flag. It shows the current state of our project, with the first two functions implemented and the remaining five ready for implementation. However, looking at what was implemented, I noticed that the `import_quicket_checkins` and `import_walkup_registrations` functions were listed under "Phase 2 Tools (Skeleton Only)". This was a mistake on my part, and I will correct that later in this post.
+We see in *Code Snippet 1* that Claude Code has picked up where we left off, thanks to the `--continue` flag. It shows the current state of our project: the first two functions are implemented, and the remaining five are ready to be implemented. However, looking at what was implemented, I noticed that the `import_quicket_checkins` function was listed under "Phase 2 Tools (Skeleton Only)". This was a mistake on my part, and I will correct that later in this post.
 
 I then issued the following prompt to get us started:
 
@@ -141,13 +141,13 @@ Claude Code started to respond, however:
 ```
 {{< gen-cap "Code Snippet 3" "Claude Code Compacting the Conversation" >}}
 
-You see in *Code Snippet 3* how Claude Code started to read the database schema file to understand the structure of the data we need to import. However, while reading the file, it compacted the conversation to save memory.
+You see in *Code Snippet 3* how Claude Code began reading the database schema file to understand the structure of the data we need to import. However, while reading the file, it compacted the conversation to save memory.
 
 ### Compactation and Retaining Context
 
 Let's make a slight detour and chat about compactation.
 
-Compactation is a common behavior in Claude Code when the conversation gets lengthy, and we spoke about it in one of the earlier posts in this series. Claude Code did the compactation automatically, and you may think that we have lost the initial prompt and context. However, Claude Code retains the essential context even after compacting, so it still "remembers" what we asked it to do. Internally Claude Code does something like this:
+Compactation is a common behaviour in Claude Code when the conversation gets lengthy, and we spoke about it in one of the earlier posts in this series. In our case, Claude Code automatically compacted the data, and we may think we have lost the initial prompt and context. However, Claude Code retains the essential context even after compacting, so it still "remembers" what we asked it to do. Internally, Claude Code does something like this:
 
 ```
 This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
@@ -165,10 +165,10 @@ This session is being continued from a previous conversation that ran out of con
 ```
 {{< gen-cap "Code Snippet 4" "Internal Summary Generation after Compaction" >}}
 
-As shown in *Code Snippet 4*, after compactation Claude Code internally generates a detailed summary of the previous conversation, capturing all key points, decisions, and context. This allows it to continue the conversation seamlessly, even after losing some of the earlier context.
+As shown in *Code Snippet 4*, after compactation, Claude Code internally generates a detailed summary of the previous conversation, capturing all key points, decisions, and context. This allows it to continue the conversation seamlessly, even after losing some of the earlier context.
 
 {{< callout tip >}}
-In *Code Snippet 4*, note how Claude Code provides a path to the full transcript of the conversation before compaction. This is the same as the project log file we discussed in Part 4 of this series. If you ever need to refer back to specific details from earlier in the conversation, you can always check this log file. Or even better yet, use the `claude-code-transcripts` tool (also covered in Part 4), to easily search and retrieve information from past conversations.
+In *Code Snippet 4*, note how Claude Code provides a path to the full transcript of the conversation before compaction. This is the same as the project log file we discussed in Part 4 of this series. If you ever need to refer back to specific details from earlier in the conversation, you can always check this log file. Or even better yet, use the `claude-code-transcripts` tool (also covered in Part 4) to easily search and retrieve information from past conversations.
 {{< /callout >}}
 
 Now, let's get back to implementing our import functions.
@@ -215,7 +215,7 @@ After the compactation was done, Claude Code continued:
 ```
 {{< gen-cap "Code Snippet 5" "Implementation Strategy Proposal" >}}
 
-Claude Code continued after the compactation looking at the database schema and proposing an implementation strategy for `import_quicket_registrations`. While it summarised it came across some options, towards the bottom of *Code Snippet 5*, that needed confirmation from me before proceeding. 
+Claude Code continued after the compactation, looking at the database schema and proposing an implementation strategy for `import_quicket_registrations`. While it summarised, it identified some items that needed my input (see the bottom of *Code Snippet 5*), which required my confirmation before proceeding. 
 
 I confirmed the options as follows:
 
@@ -287,7 +287,7 @@ After my confirmation in *Code Snippet 6*, Claude Code continued:
 ```
 {{< gen-cap "Code Snippet 7" "Implementation Complete and Next Steps" >}}
 
-As shown in *Code Snippet 7*, Claude Code completed the implementation of `import_quicket_registrations`, created a test script to verify it, and provided a summary of what was implemented. It also suggested next steps for testing and validation. I responded to the question what to do next, that I wanted Claude Code to review the implementation code:
+As shown in *Code Snippet 7*, Claude Code completed the implementation of `import_quicket_registrations`, created a test script to verify it, and provided a summary of the implementation. It also suggested the next steps for testing and validation. My response to what to do next was to review the implementation code:
 
 ```
 ● Let me provide a comprehensive review of the implementation:              
@@ -333,7 +333,13 @@ As shown in *Code Snippet 7*, Claude Code completed the implementation of `impor
 ```
 {{< gen-cap "Code Snippet 8" "Code Review and Recommended Next Steps" >}}
 
-In *Code Snippet 8*, Claude Code provided a comprehensive code review of the implementation, identifying strengths and areas for improvement. It recommended next steps, including fixing the critical connection pool leak issue. I chose to have Claude Code fix all the issues in one go:
+I thought that reviewing the code above would be Claude Code showing me the code for me to review. I was surprised to see in *Code Snippet 8* how Claude Code provided, by itself, a comprehensive code review of the implementation, identifying strengths and areas for improvement. It recommended the next steps, including fixing the critical connection pool leak issue. To be honest, Claude Code did a much better job of reviewing the code than I ever would have!
+
+{{< callout tip >}}
+Having your coding agent review the code is an excellent idea. I can guarantee you that I would not have found the connection pool issue that Claude Code pointed out. When letting the coding agent review the code, try to have another LLM do the review than the model that generated the code, maybe even another provider (e.g., Gemini) instead of Claude.
+{{< /callout >}}
+
+My response to the question in *Code Snippet 8* was to let Claude Code fix all the issues in one go. 
 
 ```
 ● I'll fix all the identified issues systematically.                        
@@ -393,7 +399,7 @@ In *Code Snippet 8*, Claude Code provided a comprehensive code review of the imp
 ```
 {{< gen-cap "Code Snippet 9" "Fixes Applied and Next Steps" >}}
 
-As shown in *Code Snippet 9*, Claude Code applied all the identified fixes, documented them, and provided a summary of the changes. It suggested next steps, including running tests to verify the fixes. I chose to have Claude Code run the test now:
+As shown in *Code Snippet 9*, Claude Code applied all the identified fixes, documented them, and provided a summary of the changes. It suggested the next steps, including running tests to verify the fixes. I chose to have Claude Code run the test to confirm it works:
 
 ```
 ● Bash(cd "W:\OneDrive\repos\niels\event-contact-management-2\mcp-servers\import-mcp" && uv run python      
@@ -427,25 +433,25 @@ As shown in *Code Snippet 9*, Claude Code applied all the identified fixes, docu
 ```
 {{< gen-cap "Code Snippet 10" "Test Completed and Next Steps" >}}
 
-The test in *Code Snippet 10* completed successfully, confirming that all fixes were effective. Claude Code suggested next steps, including testing the import via Claude Desktop.
+The test, as you see in *Code Snippet 10*, completed successfully, confirming that all fixes were effective. Claude Code suggested the following steps, including testing the import via Claude Desktop.
 
 I decided I wanted to test the import using Claude Desktop, and that's when I ran into an issue:
 
 {{< imgfig2 "/images/posts/claude-code-8-2.png" "Figure 2: " "Import Error in Claude Desktop" >}}
 
-So, even though the import function was implemented and tested successfully in the test script, when I tried to run it via Claude Desktop, I got an error saying the functionality is not yet fully implemented. The issue is that when Claude Desktop starts it loads the MCP Server(s) into memory. Since Claude Desktop was running before the code changes were done, Claude Desktop had the original version of the Import MCP server in memory. This was fixed by restarting Claude Desktop to pick up the new code changes.
+So, even though the import function was implemented and tested successfully in the test script, when I tried to run it via Claude Desktop, I got an error saying the functionality is not yet fully implemented. The issue is that when Claude Desktop starts, it loads the MCP Server(s) into memory. Since Claude Desktop was running before the code changes were made, it had the original version of the Import MCP server in memory. This was fixed by restarting Claude Desktop to pick up the new code changes.
 
 After restarting Claude Desktop, I retried the import command:
 
 {{< imgfig2 "/images/posts/claude-code-8-3.png" "Figure 3: " "Successful Import in Claude Desktop" >}}
 
-As shown in *Figure 3*, the import completed successfully this time! We have now fully implemented and tested the `import_quicket_registrations` function end-to-end. I say it imported successfully, yes it did. 
+As shown in *Figure 3*, the import completed successfully this time, YAY! We have now fully implemented and tested the `import_quicket_registrations` function end-to-end. 
 
-However it took forever to complete: 15-20 minutes for 49 records, eish! This is not good enough for production use, where we will work with a lot more than 49 records to import, probably five to six hundred. We need to fix this now. The other import functions will likely have similar performance issues if we don't address this now.
+The import was successful. However, it took forever to complete: 15-20 minutes for 49 records, eish! This is not good enough for production use, where we will work with a lot more than 49 records to import, probably five to six hundred. We need to fix this now. The other import functions will likely have similar performance issues if we don't address this now.
 
-## Claude Code to the Rescue - Performance Optimization
+## Claude Code to the Rescue - Performance Optimisation
 
-I went back to Claude Code, and started with switching model from `Sonnet 4.5` to `Opus 4.5`. I just wanted to check out the more "cabable" model. I then issued the following prompt:
+I went back to Claude Code and started by switching the model from `Sonnet 4.5` to `Opus 4.5`. I just wanted to check out the more "capable" model. I then issued the following prompt:
 
 ```
 I just tested Quicket Registrations import in Claude Desktop, and it worked. However, the performance was absolutely ridicously bad. It took over 20 minutes to import the 49   records, and that is not acceptable. Can you think hard about what the issue can be. I do not want you to make any changes yet, just think about it, and let me know.
@@ -489,11 +495,11 @@ Claude Code responded:
 ```
 {{< gen-cap "Code Snippet 12" "Performance Analysis and Solution" >}}
 
-As shown in *Code Snippet 12*, Claude Code identified the root cause of the performance issue: approximately 750 sequential database round-trips for just 49 rows. The primary bottleneck was the nested loop for processing interest topics, which alone caused around 500 queries.
+As shown in *Code Snippet 12*, Claude Code identified the root cause of the performance issue: approximately 750 sequential database round-trips for just 49 rows. TING (That.Is.Not.Good)! The primary bottleneck was the nested loop for processing interest topics, which alone caused around 500 queries.
 
 Claude Code proposed a solution: adopting a batch loading pattern. This involves pre-loading reference data into memory, processing it there, and then performing batch inserts at the end. This change is expected to reduce the import time from 20 minutes to just 15-30 seconds, a 40-80× speedup.
 
-Persoanally I am not that keen on loading "stuff" into memory, so I asked Claude Code about it, and got this response:
+Personally, I am not that keen on loading "stuff" into memory, so I asked Claude Code about it and got this response:
 
 ```
 ● Great question. Let me give you an honest comparison.
@@ -565,15 +571,15 @@ Persoanally I am not that keen on loading "stuff" into memory, so I asked Claude
 ```
 {{< gen-cap "Code Snippet 13" "Memory-Based vs Database-Centric Approach" >}}
 
-We see in *Code Snippet 13* that Claude Code provided a detailed comparison between the memory-based approach it proposed and a database-centric approach. It highlighted the pros and cons of each method, ultimately recommending the memory-based approach for our specific use case due to its simplicity, speed, and maintainability. 
+We see in *Code Snippet 13* that Claude Code provided a detailed comparison between the memory-based approach it proposed and a database-centric approach. It highlighted the pros and cons of each method. It ultimately recommended the memory-based approach for our specific use case due to its simplicity, speed, and maintainability. 
 
-I was, however, a bit concerned as I saw that Claude Code said in *Code Snippet 13*: "*At your scale (~50 imports, ~300 total contacts) ...*", where I know we would have much higher volumes. So I asked what about if the volumes would be 400 - 500 imports and 2,000 contacts. Claude Code confirmed that even at that scale, the memory-based approach would still be effective and manageable. 
+I was, however, a bit concerned as I saw that Claude Code said in *Code Snippet 13*: "*At your scale (~50 imports, ~300 total contacts) ...*", where I know we would have much higher volumes. So I asked what about if the volumes were 400-500 imports and 2,000 contacts. Claude Code confirmed that, even at that scale, the memory-based approach would remain effective and manageable. 
 
 This is where conversational development shines. Instead of just accepting the first implementation, we can discuss trade-offs and make informed decisions together with Claude Code.
 
-### Implementation of Performance Optimization
+### Implementation of Performance Optimisation
 
-With the approach confirmed, I asked Claude Code to implement the performance optimizations:
+With the approach confirmed, I asked Claude Code to implement the performance optimisations:
 
 ```
 ● I'll implement the batch loading optimization. Let me create a comprehensive update to the
@@ -629,13 +635,13 @@ With the approach confirmed, I asked Claude Code to implement the performance op
 ```
 {{< gen-cap "Code Snippet 14" "Batch Loading Optimization Implementation" >}}
 
-As shown in *Code Snippet 14*, Claude Code implemented the batch loading optimization for the `import_quicket_registrations` function. It updated the code, verified the syntax, and ran tests to ensure everything was functioning correctly. The expected performance improvements were also outlined, showing significant speedups for various row counts.
+As shown in *Code Snippet 14*, Claude Code implemented the batch loading optimisation for the `import_quicket_registrations` function. It updated the code, verified the syntax, and ran tests to ensure everything was functioning correctly. The expected performance improvements were also outlined, showing significant speedups for various row counts.
 
-To test this I asked Claude Code to delete all records from all tables, except for the `events` table, so that we could do a fresh import. When I ran the import in Claude Desktop after restarting it:
+To test this, I asked Claude Code to delete all records from all tables except the `events` table, so we could do a fresh import. When I ran the import in Claude Desktop after restarting it:
 
 {{< imgfig2 "/images/posts/claude-code-8-4.png" "Figure 4: " "Optimized Import in Claude Desktop" >}}
 
-Wowza! That is impressive! As shown in *Figure 4*, (outlined in red), the optimized import completed in 1 - 2 seconds for 49 records, a massive improvement from the previous 20+ minutes. This confirms that the batch loading optimization was highly effective. We should now be ready to proceed with implementing the remaining import functions using the same optimized approach.
+Wowza! That is impressive! As shown in *Figure 4* (outlined in red), the optimised import completed in 1-2 seconds for 49 records, a massive improvement from the previous 20+ minutes. This confirms that the batch loading optimisation was highly effective. We should now be ready to implement the remaining import functions using the same optimised approach.
 
 ## Continuing the Import Function Implementations
 
@@ -697,27 +703,33 @@ In my prompt to Claude Code I asked it to performance optimmise it from the star
 ```
 {{< gen-cap "Code Snippet 15" "import_quicket_checkins Implementation" >}}
 
-As shown in *Code Snippet 15*, Claude Code implemented the `import_quicket_checkins` function using the same batch optimization pattern as `import_quicket_registrations` (at least that's what Claude Code said). It provided a summary of the implementation details and instructions for testing via Claude Desktop.
+Claude Code implemented the `import_quicket_checkins` function, as you see in *Code Snippet 15*,  using the same batch optimisation pattern as `import_quicket_registrations` (at least that's what Claude Code said). It provided a summary of the implementation details and instructions for testing via Claude Desktop.
 
+I restarted Claude Desktop (to bring in the latest changes) and prompted it:
 
+{{< imgfig2 "/images/posts/claude-code-8-5.png" "Figure 5: " "Import Quicket Checkins" >}}
 
+Well, it worked - that is good - but, as you see in *Figure 5* there were a couple of issues:
 
+* Outlined in red: some discrepancy between the database schema and the import script.
+* Import time. The import of 14 records took ~34 seconds. This, compared to ~2 seconds for 49 registrations! At this stage, I wonder whether Claude Code *really* did the same batch optimisation as for the registrations.
 
+I don't see these *issues* being severe enough to warrant Claude Code fixing them now, but they need to be fixed sooner rather than later.
 
-claude-code-8-5.png
+#### GitHub Issues
 
+Let's use Claude Code to create issues on GitHub:
 
- Before we do the import_sessionize_data, I want you to add two issue:
+```
+Before we do the import_sessionize_data, I want you to add two issue:
 
-  1. Claude Desktop when running the import reported initially: "The import failed because there's a mismatch
-  between the database schema and what the import script expects. The table has a check_in_time column, but the
-  import script is looking for checked_in_at. Let me add this column:". When looking at the csv file the column is
-  "Checked In Date.
+1. Claude Desktop when running the import reported initially: "The import failed because there's a mismatch between the database schema and what the import script expects. The table has a check_in_time column, but the import script is looking for checked_in_at. Let me add this column:". When looking at the csv file the column is "Checked In Date.
 
-  2. The file for checkin was the same as for registration, with some rows having a "Yes" value in the "Checked In"
-  column. This import took ~34 seconds, compared to the registration import ~2 seconds.
+2. The file for checkin was the same as for registration, with some rows having a "Yes" value in the "Checked In" column. This import took ~34 seconds, compared to the registration import ~2 seconds. 
 
-  We can leave these issues as they ae, but we need to fix them afterwards.
+We can leave these issues as they are, but we need to fix them afterwards.
+```
+{{< gen-cap "Code Snippet 16" "Telling Claude Code about the Issues" >}}
 
 
 
