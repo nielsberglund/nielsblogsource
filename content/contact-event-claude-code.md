@@ -18,6 +18,7 @@ This is the "Table of Content" for the **Building an Event Management System wit
 * [**Building an Event Management System with Claude Code: Part 5.5 - Schema Refinement: When Real Data Reveals the Truth**][55]: In this post we see how a database schema design mistake turned lesson: How uploading real CSV files to Claude Code revealed missing fields and enabled a 45-minute schema refinement migration.
 * [**Building an Event Management System with Claude Code: Part 6 - Architecture and Design of a Custom Import MCP Server**][6]: Design a custom Import MCP Server with Claude Code for AI-native data imports. Learn why MCP servers are isolated, architect 7 self-contained tools, and transform CSV hell into conversational workflows. Complete architecture guide.
 * [**Building an Event Management System with Claude Code: Part 7 - Implementing the Import MCP Server**][7]: Part 7: Build an Import MCP Server with Claude Code; 3 hours vs 16 traditional. FastMCP implementation, validation tools, database troubleshooting, and real AI-native development lessons.
+* [**Building an Event Management System with Claude Code: Part 8 - Implementing Import Functions**][8]: Part 8: Discover how Claude Code implemented import functions, reviewed its own code, and transformed a 20-minute process into 2 seconds. AI-native development in action..
 
 ---
 
@@ -33,3 +34,4 @@ This is the "Table of Content" for the **Building an Event Management System wit
 [55]: {{< relref "2026-01-12-building-an-event-management-system-with-claude-code-part-55---schema-refinement-when-real-data-reveals-the-truth.md" >}}
 [6]: {{< relref "2026-01-14-building-an-event-management-system-with-claude-code-part-6---architecture-and-design-of-a-custom-import-mcp-server.md" >}}
 [7]: {{< relref "2026-01-18-building-an-event-management-system-with-claude-code-part-7---implementing-the-import-mcp-server.md" >}}
+[8]: {{< relref "2026-01-24-building-an-event-management-system-with-claude-code-part-8---implementing-import-functions.md" >}}
