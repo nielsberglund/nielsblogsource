@@ -148,7 +148,7 @@ I issued the prompt and let Claude Code run in YOLO mode.
 
 ## Autonomous Implementation: The Results
 
-So Claude Code started running and as it went along it output to the terminal:
+So Claude Code started running, and as it went along, it output to the terminal:
 
 ```
 ✔ Task #1 created: Implement import_sessionize_data
@@ -171,7 +171,7 @@ In *Code Snippet 3*, we see Claude Code creating tasks for each import function 
 
 ### Implementation of `import_sessionize_data`
 
-This function is responsible for importing session and speaker data from Sessionize CSV files. The function is somewhat complex; multi-speaker sessions, speaker profile data, and session tracks. 
+This function imports session and speaker data from Sessionize CSV files. The function is complex: multi-speaker sessions, speaker profile data, and session tracks. 
 
 ```
 ⏵ Analyzing Sessionize CSV structure...
@@ -189,7 +189,7 @@ This function is responsible for importing session and speaker data from Session
 
 Claude Code made several autonomous decisions:
 
-1. **Session grouping strategy**: Group rows by `Session Id`, create session from first row, link additional speakers from subsequent rows
+1. **Session grouping strategy**: Group rows by `Session Id`, create a session from the first row, and link additional speakers from subsequent rows
 2. **Speaker deduplication**: Check existing speakers by `sessionize_id` first, then by email
 3. **Profile enrichment**: Update speaker bio/tagline if the import has richer data
 4. **Handling optional fields**: Graceful handling of empty `Track`, `Room`, `Recording Url`
@@ -200,7 +200,7 @@ I reviewed the code afterwards. The decisions were sensible and matched what I w
 
 ### Implementation of `import_speaker_ratings`
 
-The most challenging function; fuzzy string matching to link feedback form session titles to database sessions.
+The most challenging function; it does fuzzy string matching to link feedback form session titles to database sessions.
 
 ```
 ● Now let me implement import_speaker_ratings with fuzzy matching.
@@ -235,7 +235,7 @@ The fuzzy matching implementation was particularly interesting. Claude Code:
 
 ### Implementation of `import_walkup_registrations`
 
-The simplest of the three functions; importing walk-in registrations from a Microsoft Forms CSV:
+The simplest of the three functions, importing walk-in registrations from a Microsoft Forms CSV:
 
 ```
 ● Now let me implement import_walkup_registrations.
@@ -334,13 +334,13 @@ In *Code Snippet 7*, we see what Claude Code did:
 - Updated documentation to reflect the new implementations
 - Summarised the work done, lines added, key features
 
-Something it did without being prompted, was to update the preview functions in `validation.py` to include the new import types. Nice touch! All this without any back-and-forth and no intervation from me!
+Something it did without being prompted was to update the preview functions in `validation.py` to include the new import types. Nice touch! All this without any back-and-forth and no intervention from me!
 
 **Time:** for all three implementations plus commits and docs: ~9 minutes!
 
 ### Testing
 
-What we didn't see though, was anythong about testing the functions against a real database, even though I asked for it in my prompt. So I asked Claude Code to run tests:
+What we didn't see, though, was any mention of testing the functions against a real database, even though I asked for it in my prompt. So I asked Claude Code to run tests:
 
 ```
 Now that the three import functions are implemented, please run tests against a real database instance. Use the sample CSV files in docs/import-files/ for testing. Report any failures and fix them as needed.
@@ -399,11 +399,11 @@ All done. Let me provide a summary of what was fixed and the current status.
 ```
 {{< gen-cap "Code Snippet 9" "Claude Code Running Tests Against Real Database" >}}
 
-Shown in *Code Snippet 9*, is how Claude Code identified and fixed several issues, autonomously. Some were due to schema changes we made earlier (removing `overall_score`, changing `registration_source` values). Others were due to data issues (duplicate speakers). Claude Code fixed them all without any intervention!
+Shown in *Code Snippet 9* is how Claude Code identified and fixed several issues autonomously. Some were due to schema changes we made earlier (removing `overall_score`, changing `registration_source` values). Others were due to data issues (duplicate speakers). Claude Code fixed them all without any intervention!
 
-> **NOTE:** One thing: "Do as I say, don't do as I do". Claude Code ran all the tests in YOLO mode, which meant Claude Code went ahead and made changes directly to the database without asking for confirmation. This is a risk of YOLO mode - always be cautious when using it with operations that affect external systems.
+> **NOTE:** One thing: "Do as I say, don't do as I do". Claude Code ran all the tests in YOLO mode, which meant Claude Code went ahead and made changes directly to the database without asking for confirmation. This is a risk of YOLO mode; always be cautious when using it with operations that affect external systems.
 
-Now then, with all tests passing, we have successfully implemented the three remaining import functions autonomously! Let us now see if I messed up allowing Claude Code to work in YOLO mode. Let's test using Claude Desktop.
+Now then, with all tests passing, we have successfully implemented the three remaining import functions autonomously! Let us now see if I messed up allowing Claude Code to work in YOLO mode. We'll test using Claude Desktop.
 
 ---
 
@@ -413,15 +413,15 @@ Having restarted Claude Desktop to load in the latest changes for the Import MCP
 
 {{ < imgfig2 "/images/posts/claude-code-9-2.png" "Figure 2: "  "What Tables have Data" >}}
 
-I started with asking what tables had data. As shown in *Figure 2*, we can see that all tables except for `email_log` have data. This is expected since we haven't implemented email functionality yet. I asked some other questions around the data, like unique contacts, contact with the same email, etc. Everything looked good.
+I started by asking what tables had data. As shown in *Figure 2*, all tables except `email_log` contain data. This is expected since we haven't implemented email functionality yet. I asked some other questions about the data, such as the number of unique and duplicate contacts. Everything looked good.
 
-One thing that confused me what is highlighted in *Figure 2*, there are more contacts (84) than tickets (81). How is that possible? Instead of me logging onto the database and figuring out what SQL queries to execute, I asked Claude Desktop:
+One thing that confused me was what is highlighted in *Figure 2*, there are more contacts (84) than tickets (81). How is that possible? Instead of me logging onto the database and figuring out what SQL queries to execute, I asked Claude Desktop:
 
 {{ < imgfig2 "/images/posts/claude-code-9-3.png" "Figure 3: "  "Discrepancy Between Contacts and Tickets" >}}
 
-You see in *Figure 3* what I asked Claude Desktop and that Claude Desktop quickly identified the issue: speakers who haven't registered for tickets! I don't know how long it would have takne me to figure that out manually, but Claude Desktop did it in seconds.
+You see in *Figure 3* what I asked Claude Desktop, and it quickly identified the issue: speakers who haven't registered for tickets! I don't know how long it would have taken me to figure that out manually, but Claude Desktop did it in seconds.
 
-Once again, this is the beauty of AI-native applications, I can focus on asking high-level questions and let the AI handle the low-level details.
+Once again, this is the beauty of AI-native applications: I can focus on asking high-level questions and let the AI handle the low-level details.
 
 ### Testing the Three Import Functions
 
