@@ -433,6 +433,8 @@ I will not go into detail on each test here. However, I can confirm that all thr
 
 #### `import_sessionize_data`
 
+**⏱️ Import Duration: 29.589 seconds (~30 seconds)**
+
 - ✅ **Sessions created**: 16 unique sessions
 - ✅ **Speakers created**: 16 speaker records
 - ✅ **Contacts created**: 15 new contacts (1 speaker already existed - Jadean Wright)
@@ -442,6 +444,8 @@ I will not go into detail on each test here. However, I can confirm that all thr
 
 #### `import_walkup_registrations`
 
+**⏱️ Import Duration: 35.841 seconds (~36 seconds)**
+
 - ✅ **Contacts created**: 30 new walk-in attendees
 - ✅ **Contacts updated**: 1 (Mohammed Farhaan Buckas - who was already a speaker)
 - ✅ **Walk-in tickets created**: 32 (all auto-checked-in)
@@ -449,6 +453,8 @@ I will not go into detail on each test here. However, I can confirm that all thr
 - ⚠️ **Phone validation warning**: 1 invalid phone number stored as-is
 
 #### `import_speaker_ratings`
+
+**⏱️ Import Duration: 151.210 seconds (~2.5 minutes)**
 
 This was the most complex test due to fuzzy matching, and the performance suffered due to the computational complexity of fuzzy matching session titles and creating duplicate ratings for multi-speaker sessions. That is something to keep in mind for large datasets.
 
@@ -459,7 +465,349 @@ This was the most complex test due to fuzzy matching, and the performance suffer
 - ✅ **Sessions unmatched**: 0 (perfect match rate!)
 - ✅ **Unique speaker-session combinations rated**: 10
 
-### Final Take
+### The Performance Problem
+
+All three functions worked correctly—the data is accurate and complete. But those import times are concerning:
+
+| Function | Rows | Time | Per-row |
+|----------|------|------|---------|
+| `import_quicket_registrations` (Part 8) | 49 | ~2s | ~40ms |
+| `import_sessionize_data` | 18 | ~30s | ~1.7s |
+| `import_walkup_registrations` | 32 | ~36s | ~1.1s |
+| `import_speaker_ratings` | 199 | ~2.5min | ~760ms |
+{{< gen-cap "Table 1" "Import Function Performance Comparison" >}}
+
+Compare what you see in *Table 1* to our optimised `import_quicket_registrations` from Part 8: 49 rows in ~2 seconds. Something is wrong.
+
+Remember what happened in Part 8? Claude Code *claimed* to have implemented batch optimisation for `import_quicket_checkins`, but when we tested it, performance was poor. The root cause: the batch pattern wasn't actually applied.
+
+Is history repeating itself? Time to investigate.
+
+---
+
+## Drilling Down: Performance Analysis with Claude Code
+
+This is where autonomous development shows its weakness: **verification**. The functions work correctly, but "correct" isn't the same as "optimised." Let's use Claude Code to diagnose what went wrong.
+
+I switched back to conversational mode (no YOLO) and asked Claude Code to investigate:
+
+```
+The three import functions you implemented autonomously are working correctly, but the performance is terrible, so later I want you to help me optimise them. NOT now.
+
+Now, however, I want you to think ultrahard and do a thorough code review of all code. Do not make any changes yet, just review the code and let me know what you find.
+```
+{{< gen-cap "Code Snippet 10" "Prompting Claude Code for Code Review" >}}
+
+As you see in *Code Snippet 10*, I asked Clkaude Code to perform a detailed code review without making any changes yet. I wanted to ensure that the code is sound before asking for optimisations.
+
+Claude Code performed the review and identified the issues:
+
+```
+● Code Review: Import MCP Server
+
+  I've thoroughly reviewed all the code. Here are my findings organized by severity.
+
+  ---
+  🔴 Critical Issues (Performance Killers)
+
+  1. N+1 Query Problems - Individual Queries in Loops
+
+[Claude Code lists several N+1 query issues across the files]
+
+  2. Connection Pool Created/Destroyed Per Import
+
+[Claude Code explains the issue with connection pool management]
+
+  ---
+  🟠 Medium Issues
+
+[Claude Code found several medium severity issues]
+
+  ---
+  🟡 Code Quality Issues
+
+[Claude Code found several code quality issues - including code duplication]
+
+  ---
+  🟢 Minor Issues
+
+[Claude Code found minor issues - including lack of logging]
+
+  ---
+  ✅ Things Done Well
+
+  1. SQL Injection Protection: All queries use parameterized queries ($1, $2).
+  2. Transaction Safety: All imports use async with conn.transaction() for rollback on failure.
+  3. UTF-8 BOM Handling: CSV reading uses encoding="utf-8-sig" consistently.
+  4. Batch Inserts: New record creation uses efficient unnest() pattern.
+  5. Connection Pool Cleanup: finally blocks ensure pool.close() is always called.
+  6. Good Docstrings: Most public functions have detailed docstrings with examples.
+  7. Clear Error Reporting: Returns structured errors and warnings lists.
+
+  ---
+  Summary Table
+  ┌────────────────────────────────┬──────────────────────────────┬─────────────┬─────────────────┐
+  │             Issue              │        Files Affected        │  Severity   │      Type       │
+  ├────────────────────────────────┼──────────────────────────────┼─────────────┼─────────────────┤
+  │ N+1 queries in loops           │ sessionize, quicket, walkins │ 🔴 Critical │ Performance     │
+  ├────────────────────────────────┼──────────────────────────────┼─────────────┼─────────────────┤
+  │ Pool create/destroy per import │ All                          │ 🔴 Critical │ Performance     │
+  ├────────────────────────────────┼──────────────────────────────┼─────────────┼─────────────────┤
+  │ Full table scans               │ All                          │ 🔴 Critical │ Performance     │
+  ├────────────────────────────────┼──────────────────────────────┼─────────────┼─────────────────┤
+  │ Fuzzy match O(N×M)             │ ratings, matching            │ 🟠 Medium   │ Performance     │
+  ├────────────────────────────────┼──────────────────────────────┼─────────────┼─────────────────┤
+  │ Unused import                  │ sessionize                   │ 🟠 Medium   │ Code quality    │
+  ├────────────────────────────────┼──────────────────────────────┼─────────────┼─────────────────┤
+  │ Operator precedence            │ ratings:137                  │ 🟠 Medium   │ Bug             │
+  ├────────────────────────────────┼──────────────────────────────┼─────────────┼─────────────────┤
+  │ Inconsistent error handling    │ quicket vs others            │ 🟠 Medium   │ Design          │
+  ├────────────────────────────────┼──────────────────────────────┼─────────────┼─────────────────┤
+  │ Code duplication               │ All                          │ 🟡 Minor    │ Maintainability │
+  ├────────────────────────────────┼──────────────────────────────┼─────────────┼─────────────────┤
+  │ Magic column positions         │ walkins                      │ 🟡 Minor    │ Fragility       │
+  ├────────────────────────────────┼──────────────────────────────┼─────────────┼─────────────────┤
+  │ No logging                     │ All                          │ 🟢 Minor    │ Observability   │
+  └────────────────────────────────┴──────────────────────────────┴─────────────┴─────────────────┘
+  When you're ready to optimize, the N+1 query problems in the UPDATE loops are the biggest performance wins.
+
+✻ Crunched for 1m 40s
+```
+{{< gen-cap "Code Snippet 11" "Claude Code's Detailed Code Review Findings" >}}
+
+Claude Code, in *Code Snippet 11*, identified several issues; major, medium and minor. Among the critical some ones that would definitely impact performance. Once again, I am impressed over the code reviews Claude Code is doing. If you are interested in looking at at the detailed review I asked Claude Code to document it, and I published it as a `gist` at: [Code Review: Import MCP Server][1].
+
+### Optimising the Code
+
+With the code review complete, I asked Claude Code to compare the findings in the code review with the poor performance we observed:
+
+```
+The code review you performed identified several critical performance issues, including N+1 queries in loops, connection pool mismanagement, and full table scans.
+
+When running the the import functions, we observed very poor performance:
+
+- import_sessionize_data: 30 seconds for 18 rows
+- import_walkup_registrations: 36 seconds for 32 rows  
+- import_speaker_ratings: 2.5 minutes for 199 rows
+
+Can you do further investigation and see whether the performance issues are related purely to the code review findings, or if there are other underlying issues as well. Think hard about it. Do not make any changes yet, just diagnose.
+```
+{{< gen-cap "Code Snippet 12" "Prompting Claude Code to Optimise Based on Code Review" >}}
+
+Claude Code responded:
+
+```
+● Let me investigate more deeply. I'll analyze the actual query counts and identify other potential bottlenecks.
+
+[Claude Code reads a lot of source code]            
+
+● Let me check the db.py pool implementation more closely and understand the connection flow.
+
+[Claude Code checks the db.py file]
+
+● Let me now trace through the exact query counts and compare with observed times. I'll create a detailed analysis.
+
+[Cluaude Code analyzes query counts and timings]
+
+● Now I have a clearer picture. Let me compile my detailed diagnosis.
+
+  ---
+  Deep Performance Investigation
+
+  Query Count Analysis
+
+  Based on tracing through the code, here are the actual query counts:
+
+[Claude Code lists query counts per import function]
+
+  ---
+  Additional Root Causes Identified
+
+[Claude Code lists additional root causes]
+  
+  ---
+  Summary of Root Causes
+  ┌──────────────────────┬─────────┬─────────────────────────────────────────────────────┐
+  │        Cause         │ Impact  │                      Evidence                       │
+  ├──────────────────────┼─────────┼─────────────────────────────────────────────────────┤
+  │ Neon cold start      │ High    │ Each import takes 30+ seconds even with few queries │
+  ├──────────────────────┼─────────┼─────────────────────────────────────────────────────┤
+  │ Geographical latency │ High    │ SA → US = 250-400ms RTT                             │
+  ├──────────────────────┼─────────┼─────────────────────────────────────────────────────┤
+  │ New pool per import  │ Medium  │ No connection reuse between imports                 │
+  ├──────────────────────┼─────────┼─────────────────────────────────────────────────────┤
+  │ N+1 queries          │ Medium  │ sessionize.py has 18+ loop queries                  │
+  ├──────────────────────┼─────────┼─────────────────────────────────────────────────────┤
+  │ Transaction commit   │ Unknown │ Ratings 247-row insert might be slow                │
+  ├──────────────────────┼─────────┼─────────────────────────────────────────────────────┤
+  │ Unknown factor       │ High    │ Ratings: 150s for 2 queries is unexplainable        │
+  └──────────────────────┴─────────┴─────────────────────────────────────────────────────┘
+  ---
+  Recommended Diagnostic Steps
+
+  To pinpoint the exact cause, we need timing instrumentation:
+
+[Claude Code lists recommended diagnostic steps]
+
+  ---
+  Preliminary Conclusion
+
+  The code review findings (N+1 queries, pool mismanagement) are real issues but don't fully explain the observed
+  performance. The biggest factor appears to be:
+
+  1. Neon serverless infrastructure latency (cold starts + geographic distance)
+  2. Possible issue with large batch INSERT or transaction commit
+  3. An unknown factor in the ratings import that needs instrumentation to diagnose
+
+  The fact that 4 queries take 36 seconds (walkins) and 2 queries take 150 seconds (ratings) suggests the problem is
+  not primarily about query count, but about per-operation infrastructure overhead.
+
+✻ Crunched for 4m 21s
+```
+{{< gen-cap "Code Snippet 13" "Claude Code's Deep Performance Investigation Findings" >}}
+
+In *Code Snippet 13*, Claude Code confirmed that the code review findings were valid, but they didn't fully explain the poor performance. Some of the issues are things that I can't just fix from a code perspective, like Neon cold starts and geographical latency. So I asked Claude Code what it recommends to do from a coding perspective, and it responds:
+
+```
+● Based on my investigation, here are my recommendations in priority order:
+
+[Claude Code lists recommendations]
+
+---
+
+  Recommended Order of Implementation
+
+  1. Add timing instrumentation → Run tests → Identify actual bottlenecks
+  2. Fix the confirmed bottlenecks based on timing data
+  3. Share connection pool (easy win)
+  4. Switch to rapidfuzz (easy win)
+  5. Batch the UPDATE loops (moderate effort, high impact)
+
+  Would you like me to implement these changes?
+```
+{{< gen-cap "Code Snippet 14" "Claude Code's Recommended Optimisations" >}}
+
+I agreed with the recommendations and asked Claude Code to proceed:
+
+```
+● I'll implement these changes systematically. Let me start with the foundational pieces first.
+
+● Write(mcp-servers\import-mcp\src\import_mcp\utils\timing.py)
+
+[Claude Code starts implementing timing instrumentation]
+
+● Now let me update matching.py to use rapidfuzz directly:
+
+[Claude Code changes the matching algorithm to rapidfuzz]
+
+● Now let me rewrite sessionize.py with the N+1 fixes and timing instrumentation:
+
+[Claude Code rewrites sessionize.py]
+
+● Now let me update walkins.py with the same optimizations:
+
+[Claude Code implements the same optimisations in the other import functions]
+
+● Now let me update the test script to use shared pools and show timing info:
+
+[Claude Code updates test script]
+
+● Now let me run the tests to see the performance improvements:
+
+[Claude Code runs the tests]
+
+● Excellent! The performance improvements are dramatic:
+
+  Performance Comparison
+  ┌────────────┬────────┬───────┬──────────────┐
+  │   Import   │ Before │ After │ Improvement  │
+  ├────────────┼────────┼───────┼──────────────┤
+  │ sessionize │ 30s    │ 3.8s  │ ~8x faster   │
+  ├────────────┼────────┼───────┼──────────────┤
+  │ walkups    │ 36s    │ 1.7s  │ ~21x faster  │
+  ├────────────┼────────┼───────┼──────────────┤
+  │ ratings    │ 150s   │ 1.3s  │ ~115x faster │
+  ├────────────┼────────┼───────┼──────────────┤
+  │ Total      │ ~216s  │ 6.8s  │ ~32x faster  │
+  └────────────┴────────┴───────┴──────────────┘
+  Key timing insights from the new instrumentation:
+  - Pool warmup: 1.68s (Neon cold start, only once)
+  - Fuzzy matching: 0.004s (rapidfuzz is blazing fast)
+  - Database queries: ~0.4-0.5s per query (network latency to Neon)
+  - CSV parsing: <0.03s (itertuples is fast)
+
+  Let me commit these optimizations:
+
+[Claude Code commits to the repository]
+
+● Done! All performance optimizations have been implemented and pushed.
+
+  Summary of Changes
+
+  New Files
+
+  - utils/timing.py - Timing instrumentation with TimingStats class, timed_phase, timed_fetch, timed_execute
+
+  Modified Files
+  ┌─────────────────────┬──────────────────────────────────────────────────────────────────┐
+  │        File         │                             Changes                              │
+  ├─────────────────────┼──────────────────────────────────────────────────────────────────┤
+  │ utils/db.py         │ Added get_shared_pool(), close_shared_pools(), connection warmup │
+  ├─────────────────────┼──────────────────────────────────────────────────────────────────┤
+  │ utils/matching.py   │ Switched from fuzzywuzzy to rapidfuzz direct API                 │
+  ├─────────────────────┼──────────────────────────────────────────────────────────────────┤
+  │ tools/sessionize.py │ Batch speaker updates, itertuples, timing, shared pool           │
+  ├─────────────────────┼──────────────────────────────────────────────────────────────────┤
+  │ tools/walkins.py    │ Batch phone updates, itertuples, timing, shared pool             │
+  ├─────────────────────┼──────────────────────────────────────────────────────────────────┤
+  │ tools/ratings.py    │ itertuples, timing, shared pool                                  │
+  ├─────────────────────┼──────────────────────────────────────────────────────────────────┤
+  │ test_imports.py     │ Shared pool usage, timing display                                │
+  └─────────────────────┴──────────────────────────────────────────────────────────────────┘
+  Performance Results
+  ┌──────────────────────┬────────┬───────┬─────────────┐
+  │        Metric        │ Before │ After │   Change    │
+  ├──────────────────────┼────────┼───────┼─────────────┤
+  │ sessionize (18 rows) │ 30s    │ 3.8s  │ 8x faster   │
+  ├──────────────────────┼────────┼───────┼─────────────┤
+  │ walkups (32 rows)    │ 36s    │ 1.7s  │ 21x faster  │
+  ├──────────────────────┼────────┼───────┼─────────────┤
+  │ ratings (199 rows)   │ 150s   │ 1.3s  │ 115x faster │
+  ├──────────────────────┼────────┼───────┼─────────────┤
+  │ Total                │ ~216s  │ 6.8s  │ 32x faster  │
+  └──────────────────────┴────────┴───────┴─────────────┘
+  Root Causes Fixed
+
+  1. N+1 queries → Batch UPDATE with unnest()
+  2. New pool per import → Shared connection pool
+  3. fuzzywuzzy → rapidfuzz (10x faster)
+  4. iterrows() → itertuples() (5-10x faster)
+  5. No timing data → Full instrumentation
+
+✻ Cogitated for 8m 18s
+```
+{{< gen-cap "Code Snippet 15" "Claude Code Implementing Performance Optimisations" >}}
+
+WE see in *Code Snippet 15* how Claude Code implemented the optimisations systematically, starting with timing instrumentation, then switching to `rapidfuzz`, fixing N+1 queries, and sharing the connection pool. The performance improvements are dramatic (according to Claude Code's own measurements). I guess the proof is in the pudding as they say, so i switched back to Claude Desktop to run the tests again.
+
+### Re-Testing After Optimisations
+
+
+
+
+
+
+
+
+
+
+
+If so, please implement optimisations to address the issues and improve performance. Test each function after optimisations and report the new performance metrics.
+
+
+### Concerns
+
+Even though everything worked well, I do have some concerns around the performance, especially with the `import_speaker_ratings`. With the limited data volumes for all of the functions, we should not see performance issues. 
 
 Overall, the autonomous implementations worked very well. Claude Code made sensible decisions, followed established patterns, and produced high-quality code. The few issues that arose during testing were quickly identified and fixed by Claude Code itself. There are some performance considerations with fuzzy matching, but for our dataset size, it was acceptable.
 
@@ -509,6 +857,9 @@ That's all for now. I hope you find this information valuable. Please share your
 [part55]: {{< relref "2026-01-12-building-an-event-management-system-with-claude-code-part-55---schema-refinement-when-real-data-reveals-the-truth.md" >}}
 [part6]: {{< relref "2026-01-14-building-an-event-management-system-with-claude-code-part-6---architecture-design-custom-import-mcp-server.md" >}}
 [part7]: {{< relref "2026-01-18-building-an-event-management-system-with-claude-code-part-7---implementing-the-import-mcp-server.md" >}}
+
+
+[1]: https://gist.github.com/nielsberglund/5bd21d30587f4a434196c27772e31695
 
 <!--
   post reference
