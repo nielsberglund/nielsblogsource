@@ -427,7 +427,7 @@ Once again, this is the beauty of AI-native applications: I can focus on asking 
 
 So far so good. Next, I wanted to test each of the three import functions individually.
 
-> **NOTE:** For the individual tests I cleaned out all data from the database, except for the `events` table. I then re-imported registrations and checkins, as in Part 8. This ensured a clean slate for each import test.
+> **NOTE:** For the individual tests, I cleaned out all data from the database, except for the `events` table. I then re-imported registrations and check-ins, as in Part 8. This ensured a clean slate for each import test.
 
 I will not go into detail on each test here. However, I can confirm that all three import functions worked as more or less expected:
 
@@ -456,7 +456,7 @@ I will not go into detail on each test here. However, I can confirm that all thr
 
 **⏱️ Import Duration: 151.210 seconds (~2.5 minutes)**
 
-This was the most complex test due to fuzzy matching, and the performance suffered due to the computational complexity of fuzzy matching session titles and creating duplicate ratings for multi-speaker sessions. That is something to keep in mind for large datasets.
+This was the most complex test due to fuzzy matching, and performance suffered from the computational complexity of fuzzy matching session titles and the creation of duplicate ratings for multi-speaker sessions. That is something to keep in mind for large datasets.
 
 - ✅ **Evaluation records processed**: 199
 - ✅ **Ratings created**: 223 (includes duplicates for multi-speaker sessions)
@@ -467,7 +467,7 @@ This was the most complex test due to fuzzy matching, and the performance suffer
 
 ### The Performance Problem
 
-All three functions worked correctly—the data is accurate and complete. But those import times are concerning:
+All three functions worked correctly, and the data is accurate and complete. But those import times are concerning:
 
 | Function | Rows | Time | Per-row |
 |----------|------|------|---------|
@@ -487,7 +487,7 @@ Is history repeating itself? Time to investigate.
 
 ## Drilling Down: Performance Analysis with Claude Code
 
-This is where autonomous development shows its weakness: **verification**. The functions work correctly, but "correct" isn't the same as "optimised." Let's use Claude Code to diagnose what went wrong.
+What we see above is where autonomous development shows its weakness: **verification**. The functions work correctly, but "correct" isn't the same as "optimised." Let's use Claude Code to diagnose what went wrong.
 
 I switched back to conversational mode (no YOLO) and asked Claude Code to investigate:
 
@@ -498,9 +498,9 @@ Now, however, I want you to think ultrahard and do a thorough code review of all
 ```
 {{< gen-cap "Code Snippet 10" "Prompting Claude Code for Code Review" >}}
 
-As you see in *Code Snippet 10*, I asked Clkaude Code to perform a detailed code review without making any changes yet. I wanted to ensure that the code is sound before asking for optimisations.
+As you see in *Code Snippet 10*, I asked Claude Code to perform a detailed code review without making any changes yet. I wanted to ensure that the code is sound before asking for optimisations.
 
-Claude Code performed the review and identified the issues:
+Claude Code performed the review and identified issues in the code:
 
 ```
 ● Code Review: Import MCP Server
@@ -575,7 +575,7 @@ Claude Code performed the review and identified the issues:
 ```
 {{< gen-cap "Code Snippet 11" "Claude Code's Detailed Code Review Findings" >}}
 
-Claude Code, in *Code Snippet 11*, identified several issues; major, medium and minor. Among the critical some ones that would definitely impact performance. Once again, I am impressed over the code reviews Claude Code is doing. If you are interested in looking at at the detailed review I asked Claude Code to document it, and I published it as a `gist` at: [Code Review: Import MCP Server][1].
+Claude Code, in *Code Snippet 11*, identified several issues: major, medium and minor. Some of the critical issues would definitely impact performance. Once again, I am impressed with the code reviews Claude Code is doing. If you are interested in the detailed review, I asked Claude Code to document it. I published it as a `gist` at: [Code Review: Import MCP Server][1].
 
 ### Optimising the Code
 
@@ -786,18 +786,21 @@ I agreed with the recommendations and asked Claude Code to proceed:
 
 ✻ Cogitated for 8m 18s
 ```
-{{< gen-cap "Code Snippet 15" "Claude Code Implementing Performance Optimisations" >}}
+{{< gen-cap "Code Snippet 14" "Claude Code Implementing Performance Optimisations" >}}
 
-WE see in *Code Snippet 15* how Claude Code implemented the optimisations systematically, starting with timing instrumentation, then switching to `rapidfuzz`, fixing N+1 queries, and sharing the connection pool. The performance improvements are dramatic (according to Claude Code's own measurements). I guess the proof is in the pudding as they say, so i switched back to Claude Desktop to run the tests again.
+We see in *Code Snippet 14* how Claude Code implemented the optimisations systematically, starting with timing instrumentation, then switching to `rapidfuzz`, fixing N+1 queries, and sharing the connection pool. The performance improvements are dramatic (according to Claude Code's own measurements). The proof is in the pudding, as they say, so I switched back to Claude Desktop to rerun the tests.
 
 ### Re-Testing After Optimisations
 
+Once again, I asked Claude Desktop to clean out all data except for the `events` table. My plan was to re-import registrations and check-ins, followed by the three other import functions. That way, I would be able to compare "apples to apples". 
 
+claude-code-9-4.png
 
+claude-code-9-5.png
 
+claude-code-9-6.png
 
-
-
+claude-code-9-7.png
 
 
 
