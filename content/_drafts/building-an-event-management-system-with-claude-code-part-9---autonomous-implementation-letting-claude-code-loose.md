@@ -792,27 +792,42 @@ We see in *Code Snippet 14* how Claude Code implemented the optimisations system
 
 ### Re-Testing After Optimisations
 
-Once again, I asked Claude Desktop to clean out all data except for the `events` table. My plan was to re-import registrations and check-ins, followed by the three other import functions. That way, I would be able to compare "apples to apples". 
+Once again, I asked Claude Desktop to clean out all data except for the `events` table. My plan was to re-import registrations and check-ins, followed by the three other import functions. That way, I would be able to compare "apples to apples". The images below show some of the results after optimisations:
 
-claude-code-9-4.png
+{{< imgfig2 "/images/posts/claude-code-9-4.png" "Figure 4: "  "Registrations Imported" >}}
 
-claude-code-9-5.png
+{{< imgfig2 "/images/posts/claude-code-9-5.png" "Figure 5: "  "Walk-ins Imported" >}}
 
-claude-code-9-6.png
+{{< imgfig2 "/images/posts/claude-code-9-6.png" "Figure 6: "  "Speakers & Sesions Imported" >}}
 
-claude-code-9-7.png
+All import speed looks good! There are a couple of things to notice, though:
+
+* *Figure 4*: No timings, however, manually measuring from start to finish, the import took ~7 seconds for 49 registrations.
+* *Figure 5*: Here we have timings, as I explicitly asked for them (highlighted in yellow).
+
+In *Figure 6*, we see the timings (highlighted in yellow) and a performance breakdown of where time was spent (outlined in red). This without me asking for it!
+
+So why the difference between what was shown in figures 4 and 5, versus 6? The answer is that when Claude Code implemented timing instrumentation, it only instrumented the three new import functions, not the existing ones. That is something I will ask Claude Code to fix later.
+
+{{< callout tip >}}
+It pays to be as specific as possible when conversing with Claude Code. What I should have done when asking Claude Code to proceed after *Code Snippet 14* was to tell Claude Code to also instrument the existing import functions for timings. Lesson learned!
+{{< /callout >}}
+
+What about the two remaining functions? For both walk-ins and evaluations, the performance is good. They both output the performance breakdown as the sessionize import function does, so all good on that front. However, when looking at the session evaluations results:
+
+{{< imgfig2 "/images/posts/claude-code-9-7.png" "Figure 7: "  "Session Evaluation Import" >}}
+
+Look at the highlighted (yellow) and outlined/highlighted in red sections in *Figure 7*. The function could not match 24 ratings to sessions. Those ratings were all for the same session, which featured multiple speakers. It looks like having multiple speakers in a session affects fuzzy matching. This is strange, as in the previous test before optimisations, all sessions were matched. I suspect that `rapidfuzz` handles the matching differently than `fuzzywuzzy`. I will have to investigate that further later.
+
+Everything looks good, apart from the timing instrumentation is missing for two functions, and the session-matching issue.
 
 
 
 
-If so, please implement optimisations to address the issues and improve performance. Test each function after optimisations and report the new performance metrics.
 
 
-### Concerns
 
-Even though everything worked well, I do have some concerns around the performance, especially with the `import_speaker_ratings`. With the limited data volumes for all of the functions, we should not see performance issues. 
 
-Overall, the autonomous implementations worked very well. Claude Code made sensible decisions, followed established patterns, and produced high-quality code. The few issues that arose during testing were quickly identified and fixed by Claude Code itself. There are some performance considerations with fuzzy matching, but for our dataset size, it was acceptable.
 
 ---
 
