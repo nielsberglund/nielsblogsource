@@ -3,12 +3,12 @@ type: post
 layout: "post"
 title: "Building an Event Management System with Claude Code: Part 9 - Autonomous Implementation: Letting Claude Code Loose"
 author: nielsb
-date: 2026-01-28T11:43:05+02:00
+date: 2026-01-29T18:43:05+02:00
 comments: true
 highlight: true
-draft: true
-image: "/images/banner/posts/<file_name_incl_ext>"
-thumbnail: "/images/thumbnails/posts/<file_name_incl_ext>"
+draft: false
+image: "/images/banner/posts/claude-code-ai-9.png"
+thumbnail: "/images/thumbnails/posts/claude-code-ai-9.png"
 categories:
   - Claude-Code
   - AI-Coding 
@@ -350,8 +350,6 @@ Now that the three import functions are implemented, please run tests against a 
 Claude Code went ahead and started the test process:
 
 ```
-[compactation happened so I don't have the full output here]
-
 All done. Let me provide a summary of what was fixed and the current status.
 
 ● All import tool tests pass and fixes have been committed   03:04 PM  claude-opus-4-5-20251101
@@ -411,13 +409,13 @@ Now then, with all tests passing, we have successfully implemented the three rem
 
 Having restarted Claude Desktop to load in the latest changes for the Import MCP server, I started with some basic sanity checks:
 
-{{ < imgfig2 "/images/posts/claude-code-9-2.png" "Figure 2: "  "What Tables have Data" >}}
+{{< imgfig2 "/images/posts/claude-code-9-2.png" "Figure 2: "  "What Tables have Data" >}}
 
 I started by asking what tables had data. As shown in *Figure 2*, all tables except `email_log` contain data. This is expected since we haven't implemented email functionality yet. I asked some other questions about the data, such as the number of unique and duplicate contacts. Everything looked good.
 
 One thing that confused me was what is highlighted in *Figure 2*, there are more contacts (84) than tickets (81). How is that possible? Instead of me logging onto the database and figuring out what SQL queries to execute, I asked Claude Desktop:
 
-{{ < imgfig2 "/images/posts/claude-code-9-3.png" "Figure 3: "  "Discrepancy Between Contacts and Tickets" >}}
+{{< imgfig2 "/images/posts/claude-code-9-3.png" "Figure 3: "  "Discrepancy Between Contacts and Tickets" >}}
 
 You see in *Figure 3* what I asked Claude Desktop, and it quickly identified the issue: speakers who haven't registered for tickets! I don't know how long it would have taken me to figure that out manually, but Claude Desktop did it in seconds.
 
@@ -474,7 +472,8 @@ All three functions worked correctly, and the data is accurate and complete. But
 | `import_quicket_registrations` (Part 8) | 49 | ~2s | ~40ms |
 | `import_sessionize_data` | 18 | ~30s | ~1.7s |
 | `import_walkup_registrations` | 32 | ~36s | ~1.1s |
-| `import_speaker_ratings` | 199 | ~2.5min | ~760ms |
+| `import_speaker_ratings` | 199 | ~2.5min | ~760ms | 
+
 {{< gen-cap "Table 1" "Import Function Performance Comparison" >}}
 
 Compare what you see in *Table 1* to our optimised `import_quicket_registrations` from Part 8: 49 rows in ~2 seconds. Something is wrong.
@@ -919,14 +918,7 @@ Claude Code responded:
 ```
 {{< gen-cap "Code Snippet 18" "Claude Code Listing Open GitHub Issues" >}}
 
-As shown in *Code Snippet 18*, Claude Code listed all open issues, including the two we logged earlier in this post. Instead of asking Claude Code to fix the issues individually, since Claude Code suggested that issues #2, #3, and #4 are related, and may already have been fixed, I asked Claude Code to investigate:
-
-```
-are issues #2 and #3 still valid?
-```
-{{< gen-cap "Code Snippet 19" "Prompting Claude Code to Investigate Existing GitHub Issues" >}}
-
-The response to the above prompt was:
+As shown in *Code Snippet 18*, Claude Code listed all open issues, including the two we logged earlier in this post. Instead of asking Claude Code to fix the issues individually, since Claude Code suggested that issues #2, #3, and #4 are related, and may already have been fixed, I asked Claude Code to investigate, whether issues #2 and #3 are still valid, and Claude Code responded:
 
 ```
 ● Let me check the current state of the Quicket code to verify if those issues are still valid.
@@ -956,9 +948,9 @@ The response to the above prompt was:
 
   Would you like me to close #2 and #3 as duplicates of #4, or keep them separate for tracking purposes?
 ```
-{{< gen-cap "Code Snippet 20" "Claude Code Investigating Existing GitHub Issues" >}}
+{{< gen-cap "Code Snippet 19" "Claude Code Investigating Existing GitHub Issues" >}}
 
-We see in *Code Snippet 20* that Claude Code confirms that both issues are still valid and recommends combining the fixes with issue #4. 
+We see in *Code Snippet 19* that Claude Code confirms that both issues are still valid and recommends combining the fixes with issue #4. 
 
 ### Fixing Issues #2, #3, and #4
 
@@ -969,7 +961,7 @@ You can close #2 and #3 and fix them when you fix #4. You do the work with colum
 
 GO
 ```
-{{< gen-cap "Code Snippet 21" "Prompting Claude Code to Fix Multiple GitHub Issues" >}}  
+{{< gen-cap "Code Snippet 20" "Prompting Claude Code to Fix Multiple GitHub Issues" >}}  
 
 Claude Code went ahead to implement the fixes:
 
@@ -1004,9 +996,9 @@ Claude Code went ahead to implement the fixes:
 
 ✻ Cogitated for 5m 7s
 ```
-{{< gen-cap "Code Snippet 22" "Claude Code Fixing Multiple GitHub Issues" >}}
+{{< gen-cap "Code Snippet 21" "Claude Code Fixing Multiple GitHub Issues" >}}
 
-As shown in *Code Snippet 22*, Claude Code fixed all three issues and committed the changes. When I checked GitHub, I saw that the issues were closed as expected.
+As shown in *Code Snippet 21*, Claude Code fixed all three issues and committed the changes. When I checked GitHub, I saw that the issues were closed as expected.
 
 ### Verifying the Fixes
 
@@ -1056,9 +1048,9 @@ Remember above when I said that we need to be specific when conversing with Clau
   - ec6c0f8 - Optimize Quicket import functions (fixes #2, #3, #4)
   - 9b021aa - Add Quicket import tests to test_imports.py
 ```
-{{< gen-cap "Code Snippet 23" "Claude Code Running Tests After Fixes" >}}
+{{< gen-cap "Code Snippet 22" "Claude Code Running Tests After Fixes" >}}
 
-You see in *Code Snippet 23* how Claude Code ran the tests and confirmed that everything is working correctly after the fixes. Excellent!
+You see in *Code Snippet 22* how Claude Code ran the tests and confirmed that everything is working correctly after the fixes. Excellent!
 
 ### Fixing Issue #5
 
@@ -1067,6 +1059,7 @@ Issue #5 is more complex, as it involves rethinking how multi-speaker sessions a
 ```
 So, issue #5 is left to do. It is a bit more complex than the others. Can you think hard about the issue, analyse it, and propose a solution. Do NOT write any code yet.
 ```
+{{< gen-cap "Code Snippet 23" "Prompt Claude Code for Issue #5" >}}
 
 Claude Code started thinking:
 
@@ -1152,9 +1145,9 @@ Why rsplit is Better
   ---
   Shall I implement this two-line fix?  
 ```
-{{< gen-cap "Code Snippet 25" "Claude Code Reconsidering Issue #5" >}}
+{{< gen-cap "Code Snippet 26" "Claude Code Reconsidering Issue #5" >}}
 
-As shown in *Code Snippet 25*, Claude Code reconsidered the issue. Claude Code recommended using `rsplit` to handle multi-speaker sessions more robustly. I agreed with this approach and asked Claude Code to implement the fix and test it. Claude Code did just this:
+As shown in *Code Snippet 26*, Claude Code reconsidered the issue. Claude Code recommended using `rsplit` to handle multi-speaker sessions more robustly. I agreed with this approach and asked Claude Code to implement the fix and test it. Claude Code did just this:
 
 ```
 [Claude Code implements the rsplit fix and tests it]
@@ -1182,9 +1175,11 @@ As shown in *Code Snippet 25*, Claude Code reconsidered the issue. Claude Code r
 
 ✻ Churned for 1m 27s
 ```
-{{< gen-cap "Code Snippet 26" "Claude Code Fixing Issue #5" >}}
+{{< gen-cap "Code Snippet 27" "Claude Code Fixing Issue #5" >}}
 
-In *Code Snippet 26*, you see how Claude Code implemented the fix for issue #5 and confirmed that all import-related issues are now closed. Good stuff! As mentioned a couple of posts ago, we split this project into two phases. I have a feeling we are close to being complete with Phase 1 now. I ask Claude Code whether we are done with Phase 1, and it responds:
+In *Code Snippet 27*, you see how Claude Code implemented the fix for issue #5 and confirmed that all import-related issues are now closed. Good stuff! 
+
+As mentioned a couple of posts ago, we split this project into two phases. With the above done, I have a feeling we are close to being complete with Phase 1 now. I ask Claude Code whether we are done with Phase 1, and it responds:
 
 ```
 ● Based on the updated CLAUDE.md, Phase 1 core work is complete. The remaining items are optional enhancements:
@@ -1213,9 +1208,9 @@ In *Code Snippet 26*, you see how Claude Code implemented the fix for issue #5 a
   2. Add any additional import functionality?
   3. Something else?
   ```
-{{< gen-cap "Code Snippet 27" "Claude Code Confirming Phase 1 Completion" >}}
+{{< gen-cap "Code Snippet 28" "Claude Code Confirming Phase 1 Completion" >}}
 
-Yes, we see in *Code Snippet 27* how Claude Code confirmed that Phase 1 is complete, with all core work done and tested. The remaining items are optional enhancements. What remains now is to "trust but verify" that everything works as expected.
+Yes, we see in *Code Snippet 28* how Claude Code confirmed that Phase 1 is complete, with all core work done and tested. The remaining items are optional enhancements. What remains now is to "trust but verify" that everything works as expected.
 
 ---
 
@@ -1249,6 +1244,7 @@ After implementing three functions and fixing two issues autonomously, here's my
 | **Pattern following** | Claude Code correctly applied established patterns without guidance |
 | **Decision making** | Reasonable autonomous decisions, well-documented in code comments |
 | **Commits** | Clean, descriptive commit messages |
+
 {{< gen-cap "Table 2" "Autonomous - Worked Well" >}}
 
 ### Where Autonomous Struggled
@@ -1259,6 +1255,7 @@ After implementing three functions and fixing two issues autonomously, here's my
 | **Edge case handling** | Some edge cases I would have caught in review weren't addressed |
 | **Documentation** | Less inline documentation than conversational sessions produce |
 | **Verification claims** | Said "batch optimized" but wasn't always true (the Part 8 checkins issue) |
+
 {{< gen-cap "Table 3" "Autonomous - Struggled" >}}
 
 ### When to Use Each Approach
@@ -1300,6 +1297,7 @@ Let's take stock. After this post, our Import MCP Server is complete:
 | 5 | `import_walkup_registrations` | ✅ Complete | ~3s (32 rows) |
 | 6 | `import_sessionize_data` | ✅ Complete | ~45s (18 rows)* |
 | 7 | `import_speaker_ratings` | ✅ Complete | ~8s (199 rows) |
+
 {{< gen-cap "Table 4" "Import Tools Completion Status" >}}
 
 I am happy with the performance - for now. The Sessionize import could be faster, but it's acceptable. When I start importing "real" data, I may revisit performance if needed.
@@ -1314,6 +1312,7 @@ I am happy with the performance - for now. The Sessionize import could be faster
 | Autonomous issue fixing | 15 minutes |
 | Review and verification | 20 minutes |
 | **Total** | **~2 hours** |
+
 {{< gen-cap "Table 5" "Time Investment Summary" >}}
 
 **Estimated conversational approach:** 5-6 hours
@@ -1344,7 +1343,8 @@ Claude Desktop: "✅ Created 198 ratings, 12 sessions couldn't be matched"
 
 What used to take 2-3 hours of manual CSV wrangling now takes **under 10 minutes of conversation**.
 
-And that's just the import side. With all this data now in our PostgreSQL database, the real power emerges: **analytical conversations**. Using Claude Desktop and the Postgres MCP Pro server, I can ask questions like "Which speakers have presented at all three years?", "What's our attendee retention rate?", or "Show me the correlation between session ratings and track"—and get immediate, insightful answers. No dashboards to build, no reports to configure. Just questions and answers. This is the AI-native vision from Part 3 fully realised: conversational data import *and* conversational data analysis, all through the same interface.
+And that's just the import side. With all this data now in our PostgreSQL database, the real power emerges: **analytical conversations**. Using Claude Desktop and the Postgres MCP Pro server, I can ask questions like "Which speakers have presented at all three years?", "What's our attendee retention rate?", or "Show me the correlation between session ratings and track", and get immediate, insightful answers. No dashboards to build. No reports to configure. Just questions and answers.
+This is the AI-native vision from Part 3 fully realised: conversational data import and conversational data analysis, all through the same interface.
 
 ---
 
