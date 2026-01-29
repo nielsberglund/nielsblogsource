@@ -3,7 +3,7 @@ type: post
 layout: "post"
 title: "Building an Event Management System with Claude Code: Part 9 - Autonomous Implementation: Letting Claude Code Loose"
 author: nielsb
-date: 2026-01-24T11:43:05+02:00
+date: 2026-01-28T11:43:05+02:00
 comments: true
 highlight: true
 draft: true
@@ -425,7 +425,7 @@ Once again, this is the beauty of AI-native applications: I can focus on asking 
 
 ### Testing the Three Import Functions
 
-So far so good. Next, I wanted to test each of the three import functions individually.
+So far, so good. Next, I wanted to test each of the three import functions individually.
 
 > **NOTE:** For the individual tests, I cleaned out all data from the database, except for the `events` table. I then re-imported registrations and check-ins, as in Part 8. This ensured a clean slate for each import test.
 
@@ -813,7 +813,7 @@ So why the difference between what was shown in figures 4 and 5, versus 6? The a
 It pays to be as specific as possible when conversing with Claude Code. What I should have done when asking Claude Code to proceed after *Code Snippet 14* was to also ask Claude Code to instrument the existing import functions for timing. Lesson learned!
 {{< /callout >}}
 
-What about the two remaining functions? For both walk-ins and evaluations, the performance is good. They both output the performance breakdown as the sessionize import function does, so all good on that front. However, when looking at the session evaluations results:
+What about the two remaining functions? For both walk-ins and evaluations, the performance is good. They both output the performance breakdown as the sessionize import function does, so all is good on that front. However, when looking at the session evaluations results:
 
 {{< imgfig2 "/images/posts/claude-code-9-7.png" "Figure 7: "  "Session Evaluation Import" >}}
 
@@ -1184,7 +1184,7 @@ As shown in *Code Snippet 25*, Claude Code reconsidered the issue. Claude Code r
 ```
 {{< gen-cap "Code Snippet 26" "Claude Code Fixing Issue #5" >}}
 
-In *Code Snippet 26*, you see how Claude Code implemented the fix for issue #5 and confirmed that all import-related issues are now closed. Good stuff! As mentioned a couple of posts ago, we split this project into two phases. I have a feeling we are close to be complete with Phase 1 now. I ask Claude Code whether we are done with Phase 1, and it responds:
+In *Code Snippet 26*, you see how Claude Code implemented the fix for issue #5 and confirmed that all import-related issues are now closed. Good stuff! As mentioned a couple of posts ago, we split this project into two phases. I have a feeling we are close to being complete with Phase 1 now. I ask Claude Code whether we are done with Phase 1, and it responds:
 
 ```
 ● Based on the updated CLAUDE.md, Phase 1 core work is complete. The remaining items are optional enhancements:
@@ -1232,22 +1232,202 @@ To ensure everything is working as expected, I decided to run a complete end-to-
 I switched over to Claude Desktop and initiated the full import process as per above.
 
 I monitored the import processes closely, checking the timing outputs and ensuring that all data was imported correctly. Everything worked flawlessly! The timing instrumentation provided detailed insights into where time was spent during each import, and all data matched as expected.
+
+We are officially good!
+
+---
   
+## The Verdict: Autonomous vs Conversational
 
+After implementing three functions and fixing two issues autonomously, here's my assessment:
 
+### What Worked Well with Autonomous
 
+| Aspect | Observation |
+|--------|-------------|
+| **Speed** | ~45 minutes for 3 functions vs estimated 2-3 hours conversationally |
+| **Pattern following** | Claude Code correctly applied established patterns without guidance |
+| **Decision making** | Reasonable autonomous decisions, well-documented in code comments |
+| **Commits** | Clean, descriptive commit messages |
+{{< gen-cap "Table 2" "Autonomous - Worked Well" >}}
 
+### Where Autonomous Struggled
 
+| Aspect | Observation |
+|--------|-------------|
+| **Batch optimization consistency** | Sessionize import slower than expected—pattern may not be fully applied |
+| **Edge case handling** | Some edge cases I would have caught in review weren't addressed |
+| **Documentation** | Less inline documentation than conversational sessions produce |
+| **Verification claims** | Said "batch optimized" but wasn't always true (the Part 8 checkins issue) |
+{{< gen-cap "Table 3" "Autonomous - Struggled" >}}
 
+### When to Use Each Approach
+
+**Use Autonomous When:**
+- Implementing functions that follow established patterns
+- You have clear reference implementations to point to
+- The work is relatively self-contained
+- You can review the final result effectively
+- Time is more important than perfection
+
+**Use Conversational When:**
+- Making architectural decisions
+- Implementing complex business logic
+- You need to understand the "why" behind decisions
+- Quality and correctness are paramount
+- You're learning or exploring new territory
+
+### The Trust but Verify Principle
+
+Autonomous mode is powerful, but I learned an important lesson: **Claude Code can claim to have done something without actually doing it.** The Part 8 checkins "batch optimisation" and the slower-than-expected Sessionize import both suggest that verification is essential.
+
+My recommendation: **Use autonomous for speed, but always review the output.** A quick `git diff` and some targeted testing catches most issues.
+
+---
+
+## What We've Accomplished
+
+Let's take stock. After this post, our Import MCP Server is complete:
+
+### All 7 Import Tools - Complete ✅
+
+| # | Tool | Status | Performance |
+|---|------|--------|-------------|
+| 1 | `validate_import_data` | ✅ Complete | <50ms |
+| 2 | `preview_import` | ✅ Complete | ~2.4s |
+| 3 | `import_quicket_registrations` | ✅ Complete | ~2s (49 rows) |
+| 4 | `import_quicket_checkins` | ✅ Complete | ~4s (49 rows) |
+| 5 | `import_walkup_registrations` | ✅ Complete | ~3s (32 rows) |
+| 6 | `import_sessionize_data` | ✅ Complete | ~45s (18 rows)* |
+| 7 | `import_speaker_ratings` | ✅ Complete | ~8s (199 rows) |
+{{< gen-cap "Table 4" "Import Tools Completion Status" >}}
+
+I am happy with the performance - for now. The Sessionize import could be faster, but it's acceptable. When I start importing "real" data, I may revisit performance if needed.
+
+### Time Investment: Part 9
+
+| Activity | Time |
+|----------|------|
+| Crafting autonomous prompt | 10 minutes |
+| Autonomous implementation (3 functions) | 45 minutes |
+| Testing in Claude Desktop | 20 minutes |
+| Autonomous issue fixing | 15 minutes |
+| Review and verification | 20 minutes |
+| **Total** | **~2 hours** |
+{{< gen-cap "Table 5" "Time Investment Summary" >}}
+
+**Estimated conversational approach:** 5-6 hours
+
+The autonomous approach delivered a **~3x speedup** for this type of work.
+
+### The Complete Import Workflow
+
+We can now do this entire workflow conversationally:
+
+```
+Me: "Import the Quicket registrations from march-2025-reg.csv for event 10"
+Claude Desktop: "✅ Imported 287 contacts, 312 tickets"
+
+Me: "Now import the check-ins"
+Claude Desktop: "✅ Updated 267 tickets as checked in"
+
+Me: "Import the walk-ins from the Microsoft Forms export"
+Claude Desktop: "✅ Imported 23 walk-in registrations"
+
+Me: "Import the speakers from Sessionize"
+Claude Desktop: "✅ Created 18 sessions, 22 speaker profiles"
+
+Me: "Finally, import the speaker ratings"
+Claude Desktop: "✅ Created 198 ratings, 12 sessions couldn't be matched"
+```
+{{< gen-cap "Code Snippet 28" "Complete Conversational Import Workflow Example" >}}
+
+What used to take 2-3 hours of manual CSV wrangling now takes **under 10 minutes of conversation**.
+
+And that's just the import side. With all this data now in our PostgreSQL database, the real power emerges: **analytical conversations**. Using Claude Desktop and the Postgres MCP Pro server, I can ask questions like "Which speakers have presented at all three years?", "What's our attendee retention rate?", or "Show me the correlation between session ratings and track"—and get immediate, insightful answers. No dashboards to build, no reports to configure. Just questions and answers. This is the AI-native vision from Part 3 fully realised: conversational data import *and* conversational data analysis, all through the same interface.
+
+---
+
+## What's Next: Part 10 Preview
+
+With the Import MCP Server complete, we have one major piece remaining: **email integration**.
+
+### Part 10: Email Integration with Brevo MCP
+
+We'll implement the final piece of the puzzle:
+
+- Install and configure `@houtini/brevo-mcp`
+- Create email templates for common communications
+- Test sending emails to filtered contact groups
+- Complete the end-to-end workflow: Import → Query → Email
+
+**Example of What's Coming:**
+
+```
+Me: "Send an email to all speakers from the March 2025 event thanking them"
+
+Claude Desktop: "Found 22 speakers. Here's a preview:
+- Recipients: 22 speakers
+- Template: speaker-thank-you
+- Subject: 'Thank you for speaking at Data & AI Community Day!'
+
+Should I send this?"
+
+Me: "Yes, send it"
+
+Claude Desktop: "✅ Email queued for 22 recipients via Brevo"
+```
+{{< gen-cap "Code Snippet 29" "Example Conversational Email Workflow" >}}
+
+This completes the vision from Part 3: a fully conversational event management system where I can import data, query insights, and send communications, all through natural language.
+
+---
 
 ## ~ Finally
 
-That's all for now. I hope you find this information valuable. Please share your thoughts and ideas on this post, or [ping][ma] me if you have any suggestions. Your input is highly valued and can help shape the direction of our discussions. If you found this post helpful, please consider sharing it with your network. Follow me on [LinkedIn][nblin] for more updates on this project and other AI-related topics.
+Part 9 was an experiment, and experiments yield learning. The autonomous approach proved valuable for pattern-following implementation work, delivering a 3x speedup. But it also revealed the importance of verification. Claude Code can confidently claim to have implemented something that it actually missed.
 
-[ma]: mailto:niels.it.berglund@gmail.com
+**The key insight:** Autonomous and conversational aren't either/or. They're tools for different situations. Use autonomous for speed when patterns are established. Use conversational language for quality when decisions matter. And always verify.
 
-[nblin]: https://www.linkedin.com/in/nielsberglund/
-[dataai]: https://aimldatadurban.org/
+**For the Import MCP Server:** All seven tools are now complete. What started as a 2-3 hour post-event manual process is now a 10-minute conversation. That's the promise of AI-native development delivered.
+
+**YOLO mode warning:** It's powerful but dangerous. Use it in development, with git as your safety net, and never for operations that affect external systems.
+
+### Your Turn
+
+If you're following along:
+1. Try autonomous mode for implementing functions that follow existing patterns
+2. Use YOLO mode carefully, commit your work first
+3. Always verify autonomous output with testing and code review
+4. Find your own balance between speed and oversight
+
+**Have questions or thoughts?**
+
+- Ping me: [niels.it.berglund@gmail.com](mailto:niels.it.berglund@gmail.com)
+- Follow on LinkedIn: [linkedin.com/in/nielsberglund](https://www.linkedin.com/in/nielsberglund/)
+
+**Found this helpful?** Share it with your network! The question of how much autonomy to give AI coding assistants is one every developer will face, and there's no one-size-fits-all answer.
+
+See you in Part 10, where we complete the system with email integration! 🚀
+
+---
+
+**Series Navigation:**
+
+- [✅ Part 1: Installation & Initialisation][part1]
+- [✅ Part 2: IDE Integration][part2]
+- [✅ Part 3: Architecture Planning][part3]
+- [✅ Part 4: Database Infrastructure][part4]
+- [✅ Part 5: Schema & Conversations][part5]
+- [✅ Part 5.5: Schema Refinement][part55]
+- [✅ Part 6: Import MCP Server Design][part6]
+- [✅ Part 7: Import MCP Server Foundation][part7]
+- [✅ Part 8: Implementing Import Functions][part8]
+- ✅ Part 9: Autonomous Implementation (this post)
+- 🚀 Part 10: Email Integration with Brevo MCP (coming soon)
+
+
+
 
 [part1]: {{< relref "2025-07-29-building-an-event-management-system-with-claude-code-claude-code-installation-and-initialisation.md" >}}
 [part2]: {{< relref "2025-08-13-building-an-event-management-system-with-claude-code-part-2---ide-integration-and-advanced-features.md" >}}
@@ -1255,8 +1435,9 @@ That's all for now. I hope you find this information valuable. Please share your
 [part4]: {{< relref "2026-01-01-building-an-event-management-system-with-claude-code-part-4---database-setup-and-first-conversations.md" >}}
 [part5]: {{< relref "2026-01-04-building-an-event-management-system-with-claude-code-part-5---database-schema-and-natural-language-queries.md" >}}
 [part55]: {{< relref "2026-01-12-building-an-event-management-system-with-claude-code-part-55---schema-refinement-when-real-data-reveals-the-truth.md" >}}
-[part6]: {{< relref "2026-01-14-building-an-event-management-system-with-claude-code-part-6---architecture-design-custom-import-mcp-server.md" >}}
+[part6]: {{< relref "2026-01-14-building-an-event-management-system-with-claude-code-part-6---architecture-and-design-of-a-custom-import-mcp-server.md" >}}
 [part7]: {{< relref "2026-01-18-building-an-event-management-system-with-claude-code-part-7---implementing-the-import-mcp-server.md" >}}
+[part8]: {{< relref "2026-01-24-building-an-event-management-system-with-claude-code-part-8---implementing-import-functions.md" >}}
 
 
 [1]: https://gist.github.com/nielsberglund/5bd21d30587f4a434196c27772e31695
