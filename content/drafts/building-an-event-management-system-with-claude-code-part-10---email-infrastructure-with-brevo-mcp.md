@@ -487,13 +487,6 @@ So how do we go about creating a Brevo template? Before diving in on that, what 
 
 
 
-
-
-
-
-
-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
-
 Claude Code provided a step-by-step guide to setting up our Brevo account, including generating an API key and verifying the sender email address. Following these instructions, I successfully prepared our Brevo account for integration.
 
 
