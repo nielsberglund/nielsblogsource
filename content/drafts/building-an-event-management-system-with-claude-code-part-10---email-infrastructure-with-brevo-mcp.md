@@ -67,8 +67,6 @@ Research the current Brevo MCP server options and compare them. Consider:
 ```
 {{< gen-cap "Code Snippet 1" "Asking Claude Code to Research Brevo MCP Options" >}}
 
-Claude Code responded with a detailed comparison of several options, ultimately reaffirming that `@houtini/brevo-mcp` was indeed the best fit for our needs.
-
 Claude Code went to work:
 
 ```
@@ -110,35 +108,32 @@ Claude Code went to work:
 ```
 {{< gen-cap "Code Snippet 2" "Claude Code's Brevo MCP Server Recommendation" >}}
 
-Claude Code responded with a detailed comparison of several options, as we see in *Code Snippet 2*, ultimately reaffirming that `@houtini/brevo-mcp` was indeed the best fit for our needs.
+Claude Code responded with a detailed comparison of several options, as shown in *Code Snippet 2*. It ultimately reaffirms that `@houtini/brevo-mcp` was the best fit for our needs.
 
 ### The Architecture Decision
 
-When I had looked at variopus Brevo MCP servers earlier, there were some mentions around Transactional messaging and Campaign messaging. Before choosing `@houtini/brevo-mcp` I wanted to make sure I understood the trade-offs:
+When I looked at various Brevo MCP servers earlier, I noticed mentions of Transactional and Campaign messaging. Before choosing `@houtini/brevo-mcp`, I wanted to understand the trade-offs, so I asked Claude Code to explain the differences between the two modes and suggest the best option for our use case.
 
-```
-I have heard about transactional mode, which you indicate we get with the MCP server. There is also campaign mode. What do we loose by doing transactional.
-```
-{{< gen-cap "Code Snippet 3" "Clarifying Transactional vs Campaign Messaging with Claude Code" >}}
+Claude Code clarified the differences, confirming that transactional messaging was indeed what we needed for our event management system. With this understanding, I wanted to know what the architecture would look like, so I asked Claude Code. 
 
-Claude Code clarified the differences, confirming that transactional messaging was indeed what we needed for our event management system. With this understanding, I just wanted to be absolutely sure what the architecture would look like, so I asked Claude Coe about it. Claude Code provided a clear architecture diagram and explanation, confirming that our approach was sound. The explanation of the architecture is shown is published as a `gist` at: [Email Architecture - Transactional Mode][1], and the core architecture diagram is shown below:
+Claude Code provided a clear architecture diagram and explanation, confirming that our approach was sound. The explanation of the architecture is published as a `gist` at: [Email Architecture - Transactional Mode][1], and the core architecture diagram is shown below:
 
 {{< imgfig2 "/images/posts/claude-code-10-1.png" "Figure 1: " "Email Architecture - Transactional Mode" >}}
 
-Key points of the architecture as hown in *Figure 1*:
+Key points of the architecture as shown in *Figure 1*:
 
 1. PostgreSQL = Single source of truth (contacts, history)
 2. Brevo = Email delivery only (templates, sending)
 3. Claude = Orchestrator (queries DB, loops through recipients, sends via Brevo)
 4. Confirmation = Required before bulk sends (>10 recipients)
 
-With this confirmation, we were ready to proceed.
+With this confirmation, I was ready to proceed.
 
 ---
 
 ## Setting Up Brevo with Claude Code's Guidance
 
-The question is then, what do we need to setup Brevo so that we can start sending emails?
+The question is: what do we need to set up Brevo to start sending emails?
 
 ### Setting up Brevo
 
@@ -148,7 +143,7 @@ The answer to the question above was (as usual) that I asked Claude Code:
 Before I can setup and start use @houtini/brevo-mcp, can you guide me through setting up Brevo for our transactional email integration.
 What do I need to configure in Brevo before we can start sending?
 ``` 
-{{< gen-cap "Code Snippet 4" "Preparing Brevo Account for MCP Server Use" >}}
+{{< gen-cap "Code Snippet 3" "Preparing Brevo Account for MCP Server Use" >}}
 
 Claude Code provided a checklist:
 
@@ -189,25 +184,25 @@ directly to any email address.
 
 Ready to proceed? Let me know when you have your API key.
 ```
-{{< gen-cap "Code Snippet 5" "Claude Code's Step-by-Step Brevo Setup Guide" >}}  
+{{< gen-cap "Code Snippet 4" "Claude Code's Step-by-Step Brevo Setup Guide" >}}  
 
-As we see in *Code Snippet 5*, Claude Code provided a step-by-step guide to setting up our Brevo account, including how to generate an API key and verify the sender email address. Following these instructions, I successfully prepared our Brevo account for integration:
+As we see in *Code Snippet 4*, Claude Code provided a step-by-step guide to setting up our Brevo account, including how to generate an API key and verify the sender email address. Following Claude Code's instructions, I successfully prepared our Brevo account for integration:
 
 {{< imgfig2 "/images/posts/claude-code-10-2.png" "Figure 2: " "Brevo API Key Generated" >}}
 
-In *Figure 2* we see the generated API key outlined in red (partially redacted for security). I generated it by browsing to the Brevo URL, clicking to generate a new API key (outlined in blue), and copying it for later use. 
+In *Figure 2*, the generated API key is outlined in red (partially redacted for security). I generated it by browsing to the Brevo URL, clicking to generate a new API key (outlined in blue), and copying it for later use. 
 
 {{< callout tip >}}
 Keep your API key secure! Store it in environment variables, never in code or committed files. Claude Code will help us configure this properly.
 {{< /callout >}}
 
-Since I have been using Brevo for a while, I already had a verified sender email address, so I didn't need to do that step again.
+Since I have been using Brevo for a while through their Web UI, I already had a verified sender email address, so I didn't need to repeat that step.
 
 ---
 
 ## Installing @houtini/brevo-mcp with Claude Code
 
-We should now be rady to install `@houtini/brevo-mcp`. 
+We should now be ready to install `@houtini/brevo-mcp`. 
 
 ### Generating the Configuration
 
@@ -216,7 +211,7 @@ With the API key ready, I asked Claude Code to set up the MCP server:
 ```
 Configure @houtini/brevo-mcp for Claude Desktop. Generate the configuration and add it to Claude Desktop. Please also document the configuration.
 ```
-{{< gen-cap "Code Snippet 6" "Setting Up @houtini/brevo-mcp with Claude Code" >}}
+{{< gen-cap "Code Snippet 5" "Setting Up @houtini/brevo-mcp with Claude Code" >}}
 
 Claude Code generated the configuration:
 
@@ -261,34 +256,36 @@ conversation is shared. The key in the config file is fine - just be careful wit
 
 Would you like me to commit the documentation to git?
 ```
-{{< gen-cap "Code Snippet 7" "Claude Code's Generated @houtini/brevo-mcp Configuration" >}}
+{{< gen-cap "Code Snippet 6" "Claude Code's Generated @houtini/brevo-mcp Configuration" >}}
 
-The only issue with the generated configuration in *Code Snippet 7* is that the key is visible in this conversation as well as hardcoded in the config file. To mitigate this, I regenerated the API key in Brevo after completing the setup.
+The only issue with the generated configuration in *Code Snippet 6* is that the key is visible in this conversation as well as hardcoded in the config file. To mitigate this, I regenerated the API key in Brevo after completing the setup.
+
+> **NOTE:** All of you reading this are probably groaning out loud, and thinking: "Niels, why didn't you just use environment variables properly instead of hardcoding the key in the config file?". Good question. The answer is: cast your minds back to part 7 in this series. There, we realised that Claude Desktop cannot "see" environment variables. We do have a GH issue open to see how to solve this. Until we've solved that, hardcoding the key in the config file is the only way to get Claude Code to work with MCP servers requiring authentication.
 
 I restarted Claude Desktop to load the new MCP Server.
 
 ### Verifying the Connection
 
-Now the moment of truth—does it work? I switched to Claude Desktop (since we need the Brevo MCP server running) and asked:
+Now, the moment of truth: does it work? I switched to Claude Desktop (since we need the Brevo MCP server running) and asked:
 
 {{< imgfig2 "/images/posts/claude-code-10-3.png" "Figure 3: " "Verifying Brevo MCP Connection in Claude Desktop" >}}
 
-Yay! In *Figure 3* we see that Claude Desktop successfully connected to Brevo and retrieved account information, confirming that our setup was correct. We are now one step closing to sending email through conversations.
+Yay! In *Figure 3*, we see that Claude Desktop successfully connected to Brevo and retrieved account information, confirming that our setup was correct. We are now one step closer to sending emails through conversations.
 
 ---
 
 ## Exploring the Brevo MCP Tools with Claude Code
 
-Before we send our first email, let's explore what tools are available in the Brevo MCP server.
+Before we send our first email, let's explore the tools the Brevo MCP server provides.
 
 ### Discovering Available Tools
 
 So far, the whole process has been very conversational. Let's continue that trend by using Claude Code to list the available tools:
 
 ```
- Now that Brevo MCP is connected, list all the available tools and explain which ones we'll use for our transactional email approach.
+Now that Brevo MCP is connected, list all the available tools and explain which ones we'll use for our transactional email approach.
 ```
-{{< gen-cap "Code Snippet 8" "Listing Available Brevo MCP Tools with Claude Code" >}}
+{{< gen-cap "Code Snippet 7" "Listing Available Brevo MCP Tools with Claude Code" >}}
 
 Claude Code provided a breakdown:
 
@@ -358,11 +355,11 @@ Claude Code provided a breakdown:
   ---
   Would you like me to test the Brevo connection by calling get_account_info in Claude Desktop?
 ```
-{{< gen-cap "Code Snippet 9" "Claude Code's Breakdown of Brevo MCP Tools" >}}
+{{< gen-cap "Code Snippet 8" "Claude Code's Breakdown of Brevo MCP Tools" >}}
 
-*Code Snippet 9* is just a small excerpt of what Claude Code listed. There were many tools, but the key takeaway is that we will primarily use `send_email` for our transactional emails, with `get_account_info` as a secondary tool for verification and monitoring.
+*Code Snippet 8* is just a small excerpt of what Claude Code listed. There were many tools, but the key takeaway is that we will primarily use `send_email` for our transactional emails, with `get_account_info` as a secondary tool for verification and monitoring.
 
-You may notice in *Code Snippet 9* that Claude Code mentioned the transactional workflow, which I snipped for brevity. The workflow looks very much like you see in *Figure 1* earlier.
+You may notice in *Code Snippet 8* that Claude Code mentioned the transactional workflow, which I snipped for brevity. The workflow looks very much like what you see in *Figure 1* earlier.
 
 ### Deep Dive: The `send_email` Tool
 
@@ -412,15 +409,15 @@ send_email({
 [snipped for brevity]
 
 ```
-{{< gen-cap "Code Snippet 10" "Claude Code's Detailed Explanation of the send_email Tool" >}}
+{{< gen-cap "Code Snippet 9" "Claude Code's Detailed Explanation of the send_email Tool" >}}
 
-The batch capabilities shown in *Code Snippet 10* are particularly exciting, as they allow us to send personalized emails to multiple recipients in one go, all while using a single Brevo template.
+The batch capabilities shown in *Code Snippet 9* are particularly exciting, as they enable us to send personalised emails to multiple recipients in a single go, using a single Brevo template.
 
 ### Brevo Templates Explained
 
 Brevo templates are  a pre-designed email layout you create once in Brevo's drag-and-drop editor, containing your logo, colors, formatting, and placeholder text like {{params.firstName}} or {{params.eventName}}. When sending emails via the API, instead of passing raw HTML every time, you just reference the template by its ID (e.g., templateId: 12) and pass the dynamic values (e.g., params: {firstName: "Jane", eventName: "Tech Conference"}), and Brevo merges them together. 
 
-This separates design from code, we can update email styling in Brevo's visual editor without touching any code, while Claude just needs to know "use template 12 for registration  confirmations" and provide the personalization data.
+This separates design from code; we can update email styling in Brevo's visual editor without touching any code, while Claude needs to know "use template 12 for registration confirmations" and provide the personalisation data.
 
 ---
 
