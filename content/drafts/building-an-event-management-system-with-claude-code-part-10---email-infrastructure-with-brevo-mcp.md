@@ -423,7 +423,7 @@ This separates design from code; we can update email styling in Brevo's visual e
 
 ## Creating Our First Email Template
 
-So how do we go about creating a Brevo template? Before diving in on that, what templates would we need for our **Data & AI Community Day Durban** events? Once again, I turned to Claude Code for guidance:
+How do we create a Brevo template? Before diving into that, what templates would we need for our **Data & AI Community Day Durban** events? Once again, I turned to Claude Code for guidance, and Claude Code responded:
 
 ```
 ● Based on the Data & AI Community Day Durban workflow (Quicket registrations, Sessionize speakers, ~300 attendees,
@@ -461,9 +461,36 @@ So how do we go about creating a Brevo template? Before diving in on that, what 
   The registration confirmation is typically handled by Quicket automatically, so you likely don't need to duplicate
   that.
 ```
-{{< gen-cap "Code Snippet 11" "Claude Code's Recommended Email Templates for Event Management" >}}  
+{{< gen-cap "Code Snippet 10" "Claude Code's Recommended Email Templates for Event Management" >}}  
+
+Shown in *Figure 10* is Claude Code's recommended set of email templates for our event management system. I do have some reservations about the templates and the exact parameters. Since our first event is coming up soon (March 14), I decided to start by creating the "CFP Invitation" (Call For Papers/Call For Speakers) template.
+
+> **NOTE:** The reservations I have are for the "Session Accepted" and "Speaker Thank You + Ratings" templates. Acceptance emails (and rejections) are sent from the Sessionize platform, so no template is needed. For the "Speaker Thank You + Ratings" template, I believe the parameters need to change somewhat, as one speaker may present multiple topics, and should receive separate ratings for each. Also, for each topic, the ratings cover both the presentation and the content individually. I will revisit this with Claude Code at a later stage to refine the template parameters.
+
+So, how do we create Brevo templates?
+
+### Creating a Template in Brevo
+
+The "CFP Invitation" template is the one I want to start with (as per above). My assumption is that it will serve as a good starting point for our email communications. I also assume I will create the template using a Brevo editor. What I do not know is how to include the parameters we see in *Code Snippet 10*. So I asked Claude Code:
+
+```
+I have decided to create the "CFP Invitation" email template in Brevo as my first template. Can you guide me through creating this template. What I use to create it. etc., and how to add the dynamic parameters like {{params.firstName}}, {{params.eventName}}, etc.?
+```
+{{< gen-cap "Code Snippet 11" "Creating the 'CFP Invitation' Template with Claude Code's Guidance" >}}
+
+You see in *Code Snippet 11* how I "hedged" my bets about where to create the template (I assume in Brevo's editor), and how I asked about the dynamic parameters.
 
 
+
+
+
+
+
+I logged into my Brevo account and navigated to the "Templates" section. From there, I clicked on "Create a new template" and selected the drag-and-drop editor.
+
+```
+
+I feel that we may want to split that into two templates: one for acceptance and one for rejection. However, I decided to proceed with Claude Code's recommendation for now, and we can always refine later.
 
 
 
