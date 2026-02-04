@@ -463,9 +463,9 @@ How do we create a Brevo template? Before diving into that, what templates would
 ```
 {{< gen-cap "Code Snippet 10" "Claude Code's Recommended Email Templates for Event Management" >}}  
 
-Shown in *Figure 10* is Claude Code's recommended set of email templates for our event management system. I do have some reservations about the templates and the exact parameters. Since our first event is coming up soon (March 14), I decided to start by creating the "CFP Invitation" (Call For Papers/Call For Speakers) template.
+Shown in *Figure 10* is Claude Code's recommended set of email templates for our event management system. Since our first event is coming up soon (March 14), I decided to start by creating the "CFP Invitation" (Call For Papers/Call For Speakers) template.
 
-> **NOTE:** The reservations I have are for the "Session Accepted" and "Speaker Thank You + Ratings" templates. Acceptance emails (and rejections) are sent from the Sessionize platform, so no template is needed. For the "Speaker Thank You + Ratings" template, I believe the parameters need to change somewhat, as one speaker may present multiple topics, and should receive separate ratings for each. Also, for each topic, the ratings cover both the presentation and the content individually. I will revisit this with Claude Code at a later stage to refine the template parameters.
+> **NOTE:** Looking at *Code Snippet 10*, I do have some concerns about the templates and the exact parameters. The reservations I have are for the "Session Accepted" and "Speaker Thank You + Ratings" templates. Acceptance emails (and rejections) are sent from the Sessionize platform, so no template is needed. For the "Speaker Thank You + Ratings" template, I believe the parameters need to change somewhat, as one speaker may present multiple topics, and should receive separate ratings for each. Also, for each topic, the ratings cover both the presentation and the content individually. I will revisit this with Claude Code at a later stage to refine the template parameters.
 
 So, how do we create Brevo templates?
 
@@ -478,19 +478,89 @@ I have decided to create the "CFP Invitation" email template in Brevo as my firs
 ```
 {{< gen-cap "Code Snippet 11" "Creating the 'CFP Invitation' Template with Claude Code's Guidance" >}}
 
-You see in *Code Snippet 11* how I "hedged" my bets about where to create the template (I assume in Brevo's editor), and how I asked about the dynamic parameters.
+You see in *Code Snippet 11* how I "hedged" my bets about where to create the template (I assume in Brevo's editor), and how I asked about the dynamic parameters. Claude responded:
 
+```
+● Creating Your First Brevo Template: CFP Invitation
 
+  Step 1: Access the Template Editor
 
+  1. Log into https://app.brevo.com
+  2. Navigate to Campaigns → Templates
+  3. Click New Template → Drag & Drop Editor (recommended for beginners)
 
+  Step 2: Basic Setup
 
+  When prompted:
+  - Template Name: CFP Invitation - Data & AI Community Day
+  - Subject Line: {{params.firstName}}, speak at {{params.eventName}}!
+  - From: Your verified sender email
 
+  Step 3: Design the Email
+
+  Use the drag-and-drop blocks to build your layout:
+
+[Snipped for brevity]
+
+  Step 4: Adding Dynamic Parameters
+
+  In the drag-and-drop editor:
+
+  1. Click on a Text Block
+  2. Type your text normally
+  3. Where you want a dynamic value, simply type {{params.variableName}}
+  4. The editor will highlight it as a variable
+
+  For the button link:
+  1. Select the button
+  2. In the Link URL field, enter: {{params.submitLink}}
+
+  Step 5: Parameters Summary
+  ┌────────────────────────┬─────────────────────────────────────┬────────────────────────┐
+  │       Parameter        │            Example Value            │      Description       │
+  ├────────────────────────┼─────────────────────────────────────┼────────────────────────┤
+  │ {{params.firstName}}   │ Jane                                │ Recipient's first name │
+  ├────────────────────────┼─────────────────────────────────────┼────────────────────────┤
+  │ {{params.eventName}}   │ Data & AI Community Day Durban 2026 │ Full event name        │
+  ├────────────────────────┼─────────────────────────────────────┼────────────────────────┤
+  │ {{params.eventDate}}   │ March 15, 2026                      │ Event date             │
+  ├────────────────────────┼─────────────────────────────────────┼────────────────────────┤
+  │ {{params.venue}}       │ Durban ICC                          │ Event location         │
+  ├────────────────────────┼─────────────────────────────────────┼────────────────────────┤
+  │ {{params.cfpDeadline}} │ January 31, 2026                    │ Submission deadline    │
+  ├────────────────────────┼─────────────────────────────────────┼────────────────────────┤
+  │ {{params.submitLink}}  │ https://sessionize.com/your-event   │ Sessionize CFP URL     │
+  └────────────────────────┴─────────────────────────────────────┴────────────────────────┘
+  Step 6: Preview & Test
+
+  1. Click Preview in the top right
+  2. Click Send Test Email
+  3. Enter test values for each parameter when prompted
+  4. Send to yourself to verify formatting
+
+  Step 7: Save & Note the Template ID
+
+  1. Click Save & Quit
+  2. Back in the Templates list, hover over your template
+  3. Note the Template ID (visible in the URL or template details) - you'll need this for the API
+
+  ---
+  Using the Template via Claude
+
+  Once saved, Claude can send emails using:
+
+[snipped for brevity]
+
+  Let me know once you've created the template and I can help you test it
+```
+{{< gen-cap "Code Snippet 12" "Claude Code's Step-by-Step Guide to Creating the 'CFP Invitation' Template" >}}
+
+You see in *Code Snippet 12* that Claude Code provided a detailed step-by-step guide to creating the "CFP Invitation" template in Brevo's drag-and-drop editor, including how to add dynamic parameters like `{{params.firstName}}` and `{{params.eventName}}`.
 
 I logged into my Brevo account and navigated to the "Templates" section. From there, I clicked on "Create a new template" and selected the drag-and-drop editor.
 
-```
 
-I feel that we may want to split that into two templates: one for acceptance and one for rejection. However, I decided to proceed with Claude Code's recommendation for now, and we can always refine later.
+
 
 
 
