@@ -560,9 +560,9 @@ You see in *Code Snippet 12* that Claude Code provided a detailed step-by-step g
 I logged into my Brevo account and navigated to the "Templates" section. From there, I clicked on "Create a new template" and selected the drag-and-drop editor.
 
 
+{"firstName": "Jane", "eventName": "Test Event", "eventDate": "March 15, 2026", "venue": "Richfield", "cfpDeadline": "2026-02-28", "submitLink": "https://nielsberglund.com", "bannerImageUrl": "dot-net-conf-text-1_png.png"}
 
-
-
+ 
 
 
 
