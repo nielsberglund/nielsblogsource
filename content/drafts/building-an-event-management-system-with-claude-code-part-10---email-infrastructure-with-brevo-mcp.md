@@ -557,7 +557,16 @@ You see in *Code Snippet 11* how I "hedged" my bets about where to create the te
 
 You see in *Code Snippet 12* that Claude Code provided a detailed step-by-step guide to creating the "CFP Invitation" template in Brevo's drag-and-drop editor, including how to add dynamic parameters like `{{params.firstName}}` and `{{params.eventName}}`.
 
-I logged into my Brevo account and navigated to the "Templates" section. From there, I clicked on "Create a new template" and selected the drag-and-drop editor.
+I logged into my Brevo account and navigated to the "Marketing -> Campaigns ->Templates" section. From there, I clicked on **Create Template** and chose **Email template**. I proceeded to design a very minimalistic template for test, and I added the dynamic parameters:
+
+{{< imgfig2 "/images/posts/claude-code-10-4.png" "Figure 4: " "The 'CFP Invitation' Template in Brevo's Editor" >}}
+
+In *Figure 4*, you can see the template I created in Brevo's editor, with the dynamic parameters highlighted in red. The parameters are added by simply typing `{{params.variableName}}` in the text blocks or link fields, and Brevo automatically recognizes them as variables.
+
+
+
+
+
 
 
 {"firstName": "Jane", "eventName": "Test Event", "eventDate": "March 15, 2026", "venue": "Richfield", "cfpDeadline": "2026-02-28", "submitLink": "https://nielsberglund.com", "bannerImageUrl": "dot-net-conf-text-1_png.png"}
