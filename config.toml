@@ -144,3 +144,11 @@ params = ["categories", "tags"]
   changefreq = 'monthly'
   filename = 'sitemap.xml'
   priority = 0.5
+
+[module]
+  [[module.mounts]]
+    source = "content"
+    target = "content"
+  [[module.mounts]]
+    source = "W:\\OneDrive\\repos\\blogstuff\\miscblogstuff\\drafts"
+    target = "content\\drafts"
