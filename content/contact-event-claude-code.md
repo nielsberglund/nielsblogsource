@@ -20,7 +20,7 @@ This is the "Table of Content" for the **Building an Event Management System wit
 * [**Building an Event Management System with Claude Code: Part 7 - Implementing the Import MCP Server**][7]: Part 7: Build an Import MCP Server with Claude Code; 3 hours vs 16 traditional. FastMCP implementation, validation tools, database troubleshooting, and real AI-native development lessons.
 * [**Building an Event Management System with Claude Code: Part 8 - Implementing Import Functions**][8]: Part 8: Discover how Claude Code implemented import functions, reviewed its own code, and transformed a 20-minute process into 2 seconds. AI-native development in action.
 * [**Building an Event Management System with Claude Code: Part 9 - Autonomous Implementation: Letting Claude Code Loose**][9]: Part 9: Test autonomous Claude Code by implementing 3 import functions with minimal guidance. Compare results with conversational development. Includes YOLO mode, fixing GitHub issues, and lessons on when to let AI work independently.
-
+* [**Building an Event Management System with Claude Code: Part 10 - Email Infrastructure with Brevo MCP**][10]: Part 10: Integrate Brevo MCP for transactional email sending. Set up email infrastructure, create templates, and send your first conversational emails—all without maintaining a separate contact database.
 
 
 
@@ -40,3 +40,4 @@ This is the "Table of Content" for the **Building an Event Management System wit
 [7]: {{< relref "2026-01-18-building-an-event-management-system-with-claude-code-part-7---implementing-the-import-mcp-server.md" >}}
 [8]: {{< relref "2026-01-24-building-an-event-management-system-with-claude-code-part-8---implementing-import-functions.md" >}}
 [9]: {{< relref "2026-01-29-building-an-event-management-system-with-claude-code-part-9---autonomous-implementation-letting-claude-code-loose.md" >}}
+[10]: {{< relref "2026-02-14-building-an-event-management-system-with-claude-code-part-10---email-infrastructure-with-brevo-mcp.md" >}}
