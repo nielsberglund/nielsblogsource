@@ -21,6 +21,7 @@ This is the "Table of Content" for the **Building an Event Management System wit
 * [**Building an Event Management System with Claude Code: Part 8 - Implementing Import Functions**][8]: Part 8: Discover how Claude Code implemented import functions, reviewed its own code, and transformed a 20-minute process into 2 seconds. AI-native development in action.
 * [**Building an Event Management System with Claude Code: Part 9 - Autonomous Implementation: Letting Claude Code Loose**][9]: Part 9: Test autonomous Claude Code by implementing 3 import functions with minimal guidance. Compare results with conversational development. Includes YOLO mode, fixing GitHub issues, and lessons on when to let AI work independently.
 * [**Building an Event Management System with Claude Code: Part 10 - Email Infrastructure with Brevo MCP**][10]: Part 10: Integrate Brevo MCP for transactional email sending. Set up email infrastructure, create templates, and send your first conversational emails—all without maintaining a separate contact database.
+* [**Building an Event Management System with Claude Code: Part 11 - Campaign Tracking & Batch Sending**][11]: Part 11: Add campaign tracking and batch sending to your AI-native event system. Design tracking tables conversationally, send personalised campaigns to multiple recipients, and prevent duplicate emails—all through Claude Code and Claude Desktop.
 
 
 
@@ -41,3 +42,5 @@ This is the "Table of Content" for the **Building an Event Management System wit
 [8]: {{< relref "2026-01-24-building-an-event-management-system-with-claude-code-part-8---implementing-import-functions.md" >}}
 [9]: {{< relref "2026-01-29-building-an-event-management-system-with-claude-code-part-9---autonomous-implementation-letting-claude-code-loose.md" >}}
 [10]: {{< relref "2026-02-14-building-an-event-management-system-with-claude-code-part-10---email-infrastructure-with-brevo-mcp.md" >}}
+[11]: {{< relref "2026-02-22-building-an-event-management-system-with-claude-code-part-11---campaign-tracking--batch-sending.md" >}}
+  
