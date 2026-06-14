@@ -3,7 +3,7 @@ title = "Niels Berglund"
 theme = "hugo-theme-cleanwhite"
 languageCode = "en-us"
 # Enable comments by entering your Disqus shortname
-disqusShortname = "manageddata"
+# disqusShortname = "manageddata"
 # comment as GA as not used
 # googleAnalytics = "UA-18914734-2"
 preserveTaxonomyNames = true
