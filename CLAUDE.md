@@ -11,7 +11,7 @@ hugo                  # build the site into ../blogsite (publishDir)
 
 - Hugo extended is installed via Homebrew (`/opt/homebrew/bin/hugo`).
 - `publishDir = "../blogsite"`: the generated site goes to a sibling folder, not `public/`. Don't commit build output here.
-- The theme `themes/hugo-theme-cleanwhite` is a git submodule. If it's empty, run `git submodule update --init` before building. `themes/hyde-hyde` is an old leftover and isn't used.
+- The theme `themes/hugo-theme-cleanwhite` is a git submodule. If it's empty, run `git submodule update --init` before building.
 - `config.toml` has a `[module]` mount that points at a **Windows** path (`W:\OneDrive\repos\blogstuff\miscblogstuff\drafts` → `content\drafts`). On this Mac the drafts live in `../miscblogstuff/drafts`. If a build fails on that mount, say so; don't quietly rewrite the config.
 
 ## Layout
