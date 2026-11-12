@@ -8,7 +8,6 @@ comments: true
 highlight: true
 draft: false
 categories:
-categories:
   - roundup
 tags:
   - data science
