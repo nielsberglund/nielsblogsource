@@ -12,7 +12,7 @@ hugo                  # build the site into ../blogsite (publishDir)
 - Hugo extended is installed via Homebrew (`/opt/homebrew/bin/hugo`).
 - `publishDir = "../blogsite"`: the generated site goes to a sibling folder, not `public/`. Don't commit build output here.
 - The theme `themes/hugo-theme-cleanwhite` is a git submodule. If it's empty, run `git submodule update --init` before building.
-- `config.toml` has a `[module]` mount that points at a **Windows** path (`W:\OneDrive\repos\blogstuff\miscblogstuff\drafts` → `content\drafts`). On this Mac the drafts live in `../miscblogstuff/drafts`. If a build fails on that mount, say so; don't quietly rewrite the config.
+- `config.toml` mounts `../miscblogstuff/drafts` as `content/drafts`. The relative path works on both Windows and macOS, as long as `miscblogstuff` is a sibling folder of this repo. Drafts are built even without `-D`, so a draft with invalid front matter (such as a placeholder `date: 2026-04-XX`) breaks the whole build. Leave `date:` out of a draft until it has a real date.
 
 ## Layout
 

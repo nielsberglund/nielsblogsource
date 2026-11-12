@@ -150,5 +150,7 @@ params = ["categories", "tags"]
     source = "content"
     target = "content"
   [[module.mounts]]
-    source = "W:\\OneDrive\\repos\\blogstuff\\miscblogstuff\\drafts"
-    target = "content\\drafts"
+    # Relative to this repo, so it works on both Windows and macOS
+    # as long as miscblogstuff is a sibling folder of nielsblogsource.
+    source = "../miscblogstuff/drafts"
+    target = "content/drafts"
